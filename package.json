@@ -1,0 +1,20 @@
+{
+  "name": "betterdorucord",
+  "version": "0.0.1",
+  "description": "Bootleg BD without an UI and you have to run every time Discord updates",
+  "main": "installer.js",
+  "scripts": {
+    "test": "none"
+  },
+  "keywords": [
+    "better",
+    "discord",
+    "doru"
+  ],
+  "author": "Doru",
+  "license": "ISC",
+  "dependencies": {
+    "asar": "^1.0.0",
+    "rimraf": "^2.6.3"
+  }
+}
