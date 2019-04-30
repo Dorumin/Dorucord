@@ -1,0 +1,1143 @@
+/* Entire app, but only affects the top bar */
+#app-mount {
+    background-color: #260000;
+}
+
+/* Whole app minus the top bar background */
+/* Pseudo-element to allow for custom filters and stuff, also nicer positioning than background-size: cover */
+#app-mount > div*app > div*app > div*layers > div[role="dialog"]*layer::before {
+    content: '';
+    background-image: url(https://cdn.discordapp.com/attachments/505815497598828570/571515379399000074/unknown.png);
+    background-color: #4d0009;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: brightness(.8) contrast(1.1) blur(0); /* Blur up to the user */
+}
+
+/* Guild list background */
+div[role="dialog"] > *container*flex*container > *wrapper {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/** Guild without image and discord logo background**/
+#app-mount div*acronym,
+div*unreadMentionsIndicatorTop + div*scrollerWrap > div*scroller > div*listItem:nth-child(1) a,
+div*unreadMentionsIndicatorTop + div*scrollerWrap > div*scroller > div*listItem:nth-child(2) div*guildSeparator,
+div*unreadMentionsIndicatorTop + div*scrollerWrap > div*scroller > div*listItem div*circleIconButton {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/** Guild left bar voice connected icon **/
+div*unreadMentionsIndicatorTop + div*scrollerWrap > div*scroller > div*listItem div*badgeWrapper > div*upperBadge > div*iconBadge {
+    background-color: #160000;
+}
+
+/* Channel list */
+/** Background of current user below recent DMs/channels */
+div*channels {
+    background-color: transparent; /* TODO: Darken? */
+}
+
+/*** Darken account details ***/
+div*channels > *container:last-of-type {
+    background-color: rgba(0, 0, 0, .2);
+    position: relative;
+}
+
+/*** Fix bug with the absolute background that makes username in details disappear ***/
+div*accountDetails .username {
+    position: relative;
+}
+
+/** Actual channel list background */
+div*channels > div*vertical {
+    background-color: transparent;
+}
+
+/** Channel margin to separate from scrollbar */
+div*channels div*content {
+    margin-right: 8px;
+}
+
+/** Search bar on top of the DM lists **/
+div*privateChannels > div*searchBar {
+    box-shadow: none;
+}
+
+div*privateChannels > div*searchBar > div*searchBarComponent {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/** Hover effect on recent DMs **/
+div*privateChannels div*channel {
+    margin-right: 4px;
+}
+
+div*privateChannels div*channel*selected {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+div*privateChannels div*channel*selected > a {
+    background-color: transparent;  
+}
+
+div*privateChannels div*channel:active > a {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+div*privateChannels div*channel:hover > a {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/* Hovered channel highlight **/
+#app-mount div*channels div*containerDefault:hover div*content {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/** Selected channel highlight **/
+#app-mount div*channels div*containerDefault*selected div*content {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Server dropdown darken background **/
+div*channels > div*vertical > div:first-of-type {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/* Chat area */
+/** The area around the textbox **/
+#app-mount div*chat {
+    background-color: transparent;
+}
+
+/** The header background **/
+div*chat > div*title {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: none;
+}
+
+/*** Remove random box-shadow at the end of the channel name ***/
+div*chat > div*title > div*children::after {
+    display: none;
+}
+
+/*** The same but with the border of editing group DMs ***/
+div*chat > div*title div*outer input*input {
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/*** Ugly aka badge ***/
+div*chat > div*title div*akaBadge {
+    background-color: #52082e;
+}
+
+/*** Search bar background ***/
+#app-mount *searchBar {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/**** Search bar filters ****/
+#app-mount *searchBar *searchFilter {
+    background-color: rgb(255, 255, 255, .1);
+}
+
+#app-mount *searchBar *searchAnswer {
+    background-color: rgb(255, 255, 255, .1);
+    margin-left: 0;
+}
+
+/*** Search results ***/
+#app-mount *searchResultsWrap {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+#app-mount *searchResultsWrap *searchHeader {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount *searchResultsWrap *channelName {
+    background-color: transparent;
+}
+
+#app-mount *searchResultsWrap *searchResult::before,
+#app-mount *searchResultsWrap *searchResult::after {
+    background-image: none;
+}
+
+#app-mount div*searchResultsWrap div*searchResultMessage*hit {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: none;
+}
+
+#app-mount div*searchResultsWrap div*searchResult*expanded {
+    border-color: transparent;
+}
+
+#app-mount div*searchResultsWrap div*searchResult*expanded div*searchResultMessage {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+#app-mount div*searchResultsWrap div*searchResult*expanded div*searchResultMessage > div*messageGroupCozy {
+    padding-top: .2em;
+}
+
+/*** Jump button ***/
+#app-mount *jumpButton {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/** Content background **/
+div*chat > div*content {
+    background: transparent;
+}
+
+/** Channel members**/
+div*chat > div*content div*members {
+    background-color: rgba(0, 0, 0, .2); /* TODO: Darken? */
+}
+
+/*** Member hover color ***/
+div*chat > div*content div*members div*member:hover div*content,
+div*chat > div*content div*members div*member.popout-open div*content {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/*** Member color when popout's open, TODO: Super hacky, maybe use mask-image? ***/
+div*member*memberOnline > div*content > span*avatarWrapper > div*wrapper > div*status,
+div*privateChannels div*channel div*wrapper > div*status {
+    border-color: transparent;
+}
+
+div*member*memberOnline > div*content > div*wrapper > div*image,
+div*privateChannels div*channel > a > div*wrapper > div*inner {
+    transition: clip-path 200ms ease;
+}
+
+div*privateChannels div*channel > a:not(.typing) > div*wrapper > div[user]*inner {
+    clip-path: polygon(100% 0, 100% 60%, 70% 65%, 60% 80%, 60% 100%, 60% 100%, 0 100%, 0 0);
+}
+
+div*privateChannels div*channel > a.typing > div*wrapper > div[user]*inner {
+    clip-path: polygon(100% 0, 100% 60%, 40% 60%, 30% 80%, 30% 100%, 40% 100%, 0 100%, 0 0);
+}
+
+div*member*memberOnline > div*content > span*avatarWrapper > div*wrapper > div*image*small*mask {
+    clip-path: polygon(100% 0px, 100% 65%, 75% 65%, 55% 80%, 55% 100%, 60% 100%, 0px 100%, 0px 0px);
+}
+
+div*member*memberOnline > div*content > span*avatarWrapper > div*wrapper > div*image*small:not(*mask) {
+    clip-path: polygon(100% 0, 100% 65%, 50% 65%, 35% 80%, 35% 100%, 50% 100%, 0 100%, 0 0);
+}
+
+/** Messages background **/
+div*chat > div*content div*messagesWrapper {
+    background-color: transparent;
+}
+
+/*** Load more messages button background ***/
+div*chat > div*content div*hasMore button {
+    background-color: rgba(0, 0, 0, .3);
+    border-color: transparent;
+}
+
+/*** Blocked messages background ***/
+#app-mount div*messageGroupBlocked {
+    background-color: rgba(0, 0, 0, .1);
+    border: none;
+}
+
+/**** Blocked messages collapse button ****/
+#app-mount div*messageGroupBlockedBtn {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#app-mount div*messageGroupBlockedBtn:hover {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/** Textarea wrapper background **/
+#app-mount div*chat form {
+    background-color: transparent;
+}
+
+/** Emoticon autocomplete popout **/
+div*channelTextArea div*autocomplete {
+    background: rgba(40, 0, 0, .9);
+}
+
+div*channelTextArea div*autocomplete div*selectorSelected {
+    background: rgba(0, 0, 0, .3);
+}
+
+/** Typing indicator background **/
+div*chat div*spacer div*typing {
+    background-color: transparent;
+}
+
+/** Embeds **/
+div*chat > div*content div*embedInner {
+    background-color: rgba(0, 0, 0, .2);
+    border-color: transparent;
+}
+
+/*** Embed default pill color ***/
+div*chat > div*content div*embed > div*embedPill {
+    background-color: #420000;
+}
+
+/*** Invite embeds, TODO: Make more specific? Selector seems sketch ***/
+div*chat > div*content div*wrapper*userSelectNone*cursorDefault {
+    background-color: rgba(0, 0, 0, .2);
+    border-color: transparent;
+}
+
+/** Time dividers **/
+div*chat > div*content div*divider span*dividerContent {
+    color: rgba(255, 255, 255, .7);
+}
+
+div*chat > div*content div*divider span*dividerContent::before,
+div*chat > div*content div*divider span*dividerContent::after {
+    border-color: rgba(255, 255, 255, .5);
+}
+
+div*chat > div*content div*dividerRed span*dividerContent {
+    color: rgba(240, 71, 71, .8);
+}
+
+div*chat > div*content div*dividerRed span*dividerContent::before,
+div*chat > div*content div*dividerRed span*dividerContent::after {
+    border-color: rgba(240, 71, 71, .8);
+}
+
+
+/** Code blocks **/
+/*** Border ***/
+#app-mount div*message div*markup > pre {
+    background: #550618;
+    border-color: #550618;
+}
+
+/*** Background ***/
+#app-mount div*message div*markup code {
+    background-color: #550618;
+}
+
+/** Textarea background */
+#app-mount div*chat form {
+    background-color: transparent;
+}
+
+/* Activity feed */
+*activityFeed > *container {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/** Remove gradient at the end of activity feed header */
+*activityFeed > *container > *children::after {
+    display: none;
+}
+
+/** Fix horizontal scroll **/
+div*activityFeed > div*scrollerWrap > div*scroller {
+    overflow-x: hidden;
+}
+
+/** Cards **/
+/*** Cards background ***/
+div*activityFeed div*outer {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+div*activityFeed article*wrapper*card {
+    background-color: transparent;
+}
+
+div*activityFeed div*recentlyPlayedContainer {
+    background-color: transparent;
+}
+
+div*activityFeed div*recentlyPlayedContainer > div*separator{
+    background-color: transparent;
+}
+
+/*** Cards hover effect ***/
+div*activityFeed div*outer*interactive:hover {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+/*** Remove card separator ***/
+div*activityFeed div*card*outer > div*wrapper {
+    box-shadow: none;
+}
+
+/*** Quick launcher card boxes background ***/
+div*activityFeed div*outer*wrappedCard > div*grid > div*clickable,
+div*activityFeed div*card > div*grid > div*clickable {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/*** Recently played item hover effect ***/
+div*activityFeed div*card > div*popoutContainer {
+    background-color: transparent;
+}
+
+div*activityFeed div*card > div*popoutContainer:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/**** Change background for currently playing rich presence ****/
+div*activityFeed div*card > div*popoutContainer > div*inset,
+div*activityFeed div*card > div*popoutContainer div*popout div*enabled:hover,
+div*activityFeed div*card > div*popoutContainer div*popout div*separator {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+div*activityFeed div*card > div*popoutContainer > div*inset > section*section {
+    background-color: transparent;
+}
+
+/**** Item popout background ****/
+div*activityFeed div*popoutContainer div*popout {
+    background-color: rgba(32, 0, 0, .95);
+}
+
+div*activityFeed div*popoutContainer div*popout div*memberListItem:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/*** Share button background ***/
+div*activityFeed button*shareButton {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+/* Library */
+div*gameLibrary > div*libraryHeader,
+div*root > div*libraryHeader {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: none;
+}
+
+/** Get rid of the weird gradient **/
+div*gameLibrary > div*libraryHeader > div*children::after,
+div*root > div*libraryHeader > div*children::after {
+    display: none;
+}
+
+/** Header background color and give some space to breathe with the content **/
+div*gameLibrary div*table > div*stickyHeader {
+    background-color: rgba(0, 0, 0, .2);
+    margin-bottom: 4px;
+}
+
+/** Highlight effect on row hover **/
+div*gameLibrary div*table > div*rowWrapperActive {
+    background-color: rgba(255, 255, 255, .1);
+    box-shadow: none;
+}
+
+/** Change the color of thoe play button **/
+div*gameLibrary div*table button*playButton {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Row color **/
+div*gameLibrary div*table div*bodyCell*platformCell,
+div*gameLibrary div*table div*bodyCell*lastPlayedCell {
+    color: #ced0d2;
+}
+
+/** Selected tab background color label **/
+#app-mount div*libraryHeader div*topPill > div*item*selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount div*libraryHeader div*topPill > div*item:hover {
+    background-color: rgba(255, 255, 255, .15);
+}
+
+/** Redeem input border **/
+div*root div*codeRedemptionInput > input {
+    border-color: transparent;
+}
+
+div*root div*codeRedemptionInput > input:hover {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/** No gifts image hue rotate **/
+div*gameLibrary div*root div*emptyStateImage {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(0.65);
+}
+
+/* TODO: Nitro */
+
+/* Friends */
+/** Friends row hover **/
+div*friendsTable {
+    margin-top: 0;
+}
+
+div*friendsTable div*friendsRow:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+/** Friend actions like call, vcall **/
+div*friendsTable div*friendsTableBody div*friendsRow div*friendsColumnActions div*friendsAction {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/*** Hover effect for friend actions ***/
+div*friendsTable div*friendsTableBody div*friendsRow div*friendsColumnActions div*friendsAction:hover {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/** Rotate hue for no friends image **/
+div*friendsTable div*friendsEmpty div*image {
+    filter: hue-rotate(140deg) saturate(1800%) brightness(0.5);
+}
+
+/** Lighten up the text for no friends **/
+div*friendsTable div*friendsEmpty div*image + div div*text {
+    color: rgba(255, 255, 255, .8);
+}
+
+/** Add friend background **/
+div*friendsTable div*friendTableAddWrapper div*friendTableAddHeader {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/** Background for header, TODO: Sketchy af selector **/
+div*channels + div*container > div:nth-child(1)*container {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/*** Friends header tabs, suffers from the same sketchy selector but is even more specific so w.e ***/
+div*channels + div*container > div:nth-child(1)*container > div*children > div*tabBar > div*item*selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+div*channels + div*container > div:nth-child(1)*container > div*children > div*tabBar > div*item:hover {
+    background-color: rgba(255, 255, 255, .15);
+}
+
+/*** Hide the weird gradient at the right ***/
+div*channels + div*container > div:nth-child(1)*container > div*children::after {
+    display: none;
+}
+
+/* Popouts */
+/** Attach popout (for when listening to spotify or playing a game with invites) **/
+div*popouts div*attachPopout {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+/** Message menu popout on the right with pin/copy id/delete/etc. **/
+div*popouts > div[role="dialog"] > div*container {
+    background-color: #270000;
+}
+
+div*popouts > div[role="dialog"] > div*container > button*item {
+    background-color: transparent;
+}
+
+div*popouts > div[role="dialog"] > div*container > button*item:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Menus (only found the one that pops out on guild settings at the top of channel list) **/
+div*popouts div*menu {
+    background-color: #260000;
+}
+
+/*** Menu item hover color ***/
+div*popouts div*menu div*item:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/** User popout, a must to get right **/
+div*userPopout {
+    box-shadow: none;
+}
+
+/*** Header colors, TODO: Make these colors distinct? ***/ 
+div*userPopout > div*headerNormal {
+    background-color: rgba(39, 0, 0, 1);
+}
+
+div*userPopout > div*headerPlaying {
+    background-color: rgba(39, 0, 0, 1);
+}
+
+div*userPopout > div*headerSpotify {
+    background-color: rgba(39, 0, 0, 1);
+}
+
+div*userPopout > div*body,
+div*userPopout > div*footer {
+    background-color: rgba(49, 10, 10, 1);
+}
+
+div*userPopout > div*body > div*note textarea:focus {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+div*userPopout > div*footer > input*quickMessage {
+    background-color: #220707;
+    border-color: transparent;
+}
+
+div*userPopout > div*footer > input*quickMessage:hover,
+div*userPopout > div*footer > input*quickMessage:focus {
+    background-color: #1d0606;
+}
+
+/** TODO: Add role + button **/
+div*popouts > div*popout + div*popout[role="dialog"] > div*header + div*sectionTag {
+    background-color: rgba(0, 0, 0, .2);;
+}
+
+div*popouts > div*popout + div*popout[role="dialog"] > div*header + div*sectionTag div*row {
+    background-image: none;
+    background-color: transparent;
+}
+
+div*popouts > div*popout + div*popout[role="dialog"] > div*header + div*sectionTag div*row:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/** Pinned messages and recent mentions popout, arguably second the most important one to get right **/
+div*popouts div*messagesPopoutWrap {
+    background-color: #320000;
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/*** Pinned popout header and footer ***/
+div*popouts div*messagesPopoutWrap > div*header {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: none;
+}
+
+div*popouts div*messagesPopoutWrap > div*footer {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+/*** Pinned popout messages ***/
+div*popouts div*messagesPopoutWrap div*messageGroupWrapper {
+    background-color: rgba(0, 0, 0, .2);
+    border-color: transparent;
+}
+
+div*popouts div*messagesPopoutWrap div*messageGroupWrapper:hover {
+    border-color: transparent;
+}
+
+/**** Action buttons, jump and remove ****/
+div*popouts div*messagesPopoutWrap div*messageGroupWrapper div*actionButtons {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*** Change color of the no pin message icon ***/
+div*popouts div*messagesPopoutWrap div*emptyPlaceholder div*image {
+    filter: hue-rotate(140deg) saturate(1900%) brightness(0.55);
+}
+
+/*** Load more messages background ***/
+div*popouts div*messagesPopoutWrap div*hasMore button*hasMoreButton {
+    background-color: rgba(0, 0, 0, .3);
+    border-color: transparent;
+}
+
+/** Search popout **/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh {
+    background-color: #270000;
+    box-shadow: none;
+}
+
+/*** Get rid of dumb gradient ***/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*resultsGroup div*option::after {
+    display: none;
+}
+
+/*** Selected or hovered option ***/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*resultsGroup div*option:hover,
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*resultsGroup div*option*selected {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+/*** Suggest header ***/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*queryContainer*focused {
+    background-color: rgba(0, 0, 0, .2);
+    border-color: transparent;
+}
+
+/**** Enter prompt ****/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*queryContainer > div*queryShortcut > div*keybindShortcut > span {
+    background-color: rgba(255, 255 ,255, .02);
+    box-shadow: inset 0 -4px 0 rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .05);
+}
+
+/*** Date picker background ***/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*datePicker > div*calendarPicker > .react-datepicker {
+    background-color: #200000;
+}
+
+/**** Previous/next arrow backgrounds and hover effects ****/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*datePicker > div*calendarPicker > .react-datepicker .react-datepicker__navigation {
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, .04);
+}
+
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*datePicker > div*calendarPicker > .react-datepicker .react-datepicker__navigation:hover {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+/**** Header and day backgrounds and hover effects ****/
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*datePicker > div*calendarPicker > .react-datepicker .react-datepicker__header,
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*datePicker > div*calendarPicker > .react-datepicker .react-datepicker__day {
+    background-color: transparent;
+}
+
+div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*datePicker > div*calendarPicker > .react-datepicker .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Game popout **/
+div*popouts > div[role="dialog"] > div*container > div*footer {
+    background-color: #200000;
+}
+
+div*popouts > div[role="dialog"] > div*container > div*header > div*players {
+    background-color: #280000;
+}
+
+div*popouts > div[role="dialog"] > div*container > div*header div*player:hover {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+div*popouts > div[role="dialog"] > div*container > div*header > div*news {
+    background-color: #280000;
+}
+
+div*popouts > div[role="dialog"] > div*container > div*header > div*newsEmpty {
+    filter: hue-rotate(135deg) saturate(2500%) brightness(0.35);
+}
+
+div*popouts > div[role="dialog"] > div*container > div*footer {
+    background-color: #200000;
+}
+
+div*popouts > div[role="dialog"] > div*container > div*footer > button*lookFilled {
+    background-color: #320000;
+}
+
+div*popouts > div[role="dialog"] > div*container > div*footer > button*lookFilled:hover {
+    background-color: #420000;
+}
+
+/** Emoticon picker popout**/
+div*popouts div[role="dialog"]*popout div*emojiPicker {
+    background-color: rgba(40, 0, 0, .95);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+div*popouts div[role="dialog"]*popout div*emojiPicker div*stickyHeader {
+    background-color: #1d0102;
+}
+
+div*popouts div[role="dialog"]*popout div*emojiPicker div*emojiItem*selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+div*popouts div[role="dialog"]*popout div*emojiPicker div*categories div*item {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(0.65);
+}
+
+div*popouts div[role="dialog"]*popout div*emojiPicker div*categories div*item:hover,
+div*popouts div[role="dialog"]*popout div*emojiPicker div*categories div*item*selected {
+    filter: none !important; /* TODO: Figure out why I did this */
+}
+
+div*popouts div[role="dialog"]*popout div*emojiPicker div*scroller::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Context menu */
+#app-mount div*contextMenu {
+    background-color: rgba(42, 0, 0, 0.8);
+    box-shadow: none;
+}
+
+div*contextMenu div*itemGroup div*item:hover {
+    background-color: rgba(42, 0, 0, 0.8);
+    box-shadow: none;
+}
+
+/** Checkboxes **/
+div*contextMenu div*itemGroup div*item*itemToggle div*checkbox div*checkboxInner input*checkboxElement:checked + span {
+    background-color: #600000;
+    border-color: #600000;
+}
+
+/* Tooltips */
+div*layerContainer div*tooltip {
+    background-color: #270000;
+    box-shadow: none;
+}
+
+div*layerContainer div*tooltip div*tooltipPointer {
+    border-top-color: #270000;
+    box-shadow: none;
+}
+
+/* Modals */
+/*
+#app-mount div*modal {
+    background-color: rgba(0, 0, 0, .6);
+}
+*/
+
+/** User modal **/
+/*** Top color, TODO: Figure out alternate color for playing/Spotify ***/
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*topSectionNormal {
+    background-color: #200000;
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*topSectionPlaying {
+    background-color: #200000;
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*topSectionSpotify {
+    background-color: #200000;
+}
+
+/*** Lighter body color ***/
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body {
+    background-color: #270000;
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*userInfoSection {
+    border-color: transparent;
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*userInfoSection:first-of-type {
+    padding-bottom: 0;
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*userInfoSection > div*note > textarea {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*userInfoSection > div*note > textarea:hover {
+    background-color: rgba(255, 255, 255, .04);
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*userInfoSection > div*note > textarea:focus {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*userInfoSection > div*connectedAccounts > div*connectedAccount {
+    background-color: rgba(0, 0, 0, .2);
+    border-color: transparent;
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*userInfoSection > div*connectedAccounts > div*connectedAccount svg*connectedAccountVerifiedIcon path[fill='#4f545c'] {
+    fill: #600000;
+}
+
+div*theme > div*modal > div*inner > div*flex*vertical*justifyStart*root > div*body div*emptyIconFriends {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(0.65);
+}
+
+/** Channel description modal **/
+div*theme > div*modal > div*inner > div*modal {
+    border-color: transparent;
+    box-shadow: none;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+div*theme > div*modal > div*inner > div*modal > div*header*flex*horizontal*directionRow,
+div*theme > div*modal > div*inner > div*modal > div*header*flex*horizontal*directionRow + div*content {
+    background-color: #270000;
+}
+
+/*** Footer, the description doesn't have it but other modals do, like the changelog ***/
+div*theme > div*modal > div*inner > div*modal > div*footer {
+    background-color: #200000;
+    box-shadow: none;
+}
+
+/** Footer button **/
+div*theme > div*modal > div*inner > div*modal > div*footer > button*button {
+    background-color: #320000;
+}
+
+div*theme > div*modal > div*inner > div*modal > div*footer > button*button:hover {
+    background-color: #420000;
+}
+
+/** Modal checkboxes **/
+div*theme > div*modal > div*inner > div*modal > div*content div*switchItem div*switch::before {
+    background-color: #520000;
+}
+
+/** Add to group DM modal **/
+div*popouts > div[role="dialog"]*popout > div*modal*popout {
+    background-color: #370000;
+}
+
+div*popouts > div[role="dialog"]*popout > div*modal*popout > div*header > div*searchBar > div*searchBarComponent {
+    background-color: transparent;
+}
+
+div*popouts > div[role="dialog"]*popout > div*modal*popout > div*header > div*searchBar > div*searchBarComponent > div*inner > a*anchor*tag {
+    background-color: rgba(255, 255, 255, .06);
+}
+
+/** Background colors **/
+#app-mount div*wrapper div*modal {
+    background-color: #660c3a;
+    box-shadow: none;
+}
+
+#app-mount div*wrapper div*modal div*footer {
+    background-color: #52082e;
+}
+
+#app-mount div*wrapper div*modal div*footer > div*content::before {
+    display: none;
+}
+
+#app-mount div*wrapper div*modal div*header > div*marginTop4 {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/** Leave guild modal **/
+div*theme > div*modal > div*inner > form*modal*container*sizeSmall {
+    box-shadow: none;
+}
+
+div*theme > div*modal > div*inner > form*modal*container*sizeSmall > div*header,
+div*theme > div*modal > div*inner > form*modal*container*sizeSmall > div*footer {
+    background-color: #270000;
+    box-shadow: none;
+}
+
+div*theme > div*modal > div*inner > form*modal*container*sizeSmall > div*content {
+    background-color: #200000;
+    padding-top: 12px;
+}
+
+/** Pin message modal **/
+/*** message background ***/
+div*theme > div*modal > div*inner > form*modal*container*sizeSmall > div*content div*message {
+    background-color: rgba(0, 0, 0, .2);
+    box-shadow: none;
+}
+
+/*** Button color ***/
+
+
+/** Change user nickname modal **/
+div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) {
+    box-shadow: none;
+}
+
+div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) > div*header,
+div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) > div*content {
+    background-color: #270000;
+}
+
+div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) > div*footer {
+    background-color: #200000;
+    box-shadow: none;
+}
+
+/*** Submit button (or basically most footer buttons on modals) ***/
+div*theme > div*modal > div*inner > form*modal*sizeSmall > div*footer > button[type="submit"]*button*lookFilled {
+    background-color: #320000;
+}
+
+div*theme > div*modal > div*inner > form*modal*sizeSmall > div*footer > button[type="submit"]*button*lookFilled:hover {
+    background-color: #420000;
+}
+
+/*** Input focus effect ***/
+div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) > div*content div*input input*input {
+    border-color: transparent;
+}
+
+div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) > div*content div*input input*input:hover {
+    background-color: #300000;
+}
+
+div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) > div*content div*input input*input:focus {
+    border-color: transparent;
+    background-color: #320000;
+}
+
+
+/** TODO: Create group DM modal/popout/both **/
+div*popouts {
+
+}
+
+/* Configuration */
+/* or GUILD_SETTINGS */
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"],
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView {
+    background-color: transparent;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Sidebar item hover/selected effects **/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion div*side > div*item:hover,
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion div*side > div*item*selected {
+    background-color: rgba(255, 255, 255, .08);
+}
+
+/** Sidebar separators **/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion div*separator {
+    background-color: #420420;
+}
+
+/** Video preview wrapper **/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*previewOverlay {
+    background: rgba(0, 0, 0, .2);
+    border-color: transparent;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*previewContainer .media-engine-video {
+    background: transparent;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*micTest div*progress {
+    background: rgba(100, 0, 0, 1);
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*micTest div*notches {
+    filter: hue-rotate(140deg) saturate(1800%) brightness(0.2);
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*game {
+    left: -10px;
+    width: calc(100% + 20px);
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*game div*gameNameLastPlayed {
+    padding-left: 12px;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*game div*gameNameLastPlayed + div{
+    padding-right: 12px;
+}
+
+/** Content area cards **/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*card {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+/*** Privacy & Safety clickable cards ***/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*card*item:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/**** !important to override inline styles ****/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="border-color"] {
+    border-color: transparent !important;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(114, 137, 218)"] {
+    background-color: rgba(80, 120, 220, .7) !important;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(67, 181, 129)"] {
+    background-color: rgba(10, 240, 100, .7) !important;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(250, 166, 26)"] {
+    background-color: rgba(200, 150, 25, .7) !important;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(245, 119, 49)"] {
+    background-color: rgba(245, 119, 49, .7) !important;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(240, 71, 71)"] {
+    background-color: rgba(200, 0, 0, .7) !important;
+}
+
+/** Content area red buttons **/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion button*deleteApp {
+    background: rgba(75, 0, 0, .5);
+    color: rgba(255, 200, 200, 1);
+    border-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion button*deleteApp:hover {
+    background: rgba(100, 0, 0, .5);
+}
+
+/** Selects **/
+div*select .Select-menu-outer {
+    background-color: rgba(40, 0, 0, .9);
+    border-color: transparent;
+}
+
+/** Connections boxes **/
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*connectedAccounts div*accountBtn button*accountBtnInner {
+    background-color: rgba(0, 0, 0, .3);
+    border-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*connectedAccounts div*accountBtn button*accountBtnInner:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/* Scrollbars */
+/** Affect all scrollbars */
+#app-mount div*scroller::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+/** Only the chat messages scrollbar **/
+/** TODO: Fix, WIP, bad **/
+#app-mount /* div*messagesWrapper */ div*scroller::-webkit-scrollbar-track-piece {
+    background: rgba(0, 0, 0, .2);
+    border-color: transparent;
+}
+
+/** Fix stupid big icons **/
+div*title > div*children > div*iconWrapper {
+    margin: 2px;
+    transform: scale(.8) translateY(2px);
+}
+
