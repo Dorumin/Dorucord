@@ -17,7 +17,7 @@
     right: 0;
     left: 0;
     top: 0;
-    filter: brightness(.8) contrast(1.1) blur(0); /* Blur up to the user */
+    filter: brightness(.7) contrast(1.1) blur(0); /* Blur up to the user */
 }
 
 /* Guild list background */
@@ -40,13 +40,36 @@ div*unreadMentionsIndicatorTop + div*scrollerWrap > div*scroller > div*listItem 
 
 /* Channel list */
 /** Background of current user below recent DMs/channels */
-div*channels {
+div*channels,
+div*channels > div*container:first-child {
     background-color: transparent; /* TODO: Darken? */
 }
 
+/** Server dropdown **/
+div*channels header*header {
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: none;
+}
+
+/*** Server header boost count ***/
+div*channels header*header div*flowerStarContainer {
+    color: rgba(255, 255, 255, .3);
+}
+
+/** Channel notices **/
+div*channelNotice {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/*** Channel notice button background ***/
+div*channelNotice button*btn {
+    background-color: rgba(0, 0, 0, .3);
+}
+
 /*** Darken account details ***/
-div*channels > *container:last-of-type {
+div*channels > div*container:not(:first-child) {
     background-color: rgba(0, 0, 0, .2);
+    border-color: transparent;
     position: relative;
 }
 
@@ -96,7 +119,7 @@ div*privateChannels div*channel:hover > a {
 }
 
 /* Hovered channel highlight **/
-#app-mount div*channels div*containerDefault:hover div*content {
+#app-mount div*channels div*containerDefault > div*wrapper:hover > div*content {
     background-color: rgba(0, 0, 0, .4);
 }
 
@@ -105,12 +128,73 @@ div*privateChannels div*channel:hover > a {
     background-color: rgba(0, 0, 0, .3);
 }
 
+/** Selected and hover voice user highlight **/
+#app-mount div*channels div*voiceUser:hover > div*content,
+#app-mount div*channels div*voiceUser*selected > div*content {
+    background-color: rgba(0, 0, 0, .4);
+}
+
 /** Server dropdown darken background **/
 div*channels > div*vertical > div:first-of-type {
     background-color: rgba(0, 0, 0, .2);
 }
 
 /* Chat area */
+/** Reactions **/
+div*reaction {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+div*reactionCount {
+    color: rgba(255, 255, 255, .7);
+}
+
+/** Clyde background gradient kill **/
+div*isLocalBot {
+    background-image: none;
+    box-shadow: none;
+}
+
+/** Calls **/
+div*chat > div*title + div*videoHeight {
+    background-color: transparent;
+}
+
+div*chat > div*title + div*videoHeight > div*video {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/*** Robyn's shit ***/
+button*lookFilled *colorGreen {
+    color: #fff;
+    background-color: #43b581;
+}
+
+button*joinVideoCallButton {
+    background-color: rgba(67, 181, 129, 0.3);
+}
+
+button*joinVideoCallButton *underlay {
+    background-color: rgba(105, 196, 154, 0.3);
+}
+
+/*** Buttons ***/
+div*chat > div*title + div*videoHeight > div*video div*videoInner div*videoBottom div*center*iconsWrapper {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/*** Screenshare preview ***/
+div*modal div*content div*tiles {
+    background-color: rgba(0, 0, 0, .4);
+    box-shadow: none;
+}
+
+/** Message timestamp **/
+div*message time*timestampCozy {
+    color: rgba(255, 255, 255, .35);
+}
+
 /** The area around the textbox **/
 #app-mount div*chat {
     background-color: transparent;
@@ -178,6 +262,10 @@ div*chat > div*title div*akaBadge {
     box-shadow: none;
 }
 
+#app-mount div*searchResultsWrap div*searchResultMessage > div*messageGroupCozy {
+    padding-top: 2px;
+}
+
 #app-mount div*searchResultsWrap div*searchResult*expanded {
     border-color: transparent;
 }
@@ -206,15 +294,10 @@ div*chat > div*content div*members {
     background-color: rgba(0, 0, 0, .2); /* TODO: Darken? */
 }
 
-/*** Member hover color ***/
-div*chat > div*content div*members div*member:hover div*content,
-div*chat > div*content div*members div*member.popout-open div*content {
-    background-color: rgba(0, 0, 0, .2);
-}
-
 /*** Member color when popout's open, TODO: Super hacky, maybe use mask-image? ***/
 div*member*memberOnline > div*content > span*avatarWrapper > div*wrapper > div*status,
-div*privateChannels div*channel div*wrapper > div*status {
+div*privateChannels div*channel div*wrapper > div*status,
+div*channels > div*container div*status {
     border-color: transparent;
 }
 
@@ -223,7 +306,8 @@ div*privateChannels div*channel > a > div*wrapper > div*inner {
     transition: clip-path 200ms ease;
 }
 
-div*privateChannels div*channel > a:not(.typing) > div*wrapper > div[user]*inner {
+div*privateChannels div*channel > a:not(.typing) > div*wrapper > div[user]*inner,
+div*channels > div*container:last-child div*inner {
     clip-path: polygon(100% 0, 100% 60%, 70% 65%, 60% 80%, 60% 100%, 60% 100%, 0 100%, 0 0);
 }
 
@@ -286,7 +370,7 @@ div*chat div*spacer div*typing {
 
 /** Embeds **/
 div*chat > div*content div*embedInner {
-    background-color: rgba(0, 0, 0, .2);
+    background-color: rgba(0, 0, 0, .3);
     border-color: transparent;
 }
 
@@ -322,6 +406,14 @@ div*chat > div*content div*dividerRed span*dividerContent::after {
 
 
 /** Code blocks **/
+div*message div*markup {
+    color: #ececec;
+}
+
+div*message div*markup*isFailed {
+    color: #f04747;
+}
+
 /*** Border ***/
 #app-mount div*message div*markup > pre {
     background: #550618;
@@ -404,7 +496,8 @@ div*activityFeed div*card > div*popoutContainer div*popout div*separator {
     background-color: rgba(0, 0, 0, .2);
 }
 
-div*activityFeed div*card > div*popoutContainer > div*inset > section*section {
+div*activityFeed div*card > div*popoutContainer > div*inset > section*section,
+div*activityFeed div*emptyCard {
     background-color: transparent;
 }
 
@@ -567,6 +660,15 @@ div*popouts div*menu div*item:hover {
     background-color: rgba(0, 0, 0, .2);
 }
 
+/** RTC Connection popout **/
+div*popouts > div*popout*popoutTop > div*container > header:not([class]) {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+div*popouts > div*popout*popoutTop > div*container > section:not([class]) {
+    background-color: transparent;
+}
+
 /** User popout, a must to get right **/
 div*userPopout {
     box-shadow: none;
@@ -718,36 +820,48 @@ div*popouts div[role="dialog"] div*container*elevationBorderHigh > div*datePicke
 }
 
 /** Game popout **/
-div*popouts > div[role="dialog"] > div*container > div*footer {
+div*popouts > div[role="dialog"] > div*container > div*footer,
+div*popouts + div*theme > div*modal > div*inner > div*container > div*footer {
     background-color: #200000;
 }
 
-div*popouts > div[role="dialog"] > div*container > div*header > div*players {
+div*popouts > div[role="dialog"] > div*container > div*header > div*players,
+div*popouts + div*theme > div*modal > div*inner > div*container > div*header > div*players {
     background-color: #280000;
 }
 
-div*popouts > div[role="dialog"] > div*container > div*header div*player:hover {
+div*popouts > div[role="dialog"] > div*container > div*header div*player:hover,
+div*popouts + div*theme > div*modal > div*inner > div*container > div*header div*player:hover {
     background-color: rgba(0, 0, 0, .2);
 }
 
-div*popouts > div[role="dialog"] > div*container > div*header > div*news {
+div*popouts > div[role="dialog"] > div*container > div*header > div*news,
+div*popouts + div*theme > div*modal > div*inner > div*container > div*header > div*news {
     background-color: #280000;
 }
 
-div*popouts > div[role="dialog"] > div*container > div*header > div*newsEmpty {
+div*popouts > div[role="dialog"] > div*container > div*header > div*newsEmpty,
+div*popouts + div*theme > div*modal > div*inner > div*container > div*header > div*newsEmpty {
     filter: hue-rotate(135deg) saturate(2500%) brightness(0.35);
 }
 
-div*popouts > div[role="dialog"] > div*container > div*footer {
-    background-color: #200000;
-}
-
-div*popouts > div[role="dialog"] > div*container > div*footer > button*lookFilled {
+div*popouts > div[role="dialog"] > div*container > div*footer > button*lookFilled,
+div*popouts + div*theme > div*modal > div*inner > div*container > div*footer > button*lookFilled {
     background-color: #320000;
 }
 
-div*popouts > div[role="dialog"] > div*container > div*footer > button*lookFilled:hover {
+div*popouts > div[role="dialog"] > div*container > div*footer > button*lookFilled:hover,
+div*popouts + div*theme > div*modal > div*inner > div*container > div*footer > button*lookFilled:hover {
     background-color: #420000;
+}
+
+/** Reactions popout **/
+div*popouts + div*theme > div*modal > div*inner > div*modal > div*inner > div*sidebar {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+div*popouts + div*theme > div*modal > div*inner > div*modal > div*inner > div*reactors {
+    background-color: transparent;
 }
 
 /** Emoticon picker popout**/
@@ -871,6 +985,7 @@ div*theme > div*modal > div*inner > div*modal {
     box-shadow: none;
     border-radius: 10px;
     overflow: hidden;
+    background-color: #270000;
 }
 
 div*theme > div*modal > div*inner > div*modal > div*header*flex*horizontal*directionRow,
@@ -891,6 +1006,11 @@ div*theme > div*modal > div*inner > div*modal > div*footer > button*button {
 
 div*theme > div*modal > div*inner > div*modal > div*footer > button*button:hover {
     background-color: #420000;
+}
+
+div*theme > div*modal > div*inner > div*modal > div*footer > button*button*lookBlank,
+div*theme > div*modal > div*inner > div*modal > div*footer > button*button*lookLink {
+    background-color: transparent !important;
 }
 
 /** Modal checkboxes **/
@@ -926,6 +1046,45 @@ div*popouts > div[role="dialog"]*popout > div*modal*popout > div*header > div*se
 }
 
 #app-mount div*wrapper div*modal div*header > div*marginTop4 {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/** Tiers modal **/
+div*theme > div*modal > div*inner > div*modal > div*scrollerWrap > div*scroller > div*carouselContainer > div*scrollerWrap div*carousel div*tierNoneContainer {
+    background-color: rgba(0, 0, 0, .4)
+}
+
+div*theme > div*modal > div*inner > div*modal > div*scrollerWrap > div*scroller > div*carouselContainer > div*scrollerWrap div*carousel div*tier div*tierHeader {
+    background-color: rgba(0, 0, 0, .6);
+}
+
+div*theme > div*modal > div*inner > div*modal > div*scrollerWrap > div*scroller > div*carouselContainer > div*scrollerWrap div*carousel div*tier div*tierBody {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+div*carouselRightGradientEdge {
+    background-image: linear-gradient(270deg, rgba(0, 0, 0, .3), transparent);
+}
+
+div*carouselLeftGradientEdge {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, .3), transparent);
+}
+
+div*progressBar div*barBackground {
+    background-color: rgba(0, 0, 0, .4);
+}
+
+div*progressBar div*tierMarkerBackground {
+    background-image: none !important;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+div*progressBar div*tierMarkerInProgress {
+    background-image: none !important;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+span*boostCount {
     background-color: rgba(0, 0, 0, .4);
 }
 
@@ -993,114 +1152,117 @@ div*theme > div*modal > div*inner > form*modal*sizeSmall:not(*container) > div*c
     background-color: #320000;
 }
 
-
-/** TODO: Create group DM modal/popout/both **/
-div*popouts {
-
-}
-
 /* Configuration */
 /* or GUILD_SETTINGS */
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"],
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]),
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView {
     background-color: transparent;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*sidebarRegion {
     background-color: rgba(0, 0, 0, .5);
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion {
     background-color: rgba(0, 0, 0, .3);
 }
 
 /** Sidebar item hover/selected effects **/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion div*side > div*item:hover,
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion div*side > div*item*selected {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*sidebarRegion div*side > div*item:hover,
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*sidebarRegion div*side > div*item*selected {
     background-color: rgba(255, 255, 255, .08);
 }
 
 /** Sidebar separators **/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*sidebarRegion div*separator {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*sidebarRegion div*separator {
     background-color: #420420;
 }
 
 /** Video preview wrapper **/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*previewOverlay {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*userSettingsVoice div*previewOverlay {
     background: rgba(0, 0, 0, .2);
     border-color: transparent;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*previewContainer .media-engine-video {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*userSettingsVoice div*previewContainer .media-engine-video {
     background: transparent;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*micTest div*progress {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*userSettingsVoice div*micTest div*progress {
     background: rgba(100, 0, 0, 1);
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*userSettingsVoice div*micTest div*notches {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*userSettingsVoice div*micTest div*notches {
     filter: hue-rotate(140deg) saturate(1800%) brightness(0.2);
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*game {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*game {
     left: -10px;
     width: calc(100% + 20px);
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*game div*gameNameLastPlayed {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*game div*gameNameLastPlayed {
     padding-left: 12px;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*game div*gameNameLastPlayed + div{
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*game div*gameNameLastPlayed + div{
     padding-right: 12px;
 }
 
 /** Content area cards **/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*card {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*card {
     border-color: transparent;
     background-color: rgba(0, 0, 0, .2);
 }
 
 /*** Privacy & Safety clickable cards ***/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*card*item:hover {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*card*item:hover {
     background-color: rgba(0, 0, 0, .3);
 }
 
 /**** !important to override inline styles ****/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="border-color"] {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="border-color"] {
     border-color: transparent !important;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(114, 137, 218)"] {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(114, 137, 218)"] {
     background-color: rgba(80, 120, 220, .7) !important;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(67, 181, 129)"] {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(67, 181, 129)"] {
     background-color: rgba(10, 240, 100, .7) !important;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(250, 166, 26)"] {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(250, 166, 26)"] {
     background-color: rgba(200, 150, 25, .7) !important;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(245, 119, 49)"] {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(245, 119, 49)"] {
     background-color: rgba(245, 119, 49, .7) !important;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(240, 71, 71)"] {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*radioGroup div*card*item[style*="background-color: rgb(240, 71, 71)"] {
     background-color: rgba(200, 0, 0, .7) !important;
 }
 
+/** Close buttons **/
+div*card > button*button*removeOverride {
+    background-color: #220000;
+}
+
+div*card > button*button*removeOverride:hover {
+    background-color: #320000;
+}
+
 /** Content area red buttons **/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion button*deleteApp {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion button*deleteApp {
     background: rgba(75, 0, 0, .5);
     color: rgba(255, 200, 200, 1);
     border-color: transparent;
     transition: background-color 200ms ease;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion button*deleteApp:hover {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion button*deleteApp:hover {
     background: rgba(100, 0, 0, .5);
 }
 
@@ -1111,13 +1273,13 @@ div*select .Select-menu-outer {
 }
 
 /** Connections boxes **/
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*connectedAccounts div*accountBtn button*accountBtnInner {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*connectedAccounts div*accountBtn button*accountBtnInner {
     background-color: rgba(0, 0, 0, .3);
     border-color: transparent;
     transition: background-color 200ms ease;
 }
 
-#app-mount > div*app > div*app > div*layers > div*layer[aria-label$="_SETTINGS"] div*standardSidebarView > div*contentRegion div*connectedAccounts div*accountBtn button*accountBtnInner:hover {
+#app-mount > div*app > div*app > div*layers > div*layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div*standardSidebarView > div*contentRegion div*connectedAccounts div*accountBtn button*accountBtnInner:hover {
     background-color: rgba(0, 0, 0, .5);
 }
 
@@ -1141,3 +1303,47 @@ div*title > div*children > div*iconWrapper {
     transform: scale(.8) translateY(2px);
 }
 
+/* Update */
+div*privateChannels,
+div*guilds,
+div*messages,
+div*sidebar,
+div*activityFeed,
+div*guilds div*scroller,
+div*sidebar div*scroller,
+div*gameLibrary div*scroller,
+div*friendsTable div*scroller,
+div*scrollerWrap div*scroller,
+div*sidebar + div*root,
+div*sidebar + div*container,
+div*sidebar + div*container > div*themed,
+div*libraryHeader + div*scrollerWrap > div*scroller,
+div*sidebar > div*container,
+div*guilds div*listItem:first-of-type div*childWrapper {
+    background-color: transparent;
+}
+
+div*sidebar div*panels {
+    background-color: rgba(0, 0, 0, .2);
+}
+
+div*channelTextArea div*inner {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+div*channelTextArea div*contents {
+    filter: brightness(.3);
+}
+
+button*emojiButtonHovered div*contents {
+    filter: none;
+}
+
+div*member div*content {
+    background-color: transparent;
+}
+
+/* Non-responsive selectors for the transition in and out of settings which depend on quickly detecting elements */
+.theme-dark .layer-3QrUeG, .theme-dark .layers-3iHuyZ {
+    background: transparent;
+}
