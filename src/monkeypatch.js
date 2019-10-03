@@ -50,8 +50,8 @@ module.exports = (dir, extractPath) => {
             document.head.appendChild(style);
             style.textContent = \\\`${css}\\\`;
             for (let rule of style.sheet.rules) {
-                if (!rule.selectorText.includes('#app-mount')) {
-                    rule.selectorText = '#app-mount ' + rule.selectorText
+                if (rule.selectorText && !rule.selectorText.includes('#app-mount')) {
+                    rule.selectorText = '#app-mount ' + rule.selectorText.split(',').join(', #app-mount ');
                 }
             }
         \`);
