@@ -1,1 +1,34 @@
-@import url('https://raw.githack.com/Dorumin/BetterDorucord/master/styles/opal.css');
+/* Needs core.css */
+#app-mount.day {
+    /* Main background */
+    --bd-background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
+    --bd-background-color: #4d0009;
+    --bd-background-filter: brightness(.7) contrast(1.1) blur(10px);
+
+    /* Text colors */
+    --bd-color-link: #ff916b;
+    --bd-color-link-hovered: #ffbba4;
+    --bd-color-mention: var(--bd-color-link);
+    --bd-color-mention-hovered: #fff;
+    --bd-color-login-subtitle: #c5c5c5;
+    --bd-color-login-hint: #d6d6d6;
+    --bd-color-loading-tips: #fff;
+    --bd-color-loading-secondary: #bdbdbd;
+
+    /* Stroke colors */
+    --bd-color-checkbox-stroke: #7289da;
+
+    /* Text shadows */
+    --bd-text-shadows-link: 0 0 2.5px transparent, 0 0 2.5px transparent;
+    --bd-text-shadows-link-hovered: 0 0 2.5px #ea521d, 0 0 2.5px #ea521d;
+
+    /* Misc background colors */
+    --bd-bgcolor-topbar: #260000;
+    --bd-bgcolor-auth-box: rgba(49, 10, 10, 0.3);
+    --bd-bgcolor-mention: rgba(234, 95, 47, .1);
+    --bd-bgcolor-mention-hovered: rgba(234, 95, 47, .5);
+    --bd-bgcolor-login-input:rgba(38, 0, 0, 0.4);
+
+    /* Border colors */
+    --bd-bordercolor-login-input: rgba(70, 0, 0, .95);
+}

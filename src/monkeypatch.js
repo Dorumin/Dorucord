@@ -7,6 +7,8 @@ module.exports = (dir, extractPath) => {
     let window = fs.readFileSync(path.join(extractPath, 'app', 'mainScreen.js')).toString();
     let js = fs
         .readdirSync(path.join(path.dirname(__dirname), 'scripts'))
+        .filter(name => !name.startsWith('!'))
+        .filter(name => name.endsWith('.js'))
         .map(file => {
             return fs.readFileSync(path.join(path.dirname(__dirname), 'scripts', file));
         })
@@ -16,6 +18,8 @@ module.exports = (dir, extractPath) => {
         .replace(/\${/g, '\\${');
     let css = fs
         .readdirSync(path.join(path.dirname(__dirname), 'styles'))
+        .filter(name => !name.startsWith('!'))
+        .filter(name => name.endsWith('.css'))
         .map(file => {
             return fs.readFileSync(path.join(path.dirname(__dirname), 'styles', file));
         })
@@ -29,14 +33,16 @@ module.exports = (dir, extractPath) => {
     window = window.replace(/mainWindow.minimize[^}]+}/, `$&
 
         _electron.session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-            callback({
-                responseHeaders: {
-                    ...details.responseHeaders,
-                    'content-security-policy': 'default-src *'
-                },
-            });
+            const keys = Object.keys(details).join('|');
+            const serialized = JSON.stringify(details);
+
+            if (details.responseHeaders['content-security-policy']) {
+                details.responseHeaders['content-security-policy'] = details.responseHeaders['content-security-policy'];
+            }
+
+            callback(details);
         });
-        
+
         mainWindow.webContents.executeJavaScript('console.log("autorun?????");');
 
         mainWindow.webContents.executeJavaScript(\`${js}\`);
@@ -49,11 +55,6 @@ module.exports = (dir, extractPath) => {
             style.rel = 'stylesheet';
             document.head.appendChild(style);
             style.textContent = \\\`${css}\\\`;
-            for (let rule of style.sheet.rules) {
-                if (rule.selectorText && !rule.selectorText.includes('#app-mount')) {
-                    rule.selectorText = '#app-mount ' + rule.selectorText.split(',').join(', #app-mount ');
-                }
-            }
         \`);
     `);
 

@@ -110,7 +110,7 @@ DMSeparators = class {
     }
 
     headerMock(header, value, self) {
-        if (header == 'Authorization') {
+        if (header == 'Authorization' && value) {
             self.token.resolve(value);
         }
         self.ref.call(this, header, value);

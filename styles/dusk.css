@@ -1,0 +1,4986 @@
+@import url('https://raw.githack.com/GameModerator/CustomDiscordThemes/master/nitpick.css');
+
+/* Brightest Day */
+/* Entire app, but only affects the top bar */
+#app-mount.day {
+    background-color: #260000;
+}
+
+#app-mount.day .bd-splashBackground {
+    background: transparent;
+}
+
+#app-mount.day .bd-splashBackground > canvas {
+    display: none;
+}
+
+#app-mount.day .bd-rightSplit {
+    background: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png) center / cover no-repeat fixed;
+}
+
+#app-mount.day .bd-rightSplit img {
+    opacity: 0;
+}
+
+#app-mount.day .bd-leftSplit .bd-wrapper .bd-authBox {
+    background: rgba(49, 10, 10, 0.3);
+}
+
+#app-mount.day .bd-leftSplit .bd-wrapper .bd-authBox::before {
+    content: '';
+    width: inherit;
+    display: block;
+    position: absolute;
+    margin: -40px;
+    z-index: -1;
+    filter: blur(10px);
+    background: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png) center / cover no-repeat fixed;
+}
+
+#app-mount.day .bd-leftSplit .bd-wrapper .bd-authBox .bd-subTitle {
+    color: #c5c5c5;
+}
+
+#app-mount.day .bd-leftSplit .bd-wrapper .bd-authBox .bd-input {
+    box-shadow: none;
+    background-color: rgba(38, 0, 0, 0.4);
+    border-color: rgba(70, 0, 0, .95);
+}
+
+#app-mount.day .bd-leftSplit .bd-wrapper .bd-authBox .bd-needAccount {
+    color: #d6d6d6;
+}
+
+#app-mount.day .bd-app > .bd-container {
+    background: transparent;
+}
+
+/* Whole app minus the top bar background */
+/* Pseudo-element to allow for custom filters and stuff, also nicer positioning than background-size: cover */
+#app-mount.day div.bd-app > div.bd-app > div.bd-bg::before {
+    content: '';
+    background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
+    background-color: #4d0009;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: brightness(.7) contrast(1.1) blur(0); /* Blur up to the user */
+}
+
+/* Loading */
+#app-mount.day .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount.day div.bd-app > div.bd-app + div.bd-container::before,
+#app-mount.day div.bd-perksModalContentWrapper::before {
+    content: '';
+    background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
+    background-color: #4d0009;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: brightness(.7) contrast(1.1) blur(0); /* Blur up to the user */
+    z-index: -1;
+}
+
+#app-mount.day div.bd-app div.bd-container .bd-quote.bd-contentBase {
+    color: #fff;
+}
+
+#app-mount.day div.bd-app div.bd-container .bd-contentBase,
+#app-mount.day div.bd-app div.bd-container .bd-problemsText {
+    color: #bdbdbd;
+}
+
+/* A huge fucking block of blue stuff I'll turn pink */
+/** Rare usage of links **/
+#app-mount.day a.bd-anchor,
+#app-mount.day a.bd-anchor.bd-embedLink,
+#app-mount.day button.bd-lookLink.bd-colorBrand {
+    color: #ff916b !important;
+    text-shadow: 0 -15px 2.5px transparent, 0 15px 2.5px transparent;
+    text-decoration: none;
+}
+
+#app-mount.day a.bd-anchor:hover,
+#app-mount.day a.bd-anchor.bd-embedLink:hover,
+#app-mount.day button.bd-lookLink.bd-colorBrand:hover {
+    text-shadow: 0 0 2.5px #ea521d, 0 0 2.5px #ea521d;
+    color: #ffbba4 !important;
+    text-decoration: none;
+    transition: all .4s linear 0s;
+}
+
+#app-mount.day button.bd-lookLink.bd-colorBrand:hover .bd-contents {
+    background: none;
+}
+
+/** Mentions **/
+#app-mount.day div.bd-markup span.bd-wrapper.bd-mention,
+#app-mount.day div.bd-markup span.bd-wrapper {
+    color: #ff916b;
+    background: rgba(234, 95, 47, .1);
+}
+
+#app-mount.day div.bd-markup span.bd-wrapper.bd-mention:hover,
+#app-mount.day div.bd-markup span.bd-wrapper:hover {
+    color: #fff !important;
+    background-color: rgba(234, 95, 47, .5) !important;
+}
+
+/** Tags **/
+#app-mount.day .bd-whiteButton,
+#app-mount.day span.bd-botTagInvert {
+    color: #ff916b !important;
+}
+
+#app-mount.day span.bd-botTagRegular,
+#app-mount.day .bd-valueChecked {
+    background: rgba(255, 145, 107, .7) !important;
+}
+
+/** Checkboxes **/
+#app-mount.day svg[name="Checkmark"] polyline {
+    stroke: #ff916b;
+}
+
+#app-mount.day .bd-checkbox,
+#app-mount.day .bd-input:focus,
+#app-mount.day .bd-input.bd-focused {
+    border-color: #ff916b !important;
+}
+
+#app-mount.day .bd-checked {
+    border-color: #ff916b !important;
+    background-color: #310a0a !important;
+}
+
+/** Blue buttons **/
+#app-mount.day button.bd-lookFilled.bd-colorBrand,
+#app-mount.day div.bd-chat > div.bd-title div.bd-children button.bd-lookFilled.bd-colorPrimary {
+    background-color: #ff916b;
+}
+
+#app-mount.day button.bd-lookFilled.bd-colorBrand:hover,
+#app-mount.day div.bd-chat > div.bd-title div.bd-children button.bd-lookFilled.bd-colorPrimary:hover {
+    background-color: #ea5f2f;
+}
+
+/** Gray buttons **/
+#app-mount.day button.bd-lookFilled.bd-colorPrimary {
+    background-color: #460000;
+}
+
+#app-mount.day button.bd-lookFilled.bd-colorPrimary:hover {
+    background-color: #5f0000;
+}
+
+/*** Loading ***/
+#app-mount.day .bd-wanderingCubesItem {
+    background-color: #ea5f2f;
+}
+
+/*
+#app-mount.day .bd-input {
+    background-color: rgba(111, 0, 0, 0.1);
+    border-color: rgba(50, 0, 0, 0.85);
+}
+
+#app-mount.day .bd-input:focus {
+    border-color: #ff916b !important;
+}
+*/
+
+/* Guild list background */
+#app-mount.day div.bd-container .bd-wrapper.bd-guilds,
+#app-mount.day div.bd-titleBar.bd-typeMacOS {
+    background-color: rgba(38, 0, 0, .4);
+}
+
+#app-mount.day div[role="dialog"] > .bd-container > .bd-wrapper .bd-scroller,
+#app-mount.day .bd-container > .bd-wrapper {
+    background-color: transparent;
+}
+
+/** Guild without image and discord logo background**/
+#app-mount.day div.bd-acronym,
+#app-mount.day div.bd-unreadMentionsIndicator .bd-mention,
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem div.bd-childWrapper,
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem:nth-child(1) a,
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem:nth-child(2) div.bd-guildSeparator,
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem div.bd-circleIconButton,
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-wrapper div.bd-folder,
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-wrapper span.bd-expandedFolderBackground,
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller div.bd-badgeWrapper div.bd-numberBadge,
+#app-mount.day div.bd-guildAvatarWithoutIcon,
+#app-mount.day div.bd-mentionsBadge div.bd-numberBadge {
+    background-color: #520000 !important;
+}
+
+#app-mount.day .bd-unread.bd-bar {
+    background-color: rgba(82, 0, 0, .8);
+}
+
+#app-mount.day .bd-unread.bd-bar:hover {
+    background-color: rgba(111, 0, 0, .8);
+}
+
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-wrapper div.bd-expandedFolderIconWrapper svg {
+    color: #ff916b !important;
+}
+
+/** Guild left bar voice connected icon **/
+#app-mount.day div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem div.bd-badgeWrapper > div.bd-upperBadge > div.bd-iconBadge {
+    background-color: #160000;
+}
+
+/* Channel list */
+/** Background of current user below recent DMs/channels */
+#app-mount.day div.bd-content > div.bd-container,
+#app-mount.day div.bd-container div.bd-privateChannels,
+#app-mount.day div.bd-container div.bd-privateChannels div.bd-scroller,
+#app-mount.day div.bd-base div.bd-content div.bd-sidebar > div.bd-container,
+#app-mount.day div.bd-flex > div.bd-container:not(.bd-hasDropdown) {
+    background-color: transparent; /* TODO: Darken? */
+    border-color: rgba(255, 255, 255, .1);
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-container div.bd-sidebar:not(.bd-flex){
+    background: rgba(38, 0, 0, .2);
+}
+
+#app-mount.day div.bd-container div.bd-reactors {
+    background: rgba(49, 10, 10, .1);
+}
+
+#app-mount.day div.bd-panels {
+    background: rgba(38, 0, 0, .2);
+}
+
+#app-mount.day div.bd-panels .bd-container button:hover {
+    background-color: rgba(90, 23, 65, 0.2);
+}
+
+/*** Groupchats ***/
+#app-mount.day div.bd-privateChannels a.bd-channel .bd-wrapper:not([aria-label]) svg img[src*="assets"] {
+    content: url(https://discordapp.com/assets/773616c3c8a7e21f8a774eb0d5625436.png);
+    filter: hue-rotate(215deg);
+    border-radius: 100%;
+}
+
+/** Unread **/
+#app-mount.day div.bd-modeUnread div.bd-name,
+#app-mount.day div.bd-modeUnread div.bd-name {
+    color: #fff !important;
+}
+
+/** Muted **/
+#app-mount.day div.bd-modeMuted svg.bd-linkButtonIcon,
+#app-mount.day div.bd-modeMuted svg[class*="icon-1_"],
+#app-mount.day div.bd-modeMuted div.bd-name,
+#app-mount.day div.bd-modeMuted span.bd-name {
+    color: #868686 !important;
+}
+
+#app-mount.day div.bd-channels div.bd-name,
+#app-mount.day div.bd-channels span.bd-name {
+    color: #b9bcc3;
+}
+
+#app-mount.day svg.bd-linkButtonIcon,
+#app-mount.day svg[class*="icon-1_"] {
+    color: #b9bcc3 !important;
+}
+
+/*** Darken account details ***/
+#app-mount.day div.bd-channels > div.bd-container:not(:first-child) {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+}
+
+/*** Fix bug with the absolute background that makes username in details disappear ***/
+/*** There are bugs in CSS? LMFAO ***/
+#app-mount.day div.bd-accountDetails .username {
+    position: relative;
+}
+
+/** Actual channel list background */
+#app-mount.day div.bd-channels > div.bd-vertical {
+    background-color: transparent;
+}
+
+/** Search bar on top of the DM lists **/
+#app-mount.day div.bd-search > div.bd-searchBar {
+    background-color: rgba(38, 0, 0, 0.4);
+    border-radius: 3px;
+}
+
+/** Hover effect on recent DMs **/
+#app-mount.day div.bd-privateChannels .bd-channel {
+    margin-right: 4px;
+}
+
+#app-mount.day div.bd-privateChannels .bd-channel.bd-selected {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-privateChannels .bd-channel.bd-selected > div {
+    background-color: rgba(38, 0, 0, 0.3);
+}
+
+#app-mount.day div.bd-privateChannels .bd-channel:active > div {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#app-mount.day div.bd-privateChannels .bd-channel:hover > div {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/** Hovered channel highlight **/
+#app-mount.day div.bd-containerDefault > div.bd-wrapper:hover > div.bd-content {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/** Selected channel highlight **/
+#app-mount.day div.bd-containerDefault.bd-selected div.bd-content {
+    background-color: rgba(38, 0, 0, 0.3);
+}
+
+/** Selected and hover voice user highlight **/
+#app-mount.day div.bd-voiceUser:hover > div.bd-content,
+#app-mount.day div.bd-voiceUser.bd-selected > div.bd-content {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/** Server dropdown darken background **/
+#app-mount.day div.bd-channels > div.bd-vertical > div:first-of-type {
+    background-color: transparent;
+}
+
+/*** Server Boost ***/
+#app-mount.day div.bd-perksModalContentWrapper div.bd-ctaBar,
+#app-mount.day div.bd-perksModalContentWrapper li.bd-perk:not(.bd-vailable) {
+    background: rgba(234, 95, 47, .3);
+}
+
+#app-mount.day div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carousel div.bd-tierNoneContainer {
+    background-color: rgba(255, 145, 107, .2);
+}
+
+#app-mount.day div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carousel div.bd-tierNoneContainer div.bd-tierNoneCard{
+    filter: hue-rotate(140deg) saturate(1200%) brightness(0.7);
+}
+
+#app-mount.day div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carousel div.bd-tier div.bd-tierHeader {
+    background-color: rgba(234, 95, 47, .3);
+    color: #d8d8d8;
+}
+
+#app-mount.day div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carousel div.bd-tier div.bd-tierBody {
+    background-color: rgba(234, 95, 47, .1);
+}
+
+#app-mount.day div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carousel div.bd-tier div.bd-tierHeader svg.bd-tierLock {
+    color: #ff916b;
+}
+
+#app-mount.day div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carouselRightGradientEdge {
+    background-image: linear-gradient(270deg, rgba(234, 95, 47, .3), transparent);
+}
+
+#app-mount.day div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carouselLeftGradientEdge {
+    background-image: linear-gradient(90deg, rgba(234, 95, 47, .3), transparent);
+}
+
+#app-mount.day div.bd-progressBar div.bd-barBackground {
+    background-color: rgba(234, 95, 47, .3);
+}
+
+#app-mount.day div.bd-progressBar div.bd-tierMarkerBackground {
+    background-image: none !important;
+    background-color: #ea5f2f;
+}
+
+#app-mount.day div.bd-progressBar div.bd-tierMarkerInProgress {
+    background-image: none !important;
+    background-color: #ff916b !important;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal span.bd-boostCount {
+    background-color: #ea5f2f;
+}
+
+/** INVITE BUTTON **/
+#app-mount.day div[role*="dialog"] div.bd-menu div.bd-item.bd-invite {
+    color: #ff916b;
+}
+
+#app-mount.day div[role*="dialog"] div.bd-menu div.bd-item.bd-invite:hover {
+    color: #fa7244;
+}
+
+#app-mount.day div[role*="dialog"] div.bd-menu div.bd-item.bd-invite div.bd-icon {
+    filter: hue-rotate(170deg) saturate(300%);
+}
+
+/*** Invite people to a new server notice ***/
+#app-mount.day div.bd-channelNotices .bd-invite {
+    background-color: #460000 !important;
+}
+
+#app-mount.day div.bd-channelNotices .bd-invite button {
+    background-color: #260000 !important;
+}
+
+/** Status change **/
+#app-mount.day div.bd-layerContainer div.bd-menu {
+    background: rgba(39, 0, 0, 0.9);
+    box-shadow: 0 0 1px #270000, 0 1px 4px rgba(0,0,0,.1);
+}
+
+#app-mount.day div.bd-layerContainer div.bd-menu .bd-item:hover {
+    background: rgba(111, 0, 0, 0.1);
+}
+
+/* Chat area */
+/** The area around the textbox **/
+#app-mount.day div.bd-chat {
+    background-color: transparent;
+}
+
+/** Files, embeds **/
+#app-mount.day div.bd-wrapperAudio.bd-embedWrapper {
+    background-color: transparent;
+    border-color: rgba(38, 0, 0, 0.6);
+}
+
+#app-mount.day div.bd-attachment.bd-embedWrapper,
+#app-mount.day div.bd-attachment:not(.bd-attachmentInner) {
+    background-color: rgba(111, 0, 0, 0.1) !important;
+    border-color: rgba(38, 0, 0, 0.6) !important;
+}
+
+#app-mount.day .bd-attachment .bd-icon,
+#app-mount.day .bd-embedWrapper .bd-icon,
+#app-mount.day .bd-embedWrapper .bd-audioMetadata:before {
+    filter: hue-rotate(140deg) saturate(200%);
+}
+
+#app-mount.day .bd-embedWrapper .bd-cancelButton,
+#app-mount.day .bd-embedWrapper .bd-downloadButton,
+#app-mount.day .bd-embedWrapper .bd-metadataIcon {
+    color: #ff916b;
+}
+
+#app-mount.day .bd-embedWrapper .bd-cancelButton:hover,
+#app-mount.day .bd-embedWrapper .bd-downloadButton:hover,
+#app-mount.day .bd-embedWrapper .bd-metadataIcon:hover {
+    color: #ea5f2f;
+}
+
+#app-mount.day .bd-mediaBarGrabber,
+#app-mount.day .bd-mediaBarProgress,
+#app-mount.day .bd-mediaBarProgress:after,
+#app-mount.day .bd-mediaBarProgress:before {
+    background-color: #ea5f2f;
+}
+
+#app-mount.day div.bd-progressContainer div.bd-progress div.bd-progressBar.bd-animating {
+    background-color: #ea5f2f !important;
+}
+
+#app-mount.day .bd-mediaBarInteraction:hover .bd-mediaBarGrabber {
+    background-color: #ff916b;
+}
+
+/** Upload Modal **/
+/*** Drag and drop ***/
+#app-mount.day .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-bgScale {
+    background: #ea5f2f;
+}
+
+#app-mount.day .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-icon {
+    filter: hue-rotate(50deg) saturate(200%);
+}
+
+/*** Actual uploader ***/
+#app-mount.day .bd-uploadModal > .bd-inner {
+    border: 2px dashed #270000;
+}
+
+#app-mount.day .bd-uploadModal {
+    background-color: #310a0a;
+}
+
+#app-mount.day .bd-uploadModal .bd-icon:not(.bd-image) {
+    filter: hue-rotate(140deg) saturate(200%);
+}
+
+#app-mount.day .bd-uploadModal .bd-inner .bd-file .bd-icon.bd-image {
+    border: 2px solid #270000;
+}
+
+#app-mount.day .bd-uploadModal .bd-footer {
+    background-color: #270000;
+}
+
+#app-mount.day .bd-uploadModal .bd-footer .bd-colorBrand.bd-lookInverted {
+    color: #310a0a;
+}
+
+#app-mount.day .bd-uploadModal .bd-inner.bd-innerNoAutocomplete {
+    background-color: #270000;
+}
+
+/*** Your files are too powerful ***/
+#app-mount.day .bd-uploadModal .bd-icons .bd-wrap .bd-icon {
+    filter: hue-rotate(80deg) saturate(100%);
+}
+
+/** Idk I think this fits here, new messages notifs **/
+#app-mount.day .bd-newMessagesBar,
+#app-mount.day .bd-jumpToPresentBar {
+    background-color: rgba(50, 0, 0, 0.8) !important;
+}
+
+#app-mount.day .bd-newMessagesBar:hover,
+#app-mount.day .bd-jumpToPresentBar:hover {
+    background-color: rgba(49, 10, 10, .95) !important;
+}
+
+#app-mount.day .bd-newMessagesBar button:last-child,
+#app-mount.day .bd-jumpToPresentBar button:last-child {
+    color: #fff3fa !important;
+}
+
+/** The header background **/
+#app-mount.day div.bd-chat > div.bd-title {
+    background-color: rgba(38, 0, 0, .2);
+    box-shadow: none;
+}
+
+#app-mount.day header.bd-header {
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-base div.bd-content div.bd-sidebar div.bd-container.bd-selected > header.bd-header,
+#app-mount.day div.bd-base div.bd-content div.bd-sidebar div.bd-container > header.bd-header:hover {
+    background: rgba(38, 0, 0, .2);
+}
+
+#app-mount.day div.bd-children div.bd-divider,
+#app-mount.day div.bd-toolbar div.bd-divider {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/*** Remove random box-shadow at the end of the channel name ***/
+#app-mount.day div.bd-chat > div.bd-title > div.bd-children::after {
+    display: none;
+}
+
+/*** The same but with the border of editing group DMs ***/
+#app-mount.day div.bd-chat > div.bd-title div.bd-outer input.bd-input {
+    box-shadow: none;
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/*** Ugly aka badge ***/
+#app-mount.day div.bd-chat > div.bd-title div.bd-akaBadge {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+/*** Search bar background ***/
+#app-mount.day .bd-searchBar {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/**** Search bar filters ****/
+#app-mount.day .bd-searchBar .bd-searchFilter {
+    background-color: rgb(255, 255, 255, .1);
+}
+
+#app-mount.day .bd-searchBar .bd-searchAnswer {
+    background-color: rgb(255, 255, 255, .1);
+    margin-left: 0;
+}
+
+/*** Search results ***/
+#app-mount.day div.bd-searchResultsWrap {
+    background-color: rgba(38, 0, 0, .2);
+}
+
+#app-mount.day div.bd-searchResultsWrap .bd-searchHeader {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-searchResultsWrap .bd-channelName {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-searchResultsWrap .bd-searchResult::before,
+#app-mount.day div.bd-searchResultsWrap .bd-searchResult::after {
+    background-image: none;
+}
+
+#app-mount.day div.bd-searchResultsWrap div.bd-searchResultMessage.bd-hit,
+#app-mount.day div.bd-searchResultsWrap div.bd-searchResult.bd-expanded {
+    border-color: transparent;
+    background-color: rgba(39, 0, 0, 0.6);
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-searchResultsWrap div.bd-searchResultMessage > div.bd-messageGroupCozy {
+    padding: 6px 0 4px;
+}
+
+#app-mount.day div.bd-searchResultsWrap div.bd-searchResult.bd-expanded {
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-searchResultsWrap div.bd-searchResult.bd-expanded div.bd-searchResultMessage {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/*** Jump button ***/
+#app-mount.day .bd-jumpButton {
+    background-color: #260000;
+}
+
+/** Content background **/
+#app-mount.day div.bd-chat > div.bd-content {
+    background: transparent;
+}
+
+#app-mount.day div.bd-chat > div.bd-content:before {
+    box-shadow: none;
+}
+
+/** Channel members **/
+#app-mount.day div.bd-chat > div.bd-content div.bd-membersWrap {
+    background-color: rgba(38, 0, 0, .2);
+}
+
+#app-mount.day div.bd-chat > div.bd-content div.bd-membersWrap div.bd-members {
+    background-color: transparent;
+}
+
+/*** Member hover color ***/
+#app-mount.day div.bd-chat > div.bd-content div.bd-members div.bd-member:hover div.bd-content,
+#app-mount.day div.bd-chat > div.bd-content div.bd-members div.bd-member.popout-open div.bd-content {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-chat > div.bd-content div.bd-members div.bd-member:hover {
+    background-color: rgba(70, 0, 0, .2);
+}
+
+#app-mount.day div.bd-chat div.bd-member.popout-open,
+#app-mount.day div.bd-chat div.bd-member.popout-open:hover {
+    background-color: rgba(38, 0, 0, 0.3) !important;
+}
+
+/*** Member color when popout's open, TODO: Super hacky, maybe use mask-image? ***/
+#app-mount.day div.bd-member.bd-memberOnline > div.bd-content > span.bd-avatarWrapper > div.bd-wrapper > div.bd-status,
+#app-mount.day div.bd-privateChannels div.bd-channel div.bd-wrapper > div.bd-status,
+#app-mount.day div.bd-channels > div.bd-container div.bd-status {
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-member.bd-memberOnline > div.bd-content > div.bd-wrapper > div.bd-image,
+#app-mount.day div.bd-privateChannels div.bd-channel > a > div.bd-wrapper > div.bd-inner {
+    transition: clip-path 200ms ease;
+}
+
+#app-mount.day div.bd-privateChannels div.bd-channel > a:not(.typing) > div.bd-wrapper > div[user].bd-inner,
+#app-mount.day div.bd-channels > div.bd-container:last-child div.bd-inner {
+    clip-path: polygon(100% 0, 100% 60%, 70% 65%, 60% 80%, 60% 100%, 60% 100%, 0 100%, 0 0);
+}
+
+#app-mount.day div.bd-privateChannels div.bd-channel > a.typing > div.bd-wrapper > div[user].bd-inner {
+    clip-path: polygon(100% 0, 100% 60%, 40% 60%, 30% 80%, 30% 100%, 40% 100%, 0 100%, 0 0);
+}
+
+#app-mount.day div.bd-member.bd-memberOnline > div.bd-content > span.bd-avatarWrapper > div.bd-wrapper > div.bd-image.bd-small.bd-mask {
+    clip-path: polygon(100% 0px, 100% 65%, 75% 65%, 55% 80%, 55% 100%, 60% 100%, 0px 100%, 0px 0px);
+}
+
+#app-mount.day div.bd-member.bd-memberOnline > div.bd-content > span.bd-avatarWrapper > div.bd-wrapper > div.bd-image.bd-small:not(.bd-mask) {
+    clip-path: polygon(100% 0, 100% 65%, 50% 65%, 35% 80%, 35% 100%, 50% 100%, 0 100%, 0 0);
+}
+
+/** Messages background **/
+#app-mount.day div.bd-chat > div.bd-content div.bd-messagesWrapper,
+#app-mount.day div.bd-chat > div.bd-content div.bd-messages {
+    background-color: transparent;
+}
+
+/*** Load more messages button background ***/
+#app-mount.day div.bd-chat > div.bd-content div.bd-hasMore {
+    background-color: rgba(50, 0, 0, 0.3);
+    border-color: transparent;
+    color: #ea5f2f;
+    box-shadow: none;
+}
+
+/*** Blocked messages background ***/
+#app-mount.day div.bd-messageGroupBlocked {
+    background-color: rgba(0, 0, 0, .1);
+    border: none;
+}
+
+/**** Blocked messages collapse button ****/
+#app-mount.day div.bd-messageGroupBlockedBtn {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#app-mount.day div.bd-messageGroupBlockedBtn:hover {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/** Textarea wrapper background **/
+#app-mount.day form.bd-form:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    margin: 0 16px;
+}
+
+#app-mount form.bd-form {
+    padding-top: 12px;
+    margin-top: 0;
+}
+
+#app-mount.day div.bd-channelTextArea,
+#app-mount.day div.bd-channelTextArea .bd-scrollableContainer {
+    background-color: rgba(38, 0, 0, .3); /* Well bae likes the dark input for lovepal so */
+}
+
+#app-mount.day div.bd-channelTextArea .bd-inner .bd-button svg path:not(.bd-attachButtonPlay) {
+    fill: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#app-mount.day div.bd-channelTextArea .bd-inner .bd-button:hover path:not(.bd-attachButtonPlay) {
+    fill: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#app-mount.day div.bd-channelTextArea .bd-inner .bd-sprite {
+    filter: grayscale(100%) opacity(.5) !important;
+}
+
+#app-mount.day div.bd-channelTextArea .bd-inner .bd-button:hover .bd-sprite {
+    filter: none !important;
+}
+
+#app-mount.day div.bd-channelTextArea .bd-inner textarea::placeholder {
+    color: #b9bbbe;
+}
+
+#app-mount.day div.bd-channelTextArea .bd-inner .bd-attachButtonDivider {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 70%;
+    margin: auto;
+}
+
+/** Gif selector **/
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete {
+    background: rgba(50, 0, 0, 0.75);
+}
+
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result {
+    background: rgba(39, 3, 26, 0.1) !important;
+}
+
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result:hover:after {
+    box-shadow: inset 0 0 0 2px #520000, inset 0 0 0 3px #460000;
+}
+
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result div.bd-categoryFade:hover {
+    background-color: rgba(39, 0, 0, 0.8);
+}
+
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result div.bd-categoryFadeBlurple {
+    background-color: rgba(234, 95, 47, .75);
+}
+
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result div.bd-categoryFadeBlurple:hover {
+    background-color: rgba(234, 95, 47, .85);
+}
+
+/** Emoticon autocomplete popout **/
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete {
+    background: rgba(50, 0, 0, 0.6);
+}
+
+#app-mount.day div.bd-channelTextArea div.bd-autocomplete div.bd-selectorSelected {
+    background: rgba(111, 0, 0, 0.2);
+}
+
+/** Typing indicator background **/
+#app-mount.day div.bd-chat div.bd-spacer div.bd-typing {
+    background-color: transparent;
+}
+
+/** Embeds **/
+#app-mount.day div.bd-embedWrapper {
+    background-color: rgba(39, 0, 0, 0.6);
+    border-color: transparent;
+}
+
+/*** Embed default pill + quote color ***/
+#app-mount.day div.bd-blockquoteDivider {
+    background-color: #260000 !important;
+}
+
+#app-mount.day div.bd-embedWrapper {
+    border-color: #260000 !important
+}
+
+#app-mount.day div.bd-isMentioned:after {
+    background: rgba(255, 145, 107, .1);
+    border-left: 4px solid #ff916b;
+}
+
+#app-mount.day div.bd-isMentioned {
+    background: rgba(255, 145, 107, .1) !important;
+}
+
+/*** Invite embeds, TODO: Make more specific? Selector seems sketch ***/
+#app-mount.day div.bd-chat > div.bd-content div.bd-wrapper.bd-userSelectNone.bd-cursorDefault {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/** Time dividers **/
+#app-mount.day div.bd-chat > div.bd-content span.bd-dividerContent {
+    color: #b33d14 !important;
+}
+
+#app-mount.day div.bd-chat > div.bd-content span.bd-dividerContent::before,
+#app-mount.day div.bd-chat > div.bd-content span.bd-dividerContent::after {
+    background: var(--text-link) !important;
+}
+
+/** Timestamps **/
+#app-mount.day time.bd-timestamp {
+    color: rgba(255, 255, 255, .4);
+}
+
+/** Code blocks **/
+#app-mount.day div.bd-message div.bd-markup {
+    color: #ececec;
+}
+
+#app-mount.day div.bd-message div.bd-markup.bd-isFailed {
+    color: #f04747;
+}
+
+/*** Border ***/
+#app-mount.day div.bd-message div.bd-markup > pre {
+    background: transparent;
+    border-color: transparent;
+}
+
+/*** Background ***/
+#app-mount.day div.bd-message div.bd-markup code,
+#app-mount.day span.bd-inlineCode {
+    background-color: rgba(50, 0, 0, 0.6);
+    border-color: rgba(50, 0, 0, 0.8);
+}
+
+/* Activity feed */
+#app-mount.day div.bd-activityFeed,
+#app-mount.day div.bd-activityFeed > .bd-container {
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-separator:not(.bd-header) {
+    background-color: rgba(255, 145, 107, 0.1) !important;
+}
+
+/** Remove gradient at the end of activity feed header */
+#app-mount.day div.bd-activityFeed > div.bd-container > div.bd-children::after {
+    display: none;
+}
+
+#app-mount.day div.bd-activityFeed .bd-colorMuted {
+    color: #a2a2a2;
+}
+
+#app-mount.day div.bd-activityFeed div.bd-coloredBackground {
+    background: #460000;
+}
+
+/** Fix horizontal scroll **/
+#app-mount.day div.bd-activityFeed > div.bd-scrollerWrap > div.bd-scroller {
+    overflow-x: hidden;
+}
+
+/** Cards **/
+/*** Cards background ***/
+#app-mount.day div.bd-activityFeed div.bd-outer {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+#app-mount.day div.bd-activityFeed article.bd-wrapper.bd-card {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-activityFeed div.bd-recentlyPlayedContainer {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-activityFeed div.bd-recentlyPlayedContainer > div.bd-separator{
+    background-color: transparent;
+}
+
+/*** Cards hover effect ***/
+#app-mount.day div.bd-activityFeed div.bd-outer.bd-interactive:hover {
+    background-color: rgba(38, 0, 0, 0.5);
+}
+
+/*** Remove card separator ***/
+#app-mount.day div.bd-activityFeed div.bd-card.bd-outer > div.bd-wrapper {
+    box-shadow: none;
+}
+
+/*** Quick launcher card boxes background ***/
+#app-mount.day div.bd-activityFeed div.bd-outer.bd-wrappedCard > div.bd-grid > div.bd-clickable,
+#app-mount.day div.bd-activityFeed div.bd-card > div.bd-grid > div.bd-clickable {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/*** Recently played item hover effect ***/
+#app-mount.day div.bd-activityFeed div.bd-card > div.bd-popoutContainer {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-activityFeed div.bd-card > div.bd-popoutContainer:hover {
+    background-color: transparent;
+}
+
+/**** Change background for currently playing rich presence ****/
+#app-mount.day div.bd-activityFeed div.bd-card > div.bd-popoutContainer > div.bd-inset,
+#app-mount.day div.bd-activityFeed div.bd-card > div.bd-popoutContainer div.bd-popout div.bd-enabled:hover,
+#app-mount.day div.bd-activityFeed div.bd-card > div.bd-popoutContainer div.bd-popout div.bd-separator {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-activityFeed div.bd-card > div.bd-popoutContainer > div.bd-inset > section.bd-section {
+    background-color: transparent;
+}
+
+/**** Item popout background ****/
+#app-mount.day div.bd-activityFeed div.bd-popoutContainer div.bd-popout {
+    background-color: rgba(49, 10, 10, .9);
+}
+
+#app-mount.day div.bd-activityFeed div.bd-popoutContainer div.bd-popout div.bd-memberListItem:hover,
+#app-mount.day div.bd-guildPopout {
+    background-color: transparent;
+}
+
+/*** Share button background ***/
+#app-mount.day div.bd-activityFeed button.bd-shareButton {
+    background-color: rgba(38, 0, 0, 0.8);
+}
+
+/* Library */
+#app-mount.day div.bd-gameLibrary,
+#app-mount.day div.bd-gameLibrary > div.bd-libraryHeader,
+#app-mount.day div.bd-root > div.bd-libraryHeader,
+#app-mount.day div.bd-root {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Search bar */
+#app-mount.day div.bd-gameLibrary .bd-searchBar.bd-container {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/* Change wumpus' color */
+#app-mount.day .bd-emptyWumpus,
+#app-mount.day .bd-emptyStateImage,
+#app-mount.day .bd-contentColumn .bd-vertical .bd-image.bd-marginBottom40,
+#app-mount.day .bd-contentRegion .bd-systemPad .bd-image.bd-marginBottom40,
+#app-mount.day .bd-noChannel .bd-image.bd-marginBottom40,
+#app-mount.day .bd-userSettingsSecurityImage {
+    filter: hue-rotate(140deg) saturate(1200%) brightness(0.7);
+}
+
+/** Get rid of the weird gradient **/
+#app-mount.day div.bd-gameLibrary > div.bd-libraryHeader > div.bd-children::after,
+#app-mount.day div.bd-root > div.bd-libraryHeader > div.bd-children::after {
+    display: none;
+}
+
+/** Header background color and give some space to breathe with the content **/
+#app-mount.day div.bd-gameLibrary div.bd-table > div.bd-stickyHeader {
+    background-color: transparent;
+    margin-bottom: 4px;
+}
+
+/** Highlight effect on row hover **/
+#app-mount.day div.bd-gameLibrary div.bd-table > div.bd-rowWrapperActive {
+    background-color: rgba(38, 0, 0, 0.2);
+    box-shadow: none;
+}
+
+/** Change the color of the play button **/
+#app-mount.day div.bd-gameLibrary div.bd-table button.bd-playButton {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Row color **/
+#app-mount.day div.bd-gameLibrary div.bd-table div.bd-bodyCell.bd-platformCell,
+#app-mount.day div.bd-gameLibrary div.bd-table div.bd-bodyCell.bd-lastPlayedCell {
+    color: #ced0d2;
+}
+
+/** Selected tab background color label **/
+#app-mount.day div.bd-libraryHeader div.bd-topPill > div.bd-item.bd-selected {
+    background-color: rgba(38, 0, 0, 0.3);
+}
+
+#app-mount.day div.bd-libraryHeader div.bd-topPill > div.bd-item:hover {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/** Redeem input border **/
+#app-mount.day div.bd-root div.bd-codeRedemptionInput > input {
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-root div.bd-codeRedemptionInput > input:hover {
+    border-color: transparent;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+#app-mount.day div.bd-root div.bd-codeRedemptionInput > input::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+
+/** No gifts image hue rotate **/
+#app-mount.day div.bd-gameLibrary div.bd-root div.bd-emptyStateImage {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(0.65);
+}
+
+/* Nitro (Done it for ya bab) */
+#app-mount.day div.bd-applicationStore,
+#app-mount.day div.bd-tier1Banner {
+    background: transparent !important;
+}
+
+#app-mount.day div.bd-itemBackground:before {
+    background: rgba(70, 0, 0, .5);
+}
+
+/* Friends */
+/** Friends row hover **/
+#app-mount.day div.bd-friendsTable {
+    margin-top: 0;
+    border-bottom-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount.day div.bd-friendsTable div.bd-friendsTableHeader div.bd-friendsColumn {
+    border-left-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount.day div.bd-friendsTable div.bd-friendsRow:hover {
+    background-color: rgba(38, 0, 0, 0.2) !important;
+}
+
+/** Friend actions like call, vcall **/
+#app-mount.day div.bd-friendsTable div.bd-friendsTableBody div.bd-friendsRow div.bd-friendsColumnActions div.bd-friendsAction {
+    background-color: transparent;
+}
+
+/*** Hover effect for friend actions ***/
+#app-mount.day div.bd-friendsTable div.bd-friendsTableBody div.bd-friendsRow div.bd-friendsColumnActions div.bd-friendsAction:hover {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/** Rotate hue for no friends image **/
+#app-mount.day div.bd-friendsTable div.bd-friendsEmpty div.bd-image {
+    filter: hue-rotate(140deg) saturate(1800%) brightness(0.5);
+}
+
+/** Lighten up the text for no friends **/
+#app-mount.day div.bd-friendsTable div.bd-friendsEmpty div.bd-image + div div.bd-text {
+    color: rgba(255, 255, 255, .8);
+}
+
+/** Add friend background **/
+#app-mount.day div.bd-friendsTable div.bd-friendTableAddWrapper div.bd-friendTableAddHeader {
+    background: transparent;
+    border-bottom: none;
+}
+
+/** Background for header, TODO: Sketchy af selector **/
+#app-mount.day div.bd-container > div:nth-child(1).bd-container {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*** Friends header tabs, suffers from the same sketchy selector but is even more specific so w.e ***/
+#app-mount.day div.bd-container > div:nth-child(1).bd-container > div.bd-children > div.bd-tabBar > div.bd-item.bd-selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount.day div.bd-container > div:nth-child(1).bd-container > div.bd-children > div.bd-tabBar > div.bd-item:hover {
+    background-color: rgba(111, 0, 0, .3);
+}
+
+/*** Hide the weird gradient at the right ***/
+#app-mount.day div.bd-container > div:nth-child(1).bd-container > div.bd-children::after {
+    display: none;
+}
+
+/* Popouts */
+/** Attach popout (for when listening to spotify or playing a game with invites) **/
+#app-mount.day div.bd-popouts div.bd-attachPopout {
+    background-color: rgba(38, 0, 0, 0.5);
+}
+
+/** Message menu popout on the right with pin/copy id/delete/etc. **/
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > button.bd-item {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > button.bd-item:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Menus (only found the one that pops out on guild settings at the top of channel list) **/
+#app-mount.day div.bd-popouts div.bd-menu {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+/*** Menu item hover color ***/
+#app-mount.day div.bd-popouts div.bd-menu div.bd-item:hover {
+    background-color: transparent;
+}
+
+/** RTC Connection popout **/
+#app-mount.day div.bd-popouts > div.bd-popout.bd-popoutTop > div.bd-container > header:not([class]) {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-popouts > div.bd-popout.bd-popoutTop > div.bd-container > section:not([class]) {
+    background-color: transparent;
+}
+
+/** User popout, a must to get right **/
+#app-mount.day div.bd-userPopout {
+    box-shadow: none;
+}
+
+/*** Header colors, TODO: Make these colors distinct? ***/
+#app-mount.day div.bd-userPopout > div.bd-headerNormal {
+    background-color: rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-userPopout > div.bd-headerPlaying,
+#app-mount.day div.bd-userPopout > div.bd-headerStreaming {
+    background-color: rgba(70, 0, 0, .95);
+}
+
+#app-mount.day div.bd-userPopout > div.bd-headerSpotify {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div.bd-userPopout > div.bd-body,
+#app-mount.day div.bd-userPopout > div.bd-footer {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div.bd-userPopout div.bd-scrollerWrap div.bd-scroller {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-userPopout > div.bd-body > div.bd-note textarea:focus {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-userPopout > div.bd-footer > input.bd-quickMessage {
+    background-color: rgba(70, 0, 0, .95);
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-userPopout > div.bd-footer > input.bd-quickMessage:hover,
+#app-mount.day div.bd-userPopout > div.bd-footer > input.bd-quickMessage:focus {
+    background-color: rgba(70, 0, 0, .95);
+    border-color: transparent;
+}
+
+/** TODO: Add role + button **/
+#app-mount.day div.bd-popouts > div.bd-popout + div.bd-popout[role="dialog"] > div.bd-header + div.bd-sectionTag {
+    background-color: transparent;;
+}
+
+#app-mount.day div.bd-popouts > div.bd-popout + div.bd-popout[role="dialog"] > div.bd-header + div.bd-sectionTag div.bd-row {
+    background-image: none;
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-popouts > div.bd-popout + div.bd-popout[role="dialog"] > div.bd-header + div.bd-sectionTag div.bd-row:hover {
+    background-color: transparent;
+}
+
+/** Pinned messages and recent mentions popout, arguably second the most important one to get right **/
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap {
+    background-color: rgba(50, 0, 0, 0.95);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/*** Pinned popout header and footer ***/
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap > div.bd-header {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap > div.bd-footer {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+/*** Pinned popout messages ***/
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-messageGroupWrapper {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-messageGroupWrapper:hover {
+    border-color: transparent;
+}
+
+/**** Action buttons, jump and remove ****/
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-messageGroupWrapper div.bd-actionButtons {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*** Change color of the no pin message icon ***/
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-emptyPlaceholder div.bd-image {
+    filter: hue-rotate(140deg) saturate(1200%) brightness(0.7);
+}
+
+/*** Load more messages background ***/
+#app-mount.day div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-hasMore button.bd-hasMoreButton {
+    background-color: rgba(0, 0, 0, .3);
+    border-color: transparent;
+}
+
+/** Search popout **/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh {
+    background-color: rgba(39, 0, 0, 0.9);
+    box-shadow: none;
+}
+
+/*** Get rid of dumb gradient ***/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-resultsGroup div.bd-option::after {
+    display: none;
+}
+
+/*** Selected or hovered option ***/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-resultsGroup div.bd-option:hover,
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-resultsGroup div.bd-option.bd-selected {
+    background-color: rgba(111, 0, 0, 0.15);
+}
+
+/*** Suggest header ***/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-queryContainer.bd-focused {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/**** Enter prompt ****/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-queryContainer > div.bd-queryShortcut > div.bd-keybindShortcut > span {
+    background-color: rgba(255, 255 ,255, .02);
+    box-shadow: inset 0 -4px 0 rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .05);
+}
+
+/*** Date picker background ***/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker {
+    background-color: rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker .react-datepicker__day {
+    border-color: #310a0a !important;
+}
+
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker .react-datepicker__day--selected:after {
+    background-color: rgba(70, 0, 0, .95);
+}
+
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-datePickerHint > .bd-hintValue {
+    background-color: rgba(70, 0, 0, .95);
+}
+
+/**** Previous/next arrow backgrounds and hover effects ****/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__navigation {
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, .04);
+}
+
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__navigation:hover {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+/**** Header and day backgrounds and hover effects ****/
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__header,
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__day {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Game popout **/
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-footer,
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-footer {
+    background-color:rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header > div.bd-players,
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header > div.bd-players {
+    background-color:rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header div.bd-player:hover,
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header div.bd-player:hover {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header > div.bd-news,
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header > div.bd-news {
+    background-color:rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header > div.bd-newsEmpty,
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header > div.bd-newsEmpty {
+    filter: hue-rotate(135deg) saturate(2500%) brightness(0.35);
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-footer > button.bd-lookFilled,
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-footer > button.bd-lookFilled {
+    background-color: rgba(70, 0, 0, .95);
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-footer > button.bd-lookFilled:hover,
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-footer > button.bd-lookFilled:hover {
+    background-color: #260000;
+}
+
+/** Reactions popout **/
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-modal > div.bd-inner > div.bd-sidebar {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#app-mount.day div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-modal > div.bd-inner > div.bd-reactors {
+    background-color: transparent;
+}
+
+/** Emoticon picker popout**/
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker,
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker .bd-categories,
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker .bd-infoBar {
+    background-color: rgba(50, 0, 0, 0.85);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker .bd-infoBar {
+    background-color: rgba(49, 0, 0, 0.7);
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker .bd-infoBar {
+    filter: brightness(1.2) !important;
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker .bd-infoBar {
+    filter: brightness(.8);
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker .bd-sadImage {
+    filter: hue-rotate(160deg) saturate(1000%) brightness(0.65);
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker div.bd-stickyHeader {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker div.bd-stickyHeader div.bd-category,
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker input {
+    color: #d4bfcf;
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker div.bd-emojiItem.bd-selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker div.bd-categories div.bd-item {
+    filter: hue-rotate(140deg) saturate(1000%) brightness(0.65);
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker div.bd-categories div.bd-item:hover,
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker div.bd-categories div.bd-item.bd-selected {
+    filter: none !important; /* TODO: Figure out why I did this */
+}
+
+#app-mount.day div.bd-layerContainer div.bd-emojiPicker div.bd-scroller::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Context menu */
+#app-mount.day div.bd-contextMenu,
+#app-mount.day div.bd-container[role="menu"] {
+    background-color: rgba(50, 0, 0, 0.85);
+    box-shadow: none;
+    padding: 0;
+}
+
+#app-mount.day div.bd-contextMenu div.bd-itemGroup div.bd-item:hover,
+#app-mount.day div.bd-container[role="menu"] div.bd-itemGroup div.bd-item:hover {
+    background-color: rgba(38, 0, 0, 0.2);
+    box-shadow: none;
+}
+
+/* FLUFF. */
+#app-mount.day div.bd-contextMenu div.bd-itemGroup:first-of-type div.bd-item:first-of-type,
+#app-mount.day div.bd-container[role="menu"] div.bd-itemGroup:first-of-type div.bd-item:first-of-type {
+    border-radius: 5px 5px 0 0;
+}
+
+#app-mount.day div.bd-contextMenu div.bd-itemGroup:last-of-type div.bd-item:last-of-type,
+#app-mount.day div.bd-container[role="menu"] div.bd-itemGroup:last-of-type div.bd-item:last-of-type {
+    border-radius: 0 0 5px 5px;
+}
+
+#app-mount.day div.bd-contextMenu div.bd-item,
+#app-mount.day div.bd-container[role="menu"] div.bd-item {
+    border-radius: 0;
+}
+
+/** Checkboxes **/
+#app-mount.day div.bd-contextMenu div.bd-itemGroup div.bd-item.bd-itemToggle div.bd-checkbox div.bd-checkboxInner input.bd-checkboxElement:checked + span,
+#app-mount.day div.bd-container[role="menu"] div.bd-itemGroup div.bd-item.bd-itemToggle div.bd-checkbox div.bd-checkboxInner input.bd-checkboxElement:checked + span {
+    background-color: #ff916b;
+    border-color: #ff916b;
+}
+
+/* Tooltips */
+#app-mount.day div.bd-layerContainer div.bd-layer > div.bd-tooltip {
+    background-color: rgba(49, 10, 10, .95);
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-layerContainer div.bd-layer > div.bd-tooltip div.bd-tooltipPointer {
+    border-top-color: rgba(49, 10, 10, .95);
+    box-shadow: none;
+}
+
+/* Modals */
+#app-mount.day div.bd-modal.bd-sizeSmall {
+    background-color: rgba(50, 0, 0, 0.85) !important;
+}
+
+#app-mount.day div.bd-modal.bd-sizeSmall div.bd-footer:not(.bd-marginTop) {
+    background-color: rgba(39, 0, 0, .95) !important;
+}
+
+#app-mount.day div.bd-modal.bd-sizeSmall div.bd-footer:not(.bd-marginTop) {
+    background-color: rgba(39, 0, 0, .95) !important;
+}
+
+#app-mount.day div.bd-modal.bd-sizeSmall div.bd-checkbox .bd-checkboxInner .bd-checkboxElement:checked+span {
+    background-color: #ff916b;
+    border-color: #ff916b;
+}
+
+/** User modal **/
+/*** Top color, TODO: Figure out alternate color for playing/Spotify ***/
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionNormal {
+    background-color:rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionNormal .bd-tabBarContainer {
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionPlaying,
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionStreaming {
+    background-color:rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionSpotify {
+    background-color:rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionPlaying .bd-lookInverted,
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionSpotify .bd-lookInverted,
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionStreaming .bd-lookInverted {
+    color: #ff916b;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root div.bd-emptyIconGuilds {
+    filter: hue-rotate(140deg) saturate(1200%) brightness(0.7);
+}
+
+/*** Lighter body color ***/
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection {
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection:first-of-type {
+    padding-bottom: 0;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-note > textarea {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-note > textarea:hover {
+    background-color: rgba(255, 255, 255, .04);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-note > textarea:focus {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-connectedAccounts > div.bd-connectedAccount {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-connectedAccounts > div.bd-connectedAccount svg.bd-connectedAccountVerifiedIcon path[fill='#4f545c'] {
+    fill: #560b71;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-emptyIconFriends {
+    filter: hue-rotate(85deg) saturate(1000%) brightness(0.65);
+}
+
+/** Channel description modal **/
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal {
+    border-color: transparent;
+    box-shadow: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-header.bd-flex.bd-horizontal.bd-directionRow,
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-header.bd-flex.bd-horizontal.bd-directionRow + div.bd-content,
+#app-mount.day div[role="dialog"].bd-root {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div[role="dialog"].bd-root div.bd-header {
+    background: rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div[role="dialog"].bd-root .bd-header div.bd-icon {
+    filter: hue-rotate(140deg) brightness(1.1);
+}
+
+#app-mount.day div[role="dialog"].bd-root .bd-header div.bd-channel {
+    background: rgba(49, 10, 10, .95);
+}
+
+/*** Footer, the description doesn't have it but other modals do, like the changelog ***/
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer,
+#app-mount.day div[role="dialog"].bd-root div.bd-footer {
+    background-color:rgba(39, 0, 0, .95);
+    box-shadow: none;
+}
+
+/** Footer button **/
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button:not([aria-label="Send a gift"]):not(.bd-closeButton) {
+    background-color: rgba(70, 0, 0, .95);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button:not([aria-label="Send a gift"]):not(.bd-closeButton):hover {
+    background-color: #310a0a;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button:not([aria-label="Send a gift"]):not(.bd-closeButton):hover .bd-contents {
+    background-image: none;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button.bd-colorGrey {
+    color: #b7b7b7;
+}
+
+/** Modal checkboxes **/
+#app-mount.day div.bd-modal > div.bd-inner > div.bd-modal > div.bd-content div.bd-switchItem div.bd-switch::before {
+    background-color: #520000;
+}
+
+/** Add to group DM modal **/
+#app-mount.day div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout {
+    background-color: rgba(50, 0, 0, 0.85);
+    box-shadow: 0 0 0 1px #320000, 0 2px 10px 0 rgba(0,0,0,.2);
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout > div.bd-header > div.bd-searchBar > div.bd-searchBarComponent {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout > div.bd-header > div.bd-searchBar > div.bd-searchBarComponent > div.bd-inner > a.bd-anchor.bd-tag {
+    background-color: rgba(255, 255, 255, .06);
+}
+
+/** You're not friends with them rip */
+#app-mount.day div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout div.bd-errorStateIcon {
+    filter: hue-rotate(140deg) saturate(1200%) brightness(0.7);
+}
+
+/** Background colors **/
+#app-mount.day div.bd-wrapper div.bd-modal {
+    background-color: #660c3a;
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-wrapper div.bd-modal div.bd-footer {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div.bd-wrapper div.bd-modal div.bd-footer > div.bd-content::before {
+    display: none;
+}
+
+#app-mount.day div.bd-wrapper div.bd-modal div.bd-header > div.bd-marginTop {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/** Leave guild modal **/
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall {
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-header,
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-footer {
+    background-color: rgba(49, 10, 10, .95);
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-content {
+    background-color:rgba(39, 0, 0, .95);
+    padding-top: 12px;
+    border-radius: 0;
+}
+
+/** Pin message modal **/
+/*** message background ***/
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-content div.bd-message {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*** Button color ***/
+
+/** Change user nickname modal **/
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) {
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-header,
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content {
+    background-color: rgba(50, 0, 0, 0.85);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-footer {
+    background-color:rgba(39, 0, 0, .95);
+    box-shadow: none;
+}
+
+/*** Submit button (or basically most footer buttons on modals) ***/
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="submit"].bd-button.bd-lookFilled,
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="button"].bd-button.bd-lookFilled {
+    background-color: rgba(234, 95, 47, .8);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="submit"].bd-button.bd-lookFilled:hover,
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="button"].bd-button.bd-lookFilled:hover {
+    background-color: #ea5f2f;
+}
+
+/*** Input focus effect ***/
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content div.bd-input input.bd-input {
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content div.bd-input input.bd-input:hover {
+    background-color: rgba(39, 0, 0, .95);
+}
+
+#app-mount.day div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content div.bd-input input.bd-input:focus {
+    border-color: transparent;
+    background-color: rgba(70, 0, 0, .95);
+}
+
+#app-mount.day .bd-cardPrimaryEditable {
+    background: rgba(111, 0, 0, 0.2);
+    border-color: #ff916b;
+}
+
+#app-mount.day .bd-cardPrimaryEditable[style*="background-color: rgb(114, 137, 218)"] {
+    background-color: #ff916b !important;
+    border-color: #ff916b !important;
+}
+
+#app-mount.day .bd-cardPrimaryEditable[style*="background-color: rgb(114, 137, 218)"] .bd-checkbox {
+    border-color: white !important;
+}
+
+#app-mount.day .bd-cardPrimaryEditable[style*="background-color: rgb(114, 137, 218)"] .bd-checkbox svg[name="Checkmark"] polyline {
+    stroke: white;
+}
+
+#app-mount.day .bd-cardPrimaryOutline {
+    border-color: #ff916b;
+}
+
+#app-mount.day .bd-checkboxContainer:before {
+    background-color: #ff916b;
+}
+
+/** TODO: Create group DM modal/popout/both **/
+/*
+#app-mount.day div.bd-popouts {
+
+}
+*/
+
+/* Configuration */
+/* or GUILD_SETTINGS */
+/* or just fucking calling it Settings idiot. */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]),
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-scroller,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-scroller {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion {
+    background-color: rgba(39, 0, 0, 0.5);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-actionButton {
+    border-color: #ea5f2f;
+    color: #ff916b;
+    background: transparent;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-text,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-title {
+    color: #e0e0e0;
+}
+
+/* Ticks */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-item.bd-box {
+    border-color: rgba(49, 10, 10, .8);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-passthroughSelected.bd-box {
+    background-color: rgba(70, 0, 0, .5);
+}
+
+/** Nitro / Server Boost **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion .bd-item[style*="color: rgb(114, 137, 218)"] {
+    color: #ff916b !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion .bd-item[style*="color: rgb(114, 137, 218)"]:hover {
+    background-color: rgba(38, 0, 0, 0.2) !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion .bd-item[style*="background-color: rgb(114, 137, 218)"] {
+    background-color: #ff916b !important;
+    color: white !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-progress .bd-background {
+    color: rgba(234, 95, 47, .3);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-progress .bd-tierInProgress {
+    background-image: none !important;
+    background-color: #ea5f2f;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-tierHeader {
+    background-color: rgba(234, 95, 47, .3);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-tierHeader svg.bd-tierLock {
+    color: #ff916b;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-tierBody {
+    background-color: rgba(234, 95, 47, .1);
+}
+
+/** Sidebar item hover/selected effects **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-side > div.bd-item:hover,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-side > div.bd-item.bd-selected {
+    background-color: rgba(38, 0, 0, 0.2);
+}
+
+/** Non-image Server Guild Icon aka Byn / Bae / Bang / Doru / Lauty (to-be) **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-avatarUploaderInner {
+    background-color: #520000;
+}
+
+/* Dropdowns and buttons */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion input.bd-input:not([placeholder="Search for Games"]),
+#app-mount.day div.bd-select div.bd-container:not(.bd-button),
+#app-mount.day div.bd-select div.bd-control {
+    background-color: rgba(111, 0, 0, 0.1);
+    border-color: rgba(50, 0, 0, 0.85);
+}
+
+#app-mount.day div.bd-select div.bd-menu,
+#app-mount.day [role*="dialog"] div.bd-popout {
+    background-color: rgba(50, 0, 0, 0.9);
+    border-color: rgba(50, 0, 0, 0.9);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-colorGrey {
+    color: #ea5f2f;
+    background-color: rgba(111, 0, 0, 0.1);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='vertical'] .bd-colorBrand {
+    color: #ff916b;
+    background-color: rgba(175, 47, 2, 0.1);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='vertical'] .bd-colorBrand:hover {
+    color: #ff916b;
+    background-color: rgba(175, 47, 2, 0.3);
+}
+
+/* Audit Log */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] {
+    border-color: #270000;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-headerClickable,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-headerDefault {
+    background-color: rgba(38, 0, 0, 0.2);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'],
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-timestamp {
+    color: #c3c3c3;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-headerExpanded {
+    background-color: rgba(38, 0, 0, 0.3);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-divider {
+    background-color: #270000;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-changeDetails {
+    background-color: rgba(38, 0, 0, 0.1);
+}
+
+#app-mount.day .bd-popoutList {
+    background: rgba(50, 0, 0, 0.85) !important;
+    box-shadow: 0 0 0 1px #270000, 0 1px 5px 0 #270000;
+}
+
+#app-mount.day .bd-selectableItem:hover {
+    background-color: rgba(38, 0, 0, 0.2) !important;
+}
+
+#app-mount.day .bd-selectableItem.bd-selected {
+    background: #460000 !important;
+}
+
+/* Roles */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side .bd-role.bd-themed.bd-selected.bd-item,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side .bd-role.bd-themed#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-selected.bd-item:hover,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-topPill .bd-themed.bd-selected.bd-item,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-topPill .bd-themed.bd-selected.bd-item:hover {
+    background-color: rgba(38, 0, 0, 0.4) !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side .bd-themed.bd-item:hover,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-topPill .bd-themed.bd-item:hover {
+    background-color: rgba(38, 0, 0, 0.2) !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-description,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-labelDescriptor {
+    color: #c5c5c5;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side div.bd-separator {
+    background-color: #330039;
+}
+
+/* Light blue colored buttons */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-colorBrand,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-questionMark {
+    background-color: #ff916b;
+    color: white;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-colorBrand:hover,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-questionMark:hover {
+    background-color: #ea5f2f;
+}
+
+/* Primary buttons */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-lookFilled.bd-colorPrimary {
+    background-color: #460000;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-lookFilled.bd-colorPrimary:hover {
+    background-color: #5f0000;
+}
+
+/* Webhooks */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='remove'].bd-button,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='emojiRemove'].bd-button {
+    background-color: #460000 !important;
+    box-shadow: 0 0 0 1px #310a0a, 0 1px 5px 0 rgba(0,0,0,.3);
+}
+
+/** Sidebar separators **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-separator {
+    background-color: #330039;
+}
+
+/** Video preview wrapper **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-previewOverlay {
+    background: transparent;
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-previewContainer .media-engine-video {
+    background: transparent;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-micTest div.bd-progress {
+    background: #ea5f2f;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-micTest div.bd-notches {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(.1);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-previewContainer div.bd-preview img {
+    filter: hue-rotate(140deg) saturate(1000%) ;
+}
+
+/* Lol wot
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game {
+    left: -10px;
+    width: calc(100% + 20px);
+} */
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game div.bd-gameNameLastPlayed {
+    padding-left: 12px;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game div.bd-gameNameLastPlayed + div{
+    padding-right: 12px;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game div.bd-gameNameLastPlayed div.bd-lastPlayed {
+    color: #b9b9b9;
+}
+
+/** Content area cards **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-card {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-card:before {
+    background-color: rgba(111, 0, 0, 0.2);
+    border-color: rgba(50, 0, 0, 0.85);
+}
+
+/*** Privacy & Safety clickable cards ***/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-card.bd-item:hover {
+    background-color: rgba(50, 0, 0, 0.3);
+}
+
+/**** !important to override inline styles ****/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="border-color"] {
+    border-color: transparent !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(114, 137, 218)"] {
+    background-color: rgba(255, 145, 107, .7) !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(67, 181, 129)"] {
+    background-color: rgba(97, 255, 159, 0.7) !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(250, 166, 26)"] {
+    background-color: rgba(255, 202, 69, 0.7) !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(245, 119, 49)"] {
+    background-color: rgba(255, 133, 65, 0.7) !important;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(240, 71, 71)"] {
+    background-color: rgba(251, 50, 50, 0.7) !important;
+}
+
+/** Close buttons **/
+#app-mount.day div.bd-card > button.bd-button.bd-removeOverride {
+    background-color: #220000;
+}
+#app-mount.day div.bd-card > button.bd-button.bd-removeOverride:hover {
+    background-color: rgba(70, 0, 0, .95);
+}
+
+/** Content area red buttons **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-deleteApp {
+    background: rgba(38, 0, 0, 0.5);
+    color: #ff916b;
+    border-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-deleteApp:hover {
+    background: rgba(38, 0, 0, 0.7);
+}
+
+/** Selects **/
+#app-mount.day div.bd-select .Select-menu-outer {
+    background-color: rgba(32, 0, 43, 0.9);
+    border-color: transparent;
+}
+
+/** Connections boxes **/
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-connectedAccounts div.bd-accountBtn button.bd-accountBtnInner {
+    background-color: rgba(38, 0, 0, 0.2);
+    border-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-connectedAccounts div.bd-accountBtn button.bd-accountBtnInner:hover {
+    background-color: rgba(38, 0, 0, 0.4);
+}
+
+/* Billing and shit */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-paymentPane {
+    background-color: rgba(38, 0, 0, 0.3) !important;
+    color: #f6f6f7;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-paginator,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-hoverablePayment,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-payment {
+    background-color: transparent;
+    border-color: #460000;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-hoverablePayment:hover {
+    background-color: rgba(38, 0, 0, 0.5);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-expandedInfo {
+    background-color: rgba(38, 0, 0, 0.2);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-bottomDivider,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-pageIndicator,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-pageButtonPrev,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-pageButtonNext {
+    border-color: #460000;
+    color: #dedede;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion svg.bd-disabled:hover {
+    border-color: #af2f02 !important;
+    color: #c34113 !important;
+}
+
+/* Voice and Video */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-slider div.bd-bar {
+    background: #310a0a;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-slider div.bd-barFill {
+    background: #ff916b;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion span.bd-bubble {
+    background-color: rgba(49, 10, 10, .95);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion span.bd-bubble::before {
+    border-top-color: rgba(49, 10, 10, .95);
+}
+
+/* Keybinds */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-ghostPill {
+    background: rgba(38, 0, 0, 0.5);
+    color: rgb(255, 200, 200);
+}
+
+/* Game Activity */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-notDetected {
+    background-color: rgba(50, 0, 0, 0.6);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-gameNameInput:hover,
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-gameNameInput:focus {
+    border-color: rgba(50, 0, 0, 0.85);
+    background-color: rgba(50, 0, 0, 0.4);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-gameNameLastPlayed:not(.bd-vertical),
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-game.bd-card {
+    box-shadow: 0 1px 0 0 #460000;
+}
+
+/* Activity Feed */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion  div.bd-searchBox:not(.bd-searchBoxInputWrapper) {
+    background-color: rgba(50, 0, 0, 0.4);
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion  div.bd-searchResultsContainer {
+    background-color: rgba(50, 0, 0, 0.85);
+    box-shadow: 0 1px 5px 1px #460000;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion  div.bd-searchResultsContainer .bd-searchOption.bd-selected {
+    background-color: rgba(111, 0, 0, 0.1);
+}
+
+/* Language */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-contentColumn .bd-item:not(.bd-itemContainer):not(.bd-size14):not(.bd-itemIcon):not(.bd-card):not([role*="button"]):not(.bd-box) {
+    box-shadow: inset 0 -1px 0 0 #460000;
+}
+
+/* Notifications */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-notificationsSound {
+    box-shadow: inset 0 -1px 0 0 #460000;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-notificationsSound:last-of-type {
+    box-shadow: none;
+}
+
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-divider {
+    background-color: transparent;
+}
+
+/* Waaaaiiiittt you have unsaved changes */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-noticeRegion .bd-container {
+    background-color: rgba(50, 0, 0, 0.85) !important;
+}
+
+/* UNLEASH THE BAN HAMMER */
+#app-mount.day div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-bannedUser .bd-username .bd-discrim,
+#app-mount.day .bd-bannedUserModal .bd-reason,
+#app-mount.day .bd-bannedUserModal .bd-userDiscrim {
+    color: #a7a7a7;
+}
+
+/* Scrollbars */
+/** Affect all scrollbars */
+#app-mount.day div.bd-scroller::-webkit-scrollbar-thumb {
+    background-color: rgba(38, 0, 0, 0.5);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+/** Only the chat messages scrollbar **/
+/** TODO: Fix, WIP, bad **/
+#app-mount.day /* div.bd-messagesWrapper */ div.bd-scroller::-webkit-scrollbar-track-piece {
+    background: transparent;
+    border-color: transparent;
+}
+
+#app-mount.day div.bd-scroller::-webkit-scrollbar-track {
+    background: transparent;
+    border-color: transparent;
+}
+
+/** Fix stupid big icons **/
+#app-mount.day div.bd-title > div.bd-children > div.bd-iconWrapper {
+    margin: 2px;
+    transform: scale(.8) translateY(2px);
+}
+
+/* Non-responsive selectors for the transition in and out of settings which depend on quickly detecting elements */
+#app-mount.day .theme-dark .layer-3QrUeG, .theme-dark .layers-3iHuyZ {
+    background: transparent;
+}
+
+/** For calls **/
+#app-mount.day div.bd-chat div.bd-wrapper {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-video {
+    background-color: transparent;
+}
+
+#app-mount.day div.bd-videoBackground:not(.bd-videoBackgroundTransition) {
+    background-color: rgba(39, 0, 0, 0.4);
+}
+
+#app-mount.day .bd-wrapper.bd-minimum .bd-actions .bd-center {
+    border-color: rgba(50, 0, 0, 0.85);
+    background-color: rgba(111, 0, 0, 0.2);
+}
+
+#app-mount.day .bd-callAvatar.bd-voice .bd-callAvatarStatus {
+    border-color: #270000;
+}
+
+/* Join Call */
+#app-mount.day .bd-incomingCallInner {
+    background: rgba(50, 0, 0, 0.85);
+    border-color: rgba(39, 0, 0, .95);
+}
+
+#app-mount.day .bd-lookFilled .bd-colorGreen {
+    color: #fff;
+    background-color: #43b581;
+}
+
+#app-mount.day .bd-joinVideoCallButton,
+#app-mount.day .bd-joinVoiceCallButton {
+    background-color: rgba(67, 181, 129, 0.3) !important;
+}
+
+#app-mount.day .bd-joinVideoCallButton .bd-underlay {
+    background-color: rgba(105, 196, 154, 0.3);
+}
+
+/* Ugly notifications */
+#app-mount.day .bd-isLocalBot {
+    background-image: linear-gradient(90deg,rgba(50, 0, 0, 0.3) 80%, rgba(50, 0, 0, 0.85)) !important;
+    box-shadow: -20px 0 #320000, 20px 0 #320000, -20px -1px 0 0 #320000, -20px 1px 0 #270000, 20px 1px 0 #270000, 20px -1px 0 #270000 !important;
+}
+
+/* Quick Switcher */
+#app-mount.day .bd-quickswitcher {
+    background-color:  rgba(49, 10, 10, .95);
+}
+
+#app-mount.day .bd-quickswitcher input {
+    background:  rgba(70, 0, 0, .95);
+    box-shadow: 0 2px 5px rgba(38, 0, 0, .2), 0 0 0 1px rgba(38, 0, 0, .1);
+}
+
+#app-mount.day .bd-resultFocused {
+    background-color: rgba(70, 0, 0, .4);
+}
+
+#app-mount.day .bd-keybindShortcut span {
+    box-shadow: inset 0 -4px 0 rgba(39, 0, 0, .95);
+    border: 1px solid #320000;
+    background-color: rgba(70, 0, 0, .95);
+}
+
+/* Spoilers */
+#app-mount.day .bd-spoilerText.bd-hidden {
+    background-color: #460000;
+}
+
+#app-mount.day .bd-spoilerText.bd-hidden:hover {
+    background-color: rgba(70, 0, 0, .6);
+}
+
+/* Byn got fed up */
+#app-mount.day .bd-scroller {
+    background: transparent;
+}
+
+/* Add back borders */
+#app-mount.day .bd-message.bd-cozyMessage.bd-groupStart.bd-cozy {
+    padding-top: 16px;
+}
+
+#app-mount.day .bd-message.bd-cozyMessage.bd-groupStart.bd-cozy:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid rgb(255, 255, 255, .1);
+    box-sizing: border-box;
+    margin-left: 16px;
+}
+
+/* Fix Scrollbar lol */
+#app-mount.day .bd-messagesWrapper {
+    margin-bottom: -10px;
+}
+
+#app-mount.day .bd-scroller:after {
+    height: 26px;
+}
+
+.mouse-mode .day .bd-message.bd-cozyMessage.bd-cozy:hover,
+.bd-message.bd-cozyMessage.bd-cozy.bd-selected {
+    background: transparent;
+}
+
+.mouse-mode .day .bd-message.bd-cozyMessage.bd-cozy .bd-emojiButton,
+.mouse-mode .day .bd-message.bd-cozyMessage.bd-cozy .bd-emojiSeparator  {
+    display: none;
+}
+
+.mouse-mode .day .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer,
+.day .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer {
+    top: 80%;
+}
+
+.mouse-mode .day .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer,
+.day .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer {
+    top: calc(100% - 2px);
+}
+
+/* Dates, dividers */
+#app-mount.day .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill{
+    display: none;
+}
+
+#app-mount.day .bd-divider {
+    border-color: transparent;
+    margin: 16px 0;
+}
+
+#app-mount.day .bd-divider .bd-unreadPill {
+    color: var(--text-link);
+    position: initial;
+    background: transparent;
+    font-size: 14px;
+    padding: 0;
+}
+
+#app-mount.day .bd-divider .bd-unreadPill::before,
+#app-mount.day .bd-divider .bd-unreadPill::after {
+    content: "";
+    background-color: var(--text-link);
+    height: 1px;
+    position: absolute;
+}
+
+#app-mount.day .bd-divider .bd-unreadPill::before {
+    right: 50%;
+    margin-right: 20px;
+    width: calc(50% - 36px);
+}
+
+#app-mount.day .bd-divider .bd-unreadPill::after {
+    left: 50%;
+    margin-left: 20px;
+    width: 50%;
+}
+
+#app-mount.day .bd-divider .bd-unreadPill .bd-unreadPillCap {
+    display: none;
+}
+
+#app-mount.day .bd-divider .bd-content {
+    color: var(--text-link);
+    background: transparent;
+    font-size: 14px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#app-mount.day .bd-divider .bd-content::before,
+#app-mount.day .bd-divider .bd-content::after {
+    content: "";
+    background-color: var(--text-link);
+    height: 1px;
+    position: absolute;
+}
+
+#app-mount.day .bd-divider .bd-content::before {
+    right: 50%;
+    margin-right: 60px;
+    width: calc(50% - 76px);
+}
+
+#app-mount.day .bd-divider .bd-content::after {
+    left: 50%;
+    margin-left: 60px;
+    width: 50%;
+}
+
+.theme-dark .day {
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-normal: #dcddde;
+    --text-muted: #98999a;
+    --text-link: #ff916b;
+    --channels-default: #c1c1c1;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #dcddde;
+    --interactive-active: #fff;
+    --interactive-muted: #adadad;
+    --background-primary: rgba(70, 0, 0, .7);
+    --background-secondary: #2f3136;
+    --background-tertiary: #202225;
+    --background-accent: #4f545c;
+    --background-floating: #18191c;
+    --background-modifier-hover: rgba(79,84,92,0.16);
+    --background-modifier-active: rgba(79,84,92,0.24);
+    --background-modifier-selected: rgba(79,84,92,0.32);
+    --background-modifier-accent: hsla(0,0%,100%,0.06);
+    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    --channeltextarea-background: #40444b;
+    --activity-card-background: #202225;
+    --deprecated-panel-background: #292b2f;
+    --deprecated-card-bg: rgba(32,34,37,0.6);
+    --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+    --deprecated-store-bg: #36393f;
+    --deprecated-quickswitcher-input-background: #72767d;
+    --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+    --deprecated-text-input-bg: rgba(0,0,0,0.1);
+    --deprecated-text-input-border: rgba(50, 0, 0, 0.85);
+    --deprecated-text-input-border-hover: rgba(50, 0, 0, 1);
+    --deprecated-text-input-border-disabled: #202225;
+    --deprecated-text-input-prefix: #dcddde;
+}
+
+/* Darkest Night */
+/* Entire app, but only affects the top bar */
+#app-mount {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount .bd-splashBackground {
+    background: transparent;
+}
+
+#app-mount .bd-splashBackground > canvas {
+    display: none;
+}
+
+#app-mount .bd-rightSplit {
+    background: url(https://media.discordapp.net/attachments/595506142126538753/602478618001801216/Hopal.png) center top / cover no-repeat fixed;
+}
+
+#app-mount .bd-rightSplit img {
+    opacity: 0;
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox {
+    background: rgba(56, 8, 49, 0.7);
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox::before {
+    content: '';
+    width: inherit;
+    display: block;
+    position: absolute;
+    margin: -40px;
+    z-index: -1;
+    filter: blur(10px);
+    background: url(https://media.discordapp.net/attachments/595506142126538753/602478618001801216/Hopal.png) center top / cover no-repeat fixed;
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-subTitle {
+    color: #bfbfbf;
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-input {
+    box-shadow: none;
+    background-color: rgba(90, 23, 65, 0.4);
+    border-color: rgba(86, 10, 77, .95);
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-needAccount {
+    color: #bfbfbf;
+}
+
+#app-mount .bd-app > .bd-container.bd-fixClipping {
+    background: transparent;
+}
+
+/* Whole app minus the top bar background */
+/* Pseudo-element to allow for custom filters and stuff, also nicer positioning than background-size: cover */
+#app-mount div.bd-app > div.bd-app > div.bd-bg::before {
+    content: '';
+    background: linear-gradient(to right, rgba(45, 7, 40, .65), rgba(41, 7, 40, .65)), url(https://media.discordapp.net/attachments/595506142126538753/602478618001801216/Hopal.png) center top / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: brightness(.85);
+}
+
+/* Loading */
+#app-mount .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount div.bd-app > div.bd-app + div.bd-container::before,
+#app-mount div.bd-perksModalContentWrapper::before {
+    content: '';
+    background: linear-gradient(to right, rgba(45, 7, 40, .65), rgba(41, 7, 40, .65)), url(https://media.discordapp.net/attachments/595506142126538753/602478618001801216/Hopal.png) center top / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    filter: brightness(.85);
+    z-index: -1;
+}
+
+#app-mount div.bd-app div.bd-container .bd-quote.bd-contentBase {
+    color: #fff;
+}
+
+#app-mount div.bd-app div.bd-container .bd-contentBase,
+#app-mount div.bd-app div.bd-container .bd-problemsText {
+    color: #bdbdbd;
+}
+
+/* A huge fucking block of blue stuff I'll turn pink */
+/** Rare usage of links **/
+#app-mount a.bd-anchor,
+#app-mount a.bd-anchor.bd-embedLink,
+#app-mount button.bd-lookLink.bd-colorBrand {
+    color: #cc3e97 !important;
+    text-shadow: 0 -15px 2.5px transparent, 0 15px 2.5px transparent;
+    text-decoration: none;
+}
+
+#app-mount a.bd-anchor:hover,
+#app-mount a.bd-anchor.bd-embedLink:hover,
+#app-mount button.bd-lookLink.bd-colorBrand:hover {
+    text-shadow: 0 0 2.5px #be2687, 0 0 2.5px #be2687;
+    color: #f562be !important;
+    text-decoration: none;
+    transition: all .4s linear 0s;
+}
+
+#app-mount button.bd-lookLink.bd-colorBrand:hover .bd-contents {
+    background: none;
+}
+
+/** Mentions **/
+#app-mount div.bd-markup span.bd-wrapper.bd-mention,
+#app-mount div.bd-markup span.bd-wrapper {
+    color: #cc3e97;
+    background: rgba(152, 31, 107, .1);
+}
+
+#app-mount div.bd-markup span.bd-wrapper.bd-mention:hover,
+#app-mount div.bd-markup span.bd-wrapper:hover {
+    color: #fff !important;
+    background-color: rgba(152, 31, 107, .5) !important;
+}
+
+/** Tags **/
+#app-mount .bd-whiteButton,
+#app-mount span.bd-botTagInvert {
+    color: #cc3e97 !important;
+}
+
+#app-mount span.bd-botTagRegular,
+#app-mount .bd-valueChecked {
+    background: rgba(204, 62, 151, .7) !important;
+}
+
+/** Checkboxes **/
+#app-mount svg[name="Checkmark"] polyline {
+    stroke: #cc3e97;
+}
+
+#app-mount .bd-checkbox,
+#app-mount .bd-input:focus,
+#app-mount .bd-input.bd-focused {
+    border-color: #cc3e97 !important;
+}
+
+#app-mount .bd-checked {
+    border-color: #cc3e97 !important;
+    background-color: #380831 !important;
+}
+
+/** Blue buttons **/
+#app-mount button.bd-lookFilled.bd-colorBrand,
+#app-mount div.bd-chat > div.bd-title div.bd-children button.bd-lookFilled.bd-colorPrimary {
+    background-color: #cc3e97;
+}
+
+#app-mount button.bd-lookFilled.bd-colorBrand:hover,
+#app-mount div.bd-chat > div.bd-title div.bd-children button.bd-lookFilled.bd-colorPrimary:hover {
+    background-color: #981f6b;
+}
+
+/** Gray buttons **/
+#app-mount button.bd-lookFilled.bd-colorPrimary {
+    background-color: #560a4d;
+}
+
+#app-mount button.bd-lookFilled.bd-colorPrimary:hover {
+    background-color: #6f0c63;
+}
+
+/*** Loading ***/
+#app-mount .bd-wanderingCubesItem {
+    background-color: #981f6b;
+}
+
+/*
+#app-mount .bd-input {
+    background-color: rgba(95, 9, 64, 0.1);
+    border-color: rgba(39, 3, 26, 0.85);
+}
+
+#app-mount .bd-input:focus {
+    border-color: #cc3e97 !important;
+}
+*/
+
+/* Guild list background */
+#app-mount div.bd-container .bd-wrapper.bd-guilds,
+#app-mount div.bd-titleBar.bd-typeMacOS {
+    background-color: rgba(78, 16, 55, .3);
+}
+
+#app-mount div[role="dialog"] > .bd-container > .bd-wrapper .bd-scroller,
+#app-mount .bd-container > .bd-wrapper {
+    background-color: transparent;
+}
+
+/** Guild without image and discord logo background**/
+#app-mount div.bd-acronym,
+#app-mount div.bd-unreadMentionsIndicator .bd-mention,
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem div.bd-childWrapper,
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem:nth-child(1) a,
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem:nth-child(2) div.bd-guildSeparator,
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem div.bd-circleIconButton,
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-wrapper div.bd-folder,
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-wrapper span.bd-expandedFolderBackground,
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller div.bd-badgeWrapper div.bd-numberBadge,
+#app-mount div.bd-guildAvatarWithoutIcon,
+#app-mount div.bd-mentionsBadge div.bd-numberBadge {
+    background-color: #4e1037 !important;
+}
+
+#app-mount .bd-unread.bd-bar {
+    background-color: rgba(78, 16, 55, .8);
+}
+
+#app-mount .bd-unread.bd-bar:hover {
+    background-color: rgba(95, 9, 64, .8);
+}
+
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-wrapper div.bd-expandedFolderIconWrapper svg {
+    color: #ff6ec9 !important;
+}
+
+/** Guild left bar voice connected icon **/
+#app-mount div.bd-unreadMentionsIndicatorTop + div.bd-scrollerWrap > div.bd-scroller > div.bd-listItem div.bd-badgeWrapper > div.bd-upperBadge > div.bd-iconBadge {
+    background-color: #160000;
+}
+
+/* Channel list */
+/** Background of current user below recent DMs/channels */
+#app-mount div.bd-content > div.bd-container,
+#app-mount div.bd-container div.bd-privateChannels,
+#app-mount div.bd-container div.bd-privateChannels div.bd-scroller,
+#app-mount div.bd-base div.bd-content div.bd-sidebar > div.bd-container,
+#app-mount div.bd-flex > div.bd-container:not(.bd-hasDropdown) {
+    background-color: transparent; /* TODO: Darken? */
+    border-color: rgba(255, 255, 255, .1);
+    box-shadow: none;
+}
+
+#app-mount div.bd-container div.bd-sidebar:not(.bd-flex) {
+    background: rgba(78, 16, 55, .2);
+}
+
+#app-mount div.bd-container div.bd-reactors {
+    background: rgba(56, 8, 49, .1);
+}
+
+#app-mount div.bd-panels {
+    background: rgba(78, 16, 55, .1);
+}
+
+#app-mount div.bd-panels .bd-container button:hover {
+    background-color: rgba(90, 23, 65, 0.2);
+}
+
+/*** Groupchats ***/
+#app-mount div.bd-privateChannels a.bd-channel .bd-wrapper:not([aria-label]) svg img[src*="assets"] {
+    content: url(https://discordapp.com/assets/485a854d5171c8dc98088041626e6fea.png);
+    filter: hue-rotate(350deg);
+    border-radius: 100%;
+}
+
+/** Unread **/
+#app-mount div.bd-modeUnread div.bd-name,
+#app-mount div.bd-modeUnread div.bd-name {
+    color: #fff !important;
+}
+
+/** Muted **/
+#app-mount div.bd-modeMuted svg.bd-linkButtonIcon,
+#app-mount div.bd-modeMuted svg[class*="icon-1_"],
+#app-mount div.bd-modeMuted div.bd-name,
+#app-mount div.bd-modeMuted span.bd-name {
+    color: #8e8e8e !important;
+}
+
+#app-mount div.bd-channels div.bd-name,
+#app-mount div.bd-channels span.bd-name {
+    color: #b9bcc3;
+}
+
+#app-mount svg.bd-linkButtonIcon,
+#app-mount svg[class*="icon-1_"] {
+    color: #b9bcc3 !important;
+}
+
+/*** Darken account details ***/
+#app-mount div.bd-channels > div.bd-container:not(:first-child) {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+}
+
+/*** Fix bug with the absolute background that makes username in details disappear ***/
+/*** There are bugs in CSS? LMFAO ***/
+#app-mount div.bd-accountDetails .username {
+    position: relative;
+}
+
+/** Actual channel list background */
+#app-mount div.bd-channels > div.bd-vertical {
+    background-color: transparent;
+}
+
+/** Search bar on top of the DM lists **/
+#app-mount div.bd-search > div.bd-searchBar {
+    background-color: rgba(90, 23, 65, 0.4);
+    border-radius: 3px;
+}
+
+/** Hover effect on recent DMs **/
+#app-mount div.bd-privateChannels .bd-channel {
+    margin-right: 4px;
+}
+
+#app-mount div.bd-privateChannels .bd-channel.bd-selected {
+    background-color: transparent;
+}
+
+#app-mount div.bd-privateChannels .bd-channel.bd-selected > div {
+    background-color: rgba(90, 23, 65, 0.3);
+}
+
+#app-mount div.bd-privateChannels .bd-channel:active > div {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#app-mount div.bd-privateChannels .bd-channel:hover > div {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/** Hovered channel highlight **/
+#app-mount div.bd-containerDefault > div.bd-wrapper:hover > div.bd-content {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/** Selected channel highlight **/
+#app-mount div.bd-containerDefault.bd-selected div.bd-content {
+    background-color: rgba(90, 23, 65, 0.3);
+}
+
+/** Selected and hover voice user highlight **/
+#app-mount div.bd-voiceUser:hover > div.bd-content,
+#app-mount div.bd-voiceUser.bd-selected > div.bd-content {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/** Server dropdown darken background **/
+#app-mount div.bd-channels > div.bd-vertical > div:first-of-type {
+    background-color: transparent;
+}
+
+/*** Server Boost ***/
+#app-mount div.bd-perksModalContentWrapper div.bd-ctaBar,
+#app-mount div.bd-perksModalContentWrapper li.bd-perk:not(.bd-vailable)  {
+    background-color: rgba(152, 31, 107, .3);
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-carouselContainer > div.bd-carousel div.bd-tierNoneContainer {
+    background-color: rgba(204, 62, 151, .2);
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-carouselContainer > div.bd-carousel div.bd-tierNoneContainer div.bd-tierNoneCard {
+    filter: hue-rotate(95deg) saturate(800%) brightness(0.65);
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-carouselContainer > div.bd-carousel div.bd-tier div.bd-tierHeader {
+    background-color: rgba(152, 31, 107, .3);
+    color: #d8d8d8;
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-carouselContainer > div.bd-carousel div.bd-tier div.bd-tierBody {
+    background-color: rgba(152, 31, 107, .1);
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-carouselContainer > div.bd-carousel div.bd-tier div.bd-tierHeader svg.bd-tierLock {
+    color: #cc3e97;
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carouselRightGradientEdge {
+    background-image: linear-gradient(270deg, rgba(152, 31, 107, .3), transparent);
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-carouselContainer div.bd-carouselLeftGradientEdge {
+    background-image: linear-gradient(90deg, rgba(152, 31, 107, .3), transparent);
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-progressBar div.bd-barBackground {
+    background-color: rgba(152, 31, 107, .3);
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-progressBar div.bd-tierMarkerBackground {
+    background-image: none !important;
+    background-color: #981f6b;
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-progressBar div.bd-tierMarkerInProgress {
+    background-image: none !important;
+    background-color: #cc3e97 !important;
+}
+
+#app-mount div.bd-perksModalContentWrapper div.bd-modal > div.bd-inner > div.bd-modal span.bd-boostCount {
+    background-color: #981f6b;
+}
+
+/** INVITE BUTTON **/
+#app-mount div[role*="dialog"] div.bd-menu div.bd-item.bd-invite {
+    color: #cc3e97;
+}
+
+#app-mount div[role*="dialog"] div.bd-menu div.bd-item.bd-invite:hover {
+    color: #de289a;
+}
+
+#app-mount div[role*="dialog"] div.bd-menu div.bd-item.bd-invite div.bd-icon {
+    filter: hue-rotate(90deg) saturate(300%);
+}
+
+/*** Invite people to a new server notice ***/
+#app-mount div.bd-channelNotices .bd-invite {
+    background-color: #4a0831 !important;
+}
+
+#app-mount div.bd-channelNotices .bd-invite button {
+    background-color: #5a1741 !important;
+}
+
+/** Status change **/
+#app-mount div.bd-layerContainer div.bd-menu {
+    background: rgba(33, 4, 29, 0.9);
+    box-shadow: 0 0 1px #21041d, 0 1px 4px rgba(0,0,0,.1);
+}
+
+#app-mount div.bd-layerContainer div.bd-menu .bd-item:hover {
+    background: rgba(95, 9, 64, 0.1);
+}
+
+/* Chat area */
+/** The area around the textbox **/
+#app-mount div.bd-chat {
+    background-color: transparent;
+}
+
+/** Files, embeds **/
+#app-mount div.bd-wrapperAudio.bd-embedWrapper {
+    background-color: transparent;
+    border-color: rgba(90, 23, 65, 0.6);
+}
+
+#app-mount div.bd-attachment.bd-embedWrapper,
+#app-mount div.bd-attachment:not(.bd-attachmentInner) {
+    background-color: rgba(95, 9, 64, 0.1) !important;
+    border-color: rgba(90, 23, 65, 0.6) !important;
+}
+
+#app-mount .bd-attachment .bd-icon,
+#app-mount .bd-embedWrapper .bd-icon,
+#app-mount .bd-embedWrapper .bd-audioMetadata:before {
+    filter: hue-rotate(100deg) saturate(200%);
+}
+
+#app-mount .bd-embedWrapper .bd-cancelButton,
+#app-mount .bd-embedWrapper .bd-downloadButton,
+#app-mount .bd-embedWrapper .bd-metadataIcon {
+    color: #cc3e97;
+}
+
+#app-mount .bd-embedWrapper .bd-cancelButton:hover,
+#app-mount .bd-embedWrapper .bd-downloadButton:hover,
+#app-mount .bd-embedWrapper .bd-metadataIcon:hover {
+    color: #981f6b;
+}
+
+#app-mount .bd-mediaBarGrabber,
+#app-mount .bd-mediaBarProgress,
+#app-mount .bd-mediaBarProgress:after,
+#app-mount .bd-mediaBarProgress:before {
+    background-color: #981f6b;
+}
+
+#app-mount div.bd-progressContainer div.bd-progress div.bd-progressBar.bd-animating {
+    background-color: #981f6b !important;
+}
+
+#app-mount .bd-mediaBarInteraction:hover .bd-mediaBarGrabber {
+    background-color: #cc3e97;
+}
+
+/** Upload Modal **/
+/*** Drag and drop ***/
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-bgScale {
+    background: #981f6b;
+}
+
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-icon {
+    filter: hue-rotate(50deg) saturate(200%);
+}
+
+/*** Actual uploader ***/
+#app-mount .bd-uploadModal > .bd-inner {
+    border: 2px dashed #2d001c;
+}
+
+#app-mount .bd-uploadModal {
+    background-color: #3e0426;
+}
+
+#app-mount .bd-uploadModal .bd-icon:not(.bd-image) {
+    filter: hue-rotate(100deg) saturate(200%);
+}
+
+#app-mount .bd-uploadModal .bd-inner .bd-file .bd-icon.bd-image {
+    border: 2px solid #2d001c;
+}
+
+#app-mount .bd-uploadModal .bd-footer {
+    background-color: #2d001c;
+}
+
+#app-mount .bd-uploadModal .bd-footer .bd-colorBrand.bd-lookInverted {
+    color: #2d001c;
+}
+
+#app-mount .bd-uploadModal .bd-inner.bd-innerNoAutocomplete {
+    background-color: #2d001c;
+}
+
+/*** Your files are too powerful ***/
+#app-mount .bd-uploadModal .bd-icons .bd-wrap .bd-icon {
+    filter: hue-rotate(80deg) saturate(100%);
+}
+
+/** Idk I think this fits here, new messages notifs **/
+#app-mount .bd-newMessagesBar,
+#app-mount .bd-jumpToPresentBar {
+    background-color: rgba(39, 3, 26, 0.8) !important;
+}
+
+#app-mount .bd-newMessagesBar:hover,
+#app-mount .bd-jumpToPresentBar:hover {
+    background-color: rgba(56, 8, 49, .95) !important;
+}
+
+#app-mount .bd-newMessagesBar button:last-child,
+#app-mount .bd-jumpToPresentBar button:last-child {
+    color: #fff3fa !important;
+}
+
+/** The header background **/
+#app-mount div.bd-chat > div.bd-title {
+    background-color: rgba(78, 16, 55, .2);
+    box-shadow: none;
+}
+
+#app-mount header.bd-header {
+    box-shadow: none;
+}
+
+#app-mount div.bd-base div.bd-content div.bd-sidebar div.bd-container.bd-selected > header.bd-header,
+#app-mount div.bd-base div.bd-content div.bd-sidebar div.bd-container > header.bd-header:hover {
+    background: rgba(78, 16, 55, .2);
+}
+
+#app-mount div.bd-title div.bd-children div.bd-divider,
+#app-mount div.bd-title div.bd-toolbar div.bd-divider {
+    background: rgba(90, 23, 65, 0.3);
+}
+
+/*** Remove random box-shadow at the end of the channel name ***/
+#app-mount div.bd-chat > div.bd-title > div.bd-children::after {
+    display: none;
+}
+
+/*** The same but with the border of editing group DMs ***/
+#app-mount div.bd-chat > div.bd-title div.bd-outer input.bd-input {
+    box-shadow: none;
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/*** Ugly aka badge ***/
+#app-mount div.bd-chat > div.bd-title div.bd-akaBadge {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+/*** Search bar background ***/
+#app-mount .bd-searchBar {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/**** Search bar filters ****/
+#app-mount .bd-searchBar .bd-searchFilter {
+    background-color: rgb(255, 255, 255, .1);
+}
+
+#app-mount .bd-searchBar .bd-searchAnswer {
+    background-color: rgb(255, 255, 255, .1);
+    margin-left: 0;
+}
+
+/*** Search results ***/
+#app-mount div.bd-searchResultsWrap {
+    background-color: rgba(78, 16, 55, .2);
+}
+
+#app-mount div.bd-searchResultsWrap .bd-searchHeader {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount div.bd-searchResultsWrap .bd-channelName {
+    background-color: transparent;
+}
+
+#app-mount div.bd-searchResultsWrap .bd-searchResult::before,
+#app-mount div.bd-searchResultsWrap .bd-searchResult::after {
+    background-image: none;
+}
+
+#app-mount div.bd-searchResultsWrap div.bd-searchResultMessage.bd-hit,
+#app-mount div.bd-searchResultsWrap div.bd-searchResult.bd-expanded {
+    border-color: transparent;
+    background-color: rgba(33, 4, 29, 0.6);
+    box-shadow: none;
+}
+
+#app-mount div.bd-searchResultsWrap div.bd-searchResultMessage > div.bd-messageGroupCozy {
+    padding: 6px 0 4px;
+}
+
+#app-mount div.bd-searchResultsWrap div.bd-searchResult.bd-expanded {
+    border-color: transparent;
+}
+
+#app-mount div.bd-searchResultsWrap div.bd-searchResult.bd-expanded div.bd-searchResultMessage {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+/*** Jump button ***/
+#app-mount .bd-jumpButton {
+    background-color: #5a1741;
+}
+
+/** Content background **/
+#app-mount div.bd-chat > div.bd-content {
+    background: transparent;
+}
+
+#app-mount div.bd-chat > div.bd-content:before {
+    box-shadow: none;
+}
+
+/** Channel members**/
+#app-mount div.bd-chat > div.bd-content div.bd-membersWrap {
+    background-color: rgba(78, 16, 55, .2);
+}
+
+#app-mount div.bd-chat > div.bd-content div.bd-membersWrap div.bd-members {
+    background-color: transparent;
+}
+
+/*** Member hover color ***/
+#app-mount div.bd-chat > div.bd-content div.bd-members div.bd-member:hover div.bd-content,
+#app-mount div.bd-chat > div.bd-content div.bd-members div.bd-member.popout-open div.bd-content {
+    background-color: transparent;
+}
+
+#app-mount div.bd-chat > div.bd-content div.bd-members div.bd-member:hover {
+    background-color: rgba(90, 23, 65, 0.2);
+}
+
+#app-mount div.bd-chat div.bd-member.popout-open,
+#app-mount div.bd-chat div.bd-member.popout-open:hover {
+    background-color: rgba(90, 23, 65, 0.3) !important;
+}
+
+/*** Member color when popout's open, TODO: Super hacky, maybe use mask-image? ***/
+#app-mount div.bd-member.bd-memberOnline > div.bd-content > span.bd-avatarWrapper > div.bd-wrapper > div.bd-status,
+#app-mount div.bd-privateChannels div.bd-channel div.bd-wrapper > div.bd-status,
+#app-mount div.bd-channels > div.bd-container div.bd-status {
+    border-color: transparent;
+}
+
+#app-mount div.bd-member.bd-memberOnline > div.bd-content > div.bd-wrapper > div.bd-image,
+#app-mount div.bd-privateChannels div.bd-channel > a > div.bd-wrapper > div.bd-inner {
+    transition: clip-path 200ms ease;
+}
+
+#app-mount div.bd-privateChannels div.bd-channel > a:not(.typing) > div.bd-wrapper > div[user].bd-inner,
+#app-mount div.bd-channels > div.bd-container:last-child div.bd-inner {
+    clip-path: polygon(100% 0, 100% 60%, 70% 65%, 60% 80%, 60% 100%, 60% 100%, 0 100%, 0 0);
+}
+
+#app-mount div.bd-privateChannels div.bd-channel > a.typing > div.bd-wrapper > div[user].bd-inner {
+    clip-path: polygon(100% 0, 100% 60%, 40% 60%, 30% 80%, 30% 100%, 40% 100%, 0 100%, 0 0);
+}
+
+#app-mount div.bd-member.bd-memberOnline > div.bd-content > span.bd-avatarWrapper > div.bd-wrapper > div.bd-image.bd-small.bd-mask {
+    clip-path: polygon(100% 0px, 100% 65%, 75% 65%, 55% 80%, 55% 100%, 60% 100%, 0px 100%, 0px 0px);
+}
+
+#app-mount div.bd-member.bd-memberOnline > div.bd-content > span.bd-avatarWrapper > div.bd-wrapper > div.bd-image.bd-small:not(.bd-mask) {
+    clip-path: polygon(100% 0, 100% 65%, 50% 65%, 35% 80%, 35% 100%, 50% 100%, 0 100%, 0 0);
+}
+
+/** Messages background **/
+#app-mount div.bd-chat > div.bd-content div.bd-messagesWrapper,
+#app-mount div.bd-chat > div.bd-content div.bd-messages {
+    background-color: transparent;
+}
+
+/*** Load more messages button background ***/
+#app-mount div.bd-chat > div.bd-content div.bd-hasMore {
+    background-color: rgba(39, 3, 26, 0.3);
+    border-color: transparent;
+    color: #981f6b;
+    box-shadow: none;
+}
+
+/*** Blocked messages background ***/
+#app-mount div.bd-messageGroupBlocked {
+    background-color: rgba(0, 0, 0, .1);
+    border: none;
+}
+
+/**** Blocked messages collapse button ****/
+#app-mount div.bd-messageGroupBlockedBtn {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#app-mount div.bd-messageGroupBlockedBtn:hover {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/** Textarea wrapper background **/
+#app-mount form.bd-form:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    margin: 0 16px;
+}
+
+#app-mount form.bd-form {
+    padding-top: 12px;
+    margin-top: 0;
+}
+
+#app-mount div.bd-channelTextArea,
+#app-mount div.bd-channelTextArea .bd-scrollableContainer {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+#app-mount div.bd-channelTextArea .bd-inner .bd-button svg path:not(.bd-attachButtonPlay) {
+    fill: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#app-mount div.bd-channelTextArea .bd-inner .bd-button:hover path:not(.bd-attachButtonPlay) {
+    fill: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#app-mount div.bd-channelTextArea .bd-inner .bd-sprite {
+    filter: grayscale(100%) opacity(.5) !important;
+}
+
+#app-mount div.bd-channelTextArea .bd-inner .bd-button:hover .bd-sprite {
+    filter: none !important;
+}
+
+#app-mount div.bd-channelTextArea .bd-inner textarea::placeholder {
+    color: #b9bbbe;
+}
+
+#app-mount div.bd-channelTextArea .bd-inner .bd-attachButtonDivider {
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 70%;
+    margin: auto;
+}
+
+/** Gif selector **/
+#app-mount div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete {
+    background: rgba(39, 3, 26, 0.75);
+}
+
+#app-mount div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result {
+    background: rgba(39, 3, 26, 0.1) !important;
+}
+
+#app-mount div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result:hover:after {
+    box-shadow: inset 0 0 0 2px #4e1037, inset 0 0 0 3px #560a4d;
+}
+
+#app-mount div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result div.bd-categoryFade:hover {
+    background-color: rgba(19, 0, 12, 0.8);
+}
+
+#app-mount div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result div.bd-categoryFadeBlurple {
+    background-color: rgba(152, 31, 107, .75);
+}
+
+#app-mount div.bd-channelTextArea div.bd-autocomplete.bd-autocomplete div.bd-result div.bd-categoryFadeBlurple:hover {
+    background-color: rgba(152, 31, 107, .85);
+}
+
+/** Emoticon autocomplete popout **/
+#app-mount div.bd-channelTextArea div.bd-autocomplete {
+    background: rgba(39, 3, 26, 0.6);
+}
+
+#app-mount div.bd-channelTextArea div.bd-autocomplete div.bd-selectorSelected {
+    background: rgba(95, 9, 64, 0.2);
+}
+
+/** Typing indicator background **/
+#app-mount div.bd-chat div.bd-spacer div.bd-typing {
+    background-color: transparent;
+}
+
+/** Embeds **/
+#app-mount div.bd-embedWrapper {
+    background-color: rgba(33, 4, 29, 0.6);
+    border-color: transparent;
+}
+
+/*** Embed default pill + quote color ***/
+#app-mount div.bd-blockquoteDivider {
+    background-color: #5a1741 !important;
+}
+
+#app-mount div.bd-embedWrapper {
+    border-color: #5a1741 !important
+}
+
+#app-mount div.bd-isMentioned:after {
+    background: rgba(204, 62, 151, .1);
+    border-left: 4px solid #cc3e97;
+}
+
+#app-mount div.bd-isMentioned {
+    background: rgba(204, 62, 151, .1) !important;
+}
+
+/*** Invite embeds, TODO: Make more specific? Selector seems sketch ***/
+#app-mount div.bd-chat > div.bd-content div.bd-wrapper.bd-userSelectNone.bd-cursorDefault {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/** Time dividers **/
+#app-mount div.bd-chat > div.bd-content span.bd-dividerContent {
+    color: #560a4d !important;
+}
+
+#app-mount div.bd-chat > div.bd-content span.bd-dividerContent::before,
+#app-mount div.bd-chat > div.bd-content span.bd-dividerContent::after {
+    background: var(--text-link)!important;
+}
+
+/** Timestamps **/
+#app-mount time.bd-timestamp {
+    color: rgba(255, 255, 255, .4);
+}
+
+/** Code blocks **/
+#app-mount div.bd-message div.bd-markup {
+    color: #ececec;
+}
+
+#app-mount div.bd-message div.bd-markup.bd-isFailed {
+    color: #f04747;
+}
+
+/*** Border ***/
+#app-mount div.bd-message div.bd-markup > pre {
+    background: transparent;
+    border-color: transparent;
+}
+
+/*** Background ***/
+#app-mount div.bd-message div.bd-markup code,
+#app-mount span.bd-inlineCode {
+    background-color: rgba(39, 3, 26, 0.6);
+    border-color: rgba(39, 3, 26, 0.8);
+}
+
+/* Activity feed */
+#app-mount div.bd-activityFeed,
+#app-mount div.bd-activityFeed > .bd-container {
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+#app-mount div.bd-separator:not(.bd-header) {
+    background-color: rgba(255, 117, 203, 0.1) !important;
+}
+
+/** Remove gradient at the end of activity feed header */
+#app-mount div.bd-activityFeed > div.bd-container > div.bd-children::after {
+    display: none;
+}
+
+#app-mount div.bd-activityFeed .bd-colorMuted {
+    color: #a2a2a2;
+}
+
+#app-mount div.bd-activityFeed div.bd-coloredBackground {
+    background: #560a4d;
+}
+
+/** Fix horizontal scroll **/
+#app-mount div.bd-activityFeed > div.bd-scrollerWrap > div.bd-scroller {
+    overflow-x: hidden;
+}
+
+/** Cards **/
+/*** Cards background ***/
+#app-mount div.bd-activityFeed div.bd-outer {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+#app-mount div.bd-activityFeed article.bd-wrapper.bd-card {
+    background-color: transparent;
+}
+
+#app-mount div.bd-activityFeed div.bd-recentlyPlayedContainer {
+    background-color: transparent;
+}
+
+#app-mount div.bd-activityFeed div.bd-recentlyPlayedContainer > div.bd-separator{
+    background-color: transparent;
+}
+
+/*** Cards hover effect ***/
+#app-mount div.bd-activityFeed div.bd-outer.bd-interactive:hover {
+    background-color: rgba(90, 23, 65, 0.5);
+}
+
+/*** Remove card separator ***/
+#app-mount div.bd-activityFeed div.bd-card.bd-outer > div.bd-wrapper {
+    box-shadow: none;
+}
+
+/*** Quick launcher card boxes background ***/
+#app-mount div.bd-activityFeed div.bd-outer.bd-wrappedCard > div.bd-grid > div.bd-clickable,
+#app-mount div.bd-activityFeed div.bd-card > div.bd-grid > div.bd-clickable {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+/*** Recently played item hover effect ***/
+#app-mount div.bd-activityFeed div.bd-card > div.bd-popoutContainer {
+    background-color: transparent;
+}
+
+#app-mount div.bd-activityFeed div.bd-card > div.bd-popoutContainer:hover {
+    background-color: transparent;
+}
+
+/**** Change background for currently playing rich presence ****/
+#app-mount div.bd-activityFeed div.bd-card > div.bd-popoutContainer > div.bd-inset,
+#app-mount div.bd-activityFeed div.bd-card > div.bd-popoutContainer div.bd-popout div.bd-enabled:hover,
+#app-mount div.bd-activityFeed div.bd-card > div.bd-popoutContainer div.bd-popout div.bd-separator {
+    background-color: transparent;
+}
+
+#app-mount div.bd-activityFeed div.bd-card > div.bd-popoutContainer > div.bd-inset > section.bd-section {
+    background-color: transparent;
+}
+
+/**** Item popout background ****/
+#app-mount div.bd-activityFeed div.bd-popoutContainer div.bd-popout {
+    background-color: rgba(53, 10, 39, .9);
+}
+
+#app-mount div.bd-activityFeed div.bd-popoutContainer div.bd-popout div.bd-memberListItem:hover,
+#app-mount div.bd-guildPopout {
+    background-color: transparent;
+}
+
+/*** Share button background ***/
+#app-mount div.bd-activityFeed button.bd-shareButton {
+    background-color: rgba(90, 23, 65, 0.8);
+}
+
+/* Library */
+#app-mount div.bd-gameLibrary,
+#app-mount div.bd-gameLibrary > div.bd-libraryHeader,
+#app-mount div.bd-root > div.bd-libraryHeader,
+#app-mount div.bd-root {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* Search bar */
+#app-mount div.bd-gameLibrary .bd-searchBar.bd-container {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/* Change wumpus' color */
+#app-mount .bd-emptyWumpus,
+#app-mount .bd-emptyStateImage,
+#app-mount .bd-contentColumn .bd-vertical .bd-image.bd-marginBottom40,
+#app-mount .bd-contentRegion .bd-systemPad .bd-image.bd-marginBottom40,
+#app-mount .bd-noChannel .bd-image.bd-marginBottom40,
+#app-mount .bd-userSettingsSecurityImage {
+    filter: hue-rotate(95deg) saturate(800%) brightness(0.65);
+}
+
+/** Get rid of the weird gradient **/
+#app-mount div.bd-gameLibrary > div.bd-libraryHeader > div.bd-children::after,
+#app-mount div.bd-root > div.bd-libraryHeader > div.bd-children::after {
+    display: none;
+}
+
+/** Header background color and give some space to breathe with the content **/
+#app-mount div.bd-gameLibrary div.bd-table > div.bd-stickyHeader {
+    background-color: transparent;
+    margin-bottom: 4px;
+}
+
+/** Highlight effect on row hover **/
+#app-mount div.bd-gameLibrary div.bd-table > div.bd-rowWrapperActive {
+    background-color: rgba(90, 23, 65, 0.2);
+    box-shadow: none;
+}
+
+/** Change the color of the play button **/
+#app-mount div.bd-gameLibrary div.bd-table button.bd-playButton {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Row color **/
+#app-mount div.bd-gameLibrary div.bd-table div.bd-bodyCell.bd-platformCell,
+#app-mount div.bd-gameLibrary div.bd-table div.bd-bodyCell.bd-lastPlayedCell {
+    color: #ced0d2;
+}
+
+/** Selected tab background color label **/
+#app-mount div.bd-libraryHeader div.bd-topPill > div.bd-item.bd-selected {
+    background-color: rgba(90, 23, 65, 0.3);
+}
+
+#app-mount div.bd-libraryHeader div.bd-topPill > div.bd-item:hover {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/** Redeem input border **/
+#app-mount div.bd-root div.bd-codeRedemptionInput > input {
+    border-color: transparent;
+}
+
+#app-mount div.bd-root div.bd-codeRedemptionInput > input:hover {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+#app-mount div.bd-root div.bd-codeRedemptionInput > input::placeholder {
+    color: rgba(255, 255, 255, .5);
+}
+
+/** No gifts image hue rotate **/
+#app-mount div.bd-gameLibrary div.bd-root div.bd-emptyStateImage {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(0.65);
+}
+
+/* Nitro (Done it for ya bab) */
+#app-mount div.bd-applicationStore,
+#app-mount div.bd-tier1Banner {
+    background: transparent !important;
+}
+
+#app-mount div.bd-itemBackground:before {
+    background: rgba(90, 23, 65, 0.6);
+}
+
+/* Friends */
+/** Friends row hover **/
+#app-mount div.bd-friendsTable {
+    margin-top: 0;
+    border-bottom-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount div.bd-friendsTable div.bd-friendsTableHeader header.bd-friendsColumn {
+    border-left-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount div.bd-friendsTable div.bd-friendsRow:hover {
+    background-color: rgba(90, 23, 65, 0.2);
+}
+
+/** Friend actions like call, vcall **/
+#app-mount div.bd-friendsTable div.bd-friendsTableBody div.bd-friendsRow div.bd-friendsColumnActions div.bd-friendsAction {
+    background-color: transparent;
+}
+
+/*** Hover effect for friend actions ***/
+#app-mount div.bd-friendsTable div.bd-friendsTableBody div.bd-friendsRow div.bd-friendsColumnActions div.bd-friendsAction:hover {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/** Rotate hue for no friends image **/
+#app-mount div.bd-friendsTable div.bd-friendsEmpty div.bd-image {
+    filter: hue-rotate(100deg) saturate(1800%) brightness(0.5);
+}
+
+/** Lighten up the text for no friends **/
+#app-mount div.bd-friendsTable div.bd-friendsEmpty div.bd-image + div div.bd-text {
+    color: rgba(255, 255, 255, .8);
+}
+
+/** Add friend background **/
+#app-mount div.bd-friendsTable div.bd-friendTableAddWrapper div.bd-friendTableAddHeader {
+    background: transparent;
+    border-bottom: none;
+}
+
+#app-mount div.bd-friendsTable:before {
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+/** Background for header, TODO: Sketchy af selector **/
+#app-mount div.bd-container > div:nth-child(1).bd-container {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*** Friends header tabs, suffers from the same sketchy selector but is even more specific so w.e ***/
+#app-mount div.bd-container > div:nth-child(1).bd-container > div.bd-children > div.bd-tabBar > div.bd-item.bd-selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount div.bd-container > div:nth-child(1).bd-container > div.bd-children > div.bd-tabBar > div.bd-item:hover {
+    background-color: rgba(117, 32, 85, 0.3);
+}
+
+/*** Hide the weird gradient at the right ***/
+#app-mount div.bd-container > div:nth-child(1).bd-container > div.bd-children::after {
+    display: none;
+}
+
+/* Popouts */
+/** Attach popout (for when listening to spotify or playing a game with invites) **/
+#app-mount div.bd-popouts div.bd-attachPopout {
+    background-color: rgba(90, 23, 65, 0.5);
+}
+
+/** Message menu popout on the right with pin/copy id/delete/etc. **/
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > button.bd-item {
+    background-color: transparent;
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > button.bd-item:hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Menus (only found the one that pops out on guild settings at the top of channel list) **/
+#app-mount div.bd-popouts div.bd-menu {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+/*** Menu item hover color ***/
+#app-mount div.bd-popouts div.bd-menu div.bd-item:hover {
+    background-color: transparent;
+}
+
+/** RTC Connection popout **/
+#app-mount div.bd-popouts > div.bd-popout.bd-popoutTop > div.bd-container > header:not([class]) {
+    background-color: transparent;
+}
+
+#app-mount div.bd-popouts > div.bd-popout.bd-popoutTop > div.bd-container > section:not([class]) {
+    background-color: transparent;
+}
+
+/** User popout, a must to get right **/
+#app-mount div.bd-userPopout {
+    box-shadow: none;
+}
+
+/*** Header colors, TODO: Make these colors distinct? ***/
+#app-mount div.bd-userPopout > div.bd-headerNormal {
+    background-color: rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-userPopout > div.bd-headerPlaying,
+#app-mount div.bd-userPopout > div.bd-headerStreaming {
+    background-color: rgba(86, 10, 77, .95);
+}
+
+#app-mount div.bd-userPopout > div.bd-headerSpotify {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div.bd-userPopout > div.bd-body,
+#app-mount div.bd-userPopout > div.bd-footer {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div.bd-userPopout div.bd-scrollerWrap div.bd-scroller {
+    background-color: transparent;
+}
+
+#app-mount div.bd-userPopout > div.bd-body div.bd-note textarea:focus {
+    background-color: transparent;
+}
+
+#app-mount div.bd-userPopout > div.bd-footer > input.bd-quickMessage {
+    background-color: rgba(86, 10, 77, .95);
+    border-color: transparent;
+}
+
+#app-mount div.bd-userPopout > div.bd-footer > input.bd-quickMessage:hover,
+#app-mount div.bd-userPopout > div.bd-footer > input.bd-quickMessage:focus {
+    background-color: rgba(86, 10, 77, .95);
+    border-color: transparent;
+}
+
+/** TODO: Add role + button **/
+#app-mount div.bd-popouts > div.bd-popout + div.bd-popout[role="dialog"] > div.bd-header + div.bd-sectionTag {
+    background-color: transparent;;
+}
+
+#app-mount div.bd-popouts > div.bd-popout + div.bd-popout[role="dialog"] > div.bd-header + div.bd-sectionTag div.bd-row {
+    background-image: none;
+    background-color: transparent;
+}
+
+#app-mount div.bd-popouts > div.bd-popout + div.bd-popout[role="dialog"] > div.bd-header + div.bd-sectionTag div.bd-row:hover {
+    background-color: transparent;
+}
+
+/** Pinned messages and recent mentions popout, arguably second the most important one to get right **/
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap {
+    background-color: rgba(39, 3, 26, 0.95);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/*** Pinned popout header and footer ***/
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap > div.bd-header {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap > div.bd-footer {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+/*** Pinned popout messages ***/
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-messageGroupWrapper {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-messageGroupWrapper:hover {
+    border-color: transparent;
+}
+
+/**** Action buttons, jump and remove ****/
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-messageGroupWrapper div.bd-actionButtons {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*** Change color of the no pin message icon ***/
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-emptyPlaceholder div.bd-image {
+    filter: hue-rotate(95deg) saturate(800%) brightness(0.65);
+}
+
+/*** Load more messages background ***/
+#app-mount div.bd-layerContainer div.bd-messagesPopoutWrap div.bd-hasMore button.bd-hasMoreButton {
+    background-color: rgba(0, 0, 0, .3);
+    border-color: transparent;
+}
+
+/** Search popout **/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh {
+    background-color: rgba(33, 4, 29, 0.9);
+    box-shadow: none;
+}
+
+/*** Get rid of dumb gradient ***/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-resultsGroup div.bd-option::after {
+    display: none;
+}
+
+/*** Selected or hovered option ***/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-resultsGroup div.bd-option:hover,
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-resultsGroup div.bd-option.bd-selected {
+    background-color: rgba(95, 9, 64, 0.15);
+}
+
+/*** Suggest header ***/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-queryContainer.bd-focused {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/**** Enter prompt ****/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-queryContainer > div.bd-queryShortcut > div.bd-keybindShortcut > span {
+    background-color: rgba(255, 255 ,255, .02);
+    box-shadow: inset 0 -4px 0 rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .05);
+}
+
+/*** Date picker background ***/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker {
+    background-color: rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker .react-datepicker__day {
+    border-color: #380831 !important;
+}
+
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker .react-datepicker__day--selected:after {
+    background-color: rgba(86, 10, 77, .95);
+}
+
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-datePickerHint > .bd-hintValue {
+    background-color: rgba(86, 10, 77, .95);
+}
+
+/**** Previous/next arrow backgrounds and hover effects ****/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__navigation {
+    border-color: transparent;
+    background-color: rgba(255, 255, 255, .04);
+}
+
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__navigation:hover {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+/**** Header and day backgrounds and hover effects ****/
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__header,
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__day {
+    background-color: transparent;
+}
+
+#app-mount div.bd-popouts div[role="dialog"] div.bd-container.bd-elevationBorderHigh > div.bd-datePicker > div.bd-calendarPicker > .react-datepicker .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+/** Game popout **/
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-footer,
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-footer {
+    background-color:rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header > div.bd-players,
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header > div.bd-players {
+    background-color:rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header div.bd-player:hover,
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header div.bd-player:hover {
+    background-color: transparent;
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header > div.bd-news,
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header > div.bd-news {
+    background-color:rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-header > div.bd-newsEmpty,
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-header > div.bd-newsEmpty {
+    filter: hue-rotate(135deg) saturate(2500%) brightness(0.35);
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-footer > button.bd-lookFilled,
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-footer > button.bd-lookFilled {
+    background-color: rgba(86, 10, 77, .95);
+}
+
+#app-mount div.bd-popouts > div[role="dialog"] > div.bd-container > div.bd-footer > button.bd-lookFilled:hover,
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-container > div.bd-footer > button.bd-lookFilled:hover {
+    background-color: #5a1741;
+}
+
+/** Reactions popout **/
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-modal > div.bd-inner > div.bd-sidebar {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#app-mount div.bd-popouts > div.bd-modal > div.bd-inner > div.bd-modal > div.bd-inner > div.bd-reactors {
+    background-color: transparent;
+}
+
+/** Emoticon picker popout**/
+#app-mount div.bd-layerContainer div.bd-emojiPicker,
+#app-mount div.bd-layerContainer div.bd-emojiPicker .bd-categories,
+#app-mount div.bd-layerContainer div.bd-emojiPicker .bd-infoBar {
+    background-color: rgba(39, 3, 26, 0.85);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker .bd-infoBar {
+    filter: brightness(1.2) !important;
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker .bd-infoBar {
+    filter: brightness(.8);
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker .bd-sadImage {
+    filter: hue-rotate(120deg) saturate(1000%) brightness(0.7);
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker div.bd-stickyHeader {
+    background-color: transparent;
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker div.bd-stickyHeader div.bd-category,
+#app-mount div.bd-layerContainer div.bd-emojiPicker input {
+    color: #d4bfcf;
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker div.bd-emojiItem.bd-selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker div.bd-categories div.bd-item {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(0.65);
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker div.bd-categories div.bd-item:hover,
+#app-mount div.bd-layerContainer div.bd-emojiPicker div.bd-categories div.bd-item.bd-selected {
+    filter: none !important; /* TODO: Figure out why I did this */
+}
+
+#app-mount div.bd-layerContainer div.bd-emojiPicker div.bd-scroller::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Context menu */
+#app-mount div.bd-contextMenu,
+#app-mount div.bd-container[role="menu"] {
+    background-color: rgba(39, 3, 26, 0.85);
+    box-shadow: none;
+    padding: 0;
+}
+
+#app-mount div.bd-contextMenu div.bd-itemGroup div.bd-item:hover,
+#app-mount div.bd-container[role="menu"] div.bd-itemGroup div.bd-item:hover {
+    background-color: rgba(90, 23, 65, 0.2);
+    box-shadow: none;
+}
+
+/* FLUFF. */
+#app-mount div.bd-contextMenu div.bd-itemGroup:first-of-type div.bd-item:first-of-type,
+#app-mount div.bd-container[role="menu"] div.bd-itemGroup:first-of-type div.bd-item:first-of-type {
+    border-radius: 5px 5px 0 0;
+}
+
+#app-mount div.bd-contextMenu div.bd-itemGroup:last-of-type div.bd-item:last-of-type,
+#app-mount div.bd-container[role="menu"] div.bd-itemGroup:last-of-type div.bd-item:last-of-type {
+    border-radius: 0 0 5px 5px;
+}
+
+#app-mount div.bd-contextMenu div.bd-item,
+#app-mount div.bd-container[role="menu"] div.bd-item {
+    border-radius: 0;
+}
+
+/** Checkboxes **/
+#app-mount div.bd-contextMenu div.bd-itemGroup div.bd-item.bd-itemToggle div.bd-checkbox div.bd-checkboxInner input.bd-checkboxElement:checked + span,
+#app-mount div.bd-container[role="menu"] div.bd-itemGroup div.bd-item.bd-itemToggle div.bd-checkbox div.bd-checkboxInner input.bd-checkboxElement:checked + span {
+    background-color: #560b71;
+    border-color: #560b71;
+}
+
+/* Tooltips */
+#app-mount div.bd-layerContainer div.bd-layer > div.bd-tooltip {
+    background-color: rgba(56, 8, 49, .95);
+    box-shadow: none;
+}
+
+#app-mount div.bd-layerContainer div.bd-layer > div.bd-tooltip div.bd-tooltipPointer {
+    border-top-color: rgba(56, 8, 49, .95);
+    box-shadow: none;
+}
+
+/* Modals */
+#app-mount div.bd-modal.bd-sizeSmall {
+    background-color: rgba(39, 3, 26, 0.85) !important;
+}
+
+#app-mount div.bd-modal.bd-sizeSmall div.bd-footer:not(.bd-marginTop) {
+    background-color: rgba(45, 7, 40, .95) !important;
+}
+
+#app-mount div.bd-modal.bd-sizeSmall div.bd-footer:not(.bd-marginTop) {
+    background-color: rgba(45, 7, 40, .95) !important;
+}
+
+#app-mount div.bd-modal.bd-sizeSmall div.bd-checkbox .bd-checkboxInner .bd-checkboxElement:checked+span {
+    background-color: #cc3e97;
+    border-color: #cc3e97;
+}
+
+/** User modal **/
+/*** Top color, TODO: Figure out alternate color for playing/Spotify ***/
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionNormal {
+    background-color:rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionNormal .bd-tabBarContainer {
+    border-color: transparent;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionPlaying,
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionStreaming {
+    background-color:rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionSpotify {
+    background-color:rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionPlaying .bd-lookInverted,
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionSpotify .bd-lookInverted,
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-topSectionStreaming .bd-lookInverted {
+    color: #cc3e97;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root div.bd-emptyIconGuilds {
+    filter: hue-rotate(95deg) saturate(800%) brightness(0.65);
+}
+
+/*** Lighter body color ***/
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection {
+    border-color: transparent;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection:first-of-type {
+    padding-bottom: 0;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-note > textarea {
+    background-color: transparent;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-note > textarea:hover {
+    background-color: rgba(255, 255, 255, .04);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-note > textarea:focus {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-connectedAccounts > div.bd-connectedAccount {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-userInfoSection > div.bd-connectedAccounts > div.bd-connectedAccount svg.bd-connectedAccountVerifiedIcon path[fill='#4f545c'] {
+    fill: #560b71;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-flex.bd-vertical.bd-justifyStart.bd-root > div.bd-body div.bd-emptyIconFriends {
+    filter: hue-rotate(85deg) saturate(1000%) brightness(0.65);
+}
+
+/** Channel description modal **/
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal {
+    border-color: transparent;
+    box-shadow: none;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-header.bd-flex.bd-horizontal.bd-directionRow,
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-header.bd-flex.bd-horizontal.bd-directionRow + div.bd-content,
+#app-mount div[role="dialog"].bd-root {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div[role="dialog"].bd-root div.bd-header {
+    background: rgba(45, 7, 40, .95);
+}
+
+#app-mount div[role="dialog"].bd-root .bd-header div.bd-icon {
+    filter: hue-rotate(85deg) contrast(1.1);
+}
+
+#app-mount div[role="dialog"].bd-root .bd-header div.bd-channel {
+    background: rgba(56, 8, 49, .95);
+}
+
+/*** Footer, the description doesn't have it but other modals do, like the changelog ***/
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer,
+#app-mount div[role="dialog"].bd-root div.bd-footer {
+    background-color:rgba(45, 7, 40, .95);
+    box-shadow: none;
+}
+
+/** Footer button **/
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button:not([aria-label="Send a gift"]):not(.bd-closeButton) {
+    background-color: rgba(86, 10, 77, .95);
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button:not([aria-label="Send a gift"]):not(.bd-closeButton):hover {
+    background-color: #5a1741;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button:not([aria-label="Send a gift"]):not(.bd-closeButton):hover .bd-contents {
+    background-image: none;
+}
+
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-footer > button.bd-button.bd-colorGrey {
+    color: #b7b7b7;
+}
+
+/** Modal checkboxes **/
+#app-mount div.bd-modal > div.bd-inner > div.bd-modal > div.bd-content div.bd-switchItem div.bd-switch::before {
+    background-color: #520000;
+}
+
+/** Add to group DM modal **/
+#app-mount div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout {
+    background-color: rgba(39, 3, 26, 0.85);
+    box-shadow: 0 0 0 1px #27031a, 0 2px 10px 0 rgba(0,0,0,.2);
+}
+
+#app-mount div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout > div.bd-header > div.bd-searchBar > div.bd-searchBarComponent {
+    background-color: transparent;
+}
+
+#app-mount div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout > div.bd-header > div.bd-searchBar > div.bd-searchBarComponent > div.bd-inner > a.bd-anchor.bd-tag {
+    background-color: rgba(255, 255, 255, .06);
+}
+
+/** You're not friends with them rip */
+#app-mount div.bd-popouts > div[role="dialog"].bd-popout > div.bd-modal.bd-popout div.bd-errorStateIcon {
+    filter: hue-rotate(95deg) saturate(800%) brightness(0.65);
+}
+
+/** Background colors **/
+#app-mount div.bd-wrapper div.bd-modal {
+    background-color: #660c3a;
+    box-shadow: none;
+}
+
+#app-mount div.bd-wrapper div.bd-modal div.bd-footer {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div.bd-wrapper div.bd-modal div.bd-footer > div.bd-content::before {
+    display: none;
+}
+
+#app-mount div.bd-wrapper div.bd-modal div.bd-header > div.bd-marginTop {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/** Leave guild modal **/
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall {
+    box-shadow: none;
+}
+
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-header,
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-footer {
+    background-color: rgba(56, 8, 49, .95);
+    box-shadow: none;
+}
+
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-content {
+    background-color:rgba(45, 7, 40, .95);
+    padding-top: 12px;
+    border-radius: 0;
+}
+
+/** Pin message modal **/
+/*** message background ***/
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-container.bd-sizeSmall > div.bd-content div.bd-message {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/*** Button color ***/
+
+/** Change user nickname modal **/
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) {
+    box-shadow: none;
+}
+
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-header,
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content {
+    background-color: rgba(39, 3, 26, 0.85);
+}
+
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-footer {
+    background-color:rgba(45, 7, 40, .95);
+    box-shadow: none;
+}
+
+/*** Submit button (or basically most footer buttons on modals) ***/
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="submit"].bd-button.bd-lookFilled,
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="button"].bd-button.bd-lookFilled {
+    background-color: rgba(152, 31, 107, .8);;
+}
+
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="submit"].bd-button.bd-lookFilled:hover,
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall > div.bd-footer > button[type="button"].bd-button.bd-lookFilled:hover {
+    background-color: #981f6b;
+}
+
+/*** Input focus effect ***/
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content div.bd-input input.bd-input {
+    border-color: transparent;
+}
+
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content div.bd-input input.bd-input:hover {
+    background-color: rgba(45, 7, 40, .95);
+}
+
+#app-mount div.bd-modal > div.bd-inner > form.bd-modal.bd-sizeSmall:not(.bd-container) > div.bd-content div.bd-input input.bd-input:focus {
+    border-color: transparent;
+    background-color: rgba(86, 10, 77, .95);
+}
+
+#app-mount .bd-cardPrimaryEditable {
+    background: rgba(95, 9, 64, 0.2);
+    border-color: #cc3e97;
+}
+
+#app-mount .bd-cardPrimaryEditable[style*="background-color: rgb(114, 137, 218)"] {
+    background-color: #cc3e97 !important;
+    border-color: #cc3e97 !important;
+}
+
+#app-mount .bd-cardPrimaryEditable[style*="background-color: rgb(114, 137, 218)"] .bd-checkbox {
+    border-color: white !important;
+}
+
+#app-mount .bd-cardPrimaryEditable[style*="background-color: rgb(114, 137, 218)"] .bd-checkbox svg[name="Checkmark"] polyline {
+    stroke: white;
+}
+
+#app-mount .bd-cardPrimaryOutline {
+    border-color: #cc3e97;
+}
+
+#app-mount .bd-checkboxContainer:before {
+    background-color: #cc3e97;
+}
+
+/** TODO: Create group DM modal/popout/both **/
+/*
+#app-mount div.bd-popouts {
+
+}
+*/
+
+/* Configuration */
+/* or GUILD_SETTINGS */
+/* or just fucking calling it Settings idiot. */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]),
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-scroller,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-scroller {
+    background-color: transparent;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion {
+    background-color: rgba(33, 4, 29, 0.5);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-actionButton {
+    border-color: #ea5f2f;
+    color: #ff916b;
+    background: transparent;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-text,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-title {
+    color: #cccccc;
+}
+
+/* Ticks */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-item.bd-box {
+    border-color: rgba(56, 8, 49, .8);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-passthroughSelected.bd-box {
+    background-color: rgba(86, 10, 77, .5);
+}
+
+/** Nitro / Server Boost **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion .bd-item[style*="color: rgb(114, 137, 218)"] {
+    color: #cc3e97 !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion .bd-item[style*="color: rgb(114, 137, 218)"]:hover {
+    background-color: rgba(90, 23, 65, 0.2) !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion .bd-item[style*="background-color: rgb(114, 137, 218)"] {
+    background-color: #cc3e97 !important;
+    color: white !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-progress .bd-background {
+    color: rgba(152, 31, 107, .3);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-progress .bd-tierInProgress {
+    background-image: none !important;
+    background-color: #981f6b;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-tierHeader {
+    background-color: rgba(152, 31, 107, .3);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-tierHeader svg.bd-tierLock {
+    color: #cc3e97;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-content div.bd-tierBody {
+    background-color: rgba(152, 31, 107, .1);
+}
+
+/** Sidebar item hover/selected effects **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-side > div.bd-item:hover,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-side > div.bd-item.bd-selected {
+    background-color: rgba(90, 23, 65, 0.2);
+}
+
+/** Non-image Server Guild Icon aka Byn / Bae / Bang / Doru / Lauty (to-be) **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-avatarUploaderInner {
+    background-color: #4e1037;
+}
+
+/* Dropdowns and buttons */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion input.bd-input:not([placeholder="Search for Games"]),
+#app-mount div.bd-select div.bd-container:not(.bd-button),
+#app-mount div.bd-select div.bd-control {
+    background-color: rgba(95, 9, 64, 0.1);
+    border-color: rgba(39, 3, 26, 0.85);
+}
+
+#app-mount div.bd-select div.bd-menu,
+#app-mount [role*="dialog"] div.bd-popout {
+    background-color: rgba(39, 3, 26, 0.9);
+    border-color: rgba(39, 3, 26, 0.9);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-colorGrey {
+    color: #981f6b;
+    background-color: rgba(95, 9, 64, 0.1);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='vertical'] .bd-colorBrand {
+    color: #cc3e97;
+    background-color: rgba(112, 15, 76, 0.1);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='vertical'] .bd-colorBrand:hover {
+    color: #cc3e97;
+    background-color: rgba(112, 15, 76, 0.3);
+}
+
+/* Audit Log */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] {
+    border-color: #2d0728;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-headerClickable,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-headerDefault {
+    background-color: rgba(90, 23, 65, 0.2);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'],
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-timestamp {
+    color: #c3c3c3;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-headerExpanded {
+    background-color: rgba(90, 23, 65, 0.3);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-divider {
+    background-color: #2d0728;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div[class*='auditLog'] div.bd-changeDetails {
+    background-color: rgba(90, 23, 65, 0.1);
+}
+
+#app-mount .bd-popoutList {
+    background: rgba(39, 3, 26, 0.85) !important;
+    box-shadow: 0 0 0 1px #2d0728, 0 1px 5px 0 #2d0728;
+}
+
+#app-mount .bd-selectableItem:hover {
+    background-color: rgba(90, 23, 65, 0.2) !important;
+}
+
+#app-mount .bd-selectableItem.bd-selected {
+    background: #4a0831 !important;
+}
+
+/* Roles */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side .bd-role.bd-themed.bd-selected.bd-item,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side .bd-role.bd-themed#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-selected.bd-item:hover,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-topPill .bd-themed.bd-selected.bd-item,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-topPill .bd-themed.bd-selected.bd-item:hover {
+    background-color: rgba(90, 23, 65, 0.4) !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side .bd-themed.bd-item:hover,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-topPill .bd-themed.bd-item:hover {
+    background-color: rgba(90, 23, 65, 0.2) !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-description,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-labelDescriptor {
+    color: #c1c1c1;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-side div.bd-separator {
+    background-color: #330039;
+}
+
+/* Light blue colored buttons */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-colorBrand,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-questionMark {
+    background-color: #cc3e97;
+    color: white;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-colorBrand:hover,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-questionMark:hover {
+    background-color: #981f6b;
+}
+
+/* Primary buttons */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-lookFilled.bd-colorPrimary {
+    background-color: #560a4d;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-lookFilled.bd-colorPrimary:hover {
+    background-color: #6f0c63;
+}
+
+/* Webhooks */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='remove'].bd-button,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion [class*='emojiRemove'].bd-button {
+    background-color: #4a0831 !important;
+    box-shadow: 0 0 0 1px #380831, 0 1px 5px 0 rgba(0,0,0,.3);
+}
+
+/** Sidebar separators **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-sidebarRegion div.bd-separator {
+    background-color: #330039;
+}
+
+/** Video preview wrapper **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-previewOverlay {
+    background: transparent;
+    border-color: transparent;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-previewContainer .media-engine-video {
+    background: transparent;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-micTest div.bd-progress {
+    background: #981f6b;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-micTest div.bd-notches {
+    filter: hue-rotate(100deg) saturate(1000%) brightness(.1);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-userSettingsVoice div.bd-previewContainer div.bd-preview img {
+    filter: hue-rotate(100deg) saturate(1000%) ;
+}
+
+/* Lol wot
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game {
+    left: -10px;
+    width: calc(100% + 20px);
+} */
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game div.bd-gameNameLastPlayed {
+    padding-left: 12px;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game div.bd-gameNameLastPlayed + div{
+    padding-right: 12px;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-game div.bd-gameNameLastPlayed div.bd-lastPlayed {
+    color: #b9b9b9;
+}
+
+/** Content area cards **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-card {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-card:before {
+    background-color: rgba(95, 9, 64, 0.2);
+    border-color: rgba(39, 3, 26, 0.85);
+}
+
+/*** Privacy & Safety clickable cards ***/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-card.bd-item:hover {
+    background-color: rgba(39, 3, 26, 0.3);
+}
+
+/**** !important to override inline styles ****/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="border-color"] {
+    border-color: transparent !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(114, 137, 218)"] {
+    background-color: rgba(204, 62, 151, .7) !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(67, 181, 129)"] {
+    background-color: rgba(97, 255, 159, 0.7) !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(250, 166, 26)"] {
+    background-color: rgba(255, 202, 69, 0.7) !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(245, 119, 49)"] {
+    background-color: rgba(255, 133, 65, 0.7) !important;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-radioGroup div.bd-card.bd-item[style*="background-color: rgb(240, 71, 71)"] {
+    background-color: rgba(251, 50, 50, 0.7) !important;
+}
+
+/** Close buttons **/
+#app-mount div.bd-card > button.bd-button.bd-removeOverride {
+    background-color: #220000;
+}
+#app-mount div.bd-card > button.bd-button.bd-removeOverride:hover {
+    background-color: rgba(86, 10, 77, .95);
+}
+
+/** Content area red buttons **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-deleteApp {
+    background: rgba(90, 23, 65, 0.5);
+    color: rgb(255, 200, 236);
+    border-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion button.bd-deleteApp:hover {
+    background: rgba(90, 23, 65, 0.7);
+}
+
+/** Selects **/
+#app-mount div.bd-select .Select-menu-outer {
+    background-color: rgba(32, 0, 43, 0.9);
+    border-color: transparent;
+}
+
+/** Connections boxes **/
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-connectedAccounts div.bd-accountBtn button.bd-accountBtnInner {
+    background-color: rgba(90, 23, 65, 0.2);
+    border-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-connectedAccounts div.bd-accountBtn button.bd-accountBtnInner:hover {
+    background-color: rgba(90, 23, 65, 0.4);
+}
+
+/* Billing and shit */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-paymentPane {
+    background-color: rgba(90, 23, 65, 0.3) !important;
+    color: #f6f6f7;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-paginator,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-hoverablePayment,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-payment {
+    background-color: transparent;
+    border-color: #560a4d;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-hoverablePayment:hover {
+    background-color: rgba(90, 23, 65, 0.5);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-expandedInfo {
+    background-color: rgba(90, 23, 65, 0.2);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-bottomDivider,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-pageIndicator,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-pageButtonPrev,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-paymentHistory .bd-pageButtonNext {
+    border-color: #4a0831;
+    color: #dedede;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion svg.bd-disabled:hover {
+    border-color: #750f4e !important;
+    color: #bd2f87 !important;
+}
+
+/* Voice and Video */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-bar:not(.bd-sidebar) {
+    background: #380831;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion div.bd-barFill {
+    background: #cc3e97;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion span.bd-bubble {
+    background-color: rgba(56, 8, 49, .95);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion span.bd-bubble::before {
+    border-top-color: rgba(56, 8, 49, .95);
+}
+
+/* Keybinds */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-ghostPill {
+    background: rgba(90, 23, 65, 0.5);
+    color: rgb(255, 200, 236);
+}
+
+/* Game Activity */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-notDetected {
+    background-color: rgba(39, 3, 26, 0.6);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-gameNameInput:hover,
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-gameNameInput:focus {
+    border-color: rgba(39, 3, 26, 0.85);
+    background-color: rgba(39, 3, 26, 0.4);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-gameNameLastPlayed:not(.bd-vertical),
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-game.bd-card {
+    box-shadow: 0 1px 0 0 #4a0831;
+}
+
+/* Activity Feed */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion  div.bd-searchBox:not(.bd-searchBoxInputWrapper) {
+    background-color: rgba(39, 3, 26, 0.4);
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion  div.bd-searchResultsContainer {
+    background-color: rgba(39, 3, 26, 0.85);
+    box-shadow: 0 1px 5px 1px #4a0831;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion  div.bd-searchResultsContainer .bd-searchOption.bd-selected {
+    background-color: rgba(95, 9, 64, 0.1);
+}
+
+/* Language */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-contentColumn .bd-item:not(.bd-itemContainer):not(.bd-size14):not(.bd-itemIcon):not(.bd-card):not([role*="button"]):not(.bd-box) {
+    box-shadow: inset 0 -1px 0 0 #4a0831;
+}
+
+/* Notifications */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-notificationsSound {
+    box-shadow: inset 0 -1px 0 0 #4a0831;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-notificationsSound:last-of-type {
+    box-shadow: none;
+}
+
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-divider {
+    border-color: rgba(90, 23, 65, 0.3);
+}
+
+/* Waaaaiiiittt you have unsaved changes */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-noticeRegion .bd-container {
+    background-color: rgba(39, 3, 26, 0.85) !important;
+}
+
+/* UNLEASH THE BAN HAMMER */
+#app-mount div.bd-app > div.bd-app > div.bd-layers > div.bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) div.bd-standardSidebarView > div.bd-contentRegion .bd-bannedUser .bd-username .bd-discrim,
+#app-mount .bd-bannedUserModal .bd-reason,
+#app-mount .bd-bannedUserModal .bd-userDiscrim {
+    color: #a7a7a7;
+}
+
+/* Scrollbars */
+/** Affect all scrollbars */
+#app-mount div.bd-scroller::-webkit-scrollbar-thumb {
+    background-color: rgba(90, 23, 65, 0.5);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+/** Only the chat messages scrollbar **/
+/** TODO: Fix, WIP, bad **/
+#app-mount /* div.bd-messagesWrapper */ div.bd-scroller::-webkit-scrollbar-track-piece {
+    background: transparent;
+    border-color: transparent;
+}
+
+#app-mount div.bd-scroller::-webkit-scrollbar-track {
+    background: transparent;
+    border-color: transparent;
+}
+
+/** Fix stupid big icons **/
+#app-mount div.bd-title > div.bd-children > div.bd-iconWrapper {
+    margin: 2px;
+    transform: scale(.8) translateY(2px);
+}
+
+/* Non-responsive selectors for the transition in and out of settings which depend on quickly detecting elements */
+#app-mount .theme-dark .layer-3QrUeG, .theme-dark .layers-3iHuyZ {
+    background: transparent;
+}
+
+/** For calls **/
+#app-mount div.bd-chat div.bd-wrapper {
+    background-color: transparent;
+}
+
+#app-mount div.bd-video {
+    background-color: transparent;
+}
+
+#app-mount div.bd-videoBackground:not(.bd-videoBackgroundTransition) {
+    background-color: rgba(33, 4, 29, 0.4);
+}
+
+#app-mount .bd-wrapper.bd-minimum .bd-actions .bd-center {
+    border-color: rgba(39, 3, 26, 0.85);
+    background-color: rgba(95, 9, 64, 0.2);
+}
+
+#app-mount .bd-callAvatar.bd-voice .bd-callAvatarStatus {
+    border-color: #2d0728;
+}
+
+/* Join Call */
+#app-mount .bd-incomingCallInner {
+    background: rgba(39, 3, 26, 0.85);
+    border-color: rgba(45, 7, 40, .95);
+}
+
+#app-mount .bd-lookFilled .bd-colorGreen {
+    color: #fff;
+    background-color: #43b581;
+}
+
+#app-mount .bd-joinVideoCallButton,
+#app-mount .bd-joinVoiceCallButton {
+    background-color: rgba(67, 181, 129, 0.3) !important;
+}
+
+#app-mount .bd-joinVideoCallButton .bd-underlay {
+    background-color: rgba(105, 196, 154, 0.3);
+}
+
+/* Ugly notifications */
+#app-mount .bd-isLocalBot {
+    background-image: linear-gradient(90deg,rgba(39, 3, 26, 0.3) 80%, rgba(39, 3, 26, 0.85)) !important;
+    box-shadow: -20px 0 #27031a, 20px 0 #27031a, -20px -1px 0 0 #27031a, -20px 1px 0 #2d0728, 20px 1px 0 #2d0728, 20px -1px 0 #2d0728 !important;
+}
+
+/* Quick Switcher */
+#app-mount .bd-quickswitcher {
+    background-color:  rgba(56, 8, 49, .95);
+}
+
+#app-mount .bd-quickswitcher input {
+    background:  rgba(86, 10, 77, .95);
+    box-shadow: 0 2px 5px rgba(90, 23, 65, .2), 0 0 0 1px rgba(90, 23, 65, .1);
+}
+
+#app-mount .bd-resultFocused {
+    background-color: rgba(86, 10, 77, .4);
+}
+
+#app-mount .bd-keybindShortcut span {
+    box-shadow: inset 0 -4px 0 rgba(45, 7, 40, .95);
+    border: 1px solid #27031a;
+    background-color: rgba(86, 10, 77, .95);
+}
+
+/* Spoilers */
+#app-mount .bd-spoilerText.bd-hidden {
+    background-color: #560a4d;
+}
+
+#app-mount .bd-spoilerText.bd-hidden:hover {
+    background-color: rgba(86, 10, 77, .6);
+}
+
+/* Byn got fed up */
+#app-mount .bd-scroller {
+    background-color: transparent;
+}
+
+/* Add back borders */
+#app-mount .bd-message.bd-cozyMessage.bd-groupStart.bd-cozy {
+    padding-top: 16px;
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-groupStart.bd-cozy:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid rgb(255, 255, 255, .1);
+    box-sizing: border-box;
+    margin-left: 16px;
+}
+
+/* Fix Scrollbar lol */
+#app-mount .bd-messagesWrapper {
+    margin-bottom: -10px;
+}
+
+#app-mount .bd-scroller:after {
+    height: 26px;
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy:hover,
+.bd-message.bd-cozyMessage.bd-cozy.bd-selected {
+    background: transparent;
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy .bd-emojiButton,
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy .bd-emojiSeparator  {
+    display: none;
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer,
+.bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer {
+    top: 80%;
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer,
+.bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer {
+    top: calc(100% - 2px);
+}
+
+/* Remove emoji reactions cause bae doesn't like that */
+.bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-emoji {
+    display: none;
+}
+
+/* Dates, dividers */
+#app-mount .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill{
+    display: none;
+}
+
+#app-mount .bd-divider {
+    border-color: transparent;
+    margin: 16px 0;
+}
+
+#app-mount .bd-divider .bd-unreadPill {
+    color: var(--text-link);
+    position: initial;
+    background: transparent;
+    font-size: 14px;
+    padding: 0;
+}
+
+#app-mount .bd-divider .bd-unreadPill::before,
+#app-mount .bd-divider .bd-unreadPill::after {
+    content: "";
+    background-color: var(--text-link);
+    height: 1px;
+    position: absolute;
+}
+
+#app-mount .bd-divider .bd-unreadPill::before {
+    right: 50%;
+    margin-right: 20px;
+    width: calc(50% - 36px);
+}
+
+#app-mount .bd-divider .bd-unreadPill::after {
+    left: 50%;
+    margin-left: 20px;
+    width: 50%;
+}
+
+#app-mount .bd-divider .bd-unreadPill .bd-unreadPillCap {
+    display: none;
+}
+
+#app-mount .bd-divider .bd-content {
+    color: var(--text-link);
+    background: transparent;
+    font-size: 14px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#app-mount .bd-divider .bd-content::before,
+#app-mount .bd-divider .bd-content::after {
+    content: "";
+    background-color: var(--text-link);
+    height: 1px;
+    position: absolute;
+}
+
+#app-mount .bd-divider .bd-content::before {
+    right: 50%;
+    margin-right: 60px;
+    width: calc(50% - 76px);
+}
+
+#app-mount .bd-divider .bd-content::after {
+    left: 50%;
+    margin-left: 60px;
+    width: 50%;
+}
+
+.theme-dark {
+    --header-primary: #fff;
+    --header-secondary: #b9bbbe;
+    --text-normal: #dcddde;
+    --text-muted: #72767d;
+    --text-link: #cc3e97;
+    --channels-default: #c1c1c1;
+    --interactive-normal: #b9bbbe;
+    --interactive-hover: #dcddde;
+    --interactive-active: #fff;
+    --interactive-muted: #adadad;
+    --background-primary: rgba(86, 10, 77, .7);
+    --background-secondary: #2f3136;
+    --background-tertiary: #202225;
+    --background-accent: #4f545c;
+    --background-floating: #18191c;
+    --background-modifier-hover: transparent;
+    --background-modifier-active: rgba(79,84,92,0.24);
+    --background-modifier-selected: rgba(79,84,92,0.32);
+    --background-modifier-accent: hsla(0,0%,100%,0.06);
+    --elevation-low: 0 1px 0 rgba(4,4,5,0.2),0 1.5px 0 rgba(6,6,7,0.05),0 2px 0 rgba(4,4,5,0.05);
+    --elevation-high: 0 8px 16px rgba(0,0,0,0.24);
+    --guild-header-text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+    --channeltextarea-background: #40444b;
+    --activity-card-background: #202225;
+    --deprecated-panel-background: #292b2f;
+    --deprecated-card-bg: rgba(32,34,37,0.6);
+    --deprecated-card-editable-bg: rgba(32,34,37,0.3);
+    --deprecated-store-bg: #36393f;
+    --deprecated-quickswitcher-input-background: #72767d;
+    --deprecated-quickswitcher-input-placeholder: hsla(0,0%,100%,0.3);
+    --deprecated-text-input-bg: rgba(0,0,0,0.1);
+    --deprecated-text-input-border: rgba(39, 3, 26, 0.85);
+    --deprecated-text-input-border-hover: rgba(39, 3, 26, 1);
+    --deprecated-text-input-border-disabled: #202225;
+    --deprecated-text-input-prefix: #dcddde;
+}

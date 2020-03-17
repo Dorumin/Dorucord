@@ -1,0 +1,176 @@
+/* @import something for auto updates */
+
+/* Top bar for Windows */
+#app-mount {
+    background-color: var(--bd-bgcolor-topbar);
+}
+
+/* Hide loading splash backgrounds */
+div*splashBackground {
+    background-color: transparent;
+}
+
+div*splashBackground > canvas {
+    display: none;
+}
+
+/* Login form stuff */
+/* rightSplit is the container for the login background, override it */
+div*rightSplit {
+    background-image: var(--bd-background-image);
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div*rightSplit img {
+    display: none;
+}
+
+div*leftSplit form*authBox {
+    background-color: var(--bd-bgcolor-auth-box);
+}
+
+div*leftSplit form*authBox::before {
+    content: '';
+    width: inherit;
+    display: block;
+    position: absolute;
+    margin: -40px;
+    z-index: -1;
+    filter: var(--bd-background-filter);
+    background: var(--bd-background-image);
+}
+
+/* Login form text */
+div*leftSplit form*authBox div*title {
+    color: var(--bd-color-login-title);
+}
+
+
+div*leftSplit form*authBox div*subTitle {
+    color: var(--bd-color-login-subtitle);
+}
+
+/* Login form input boxes */
+div*leftSplit form*authBox input {
+    box-shadow: none;
+    background-color: var(--bd-bgcolor-login-input);
+    border-color: var(--bd-bordercolor-login-input);
+}
+
+div*leftSplit form*authBox span*needAccount {
+    color: var(--bd-color-login-hint);
+}
+
+/* Main background, pseudo-element lets you have filters and stuff */
+div*app > div*bg::before {
+    content: '';
+    filter: var(--bd-background-filter);
+    background-image: var(--bd-background-image);
+    background-color: var(--bd-background-color);
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+/* Loading */
+div*app > div*container*fixClipping::before,
+div*app > div*app + div*container::before,
+div*perksModalContentWrapper::before {
+    content: '';
+    filter: var(--bd-background-filter);
+    background-image: var(--bd-background-image);
+    background-color: var(--bd-background-color);
+    background-attachment: fixed;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+/** Loading tips **/
+div*app div*container *quote*contentBase {
+    color: var(--bd-color-loading-tips);
+}
+
+div*app div*container *contentBase,
+div*app div*container *problemsText {
+    color: var(--bd-color-loading-secondary);
+}
+
+/* Accent colors and markup */
+/** Links **/
+a*anchor,
+a*anchor*embedLink,
+button*lookLink*colorBrand {
+    transition: all .4s linear 0s;
+    color: var(--bd-color-links) !important;
+    text-decoration: none;
+    text-shadow: var(--bd-text-shadows-link);
+}
+
+a*anchor:hover,
+a*anchor*embedLink:hover,
+button*lookLink*colorBrand:hover {
+    color: var(--bd-color-links) !important;
+    text-decoration: none;
+    text-shadow: var(--bd-text-shadows-link-hovered);
+}
+
+button*lookLink*colorBrand:hover div*contents {
+    background: none;
+}
+
+/** Tags **/
+#app-mount.day [class*="whiteButton"],
+#app-mount.day span[class*="botTagInvert"] {
+    color: #ff916b !important;
+}
+
+#app-mount.day span[class*="botTagRegular"],
+#app-mount.day [class*="valueChecked"] {
+    background: rgba(255, 145, 107, .7) !important;
+}
+
+/** Mentions **/
+div*markup span*wrapper.mention,
+div*markup span*wrapper {
+    color: var(--bd-color-mention);
+    background: var(--bd-bgcolor-mention);
+}
+
+div*markup span*wrapper.mention:hover,
+div*markup span*wrapper:hover {
+    color: var(--bd-color-mention-hovered);
+    background-color: var(--bd-bgcolor-mention-hovered);
+}
+
+/** Checkboxes **/
+svg[name="Checkmark"] polyline {
+    stroke: var(--bd-color-checkbox-stroke);
+}
+
+input*checkbox,
+input*input:focus,
+input*input*focused {
+    border-color: var(--bd-color-border-checkbox) !important;
+}
+
+input*checked,
+input*checkbox:checked {
+    border-color: var(--bd-color-border-checkbox-checked) !important;
+    background-color: var(--bd-bgcolor-checkbox-checked) !important;
+}

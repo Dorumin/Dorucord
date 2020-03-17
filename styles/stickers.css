@@ -1,0 +1,122 @@
+#stickers-button {
+    background-color: transparent;
+    color: #b9bbbe;
+    font-weight: bold;
+}
+
+#sticker-button {
+    width: 20px;
+    height: 20px;
+}
+
+#sticker-button path {
+    d: path("M15.5,11.5 L20.998,11.5 C21.8885,11.5 22.335,12.577000000000002 21.705,13.207 L13.207,21.705 C12.577000000000002,22.335 11.5,21.8885 11.5,20.9975 L11.5,15.5 C11.5,13.291 13.291,11.5 15.5,11.5 M9.5,15.5 L9.5,21 C9.5,21.552 9.052,22 8.5,22 L4,22 C1.7910000000000004,22 0,20.209 0,18 L0,4 C0,1.7910000000000004 1.7910000000000004,0 4,0 L18,0 C20.209,0 22,1.7910000000000004 22,4 L22,8.5 C22,9.052 21.552,9.5 21,9.5 L15.5,9.5 C12.186499999999999,9.5 9.5,12.186499999999999 9.5,15.5");
+    fill: rgba(255, 255, 255, 0.3);
+}
+
+#sticker-button:hover path {
+    fill: rgba(255, 255, 255, 0.7);
+}
+
+#stickers-popout {
+    position: fixed;
+    z-index: 1000;
+    max-height: 340px;
+    background-color: #2f3136; /* Theme but please keep it a solid color */
+    margin: 16px;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#stickers-hidden-file-input {
+    display: none;
+}
+
+#stickers-popout-header {
+    height: 48px;
+    display: flex;
+    background-color: rgba(0, 0, 0, .1);
+    color: #ccc;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+#stickers-popout-title {
+    flex: 1;
+    padding: 4px 8px
+}
+
+.stickers-popout-header-button {
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 2px;
+    cursor: pointer;
+    padding-right: 8px;
+}
+
+.stickers-popout-header-button:hover {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.stickers-header-button-icon {
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#stickers-popout-upload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 120px;
+}
+
+#stickers-popout-body {
+    overflow-y: scroll;
+}
+
+#stickers-popout-stickers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sticker-container {
+    display: inline-flex;
+    padding: 12px;
+    cursor: pointer;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.sticker-container:hover,
+.sticker-container.selected {
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.sticker-image {
+    width: 96px;
+    height: 96px;
+}
+
+/* Scrollbars */
+#stickers-popout-body::-webkit-scrollbar {
+	width: 14px;
+}
+
+#stickers-popout-body::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+	border: 3px solid transparent;
+	background-clip: padding-box;
+}
+
+#stickers-popout-body::-webkit-scrollbar-track {
+	background: transparent;
+}
