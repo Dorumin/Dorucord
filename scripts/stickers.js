@@ -105,14 +105,14 @@ window.StickerDatabase = class {
     async add(value) {
         const store = await this.getStore('readwrite');
         const request = store.add(value);
-        
+
         await this.promisify(request);
     }
 
     async clear() {
         const store = await this.getStore('readwrite');
         const request = store.clear();
-        
+
         await this.promisify(request);
     }
 
@@ -185,7 +185,7 @@ window.Stickers = class {
         const contents = document.createElement('div');
         contents.id = 'stickers-button-contents';
         contents.setAttribute('class', classes.div);
-        
+
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.id = 'sticker-button';
         svg.setAttribute('width', '20');
@@ -280,7 +280,7 @@ window.Stickers = class {
     createStickersHeader() {
         const header = document.createElement('div');
         header.id = 'stickers-popout-header';
-        
+
         const tabs = document.createElement('div');
         tabs.id = 'stickers-popout-tabs';
         this.tabs = tabs;
@@ -338,7 +338,7 @@ window.Stickers = class {
         const tab = document.createElement('div');
         tab.className = 'stickers-tab';
         tab.setAttribute('data-key', pack.key);
-        
+
         const icon = document.createElement('img');
         icon.className = 'stickers-tab-icon loading';
         icon.alt = '';
@@ -607,7 +607,7 @@ window.Stickers = class {
                 'authorization': token
             }
         });
-        
+
         sticker.classList.remove('sending');
     }
 
@@ -794,7 +794,7 @@ window.Stickers = class {
 
     cleanup() {
         if (this.button) this.button.remove();
-        
+
         this.popout.remove();
         this.observer.disconnect();
 
