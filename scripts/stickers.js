@@ -52,6 +52,7 @@ window.StickerDatabase = class {
             request.onupgradeneeded = event => {
                 const db = event.target.result;
 
+                db.deleteObjectStore('main');
                 const store = db.createObjectStore('main', { autoIncrement: true });
 
                 for (const [indexName, keyPath, params] of this.indices) {
@@ -104,14 +105,14 @@ window.StickerDatabase = class {
     async add(value) {
         const store = await this.getStore('readwrite');
         const request = store.add(value);
-
+        
         await this.promisify(request);
     }
 
     async clear() {
         const store = await this.getStore('readwrite');
         const request = store.clear();
-
+        
         await this.promisify(request);
     }
 
@@ -125,11 +126,15 @@ window.StickerDatabase = class {
     async get(key) {
         const store = await this.getStore();
         const request = store.get(key);
+        const event = await this.promisify(request);
 
-        return await this.promisify(key);
+        return event.target.result;
     }
 
-    // No put impl
+    async set(key, value) {
+        const store = await this.getStore('readwrite');
+        return store.put(value, key);
+    }
 }
 
 window.Stickers = class {
@@ -152,6 +157,9 @@ window.Stickers = class {
         this.observer = this.createMutationObserver();
 
         this.deleting = false;
+        this.creatingPack = false;
+        this.addingToPack = false;
+        this.selectedStickerPack = -1;
 
         document.addEventListener('click', this.onClick);
         window.addEventListener('resize', this.onResize);
@@ -163,7 +171,7 @@ window.Stickers = class {
     }
 
     createDatabase() {
-        const db = new StickerDatabase('stickers', 1);
+        const db = new StickerDatabase('stickers', 2);
 
         return db;
     }
@@ -177,7 +185,7 @@ window.Stickers = class {
         const contents = document.createElement('div');
         contents.id = 'stickers-button-contents';
         contents.setAttribute('class', classes.div);
-
+        
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.id = 'sticker-button';
         svg.setAttribute('width', '20');
@@ -219,9 +227,9 @@ window.Stickers = class {
 
         const button = document.createElement('button');
         button.id = 'stickers-popout-upload-button';
-        button.textContent = 'Upload some stickers';
+        button.textContent = 'Create a sticker pack!';
 
-        button.addEventListener('click', this.selectFiles.bind(this));
+        button.addEventListener('click', this.onCreateStickerPack.bind(this));
 
         upload.appendChild(button);
 
@@ -229,6 +237,7 @@ window.Stickers = class {
     }
 
     createHeaderButton(id, emoji, text) {
+        // @TODO: Get proper icons rather than emoji
         const button = document.createElement('div');
         button.className = 'stickers-popout-header-button';
         button.id = `stickers-popout-${id}`;
@@ -251,26 +260,10 @@ window.Stickers = class {
         const popout = document.createElement('div');
         popout.id = 'stickers-popout';
 
-        const header = document.createElement('div');
-        header.id = 'stickers-popout-header';
-
-        const title = document.createElement('span');
-        title.id = 'stickers-popout-title';
-        title.textContent = 'Send stickers! Select one you like';
-
-        const trash = this.createHeaderButton('trash', '♻️', 'Delete');
-
-        const add = this.createHeaderButton('add', '➕', 'Add');
+        const header = this.createStickersHeader();
 
         const body = document.createElement('div');
         body.id = 'stickers-popout-body';
-
-        add.addEventListener('click', this.selectFiles.bind(this));
-        trash.addEventListener('click', this.onTrashClick.bind(this));
-
-        header.appendChild(title);
-        header.appendChild(trash);
-        header.appendChild(add);
 
         body.appendChild(this.sticks);
         body.appendChild(this.upload);
@@ -284,20 +277,132 @@ window.Stickers = class {
         return popout;
     }
 
-    async createSticker(key, file) {
+    createStickersHeader() {
+        const header = document.createElement('div');
+        header.id = 'stickers-popout-header';
+        
+        const tabs = document.createElement('div');
+        tabs.id = 'stickers-popout-tabs';
+        this.tabs = tabs;
+
+        const trash = this.createHeaderButton('trash', '🗑️', 'Delete');
+
+        const add = this.createHeaderButton('add', '➕', 'Add');
+
+        const body = document.createElement('div');
+        body.id = 'stickers-popout-body';
+
+        add.addEventListener('click', this.addToPack.bind(this));
+        trash.addEventListener('click', this.onTrashClick.bind(this));
+
+        header.appendChild(tabs);
+        header.appendChild(trash);
+        header.appendChild(add);
+
+        return header;
+    }
+
+    createSticker(key, file) {
         const sticker = document.createElement('div');
         sticker.className = 'sticker-container';
         sticker.title = file.name;
         sticker.setAttribute('data-key', key);
 
         const stickerImage = document.createElement('img');
-        stickerImage.className = 'sticker-image';
-        stickerImage.src = await this.blobToUrl(file);
+        stickerImage.className = 'sticker-image loading';
+        stickerImage.alt = '';
+        stickerImage.src = '';
+        this.blobToUrl(file).then(url => {
+            stickerImage.classList.remove('loading');
+            stickerImage.src = url;
+        });
+        // stickerImage.src = await this.blobToUrl(file);
 
         sticker.appendChild(stickerImage);
         sticker.addEventListener('click', this.onStickerClick.bind(this, file));
 
         return sticker;
+    }
+
+    createStickerPack(pack) {
+        const container = this.createStickerPackContainer(pack);
+        const tab = this.createStickerTab(pack, container);
+
+        return {
+            container,
+            tab
+        };
+    }
+
+    createStickerTab(pack, container) {
+        const tab = document.createElement('div');
+        tab.className = 'stickers-tab';
+        tab.setAttribute('data-key', pack.key);
+        
+        const icon = document.createElement('img');
+        icon.className = 'stickers-tab-icon loading';
+        icon.alt = '';
+        icon.src = '';
+
+        this.blobToUrl(pack.value.files[0]).then(url => {
+            icon.classList.remove('loading'),
+            icon.src = url;
+        });
+
+        tab.appendChild(icon);
+
+        tab.addEventListener('click', () => {
+            if (this.deleting) {
+                tab.classList.toggle('marked-delete');
+                return;
+            }
+
+            this.resetSelectedTab();
+            this.selectedStickerPack = pack.key;
+            tab.classList.add('selected');
+            container.classList.add('visible');
+            this.reflowPopout();
+        });
+
+        return tab;
+    }
+
+    createStickerPackContainer(pack) {
+        const container = document.createElement('div');
+        container.className = 'stickers-pack-container';
+        container.setAttribute('data-key', pack.key);
+
+        this.each(pack.value.files, (file, index) => {
+            container.appendChild(this.createSticker(`${pack.key}:${index}`, file));
+        });
+
+        return container;
+    }
+
+    createAddStickerPackTab() {
+        const tab = document.createElement('div');
+        tab.id = 'stickers-create-pack-tab';
+        tab.className = 'stickers-tab';
+        tab.textContent = '➕'; // @TODO: Add sticker pack icon
+
+        tab.addEventListener('click', this.onCreateStickerPack.bind(this));
+
+        return tab;
+    }
+
+    onCreateStickerPack() {
+        this.creatingPack = true,
+        this.selectFiles();
+    }
+
+    addToPack() {
+        this.addingToPack = true;
+        this.selectFiles();
+    }
+
+    resetSelectedTab() {
+        this.eachChild(this.tabs, tab => tab.classList.remove('selected'));
+        this.eachChild(this.sticks, tab => tab.classList.remove('visible'));
     }
 
     createMutationObserver() {
@@ -385,38 +490,87 @@ window.Stickers = class {
         this.hidePopout();
     }
 
-    async onFiles(e) {
-        const files = e.target.files;
-
-        for (let i = 0; i < files.length; i++) {
-            const file = files.item(i);
-
-            await this.db.add(file);
+    each(arr, fn) {
+        for (let i = 0, len = arr.length; i < len; i++) {
+            fn(arr[i], i);
         }
+    }
+
+    eachChild(elem, fn) {
+        this.each(elem.childNodes, fn);
+    }
+
+    empty(elem) {
+        const children = elem.childNodes;
+        let i = children.length;
+
+        while (i--) {
+            elem.removeChild(children[i]);
+        }
+    }
+
+    async onFiles(e) {
+        const files = Array.from(e.target.files);
+
+        if (!files.length) return;
+
+        if (this.creatingPack || this.selectedStickerPack === -1) {
+            this.creatingPack = false;
+            this.addStickerPack(files);
+        } else if (this.addingToPack) {
+            this.addingToPack = false;
+            this.appendToStickerPack(files);
+        }
+    }
+
+    addStickerPack(files) {
+        this.db.add({
+            name: '',
+            files: files
+        });
+
+        this.updatePopoutStickers();
+    }
+
+    async appendToStickerPack(files) {
+        console.log('Current', this.selectedStickerPack);
+
+        const pack = await this.db.get(this.selectedStickerPack);
+        pack.files = Array.from(pack.files);
+        pack.files.push(...files);
+        await this.db.set(this.selectedStickerPack, pack);
 
         this.updatePopoutStickers();
     }
 
     async updatePopoutStickers() {
-        const children = this.sticks.childNodes;
-        let i = children.length;
-
-        while (i--) {
-            this.sticks.removeChild(children[i]);
-        }
-
         const entries = await this.db.list();
 
-        for (const entry of entries) {
-            const sticker = await this.createSticker(entry.key, entry.value);
+        this.empty(this.sticks);
+        this.empty(this.tabs);
 
-            this.sticks.appendChild(sticker);
+        let first = true;
+
+        for (const entry of entries) {
+            const pack = this.createStickerPack(entry);
+            this.tabs.appendChild(pack.tab);
+            this.sticks.appendChild(pack.container);
+
+            if (entry.key === this.selectedStickerPack) {
+                pack.tab.click();
+            } else if (this.selectedStickerPack === -1 && first) {
+                pack.tab.click();
+                first = false;
+            }
         }
+
+        this.tabs.appendChild(this.createAddStickerPackTab());
 
         if (entries.length) {
             this.upload.style.display = 'none';
         } else {
             this.upload.style.display = '';
+            this.selectedStickerPack = -1;
         }
     }
 
@@ -453,7 +607,7 @@ window.Stickers = class {
                 'authorization': token
             }
         });
-
+        
         sticker.classList.remove('sending');
     }
 
@@ -480,7 +634,7 @@ window.Stickers = class {
         const container = e.target.closest('.sticker-container');
 
         if (this.deleting) {
-            container.classList.toggle('selected');
+            container.classList.toggle('marked-delete');
         } else {
             this.sendImage(container, file);
         }
@@ -494,23 +648,88 @@ window.Stickers = class {
             this.deleting = false;
 
             label.textContent = 'Delete';
-            const scheduledStickers = document.querySelectorAll('.sticker-container.selected');
-            let i = scheduledStickers.length;
+            const marked = document.querySelectorAll('.marked-delete');
+            const deletedMap = {};
 
-            while (i--) {
-                const sticker = scheduledStickers[i];
+            this.each(marked, elem => {
+                if (elem.classList.contains('stickers-tab')) {
+                    const key = elem.getAttribute('data-key');
+                    if (!key) return;
 
-                sticker.remove();
+                    const parent = elem.parentElement;
+                    parent.removeChild(elem);
+
+                    if (elem.classList.contains('selected')) {
+                        if (parent.children.length === 1) {
+                            this.upload.style.display = '';
+                            this.selectedStickerPack = -1;
+                        } else {
+                            this.selectedStickerPack = parseInt(parent.children[0].getAttribute('data-key'));
+                        }
+                    }
+
+                    this.db.delete(parseInt(key));
+                }
+
+                if (elem.classList.contains('sticker-container')) {
+                    const key = elem.getAttribute('data-key');
+                    if (!key) return;
+
+                    const [pack, index] = key.split(':');
+
+                    const parent = elem.parentElement;
+                    parent.removeChild(elem);
+
+                    if (parent.children.length === 0) {
+                        deletedMap[pack] = true;
+                        return;
+                    }
+
+                    deletedMap[pack] = deletedMap[pack] || [];
+                    deletedMap[pack].push(index);
+                }
+            });
+
+            for (const key in deletedMap) {
+                const val = deletedMap[key];
+
+                if (val === true) {
+                    const deletedTab = document.querySelector(`.stickers-tab[data-key="${key}"]`);
+                    if (deletedTab) {
+                        const parent = deletedTab.parentElement;
+                        parent.removeChild(deletedTab);
+
+                        if (deletedTab.classList.contains('selected')) {
+                            if (parent.children.length === 1) {
+                                this.upload.style.display = '';
+                                this.selectedStickerPack = -1;
+                            } else {
+                                this.selectedStickerPack = parseInt(parent.children[0].getAttribute('data-key'));
+                            }
+                        }
+                    }
+
+                    this.db.delete(parseInt(key));
+                } else {
+                    this.db.get(parseInt(key)).then(pack => {
+                        pack.files = pack.files.filter((_, index) => {
+                            return !val.includes(index.toString());
+                        });
+
+                        this.db.set(parseInt(key), pack);
+                    });
+                }
             }
 
-            i = scheduledStickers.length;
+            if (this.selectedStickerPack !== -1) {
+                const tab = document.querySelector(`.stickers-tab[data-key="${this.selectedStickerPack}"]`);
 
-            while (i--) {
-                const sticker = scheduledStickers[i];
-                const key = sticker.getAttribute('data-key');
-
-                await this.db.delete(parseInt(key) || key);
+                if (tab) {
+                    tab.click();
+                }
             }
+
+            this.reflowPopout();
         } else {
             this.deleting = true;
 
@@ -546,14 +765,12 @@ window.Stickers = class {
         this.popout.style.display = 'none';
 
         this.deleting = false;
-        const scheduledStickers = document.querySelectorAll('.sticker-container.selected');
-        let i = scheduledStickers.length;
+        document.getElementById('stickers-popout-trash').querySelector('.stickers-header-button-label').textContent = 'Delete';
 
-        while (i--) {
-            const sticker = scheduledStickers[i];
-
-            sticker.classList.remove('selected');
-        }
+        const marked = document.querySelectorAll('.marked-delete');
+        this.each(marked, elem => {
+            elem.classList.remove('marked-delete');
+        });
     }
 
     showPopout() {
@@ -577,7 +794,7 @@ window.Stickers = class {
 
     cleanup() {
         if (this.button) this.button.remove();
-
+        
         this.popout.remove();
         this.observer.disconnect();
 

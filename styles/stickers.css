@@ -44,9 +44,49 @@
     flex-shrink: 0;
 }
 
-#stickers-popout-title {
-    flex: 1;
-    padding: 4px 8px
+/* Sticker pack tabs */
+#stickers-popout-tabs {
+	display: flex;
+	flex: 1;
+	height: 100%;
+	align-items: center;
+	overflow-x: hidden;
+}
+
+.stickers-tab {
+	display: flex;
+	height: 48px;
+	width: 48px;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.stickers-tab:hover,
+.stickers-tab.selected {
+	background-color: rgba(0, 0, 0, .1);
+}
+
+.stickers-tab.selected {
+	cursor: default;
+}
+
+.stickers-tab-icon {
+	height: 24px;
+	width: 24px;
+	border-radius: 8px;
+}
+
+/* Sticker containers */
+.stickers-pack-container {
+	display: none;
+}
+
+.stickers-pack-container.visible {
+	display: flex;
+	flex-grow: 1;
+	flex-wrap: wrap;
 }
 
 .stickers-popout-header-button {
@@ -89,10 +129,14 @@
 
 .sticker-container {
     display: inline-flex;
+    position: relative;
     padding: 12px;
     cursor: pointer;
     flex-grow: 1;
     justify-content: center;
+    align-items: center;
+    min-width: 96px;
+    min-height: 96px;
 }
 
 .sticker-container:hover,
@@ -101,8 +145,8 @@
 }
 
 .sticker-image {
-    width: 96px;
-    height: 96px;
+    max-width: 96px;
+    max-height: 96px;
 }
 
 /* Scrollbars */
@@ -119,4 +163,53 @@
 
 #stickers-popout-body::-webkit-scrollbar-track {
 	background: transparent;
+}
+
+/* Deletions */
+.marked-delete {
+	background-color: rgba(255, 30, 30, .5) !important;
+}
+
+/* Image loading placeholder */
+.sticker-image.loading {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' height='32' width='32'%3E%3Crect x='1' y='1' rx='10' ry='10' width='30' height='30' fill='rgba(255, 255, 255, .1)'%3E%3C/rect%3E%3C/svg%3E");
+    background-size: cover;
+}
+
+/* Sending animation */
+.sticker-container.sending .sticker-image {
+    cursor: default;
+    opacity: .25;
+}
+
+.sticker-container.sending::before,
+.sticker-container.sending::after {
+    content: '';
+    background-color: #839eff;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    top: calc(50% - 18px);
+    left: calc(50% - 18px);
+    z-index: 1;
+    animation: spinner-wandering-cubes 1.8s infinite ease-in-out;
+}
+ 
+.sticker-container.sending::after {
+    animation-delay: -.9s;
+}
+ 
+@keyframes spinner-wandering-cubes {
+    25% {
+        transform: translateX(22px) rotate(-90deg) scale(.5);
+    }
+    50% {
+        transform: translateX(22px) translateY(22px) rotate(-180deg);
+    }
+    75% {
+        transform: translateX(0) translateY(22px) rotate(-270deg) scale(.5);
+    }
+    to {
+        transform: rotate(-1turn);
+    }
 }
