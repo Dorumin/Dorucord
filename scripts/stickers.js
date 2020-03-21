@@ -750,19 +750,22 @@ window.Stickers = class {
         const bounds = form.getBoundingClientRect();
         const rect = this.popout.getBoundingClientRect();
         const styles = getComputedStyle(this.popout);
+        const formStyle = getComputedStyle(form);
         const horizontalMargin = parseInt(styles.marginLeft) + parseInt(styles.marginRight);
         const verticalMargin = parseInt(styles.marginTop) + parseInt(styles.marginBottom);
+        const verticalPadding = parseInt(formStyle.paddingTop) + parseInt(formStyle.paddingBottom);
 
         // what is outerHeight?
         // The window's height
         this.popout.style.left = `${bounds.left}px`;
-        this.popout.style.top = `${bounds.top - rect.height - verticalMargin}px`;
+        this.popout.style.top = `${bounds.top - rect.height - verticalMargin + verticalPadding}px`;
         this.popout.style.width = `${bounds.width - horizontalMargin}px`;
     }
 
     hidePopout() {
         this.popoutOpen = false;
         this.popout.style.display = 'none';
+        document.body.classList.remove('stickers-popout-open');
 
         this.deleting = false;
         document.getElementById('stickers-popout-trash').querySelector('.stickers-header-button-label').textContent = 'Delete';
@@ -776,6 +779,7 @@ window.Stickers = class {
     showPopout() {
         this.popoutOpen = true;
         this.popout.style.display = '';
+        document.body.classList.add('stickers-popout-open');
 
         this.reflowPopout();
     }
