@@ -1,54 +1,54 @@
 window.DMScrollFix = class {
-    constructor() {
-        this.onMutation = this.onMutation.bind(this);
+	constructor() {
+		this.onMutation = this.onMutation.bind(this);
 
-        this.dmListVisible = true;
-        this.lastTop = 0;
+		this.dmListVisible = true;
+		this.lastTop = 0;
 
-        this.observer = this.createMutationObserver();
-    }
+		this.observer = this.createMutationObserver();
+	}
 
-    createMutationObserver() {
-        const observer = new MutationObserver(this.onMutation);
+	createMutationObserver() {
+		const observer = new MutationObserver(this.onMutation);
 
-        observer.observe(document.getElementById('app-mount'), {
-            childList: true,
-            subtree: true
-        });
+		observer.observe(document.getElementById('app-mount'), {
+			childList: true,
+			subtree: true
+		});
 
-        this.onMutation();
+		this.onMutation();
 
-        return observer;
-    }
+		return observer;
+	}
 
-    query(selector, container = document) {
-        const patched = selector.replace(/\*(\w+)/g, `[class*="$1-"]`);
+	query(selector, container = document) {
+		const patched = selector.replace(/\*(\w+)/g, `[class*="$1-"]`);
 
-        return container.querySelector(patched);
-    }
+		return container.querySelector(patched);
+	}
 
-    onMutation() {
-        const scroller = this.query('div*privateChannels div*scroller');
-        if (!scroller) {
-            this.dmListVisible = false;
-            return;
-        }
+	onMutation() {
+		const scroller = this.query('div*privateChannels div*scroller');
+		if (!scroller) {
+			this.dmListVisible = false;
+			return;
+		}
 
-        if (!this.dmListVisible) {
-            this.dmListVisible = true;
-            scroller.scrollTop = this.lastTop;
-        }
+		if (!this.dmListVisible) {
+			this.dmListVisible = true;
+			scroller.scrollTop = this.lastTop;
+		}
 
-        this.lastTop = scroller.scrollTop;
-    }
+		this.lastTop = scroller.scrollTop;
+	}
 
-    cleanup() {
-        this.observer.disconnect();
-    }
+	cleanup() {
+		this.observer.disconnect();
+	}
 }
 
 if (window.dmScrollFix) {
-    window.dmScrollFix.cleanup();
+	window.dmScrollFix.cleanup();
 }
 
 window.dmScrollFix = new DMScrollFix();

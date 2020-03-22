@@ -22,16 +22,27 @@ findAllImplementers(Element).forEach(cls => {
 
 	cls.prototype.setAttribute = function(key, value) {
 		if (key === 'class' && typeof value === 'string') {
-            const split = new Set(value.split(' '));
+			const split = new Set(value.split(' '));
 
 			for (const part of split) {
-                if (part.startsWith('bd-')) continue;
-                if (part.charAt(part.length - 7) !== '-') continue;
+				if (part.slice(0, 3) === 'bd-') continue;
+				// if (part.startsWith('bd-')) continue;
 
-                split.add('bd-' + part.slice(0, -7));
-            }
+				const i1 = part.indexOf('-');
+				if (i1 === -1) continue;
 
-            value = Array.from(split).join(' ');
+				const i2 = part.indexOf('-', i1 + 1);
+				const i3 = i2 === -1 ? part.length : i2;
+				const slice = part.slice(i1 + 1, i3);
+
+				if (slice.length !== 6 && slice.length !== 7) continue;
+
+				const id = part.slice(0, i1) + (i2 === -1 ? '' : part.slice(i2));
+
+				split.add('bd-' + id);
+			}
+
+			value = Array.from(split).join(' ');
 		}
 
 		previous.call(this, key, value);

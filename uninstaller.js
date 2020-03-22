@@ -10,13 +10,13 @@ const getDir = require('./src/discorddir.js');
 const killAll = require('./src/killall.js');
 // That is as long as they're not using a fucking mac
 ps.lookup({
-    command: '.*app-\\d+.\\d+.\\d+.*discord.*'
+	command: '.*app-\\d+.\\d+.\\d+.*discord.*'
 }, (_, processes) => {
-    killAll(processes).then(() => {
-        const asarPath = path.join(getDir(), 'modules', 'discord_desktop_core'),
-        backupPath = path.join(asarPath, 'backup.core.asar');
-        if (fs.existsSync(backupPath)) {
-            fs.copyFileSync(backupPath, path.join(asarPath, 'core.asar'));
-        }
-    });
+	killAll(processes).then(() => {
+		const asarPath = path.join(getDir(), 'modules', 'discord_desktop_core'),
+		backupPath = path.join(asarPath, 'backup.core.asar');
+		if (fs.existsSync(backupPath)) {
+			fs.copyFileSync(backupPath, path.join(asarPath, 'core.asar'));
+		}
+	});
 });

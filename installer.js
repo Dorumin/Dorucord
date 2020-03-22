@@ -15,11 +15,11 @@ const killAll = require('./src/killall.js');
 
 // Yeah, I'm too selfish for any of that, fuck being nice
 ps.lookup({
-    command: '.*app-\\d+.\\d+.\\d+.*discord.*'
+	command: '.*app-\\d+.\\d+.\\d+.*discord.*'
 }, (_, processes) => {
-    killAll(processes).then(() => {
-        const extractPath = readTar(getDir());
-        
-        monkeyPatch(getDir(), extractPath);    
-    });
+	killAll(processes).then(() => {
+		const extractPath = readTar(getDir());
+
+		monkeyPatch(getDir(), extractPath);
+	});
 });
