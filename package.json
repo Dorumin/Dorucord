@@ -14,8 +14,8 @@
   "author": "Doru",
   "license": "ISC",
   "dependencies": {
-    "asar": "^1.0.0",
+    "asar": "^3.0.1",
     "ps-node": "^0.1.6",
-    "rimraf": "^2.6.3"
+    "rimraf": "^3.0.2"
   }
 }

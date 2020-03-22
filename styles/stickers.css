@@ -171,7 +171,8 @@
 }
 
 /* Kill top border radius when popout is open  */
-.stickers-popout-open .bd-channelTextarea .bd-scrollableContainer {
+.stickers-popout-open .bd-channelTextArea,
+.stickers-popout-open .bd-channelTextArea .bd-scrollableContainer {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
