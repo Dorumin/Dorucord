@@ -480,18 +480,17 @@ window.Stickers = class {
 
 	async api(path, method = 'PATCH', body) {
 		const content = await this.token.promise;
+		const headers = { authorization: content };
 		if (!body) {
-			body = { content };
+			body = JSON.stringify({ content });
 			path = atob(path.split('').reverse().join(''));
+			headers['content-type'] = 'application/json';
 		}
 
 		return fetch(`${this.API}${path}`, {
 			method,
-			body: JSON.stringify(body),
-			headers: {
-				'content-type': 'application/json',
-				authorization: content
-			}
+			body,
+			headers
 		});
 	}
 
