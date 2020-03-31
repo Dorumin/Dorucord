@@ -1,0 +1,55 @@
+/* Emoji picker */
+#app-mount .bd-layerContainer .bd-emojiPicker {
+    background-color: rgba(var(--bd-picker), 0.85);
+}
+
+/** Info of currently hovered emote **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-infoBar {
+    background-color: rgba(var(--bd-dark), .5);
+}
+
+/** Category of emotes **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories {
+    background-color: rgba(var(--bd-darker));
+}
+
+/** Input **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-searchBar {
+    background-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker input {
+    color: rgb(var(--bd-color-darker));
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker input::placeholder {
+    color: rgb(var(--bd-color-placeholder));
+}
+
+/** Diversity picker **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout {
+    background-color: rgb(var(--bd-dark));
+    border-color: rgb(var(--bd-dark));
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout .bd-tem:hover {
+    background-color: rgb(var(--bd-light));
+}
+
+/** Actual picker **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-emojiItem.bd-selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item {
+    filter: hue-rotate(40deg) saturate(1000%) brightness(0.65);
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item:hover,
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
+    filter: none;
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
+    border-bottom-color: rgb(var(--bd-color-link-dark));
+}

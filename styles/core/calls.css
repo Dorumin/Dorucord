@@ -1,0 +1,24 @@
+/* Calls */
+/** Incoming call modal **/
+#app-mount .bd-container .bd-incomingCall .bd-incomingCallInner {
+    background-color: rgba(var(--bd-dark));
+}
+
+/** When you're in the call **/
+#app-mount .bd-base .bd-chat .bd-wrapper .bd-root .bd-videoControls .bd-gradientContainer {
+    background-color: rgba(var(--bd-dark), .5);
+}
+
+/** Share screen **/
+#app-mount .bd-modal .bd-flex .bd-tiles .bd-selectorButtonSelected {
+    background-color: rgb(var(--bd-color-link));
+}
+
+/*** Why is nitro an svg?? ***/
+#app-mount .bd-modal .bd-flex .bd-tiles .bd-selectorNitroIcon path {
+    fill: rgb(var(--bd-color-link))
+}
+
+#app-mount .bd-modal .bd-flex .bd-tiles .bd-imageSelected {
+    border-color: rgb(var(--bd-color-link));
+} 

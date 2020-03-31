@@ -1,0 +1,75 @@
+/* Embeds & Attachments */
+#app-mount .bd-attachment,
+#app-mount .bd-embedWrapper:not(.bd-imageWrapper) {
+    background-color: rgba(var(--bd-embed-wrapper), 0.5);
+    border-color: rgb(var(--bd-embed-wrapper-border)) !important;
+}
+
+/** Embed default pill + quote color **/
+#app-mount .bd-blockquoteDivider {
+    background-color: rgb(var(--bd-embed-pill-color));
+}
+
+#app-mount .bd-mentioned:before {
+    background: rgba(var(--bd-mentions-border), .1);
+    border-left: 4px solid rgb(var(--bd-mentions-border));
+}
+
+#app-mount .bd-mentioned {
+    background: rgba(var(--bd-mentions), .1);
+}
+
+/** Invite embeds **/
+#app-mount .bd-chat > .bd-content .bd-message .bd-wrapper.bd-userSelectNone.bd-cursorDefault {
+    background-color: rgba(var(--bd-embed-wrapper), 0.5);
+    border: 1px solid rgb(var(--bd-embed-wrapper-border));
+}
+
+/** Attachments **/
+/*** Icons ***/
+#app-mount .bd-attachment .bd-icon,
+#app-mount .bd-embedWrapper .bd-icon,
+#app-mount .bd-embedWrapper .bd-audioMetadata:before {
+    filter: var(--bd-embed-icon);
+}
+
+#app-mount .bd-embedWrapper .bd-cancelButton,
+#app-mount .bd-embedWrapper .bd-downloadButton,
+#app-mount .bd-embedWrapper .bd-metadataIcon {
+    color: rgb(var(--bd-color-link));
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-embedWrapper .bd-cancelButton:hover,
+#app-mount .bd-embedWrapper .bd-downloadButton:hover,
+#app-mount .bd-embedWrapper .bd-metadataIcon:hover {
+    color: rgb(var(--bd-color-link-dark));
+}
+
+/*** Specially for videos ***/
+#app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper {
+    color: rgb(var(--bd-photonic-variation));
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper .bd-iconWrapper {
+    opacity: .8;
+}
+
+/** Bars and stuff **/
+#app-mount .bd-mediaBarGrabber, 
+#app-mount .bd-mediaBarProgress, 
+#app-mount .bd-mediaBarProgress:after,
+#app-mount .bd-mediaBarProgress:before {
+    background-color: rgb(var(--bd-file-progress-bar));
+}
+
+#app-mount .bd-progressContainer .bd-progress .bd-progressBar.bd-animating {
+    background-color: rgb(var(--bd-file-progress-bar)) !important;
+}
+
+#app-mount .bd-mediaBarInteraction:hover .bd-mediaBarGrabber {
+    background-color: rgb(var(--bd-file-progress-bar-grabber));
+}
+
+/** Spotify invite **/

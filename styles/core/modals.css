@@ -1,0 +1,57 @@
+/* Modals */
+/** Base **/
+#app-mount .bd-modal .bd-modal,
+#app-mount .bd-modal .bd-reactors,
+#app-mount .bd-layerContainer [class^="bd-modal"],
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile,
+#app-mount .bd-layerContainer .bd-popouts {
+    background-color: rgba(var(--bd-modal-base), .85);
+}
+
+/** Footers **/
+#app-mount .bd-modal .bd-modal .bd-footer,
+#app-mount .bd-modal .bd-sidebar,
+#app-mount .bd-layerContainer .bd-footer {
+    background-color: rgba(var(--bd-modal-footer), .85);
+}
+
+/** Upload modals **/
+#app-mount .bd-uploadModal {
+    background-color: rgb(var(--bd-uploadmodal-base));
+}
+
+#app-mount .bd-uploadModal .bd-footer {
+    background-color: rgb(var(--bd-uploadmodal-footer));
+}
+
+/*** Drag and drops ***/
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-bgScale {
+    background: rgb(var(--bd-default));
+}
+
+/**** File icon ****/
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-icon,
+#app-mount .bd-uploadModal .bd-icon:not(.bd-image) {
+    filter: var(--bd-modal-icon, none);
+}
+
+/** You sure you wanna pin this? **/
+#app-mount .bd-modal .bd-modal .bd-message {
+    background: rgb(var(--bd-default));
+}
+
+/** Server boost bottom thingy **/
+#app-mount .bd-existingSlotNotice,
+#app-mount .bd-upsellFooter {
+    background-color: rgb(var(--bd-lightest));
+}
+
+/** When you click on an activity from friends **/
+#app-mount .bd-layerContainer .bd-popouts {
+    background-color: rgba(var(--bd-lightest), .8);
+}
+
+/** Settings popout **/
+#app-mount .bd-layerContainer > .bd-layer > * > .bd-container {
+    background-color: rgb(var(--bd-default));
+}

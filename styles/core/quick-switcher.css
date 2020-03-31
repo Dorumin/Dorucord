@@ -1,0 +1,18 @@
+/* Quick Switcher */
+#app-mount .bd-modal .bd-container .bd-quickswitcher {
+    background-color: rgb(var(--bd-quickswitcher));
+}
+
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input {
+    background-color: rgba(var(--bd-color-link-dark), .2);
+}
+
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-keybindShortcut span {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+    box-shadow: inset 0 -4px 0 rgba(var(--bd-default), .8);
+    border-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-result.bd-resultFocused {
+    background-color: rgb(var(--bd-lighter), .8);
+}

@@ -42,9 +42,9 @@
     border-radius: 100%;
     right: 28px;
     bottom: 0px;
-    background: #ff916b;
+    background: #b9bbbe;
     transform: rotate(-45deg);
-    box-shadow: 0 0 10px #ff916b;
+    box-shadow: 0 0 10px #b9bbbe;
 }
 
 #dayNightLabel-left:after {
@@ -53,10 +53,10 @@
     width: 40px;
     height: 22px;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.15);
+    background: transparent;
     vertical-align: middle;
     margin: 0 10px;
-    border: 2px solid #ff916b;
+    border: 2px solid #b9bbbe;
 }
 
 #dayNightToggle input[type=checkbox]:checked + #dayNightLabel-left:before {
@@ -86,17 +86,17 @@
 }
 
 /* Make background changes smoother */
-#app-mount div.bd-app > div.bd-app > div.bd-layers > div[role="dialog"].bd-layer::before,
-#app-mount div.bd-container div.bd-wrapper.bd-guilds,
-#app-mount div.bd-titleBar.bd-typeMacOS,
-#app-mount div.bd-container div.bd-sidebar:not(.bd-flex),
-#app-mount div.bd-container div.bd-privateChannels,
-#app-mount div.bd-container div.bd-privateChannels div.bd-scroller,
-#app-mount div.bd-base div.bd-content div.bd-sidebar > div.bd-container,
-#app-mount div.bd-panels,
-#app-mount div.bd-chat > div.bd-title,
-#app-mount div.bd-chat > div.bd-content div.bd-membersWrap,
-#app-mount div.bd-searchResultsWrap,
-#app-mount div.bd-channelTextArea .bd-inner {
+#app-mount div[class*="app"] > div[class*="app"] > div[class*="bg"]::before,
+#app-mount div[class*="container"] div[class*="wrapper"][class*="guilds"],
+#app-mount div[class*="titleBar"][class*="typeMacOS"],
+#app-mount div[class*="container"] div[class*="sidebar"]:not([class*="flex"]),
+#app-mount div[class*="container"] div[class*="privateChannels"],
+#app-mount div[class*="base"] div[class*="content"] div[class*="sidebar"] > div[class*="container"],
+#app-mount div[class*="panels"],
+#app-mount div[class*="chat"] > div[class*="title"],
+#app-mount div[class*="chat"] > div[class*="content"] div[class*="membersWrap"],
+#app-mount div[class*="searchResultsWrap"],
+#app-mount div[class*="channelTextArea"],
+#app-mount div[class*="channelTextArea"] [class*="scrollableContainer"] {
     transition: .5s ease;
 }

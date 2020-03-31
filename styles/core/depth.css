@@ -1,0 +1,19 @@
+/* Depth */
+#app-mount .bd-base .bd-chat > .bd-title {
+    background-color: var(--bd-depth-title, transparent);
+}
+
+#app-mount .bd-wrapper.bd-guilds,
+#app-mount .bd-titleBar.bd-typeMacOS {
+    background-color: var(--bd-depth-guilds-list, transparent);
+}
+
+#app-mount .bd-base .bd-sidebar,
+#app-mount .bd-base .bd-chat > .bd-content > .bd-membersWrap,
+#app-mount .bd-searchResultsWrap {
+    background-color: var(--bd-depth-sidebar, transparent);   
+}
+
+#app-mount .bd-base .bd-sidebar .bd-panels {
+    background-color: var(--bd-depth-userbox, transparent);
+}

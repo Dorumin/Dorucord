@@ -1,0 +1,71 @@
+/* Dates, dividers */
+/** Dates **/
+/*** Hides the red thingy ***/
+#app-mount .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill,
+#app-mount .bd-divider .bd-unreadPill .bd-unreadPillCap {
+    display: none;
+}
+
+/*** Sets the old dividers back ***/
+#app-mount .bd-scrollerWrap .bd-scroller .bd-divider {
+    border-color: transparent;
+    margin: 12px 0;
+}
+
+#app-mount .bd-scrollerWrap .bd-scroller .bd-divider.bd-hasContent {
+    margin-top: 16px;
+}
+
+#app-mount .bd-scrollerWrap .bd-scroller .bd-divider.bd-beforeGroup {
+    margin: 16px 0;
+}
+
+#app-mount .bd-divider::before,
+#app-mount .bd-divider::after {
+    content: "";
+    background-color: rgba(var(--bd-color-link-dark), .8);
+    height: 2px;
+    position: absolute;
+}
+
+#app-mount .bd-divider.bd-isUnread::before {
+    right: 50%;
+    margin-right: 20px;
+    width: calc(50% - 20px);
+}
+
+#app-mount .bd-divider.bd-isUnread::after {
+    left: 50%;
+    margin-left: 20px;
+    width: 50%;
+}
+
+#app-mount .bd-divider.bd-hasContent::before {
+    right: 50%;
+    margin-right: 56px;
+    width: calc(50% - 56px);
+}
+
+#app-mount .bd-divider.bd-hasContent::after {
+    left: 50%;
+    margin-left: 56px;
+    width: 50%;
+}
+
+/*** Text ***/
+#app-mount .bd-divider .bd-unreadPill,
+#app-mount .bd-divider .bd-content {
+    color: rgba(var(--bd-color-link-dark), .8);
+    background: transparent;
+    font-size: 14px;
+    padding: 0;
+}
+
+#app-mount .bd-divider .bd-unreadPill {
+    position: initial;
+}
+
+#app-mount .bd-divider .bd-content {
+    display: flex;
+    align-items: center;
+}

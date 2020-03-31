@@ -1,0 +1,13 @@
+/*** Click server boost from settings */
+#app-mount .bd-subscribeTooltipWrapper,
+#app-mount .bd-layerContainer .bd-layer .bd-tooltip {
+    background-color: rgba(var(--bd-tooltips));
+}
+
+#app-mount .bd-layerContainer .bd-layer .bd-tooltip > * {
+    border-top-color: rgba(var(--bd-tooltips));
+}
+
+#app-mount .bd-subscribeTooltipWrapper::after {
+    border-bottom-color: rgba(var(--bd-tooltips));
+}

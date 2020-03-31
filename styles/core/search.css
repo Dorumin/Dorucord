@@ -1,0 +1,101 @@
+/* Search */
+/** Search bar on top of the DM lists and regular search **/
+#app-mount .bd-search > .bd-searchBar,
+#app-mount .bd-searchBar .bd-searchBarComponent,
+#app-mount .bd-libraryFilter .bd-searchBar.bd-container,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-searchBar {
+    background-color: rgba(var(--bd-searchbar), .35);
+    border-radius: 3px;
+}
+
+/*** Search bar filters ***/
+#app-mount .bd-searchBar .bd-searchFilter,
+#app-mount .bd-searchBar .bd-searchAnswer {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+#app-mount .bd-searchBar .bd-searchAnswer {
+    margin-left: 0;
+}
+
+/** Search results wrap **/
+#app-mount .bd-searchResultsWrap .bd-searchResult::before,
+#app-mount .bd-searchResultsWrap .bd-searchResult::after {
+    background-image: none;
+}
+
+#app-mount .bd-searchResultsWrap .bd-searchResultMessage.bd-hit,
+#app-mount .bd-searchResultsWrap .bd-searchResult.bd-expanded {
+    border-color: transparent;
+    background-color: rgba(var(--bd-search-item), .6);
+    box-shadow: none;
+}
+
+/** Search popout **/
+#app-mount .bd-container.bd-elevationBorderHigh {
+    background-color: rgba(var(--bd-search-popout), .9);
+    box-shadow: none;
+}
+
+/*** Get rid of dumb gradient ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-resultsGroup .bd-option::after {
+    display: none;
+}
+
+/*** Selected or hovered option ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-resultsGroup .bd-option:hover,
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-resultsGroup .bd-option.bd-selected {
+    background-color: rgba(var(--bd-search-popout-option), .9);
+}
+
+/*** Suggest header ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-queryContainer.bd-focused {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/**** Return button ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-queryContainer > .bd-queryShortcut > .bd-keybindShortcut > span {
+    background-color: rgba(255, 255, 255, .02);
+    box-shadow: inset 0 -4px 0 rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .05);
+}
+
+/*** Date picker background ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker__day {
+    border-color: rgba(var(--bd-lightest), .4);
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker__day--selected:after {
+    background-color: rgba(var(--bd-lightest), .95);
+}
+
+/**** Date picker suggestion ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker > .bd-datePickerHint > .bd-hintValue {
+    background-color: rgba(var(--bd-lightest), .95);
+}
+
+/**** Previous/next arrow backgrounds and hover effects ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__navigation {
+    border-color: transparent;
+    background-color: rgba(var(--bd-lightest), .3);
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__navigation:hover {
+    background-color: rgba(var(--bd-lightest), .5);
+}
+
+/**** Header and day backgrounds and hover effects ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__header,
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__day {
+    background-color: transparent;
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
+    background-color: rgba(var(--bd-lightest), .95);
+}

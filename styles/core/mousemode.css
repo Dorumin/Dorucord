@@ -1,0 +1,5 @@
+/* Mousemode */
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy:hover,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy.bd-selected {
+    background: var(--bd-messageWrapper-hover);
+}

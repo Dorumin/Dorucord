@@ -1,0 +1,32 @@
+/* DMs / Server channel highlights  */
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel {
+    margin-right: 4px;
+}
+
+/** Selected **/
+/*** DMs ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected .bd-layout,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected:hover .bd-layout,
+/*** Guilds ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected .bd-content,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected:hover .bd-content,
+/*** Guild member list ***/
+#app-mount .bd-base .bd-membersWrap .bd-scroller .bd-container.bd-selected .bd-layout,
+#app-mount .bd-base .bd-membersWrap .bd-scroller .bd-container.bd-selected:hover .bd-layout,
+/*** Guild VC ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected > .bd-content,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected:hover > .bd-content {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+/** Hover **/
+/*** DMs ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel:hover .bd-layout,
+/*** Guilds ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-wrapper:hover .bd-content,
+/*** Guild member list ***/
+#app-mount .bd-base .bd-membersWrap .bd-scroller .bd-container:hover .bd-layout,
+/*** Guild VC ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser:hover > .bd-content {
+    background-color: rgba(var(--bd-default), .2);
+}

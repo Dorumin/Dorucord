@@ -1,0 +1,44 @@
+/* Icons */
+#app-mount .bd-quickswitcher .bd-emptyState, /* Quick switcher */
+#app-mount .bd-noticeIcon.bd-icon /* Streamer mode */,
+#app-mount .bd-sadImage /* Emoji picker */ {
+    filter: var(--bd-image-solid, none);
+}
+
+#app-mount .bd-userSettingsSecurityImage, /* User settings chestbox */
+#app-mount .bd-emptyPlaceholder .bd-image, /* No pins, recent mentions */
+#app-mount .bd-image.bd-marginBottom40, /* No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assumed it's prefix with "no". Integrations, webhooks, invites, bans,*/
+#app-mount .bd-emptyStateImage, /* Gifts */
+#app-mount .bd-emptyIconGuilds, /* Mutual servers */
+#app-mount .bd-emptyIcon, /* Mutual friends */
+#app-mount .bd-errorStateIcon, /* People to GC with */ 
+#app-mount .bd-emptyGuilds, /* Guilds */
+#app-mount .bd-marketingRefreshTier1Graphic, /* Nitro */ 
+#app-mount .bd-endContainer::after /* Gif picker favorites */ {
+    filter: var(--bd-image-translucent, none);
+}
+
+/** Some super hacky shit b did for server invite **/
+#app-mount .bd-channelNotice {
+    filter: var(--bd-image-server-invite, none);
+}
+
+#app-mount .bd-channelNotice > .bd-close,
+#app-mount .bd-channelNotice > .bd-message {
+    filter: var(--bd-image-server-invite-icons, none);
+}
+
+#app-mount .bd-channelNotice > .bd-button {
+    filter: var(--bd-image-server-invite-button, none);
+}
+
+/** Welcome to your fuckin server, scrub **/
+#app-mount .bd-itemContainer .bd-icon,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion img[alt].bd-flexChild[src*="svg"] /* Icon at the bottom right of Settings > Widget */ {
+    filter: var(--bd-image-server-welcome-icons, none);
+}
+
+/** Verified icon, boosted server **/
+#app-mount .bd-flowerStar path {
+    fill: rgb(var(--bd-color-link));
+}

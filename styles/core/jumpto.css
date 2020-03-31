@@ -1,0 +1,12 @@
+/* Jump tos */
+#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar,
+#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar,
+#app-mount .bd-base .bd-sidebar .bd-unread.bd-bar {
+    background-color: rgba(var(--bd-jumpto));
+}
+
+#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar:hover,
+#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar:hover,
+#app-mount .bd-base .bd-sidebar .bd-unread.bd-bar:hover {
+    background-color: rgba(var(--bd-jumpto-hover));
+}

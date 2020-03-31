@@ -1,0 +1,23 @@
+/* Pins */
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap {
+    background-color: rgba(var(--bd-popout-bg), .95);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/*** Pinned popout header and footer ***/
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-header,
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-footer {
+    background-color: rgba(var(--bd-popout-header-footer), .9);
+    box-shadow: none;
+}
+
+/*** Pinned popout messages ***/
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper {
+    background-color: rgba(var(--bd-popout-message-bg), .3);
+    border-color: transparent;
+}
+
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper:hover {
+    border-color: transparent;
+}

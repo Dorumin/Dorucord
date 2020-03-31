@@ -1,0 +1,9 @@
+/* Dropdowns */
+#app-mount .bd-layerContainer .bd-menu {
+    background-color: rgba(var(--bd-dropdown), .85);
+}
+
+/** Invite buttons **/
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-invite {
+    color: rgb(var(--bd-color-link));
+}

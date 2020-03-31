@@ -1,0 +1,1733 @@
+/* AKA */
+#app-mount .bd-base .bd-chat .bd-title .bd-akaBadge.bd-textBadge {
+    background: rgba(var(--bd-lightest));
+}
+
+/* Block related stuff */
+/** Blocked messages **/
+#app-mount .bd-localBot {
+    background-color: rgba(var(--bd-color-link), .05)
+}
+
+#app-mount .bd-localBot::before {
+    background-color: rgb(var(--bd-color-link))
+}
+
+/** Can't talk because you blocked them lool **/
+#app-mount .bd-messagesWrapper + .bd-form > .bd-wrapper {
+    background-color: rgb(var(--bd-default));
+}
+
+/* Bots */
+#app-mount .bd-botTagRegular.bd-botTag {
+    background-color: rgb(var(--bd-bot));
+    color: rgb(var(--bd-bot-text));
+}
+
+#app-mount .bd-botTagInvert.bd-botTag {
+    background-color: rgb(var(--bd-bot-text));
+    color: rgb(var(--bd-bot));
+}
+
+/* Buttons */
+/** Jump button **/
+#app-mount .bd-jumpButton {
+    background-color: rgb(var(--bd-default));
+}
+
+/** Regular buttons **/
+#app-mount .bd-lookFilled.bd-colorBrand,
+#app-mount .bd-questionMark {
+    background-color: rgb(var(--bd-button-default));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookFilled.bd-colorPrimary,
+#app-mount .bd-lookFilled.bd-colorGrey {
+    background-color: rgb(var(--bd-button-secondary));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-colorBrand {
+    border-color: rgba(var(--bd-button-default), .5);
+    color: rgb(var(--bd-button-default));
+}
+
+#app-mount .bd-lookInverted.bd-colorBrand.bd-subscribeTooltipButton {
+    color: rgb(var(--bd-default));
+    background-color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookInverted.bd-colorBrand {
+    color: rgb(var(--bd-button-default));
+    background-color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookGhost.bd-colorBrand {
+    background-color: rgba(var(--bd-button-default), .1);
+    color: rgb(var(--bd-button-default));
+}
+
+#app-mount .bd-lookGhost.bd-colorGrey {
+    background-color: rgba(var(--bd-button-default), .05);
+    color: rgba(var(--bd-button-default), .6);
+}
+
+/** Green buttons **/
+#app-mount .bd-lookFilled.bd-colorGreen {
+    background-color: rgb(var(--bd-button-green));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-colorGreen {
+    border-color: rgba(var(--bd-button-green), .2);
+    color: rgb(var(--bd-button-green));
+}
+
+#app-mount .bd-lookGhost.bd-colorGreen {
+    background-color: rgba(var(--bd-button-green), .1);
+    color: rgb(var(--bd-button-green));
+}
+
+/** Load more messages **/
+#app-mount .bd-hasMore {
+    background: rgba(var(--bd-color-link), .1);
+    color: rgb(var(--bd-color-link));
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-hasMore:hover {
+    background: rgba(var(--bd-color-link), .2);
+    color: rgb(var(--bd-color-link));
+}
+
+/** Button on the right side of messages **/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper {
+    background-color: rgba(var(--bd-default), 0.3);
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button:hover {
+    background-color: rgba(var(--bd-default), 0.4);
+    color: rgba(255, 255, 255, .8);
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button.bd-selected {
+    background-color: rgba(var(--bd-default), 0.5);
+    color: rgb(var(--bd-button-text));
+}
+
+/*** Hide edit button ***/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button[aria-label="Edit"] {
+    display: var(--bd-edit-button);
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer {
+    top: 39px;
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer {
+    top: calc(100% - -2px);
+}
+
+/** X button **/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor),
+#app-mount .bd-card [class*="emove"]:not(.bd-anchor) {
+    background-color: rgb(var(--bd-dark));
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor){
+    right: -11px;
+}
+
+/* Calls */
+/** Incoming call modal **/
+#app-mount .bd-container .bd-incomingCall .bd-incomingCallInner {
+    background-color: rgba(var(--bd-dark));
+}
+
+/** When you're in the call **/
+#app-mount .bd-base .bd-chat .bd-wrapper .bd-root .bd-videoControls .bd-gradientContainer {
+    background-color: rgba(var(--bd-dark), .5);
+}
+
+/** Share screen **/
+#app-mount .bd-modal .bd-flex .bd-tiles .bd-selectorButtonSelected {
+    background-color: rgb(var(--bd-color-link));
+}
+
+/*** Why is nitro an svg?? ***/
+#app-mount .bd-modal .bd-flex .bd-tiles .bd-selectorNitroIcon path {
+    fill: rgb(var(--bd-color-link))
+}
+
+#app-mount .bd-modal .bd-flex .bd-tiles .bd-imageSelected {
+    border-color: rgb(var(--bd-color-link));
+} 
+
+/* DMs / Server channel highlights  */
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel {
+    margin-right: 4px;
+}
+
+/** Selected **/
+/*** DMs ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected .bd-layout,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected:hover .bd-layout,
+/*** Guilds ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected .bd-content,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected:hover .bd-content,
+/*** Guild member list ***/
+#app-mount .bd-base .bd-membersWrap .bd-scroller .bd-container.bd-selected .bd-layout,
+#app-mount .bd-base .bd-membersWrap .bd-scroller .bd-container.bd-selected:hover .bd-layout,
+/*** Guild VC ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected > .bd-content,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected:hover > .bd-content {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+/** Hover **/
+/*** DMs ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel:hover .bd-layout,
+/*** Guilds ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-wrapper:hover .bd-content,
+/*** Guild member list ***/
+#app-mount .bd-base .bd-membersWrap .bd-scroller .bd-container:hover .bd-layout,
+/*** Guild VC ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser:hover > .bd-content {
+    background-color: rgba(var(--bd-default), .2);
+}
+
+/* Context menu */
+#app-mount .bd-layerContainer .bd-contextMenu {
+    background-color: rgba(var(--bd-context-menu), .85);
+}
+
+#app-mount .bd-layerContainer .bd-contextMenu .bd-item.bd-brand {
+    color: rgb(var(--bd-color-link));
+}
+
+#app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup > .bd-wrapper {
+    display: var(--bd-context-menu-reactions);
+}
+
+/* Main */
+#app-mount {
+    background-color: rgba(var(--bd-default), .95);
+}
+
+/* Background */
+#app-mount .bd-app > .bd-app > .bd-bg::before {
+    content: '';
+    background: var(--bd-background-color) var(--bd-background-image) var(--bd-background-position) / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+/** Login form **/
+#app-mount .bd-rightSplit {
+    background: var(--bd-background-color) var(--bd-loading-background-image) var(--bd-loading-background-position) / cover no-repeat fixed;
+}
+
+/** Loading **/
+#app-mount .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount .bd-app > .bd-app + .bd-container::before {
+    content: '';
+    background: var(--bd-loading-background-color) var(--bd-loading-background-image) var(--bd-loading-background-position) / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+/** Filters and stuff **/
+#app-mount .bd-app > .bd-app > .bd-bg::before {
+    filter: var(--bd-background-brightness) var(--bd-background-contrast) var(--bd-background-blur);
+}
+
+#app-mount .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount .bd-app > .bd-app + .bd-container::before {
+    filter: var(--bd-loading-background-brightness) var(--bd-loading-background-contrast) var(--bd-loading-background-blur);
+    z-index: -1;
+}
+
+/* Login form */
+#app-mount .bd-splashBackground {
+    background: transparent;
+}
+
+#app-mount .bd-splashBackground > canvas,
+#app-mount .bd-rightSplit img {
+    display: none;
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox {
+    background: rgba(var(--bd-default), 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/** Text **/
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-colorHeaderSecondary,
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-title.bd-h5 {
+    color: rgb(var(--bd-color-dark));
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-needAccount {
+    color: rgb(var(--bd-color-light));
+}
+
+/* Loading text */
+#app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
+    color: rgb(var(--bd-photonic-variation));   
+}
+
+#app-mount .bd-app .bd-container .bd-contentBase,
+#app-mount .bd-app .bd-container .bd-problemsText {
+    color: rgb(var(--bd-color-light));   
+
+}
+
+/* Insurance?
+#app-mount,
+#app-mount *,
+#app-mount *::after,
+#app-mount *::before {
+    background-color: transparent;
+} */
+
+#app-mount .bd-app,
+#app-mount .bd-app > .bd-container.bd-fixClipping,
+#app-mount .bd-wrapper.bd-guilds .bd-scroller,
+#app-mount .bd-base .bd-sidebar .bd-header:hover,
+#app-mount .bd-base .bd-sidebar .bd-selected .bd-header,
+#app-mount .bd-base .bd-sidebar > .bd-container,
+#app-mount .bd-base .bd-sidebar .bd-panels,
+#app-mount .bd-base .bd-sidebar .bd-privateChannels,
+#app-mount .bd-base .bd-sidebar .bd-scroller,
+#app-mount .bd-base .bd-children::after,
+#app-mount .bd-base .bd-chat,
+#app-mount .bd-base .bd-chat .bd-wrapper,
+#app-mount .bd-base .bd-chat .bd-scrollerWrap .bd-scroller,
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea,
+#app-mount .bd-base .bd-content .bd-applicationStore,
+#app-mount .bd-base .bd-content .bd-applicationStore .bd-headerBar,
+#app-mount .bd-base .bd-content .bd-applicationStore .bd-scroller,
+#app-mount .bd-base .bd-content > .bd-container,
+#app-mount .bd-base .bd-content > .bd-container .bd-scroller,
+#app-mount .bd-base .bd-content > .bd-container .bd-scroller .bd-header,
+#app-mount .bd-base .bd-container > .bd-container,
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
+#app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
+#app-mount .bd-searchResultsWrap .bd-channelName,
+#app-mount .bd-searchResultsWrap .bd-channelName,
+#app-mount .bd-searchResultsWrap .bd-searchResult.bd-expanded .bd-searchResultMessage,
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-scroller,
+#app-mount .bd-layerContainer .bd-perksModal,
+#app-mount .bd-modal .bd-flex .bd-tiles {
+    background: transparent;
+}
+
+#app-mount .bd-searchResultsWrap .bd-searchHeader,
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
+#app-mount .bd-base .bd-sidebar .bd-header,
+#app-mount .bd-layerContainer .bd-userPopout,
+#app-mount .bd-layerContainer .bd-emojiPicker,
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-header,
+#app-mount .bd-layerContainer .bd-footer,
+#app-mount .bd-modal,
+#app-mount .bd-modal .bd-footer,
+#app-mount .bd-modal .bd-message,
+#app-mount .bd-modal .bd-container .bd-quickswitcher,
+#app-mount .bd-uploadModal,
+#app-mount .bd-uploadModal .bd-footer,
+#app-mount .bd-layerContainer .bd-contextMenu,
+#app-mount .bd-hasMore,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper,
+#app-mount .bd-game,
+#app-mount .bd-elevationBorderHigh,
+#app-mount .bd-slider .bd-track .bd-grabber,
+#app-mount .bd-item.bd-noWrap,
+#app-mount .bd-css-menu,
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input,
+#app-mount .bd-modal .bd-flex .bd-tiles,
+#app-mount .bd-app *::before,
+#app-mount .bd-app *::after {
+    box-shadow: none;
+}
+
+/* Depth */
+#app-mount .bd-base .bd-chat > .bd-title {
+    background-color: var(--bd-depth-title, transparent);
+}
+
+#app-mount .bd-wrapper.bd-guilds,
+#app-mount .bd-titleBar.bd-typeMacOS {
+    background-color: var(--bd-depth-guilds-list, transparent);
+}
+
+#app-mount .bd-base .bd-sidebar,
+#app-mount .bd-base .bd-chat > .bd-content > .bd-membersWrap,
+#app-mount .bd-searchResultsWrap {
+    background-color: var(--bd-depth-sidebar, transparent);   
+}
+
+#app-mount .bd-base .bd-sidebar .bd-panels {
+    background-color: var(--bd-depth-userbox, transparent);
+}
+
+/* Dates, dividers */
+/** Dates **/
+/*** Hides the red thingy ***/
+#app-mount .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill,
+#app-mount .bd-divider .bd-unreadPill .bd-unreadPillCap {
+    display: none;
+}
+
+/*** Sets the old dividers back ***/
+#app-mount .bd-scrollerWrap .bd-scroller .bd-divider {
+    border-color: transparent;
+    margin: 12px 0;
+}
+
+#app-mount .bd-scrollerWrap .bd-scroller .bd-divider.bd-hasContent {
+    margin-top: 16px;
+}
+
+#app-mount .bd-scrollerWrap .bd-scroller .bd-divider.bd-beforeGroup {
+    margin: 16px 0;
+}
+
+#app-mount .bd-divider::before,
+#app-mount .bd-divider::after {
+    content: "";
+    background-color: rgba(var(--bd-color-link-dark), .8);
+    height: 2px;
+    position: absolute;
+}
+
+#app-mount .bd-divider.bd-isUnread::before {
+    right: 50%;
+    margin-right: 20px;
+    width: calc(50% - 20px);
+}
+
+#app-mount .bd-divider.bd-isUnread::after {
+    left: 50%;
+    margin-left: 20px;
+    width: 50%;
+}
+
+#app-mount .bd-divider.bd-hasContent::before {
+    right: 50%;
+    margin-right: 56px;
+    width: calc(50% - 56px);
+}
+
+#app-mount .bd-divider.bd-hasContent::after {
+    left: 50%;
+    margin-left: 56px;
+    width: 50%;
+}
+
+/*** Text ***/
+#app-mount .bd-divider .bd-unreadPill,
+#app-mount .bd-divider .bd-content {
+    color: rgba(var(--bd-color-link-dark), .8);
+    background: transparent;
+    font-size: 14px;
+    padding: 0;
+}
+
+#app-mount .bd-divider .bd-unreadPill {
+    position: initial;
+}
+
+#app-mount .bd-divider .bd-content {
+    display: flex;
+    align-items: center;
+}
+
+/* Dropdowns */
+#app-mount .bd-layerContainer .bd-menu {
+    background-color: rgba(var(--bd-dropdown), .85);
+}
+
+/** Invite buttons **/
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-invite {
+    color: rgb(var(--bd-color-link));
+}
+
+/* Embeds & Attachments */
+#app-mount .bd-attachment,
+#app-mount .bd-embedWrapper:not(.bd-imageWrapper) {
+    background-color: rgba(var(--bd-embed-wrapper), 0.5);
+    border-color: rgb(var(--bd-embed-wrapper-border)) !important;
+}
+
+/** Embed default pill + quote color **/
+#app-mount .bd-blockquoteDivider {
+    background-color: rgb(var(--bd-embed-pill-color));
+}
+
+#app-mount .bd-mentioned:before {
+    background: rgba(var(--bd-mentions-border), .1);
+    border-left: 4px solid rgb(var(--bd-mentions-border));
+}
+
+#app-mount .bd-mentioned {
+    background: rgba(var(--bd-mentions), .1);
+}
+
+/** Invite embeds **/
+#app-mount .bd-chat > .bd-content .bd-message .bd-wrapper.bd-userSelectNone.bd-cursorDefault {
+    background-color: rgba(var(--bd-embed-wrapper), 0.5);
+    border: 1px solid rgb(var(--bd-embed-wrapper-border));
+}
+
+/** Attachments **/
+/*** Icons ***/
+#app-mount .bd-attachment .bd-icon,
+#app-mount .bd-embedWrapper .bd-icon,
+#app-mount .bd-embedWrapper .bd-audioMetadata:before {
+    filter: var(--bd-embed-icon);
+}
+
+#app-mount .bd-embedWrapper .bd-cancelButton,
+#app-mount .bd-embedWrapper .bd-downloadButton,
+#app-mount .bd-embedWrapper .bd-metadataIcon {
+    color: rgb(var(--bd-color-link));
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-embedWrapper .bd-cancelButton:hover,
+#app-mount .bd-embedWrapper .bd-downloadButton:hover,
+#app-mount .bd-embedWrapper .bd-metadataIcon:hover {
+    color: rgb(var(--bd-color-link-dark));
+}
+
+/*** Specially for videos ***/
+#app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper {
+    color: rgb(var(--bd-photonic-variation));
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper .bd-iconWrapper {
+    opacity: .8;
+}
+
+/** Bars and stuff **/
+#app-mount .bd-mediaBarGrabber, 
+#app-mount .bd-mediaBarProgress, 
+#app-mount .bd-mediaBarProgress:after,
+#app-mount .bd-mediaBarProgress:before {
+    background-color: rgb(var(--bd-file-progress-bar));
+}
+
+#app-mount .bd-progressContainer .bd-progress .bd-progressBar.bd-animating {
+    background-color: rgb(var(--bd-file-progress-bar)) !important;
+}
+
+#app-mount .bd-mediaBarInteraction:hover .bd-mediaBarGrabber {
+    background-color: rgb(var(--bd-file-progress-bar-grabber));
+}
+
+/* Emoji picker */
+#app-mount .bd-layerContainer .bd-emojiPicker {
+    background-color: rgba(var(--bd-picker), 0.85);
+}
+
+/** Info of currently hovered emote **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-infoBar {
+    background-color: rgba(var(--bd-dark), .5);
+}
+
+/** Category of emotes **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories {
+    background-color: rgba(var(--bd-darker));
+}
+
+/** Input **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-searchBar {
+    background-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker input {
+    color: rgb(var(--bd-color-darker));
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker input::placeholder {
+    color: rgb(var(--bd-color-placeholder));
+}
+
+/** Diversity picker **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout {
+    background-color: rgb(var(--bd-dark));
+    border-color: rgb(var(--bd-dark));
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout .bd-tem:hover {
+    background-color: rgb(var(--bd-light));
+}
+
+/** Actual picker **/
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-emojiItem.bd-selected {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item {
+    filter: hue-rotate(40deg) saturate(1000%) brightness(0.65);
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item:hover,
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
+    filter: none;
+}
+
+#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
+    border-bottom-color: rgb(var(--bd-color-link-dark));
+}
+
+/* Gif picker */
+#app-mount .bd-channelTextArea > .bd-autocomplete {
+    background: rgba(var(--bd-picker), 0.85);
+}
+
+/** Individual gifs **/
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result {
+    background: rgba(var(--bd-default), 0.1);
+}
+
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result:hover:after {
+    box-shadow: inset 0 0 0 2px rgb(var(--bd-lightest));
+}
+
+/** Categories **/
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFade {
+    background-color: rgba(var(--bd-darker), 0.4);
+}
+
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFade:hover {
+    background-color: rgba(var(--bd-darker), 0.8);
+}
+
+/** Favorites **/
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFadeBlurple {
+    background-color: rgba(var(--bd-color-link-dark), .6);
+}
+
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFadeBlurple:hover {
+    background-color: rgba(var(--bd-color-link-dark), .8);
+}
+
+/** Search **/
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-searchBar {
+    background-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-channelTextArea > .bd-autocomplete input {
+    color: rgb(var(--bd-color-darker));
+}
+
+#app-mount .bd-channelTextArea > .bd-autocomplete input::placeholder {
+    color: rgb(var(--bd-color-placeholder));
+}
+
+/* Guild list */
+/** Guild without server icons **/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-listItem .bd-childWrapper,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-childWrapper,
+/** Error **/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-listItem .bd-anchor.bd-guildsError,
+/*** Discord icon ***/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-listItem:nth-child(1) a,
+/*** Separator between discord icon and your actual guild list ***/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-listItem:nth-child(2) .bd-guildSeparator,
+/*** Add new guild ***/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-listItem .bd-circleIconButton,
+/*** Invite link with default guild icon ***/
+#app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon,
+/*** Guilds with no default icon in settings ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-guilds .bd-icon.bd-noIcon,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-avatarUploader .bd-avatarUploaderInner,
+#app-mount .bd-perksModalContentWrapper .bd-ctaBar .bd-guildIcon.bd-noIcon /* Server Boost */,
+#app-mount .bd-modal .bd-avatarUploaderInner /* Create new guild */ {
+    background-color: rgb(var(--bd-guild));
+}
+
+/*** Error ***/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-listItem .bd-anchor.bd-guildsError {
+    border-color: rgb(var(--bd-color-link));
+}
+
+/** Folders **/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper span.bd-expandedFolderBackground {
+    background: rgb(var(--bd-guild-folder));
+}
+
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-expandedFolderIconWrapper svg path {
+    fill: rgb(var(--bd-color-link));
+}
+
+/*** Motherfucking piece of shit that made me break my record of not using !important ***/
+/*** It's just to make the guild folders single color ***/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper[style*="background-color"] {
+    background-color: transparent !important;
+}
+
+/*** ANOTHER PIECE OF SHIT ***/
+/*** How many pings in an unread guild ***/
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-lowerBadge .bd-numberBadge {
+    background-color: rgb(var(--bd-guild-unread)) !important;
+}
+
+/** Unread message indicator **/
+#app-mount .bd-mention.bd-bar {
+    background-color: rgb(var(--bd-guild-unread-bar));
+    opacity: 1;
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-mention.bd-bar:hover {
+    background-color: rgba(var(--bd-guild-unread-bar-hover));
+}
+
+/* Icons */
+#app-mount .bd-quickswitcher .bd-emptyState, /* Quick switcher */
+#app-mount .bd-noticeIcon.bd-icon /* Streamer mode */,
+#app-mount .bd-sadImage /* Emoji picker */ {
+    filter: var(--bd-image-solid, none);
+}
+
+#app-mount .bd-userSettingsSecurityImage, /* User settings chestbox */
+#app-mount .bd-emptyPlaceholder .bd-image, /* No pins, recent mentions */
+#app-mount .bd-image.bd-marginBottom40, /* No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assumed it's prefix with "no". Integrations, webhooks, invites, bans,*/
+#app-mount .bd-emptyStateImage, /* Gifts */
+#app-mount .bd-emptyIconGuilds, /* Mutual servers */
+#app-mount .bd-emptyIcon, /* Mutual friends */
+#app-mount .bd-errorStateIcon, /* People to GC with */ 
+#app-mount .bd-emptyGuilds, /* Guilds */
+#app-mount .bd-marketingRefreshTier1Graphic, /* Nitro */ 
+#app-mount .bd-endContainer::after /* Gif picker favorites */ {
+    filter: var(--bd-image-translucent, none);
+}
+
+/** Some super hacky shit b did for server invite **/
+#app-mount .bd-channelNotice {
+    filter: var(--bd-image-server-invite, none);
+}
+
+#app-mount .bd-channelNotice > .bd-close,
+#app-mount .bd-channelNotice > .bd-message {
+    filter: var(--bd-image-server-invite-icons, none);
+}
+
+#app-mount .bd-channelNotice > .bd-button {
+    filter: var(--bd-image-server-invite-button, none);
+}
+
+/** Welcome to your fuckin server, scrub **/
+#app-mount .bd-itemContainer .bd-icon,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion img[alt].bd-flexChild[src*="svg"] /* Icon at the bottom right of Settings > Widget */ {
+    filter: var(--bd-image-server-welcome-icons, none);
+}
+
+/** Verified icon, boosted server **/
+#app-mount .bd-flowerStar path {
+    fill: rgb(var(--bd-color-link));
+}
+
+/* Inputs */
+/** Modal search textarea **/
+#app-mount .bd-modal .bd-modal .bd-header .bd-container {
+    background-color: rgb(var(--bd-light));
+}
+
+#app-mount .bd-modal .bd-modal .bd-header .bd-container {
+    color: rgb(var(--bd-color-darker));
+}
+
+#app-mount .bd-modal .bd-modal .bd-header .bd-container::placeholder {
+    color: rgb(var(--bd-color-placeholder));
+}
+
+#app-mount .bd-modal .bd-modal .bd-header .bd-container .bd-input {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/** Text input or similar **/
+#app-mount .bd-modal .bd-input,
+#app-mount .bd-modal .bd-copyInput,
+#app-mount .bd-modal .bd-css-control,
+#app-mount .bd-layerContainer .bd-modalRoot .bd-input,
+#app-mount .bd-layerContainer .bd-modalRoot .bd-select,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-copyInput {
+    border-color: rgba(var(--bd-input-border), .2);
+    background-color: rgba(var(--bd-input), .05);
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-input {
+    background-color: rgba(var(--bd-default), 0.4);
+    border-color: rgba(var(--bd-default), 0.6);
+}
+
+#app-mount .bd-modal .bd-input:hover,
+#app-mount .bd-modal .bd-copyInput:hover,
+#app-mount .bd-modal .bd-css-control:hover,
+#app-mount .bd-layerContainer .bd-modalRoot .bd-input:hover,
+#app-mount .bd-layerContainer .bd-modalRoot .bd-select:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-copyInput:hover {
+    border-color: rgba(var(--bd-color-link), .4);
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-input:hover {
+    border-color: rgba(var(--bd-lightest), 0.8);
+}
+
+#app-mount .bd-modal .bd-input.bd-focused,
+#app-mount .bd-modal .bd-input:focus,
+#app-mount .bd-modal .bd-css-control:focus,
+#app-mount .bd-layerContainer .bd-modalRoot .bd-input:focus,
+#app-mount .bd-layerContainer .bd-modalRoot .bd-select.bd-selectOpen,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input:focus,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input.bd-focused,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input:focus,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input:focus,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input:focus,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container:focus,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control:focus,
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-input:focus {
+    border-color: rgb(var(--bd-color-link));
+}
+
+#app-mount .bd-input {
+    color: rgb(var(--bd-color-light));
+}
+
+/*** Dropdown for settings ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-container .bd-css-menu,
+#app-mount .bd-modal .bd-css-container .bd-css-menu,
+#app-mount .bd-popouts .bd-scroller {
+    background-color: rgb(var(--bd-default));
+    border-color: rgb(var(--bd-darker));
+}
+
+/**** Game activity ****/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-gameNameInput:hover,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-gameNameInput:focus {
+    border-color: rgba(var(--bd-dark), .5);
+    background-color: rgba(var(--bd-color-link-dark), .05);
+}
+
+/*** Upload modal ***/
+#app-mount .bd-uploadModal .bd-inner .bd-scrollableContainer {
+    border-color: rgba(var(--bd-color-link), .2);
+    background-color: rgba(var(--bd-darker), .5);
+}
+
+/** Radio selects **/
+#app-mount .bd-cardPrimaryEditable[style*="background"] {
+    background-color: rgb(var(--bd-color-link)) !important;
+    border-color: rgb(var(--bd-color-link)) !important;
+}
+
+#app-mount .bd-cardPrimaryEditable {
+    background-color: rgba(var(--bd-color-link), .05);
+    border-color: rgba(var(--bd-color-link), .2);
+}
+
+/*** Settings ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card:not(.bd-game):not(.bd-emojiRow),
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card::before,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-header, /* Audit Log */
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-changeDetails {
+    background-color: rgba(var(--bd-darker), .3);
+    border-color: rgba(var(--bd-darker), .5);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-auditLog /* Audit Log */ {
+    border-color: rgba(var(--bd-darker), .5);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card:hover::before,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-headerExpanded {
+    background-color: rgba(var(--bd-darker), .5);
+    border-color: rgba(var(--bd-darker), .8);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-cardWrapper {
+    background-color: transparent;
+}
+
+/** Notification settings */
+#app-mount .bd-cardPrimaryOutline {
+    border-color: rgba(var(--bd-color-link), .2);
+}
+
+#app-mount .bd-cardPrimaryOutline .bd-checkboxContainer::before {
+    background-color:  rgba(var(--bd-color-link), .1);
+}
+
+/** Checkboxes **/
+#app-mount .bd-checkbox,
+#app-mount .bd-checkbox .bd-checkboxInner span {
+    border-color: rgba(var(--bd-checkbox), .2);
+}
+
+#app-mount .bd-checkbox.bd-checked[style*="border-color"]:not(.bd-round),
+#app-mount .bd-checkbox .bd-checkboxInner .bd-checkboxElement:checked + span {
+    border-color: rgb(var(--bd-checkbox-border)) !important;
+}
+
+#app-mount .bd-checkbox.bd-checked[style*="background-color"]:not(.bd-round),
+#app-mount .bd-checkbox .bd-checkboxInner .bd-checkboxElement:checked + span {
+    background-color: rgb(var(--bd-checkbox)) !important;
+}
+
+#app-mount .bd-checkbox.bd-checked[style*="background-color"]:not(.bd-round) polyline {
+    stroke: rgb(var(--bd-checkbox-stroke));
+}
+
+#app-mount .bd-checkbox.bd-checked:not(.bd-round) polyline {
+    stroke: rgb(var(--bd-checkbox));
+}
+
+/*** Green checkboxes ***/
+#app-mount .bd-checkbox.bd-checked[style*="border-color"].bd-round {
+    border-color: rgba(var(--bd-checkbox-border), .2) !important;
+}
+
+#app-mount .bd-checkbox.bd-checked[style*="background-color"].bd-round {
+    background-color: rgba(var(--bd-checkbox), .05) !important;
+}
+
+#app-mount .bd-checkbox.bd-checked[style*="background-color"].bd-round polyline {
+    stroke: rgb(var(--bd-checkbox-stroke));
+}
+
+/** Sliders **/
+#app-mount .bd-switch.bd-valueUnchecked {
+    background-color: rgb(var(--bd-slider-unchecked));
+}
+
+#app-mount .bd-switch.bd-valueChecked {
+    background-color: rgb(var(--bd-slider-checked));
+}
+
+#app-mount .bd-switch.bd-valueChecked[style*="background"] {
+    background-color: rgb(var(--bd-slider-checked)) !important;
+}
+
+/** Super long sliders **/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-bar {
+    background-color: rgba(var(--bd-color-link-dark), .5);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-bar .bd-barFill {
+    background-color: rgb(var(--bd-color-link));
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-track .bd-grabber {
+    background-color: rgb(var(--bd-photonic-variation));
+}
+
+/** Nitro server plan selector **/
+/*** + - ***/
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile .bd-bodyWrapper .bd-iconWrapper {
+    background-color: rgb(var(--bd-color-link-dark));
+}
+
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile .bd-bodyWrapper .bd-iconWrapper {
+    color: rgb(var(--bd-photonic-variation));
+}
+
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile .bd-bodyWrapper .bd-inputWrapper .bd-input {
+    background-color: rgb(var(--bd-lightest));
+}
+
+/* Jump tos */
+#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar,
+#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar,
+#app-mount .bd-base .bd-sidebar .bd-unread.bd-bar {
+    background-color: rgba(var(--bd-jumpto));
+}
+
+#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar:hover,
+#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar:hover,
+#app-mount .bd-base .bd-sidebar .bd-unread.bd-bar:hover {
+    background-color: rgba(var(--bd-jumpto-hover));
+}
+
+/* Links */
+#app-mount a.bd-anchor,
+#app-mount a.bd-anchor.bd-embedLink,
+#app-mount span.bd-fakeLink,
+#app-mount button.bd-lookLink.bd-colorBrand {
+    color: rgb(var(--bd-color-link)) !important;
+    text-shadow: var(--bd-link-shadows);
+    text-decoration: none;
+}
+
+#app-mount a.bd-anchor:hover,
+#app-mount a.bd-anchor.bd-embedLink:hover,
+#app-mount span.bd-fakeLink:hover,
+#app-mount button.bd-lookLink.bd-colorBrand:hover {
+    color: rgb(var(--bd-color-link-hovered)) !important;
+    text-shadow: var(--bd-link-shadows-hover);
+    text-decoration: none;
+    transition: all .4s linear 0s;
+}
+
+#app-mount button.bd-lookLink.bd-colorBrand:hover .bd-contents {
+    background: none;
+}
+
+/* Loading stuff */
+#app-mount .bd-wanderingCubesItem {
+    background-color: rgb(var(--bd-color-link-dark));
+}
+
+/* Markup */
+/** Spoilers **/
+#app-mount .bd-spoilerText.bd-hidden {
+    background-color: rgba(var(--bd-spoiler-hidden), .8);
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-spoilerText.bd-hidden:hover {
+    background-color: rgb(var(--bd-spoiler-hidden-hover));
+}
+
+#app-mount .bd-spoilerText {
+    background-color: rgba(var(--bd-spoiler), 0.1);
+}
+
+/** Code **/
+#app-mount .bd-markup code,
+#app-mount span.bd-inlineCode,
+#app-mount span.bd-before_inlineCode,
+#app-mount span.bd-after_inlineCode {
+    background-color: rgba(var(--bd-code), 0.6);
+    border-color: rgba(var(--bd-code-border), 0.8);
+}
+
+/** Mentions **/
+#app-mount .bd-markup span.bd-wrapper.bd-mention,
+#app-mount .bd-markup span.bd-wrapper {
+    color: rgb(var(--bd-mentions-color));
+    background: rgba(var(--bd-mentions-color), .1);
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-markup span.bd-wrapper.bd-mention:hover,
+#app-mount .bd-markup span.bd-wrapper:hover {
+    color: rgb(var(--bd-mentions-color-hover));
+    background-color: rgba(var(--bd-mentions-color), .5);
+}
+
+/* Modals */
+/** Base **/
+#app-mount .bd-modal .bd-modal,
+#app-mount .bd-modal .bd-reactors,
+#app-mount .bd-layerContainer [class^="bd-modal"],
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile,
+#app-mount .bd-layerContainer .bd-popouts {
+    background-color: rgba(var(--bd-modal-base), .85);
+}
+
+/** Footers **/
+#app-mount .bd-modal .bd-modal .bd-footer,
+#app-mount .bd-modal .bd-sidebar,
+#app-mount .bd-layerContainer .bd-footer {
+    background-color: rgba(var(--bd-modal-footer), .85);
+}
+
+/** Upload modals **/
+#app-mount .bd-uploadModal {
+    background-color: rgb(var(--bd-uploadmodal-base));
+}
+
+#app-mount .bd-uploadModal .bd-footer {
+    background-color: rgb(var(--bd-uploadmodal-footer));
+}
+
+/*** Drag and drops ***/
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-bgScale {
+    background: rgb(var(--bd-default));
+}
+
+/**** File icon ****/
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-icon,
+#app-mount .bd-uploadModal .bd-icon:not(.bd-image) {
+    filter: var(--bd-modal-icon, none);
+}
+
+/** You sure you wanna pin this? **/
+#app-mount .bd-modal .bd-modal .bd-message {
+    background: rgb(var(--bd-default));
+}
+
+/** Server boost bottom thingy **/
+#app-mount .bd-existingSlotNotice,
+#app-mount .bd-upsellFooter {
+    background-color: rgb(var(--bd-lightest));
+}
+
+/** When you click on an activity from friends **/
+#app-mount .bd-layerContainer .bd-popouts {
+    background-color: rgba(var(--bd-lightest), .8);
+}
+
+/** Settings popout **/
+#app-mount .bd-layerContainer > .bd-layer > * > .bd-container {
+    background-color: rgb(var(--bd-default));
+}
+
+/* Mousemode */
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy:hover,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy.bd-selected {
+    background: var(--bd-messageWrapper-hover);
+}
+
+/* Pins */
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap {
+    background-color: rgba(var(--bd-popout-bg), .95);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/*** Pinned popout header and footer ***/
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-header,
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-footer {
+    background-color: rgba(var(--bd-popout-header-footer), .9);
+    box-shadow: none;
+}
+
+/*** Pinned popout messages ***/
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper {
+    background-color: rgba(var(--bd-popout-message-bg), .3);
+    border-color: transparent;
+}
+
+#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper:hover {
+    border-color: transparent;
+}
+
+/* Quick Switcher */
+#app-mount .bd-modal .bd-container .bd-quickswitcher {
+    background-color: rgb(var(--bd-quickswitcher));
+}
+
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input {
+    background-color: rgba(var(--bd-color-link-dark), .2);
+}
+
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-keybindShortcut span {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+    box-shadow: inset 0 -4px 0 rgba(var(--bd-default), .8);
+    border-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-result.bd-resultFocused {
+    background-color: rgb(var(--bd-lighter), .8);
+}
+
+/* Scrollbars */
+#app-mount .bd-scroller::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bd-scrollbar-track-piece), 0.5);
+    border-color: transparent;
+}
+
+#app-mount .bd-scroller::-webkit-scrollbar-track,
+#app-mount .bd-scroller::-webkit-scrollbar-track-piece {
+    background: var(--bd-scrollbar);
+    border-color: var(--bd-scrollbar);
+}
+
+/* Search */
+/** Search bar on top of the DM lists and regular search **/
+#app-mount .bd-search > .bd-searchBar,
+#app-mount .bd-searchBar .bd-searchBarComponent,
+#app-mount .bd-libraryFilter .bd-searchBar.bd-container,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-searchBar {
+    background-color: rgba(var(--bd-searchbar), .35);
+    border-radius: 3px;
+}
+
+/*** Search bar filters ***/
+#app-mount .bd-searchBar .bd-searchFilter,
+#app-mount .bd-searchBar .bd-searchAnswer {
+    background-color: rgba(255, 255, 255, .05);
+}
+
+#app-mount .bd-searchBar .bd-searchAnswer {
+    margin-left: 0;
+}
+
+/** Search results wrap **/
+#app-mount .bd-searchResultsWrap .bd-searchResult::before,
+#app-mount .bd-searchResultsWrap .bd-searchResult::after {
+    background-image: none;
+}
+
+#app-mount .bd-searchResultsWrap .bd-searchResultMessage.bd-hit,
+#app-mount .bd-searchResultsWrap .bd-searchResult.bd-expanded {
+    border-color: transparent;
+    background-color: rgba(var(--bd-search-item), .6);
+    box-shadow: none;
+}
+
+/** Search popout **/
+#app-mount .bd-container.bd-elevationBorderHigh {
+    background-color: rgba(var(--bd-search-popout), .9);
+    box-shadow: none;
+}
+
+/*** Get rid of dumb gradient ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-resultsGroup .bd-option::after {
+    display: none;
+}
+
+/*** Selected or hovered option ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-resultsGroup .bd-option:hover,
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-resultsGroup .bd-option.bd-selected {
+    background-color: rgba(var(--bd-search-popout-option), .9);
+}
+
+/*** Suggest header ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-queryContainer.bd-focused {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+/**** Return button ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-queryContainer > .bd-queryShortcut > .bd-keybindShortcut > span {
+    background-color: rgba(255, 255, 255, .02);
+    box-shadow: inset 0 -4px 0 rgba(255, 255, 255, .05);
+    border-color: rgba(255, 255, 255, .05);
+}
+
+/*** Date picker background ***/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker {
+    background-color: transparent;
+    border-radius: 0;
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker__day {
+    border-color: rgba(var(--bd-lightest), .4);
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker__day--selected:after {
+    background-color: rgba(var(--bd-lightest), .95);
+}
+
+/**** Date picker suggestion ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker > .bd-datePickerHint > .bd-hintValue {
+    background-color: rgba(var(--bd-lightest), .95);
+}
+
+/**** Previous/next arrow backgrounds and hover effects ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__navigation {
+    border-color: transparent;
+    background-color: rgba(var(--bd-lightest), .3);
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__navigation:hover {
+    background-color: rgba(var(--bd-lightest), .5);
+}
+
+/**** Header and day backgrounds and hover effects ****/
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__header,
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__day {
+    background-color: transparent;
+}
+
+#app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
+    background-color: rgba(var(--bd-lightest), .95);
+}
+
+/* Server Boost */
+/** Server Boost page **/
+#app-mount .bd-perksModalContentWrapper .bd-ctaBar,
+#app-mount .bd-perksModalContentWrapper li.bd-perk:not([class*="vailable"]) {
+    background: rgba(var(--bd-color-link-dark), .2);
+}
+
+/** Levels **/
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierHeader {
+    background: rgba(var(--bd-serverboost-header), .3);
+    color: rgb(var(--bd-color-light));
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierBody,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierBody {
+    background-color: rgba(var(--bd-serverboost-body), .1);
+}
+
+/*** Privileged folk ***/
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader.bd-tierHeaderUnlocked,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierHeader.bd-tierHeaderUnlocked .bd-tierHeaderUnlockedBackground {
+    background: linear-gradient(90deg, rgba(var(--bd-color-link-dark), .5), rgba(var(--bd-color-link), .5)) ;
+    color: rgb(var(--bd-color-light));
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader .bd-tierUnlocked,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-tierUnlocked {
+    background-color: rgb(var(--bd-photonic-variation));
+    color: rgb(var(--bd-color-link));
+}
+
+/*** Icons ***/
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader svg,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierHeader svg {
+    color: rgb(var(--bd-color-link));
+}
+
+/** Progress bar **/
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-barBackground {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-barBackground .bd-barForeground {
+    background-color: rgba(var(--bd-color-link), .9);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-bar.bd-foreground {
+    color: rgba(var(--bd-color-link), .9);
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-barBackground .bd-barSecondary {
+    background-color: rgba(var(--bd-color-link-dark), .5);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-bar.bd-background {
+    color: rgba(var(--bd-color-link-dark), .5);
+}
+
+/** Tiers **/
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-tierMarkerBackground,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-tier.bd-tierDefault {
+    background-color: rgb(var(--bd-color-link-dark));
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-tierMarkerInProgress,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-tier.bd-tierInProgress {
+    background-color: rgba(var(--bd-color-link), .6) !important;
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-tierMarkerAccomplished,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-tier.bd-tierCurrent  {
+    background-color: rgb(var(--bd-color-link)) !important;
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-modal > .bd-inner > .bd-modal span.bd-boostCount {
+    background-color: rgb(var(--bd-color-link-dark));
+}
+
+/* Settings */
+#app-mount [role="dialog"][aria-label$="_SETTINGS"],
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-scroller,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-scroller {
+    background-color: transparent;
+}
+
+/** List **/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion {
+    background-color: rgba(var(--bd-settings-sidebar), 0.4);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected:hover {
+    background-color: rgba(var(--bd-settings-sidebar-item), 0.4);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item:hover {
+    background-color: rgba(var(--bd-settings-sidebar-item-hover), 0.2);
+}
+
+/*** Server Boost / Nitro ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(114, 137, 218)"] {
+    color: rgb(var(--bd-color-link)) !important;
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(114, 137, 218)"]:hover {
+    background-color: rgba(var(--bd-color-link), .1) !important;
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"],
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"]:hover {
+    color: rgb(var(--bd-photonic-variation)) !important; 
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"],
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"]:hover {
+    background-color: rgb(var(--bd-color-link)) !important;
+}
+
+/** Actual settings **/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion {
+    background-color: rgba(var(--bd-settings-content), .1);
+}
+
+/** Tabs **/
+/** Not every tab has individual styles because of general selectors. Thank god for that. **/
+/*** Connections ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner {
+    background-color: rgba(var(--bd-default), .4)
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner:hover {
+    background-color: rgba(var(--bd-default), .6)
+}
+
+/*** Biling ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane {
+    background-color: rgba(var(--bd-default), .5);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment {
+    background-color: transparent;
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo {
+    background-color: rgba(var(--bd-lighter), .5);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo .bd-paymentHeader {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+/**** Navigation ****/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonNext,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonPrev,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageIndicator  {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+/*** Server Boost ***/
+/**** Active boosts ****/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildHeader {
+    background-color: rgba(var(--bd-darker), .6);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildSubscriptionSlots {
+    background-color: rgba(var(--bd-lighter), .4);
+}
+
+/**** Boost level ****/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer {
+    background-color: rgba(var(--bd-lighter), .5);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer .bd-gemWithoutLabel {
+    color: rgb(var(--bd-color-link));
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorProgressCircle .bd-circleBackgroundAlt {
+    fill: rgba(255, 255, 255, 0.1);
+}
+
+/*** Game Activity ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-activeGame.bd-notDetected {
+    background-color: rgba(var(--bd-default), .5)
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-activeGame {
+    background-color: rgba(var(--bd-color-link), .5)
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game:not(:last-of-type),
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow:not(:last-of-type),
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member:not(:last-of-type),
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member,
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser {
+    padding: 20px;
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card::before {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: var(--bd-transition);
+}
+
+/*** Language ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item {
+    background-color: rgba(var(--bd-color-link), .1);
+    border: 1px solid rgba(var(--bd-color-link), .1);
+    border-radius: 5px;
+    transition: var(--bd-transition);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:hover {
+    background-color: rgba(var(--bd-color-link), .2);
+    border: 1px solid rgba(var(--bd-color-link), .2);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+/*** Audit Log ***/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-auditLog:nth-of-type(2) {
+    margin-top: 10px;
+}
+
+/** Misc **/
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-noWrap:last-of-type .bd-divider {
+    display: none;
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-bottomDivider {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion [class*="marginBottom"]:last-of-type {
+    margin-bottom: none;
+}
+
+/* Tabs */
+/** Friends **/
+#app-mount .bd-peopleColumn .bd-peopleListItem .bd-actionButton {
+    background-color: rgb(var(--bd-default));
+}
+
+#app-mount .bd-peopleColumn .bd-peopleListItem:hover {
+    background-color: rgba(var(--bd-color-link), .05)
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-emptyCard {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard:hover {
+    background-color: rgba(var(--bd-default), .6);
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body {
+    background-color: rgba(var(--bd-lighter), .4);
+}
+
+/* Some adjustments to make text more readable */
+/** Make default channels a bit brighter **/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-content .bd-name {
+    color: rgb(var(--bd-color-darker));
+}
+
+/*** Selected ***/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel.bd-selected,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected .bd-content .bd-name {
+    color: rgb(var(--bd-photonic-variation));
+}
+
+/*** Unread ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-modeUnread .bd-content .bd-name {
+    color: rgb(var(--bd-color-lighter));
+}
+
+/*** Muted ***/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel .bd-muted,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-modeMuted .bd-content .bd-name {
+    color: rgb(var(--bd-color-darkest));
+}
+
+/** Timestamps **/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-contents .bd-timestamp {
+    color: rgb(var(--bd-color-darker));
+}
+
+/* Textarea */
+/** Area around the textarea **/
+#app-mount .bd-base .bd-chat .bd-content form.bd-form:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+    margin: 0 16px;
+}
+
+#app-mount .bd-base .bd-chat .bd-content form.bd-form {
+    padding-top: 12px;
+    margin-top: 0;
+}
+
+/** Actual textarea **/
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea .bd-scrollableContainer {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+/** Icons near textarea **/
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-button svg path:not(.bd-attachButtonPlay) {
+    fill: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.3);
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-button:hover path:not(.bd-attachButtonPlay) {
+    fill: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*** Emoji ***/
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-sprite {
+    filter: grayscale(100%) opacity(.5) !important;
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-button:hover .bd-sprite {
+    filter: none !important;
+}
+
+/** Text area placeholder color **/
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-textArea .bd-placeholder {
+    color: rgba(255, 255, 255, .45); /* TODO */
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-attachWrapper {
+    border-right: none;
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-attachWrapper::after {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 70%;
+    width: 1px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+/** Autocomplete **/
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-selector.bd-selectorSelected {
+    background-color: rgba(var(--bd-lightest), .5);
+}
+
+
+/*** Click server boost from settings */
+#app-mount .bd-subscribeTooltipWrapper,
+#app-mount .bd-layerContainer .bd-layer .bd-tooltip {
+    background-color: rgba(var(--bd-tooltips));
+}
+
+#app-mount .bd-layerContainer .bd-layer .bd-tooltip > * {
+    border-top-color: rgba(var(--bd-tooltips));
+}
+
+#app-mount .bd-subscribeTooltipWrapper::after {
+    border-bottom-color: rgba(var(--bd-tooltips));
+}
+
+/* User popouts */
+/** Header colors **/ 
+#app-mount .bd-userPopout > .bd-headerNormal,
+#app-mount .bd-modal > .bd-inner .bd-topSectionNormal {
+    background-color: rgba(var(--bd-user-popouts-header), .95);
+}
+
+#app-mount .bd-userPopout > .bd-headerPlaying,
+#app-mount .bd-modal > .bd-inner .bd-topSectionPlaying {
+    background-color: rgba(var(--bd-user-popouts-header-playing), .95);
+}
+
+#app-mount .bd-userPopout > .bd-headerStreaming,
+#app-mount .bd-modal > .bd-inner .bd-topSectionStreaming {
+    background-color: rgba(var(--bd-user-popouts-header-streaming), .95);
+}
+
+#app-mount .bd-userPopout > .bd-headerSpotify,
+#app-mount .bd-modal > .bd-inner .bd-topSectionSpotify {
+    background-color: rgba(var(--bd-user-popouts-header-spotify), .95);
+}
+
+/*** Send Message with regular status ***/
+#app-mount .bd-modal > .bd-inner .bd-topSectionNormal .bd-button.bd-lookFilled {
+    background-color: rgb(var(--bd-color-link));
+}
+
+/**** Bots ****/
+#app-mount .bd-userPopout > .bd-headerNormal .bd-botTagRegular,
+#app-mount .bd-modal > .bd-inner .bd-topSectionNormal .bd-botTagRegular {
+    background-color: rgb(var(--bd-color-link));
+}
+
+/*** Send Message with !regular status ***/
+#app-mount .bd-modal > .bd-inner .bd-topSectionPlaying .bd-lookInverted,
+#app-mount .bd-modal > .bd-inner .bd-topSectionSpotify .bd-lookInverted,
+#app-mount .bd-modal > .bd-inner .bd-topSectionStreaming .bd-lookInverted {
+    color: rgb(var(--bd-color-link));
+}
+
+/**** Bots ****/
+#app-mount .bd-userPopout > .bd-headerPlaying .bd-botTagInvert,
+#app-mount .bd-modal > .bd-inner .bd-topSectionPlaying .bd-headerInfo .bd-botTagInvert {
+    color: rgb(var(--bd-color-link));
+}
+
+/** Body **/
+#app-mount .bd-userPopout > .bd-body,
+#app-mount .bd-modal > .bd-inner .bd-flex > .bd-body {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+}
+
+#app-mount .bd-userPopout > .bd-footer {
+    background-color: rgba(var(--bd-user-popouts-footer), .95);
+}
+
+#app-mount .bd-userPopout > .bd-body .bd-note textarea:focus,
+#app-mount .bd-modal > .bd-inner .bd-flex > .bd-body .bd-note textarea:focus {
+    background-color: rgba(var(--bd-user-popouts-notes-focus), .7);
+}
+
+#app-mount .bd-userPopout > .bd-footer > input.bd-quickMessage {
+    background-color: rgba(var(--bd-user-popouts-message), .65);
+    border-color: transparent;
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-userPopout > .bd-footer > input.bd-quickMessage:hover,
+#app-mount .bd-userPopout > .bd-footer > input.bd-quickMessage:focus {
+    background-color: rgba(var(--bd-user-popouts-message), .95);
+}
+
+/** Tabs **/
+#app-mount .bd-tabBarContainer {
+    border-top-color: rgba(255, 255, 255, .1);
+}

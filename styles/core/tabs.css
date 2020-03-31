@@ -1,0 +1,25 @@
+/* Tabs */
+/** Friends **/
+#app-mount .bd-peopleColumn .bd-peopleListItem .bd-actionButton {
+    background-color: rgb(var(--bd-default));
+}
+
+#app-mount .bd-peopleColumn .bd-peopleListItem:hover {
+    background-color: rgba(var(--bd-color-link), .05)
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-emptyCard {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard:hover {
+    background-color: rgba(var(--bd-default), .6);
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body {
+    background-color: rgba(var(--bd-lighter), .4);
+}
