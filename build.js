@@ -3,12 +3,16 @@ path = require('path');
 
 let js = fs
 	.readdirSync(path.join(__dirname, 'scripts'))
+	.filter(name => !name.startsWith('!'))
+	.filter(name => name.endsWith('.js'))
 	.map(file => {
 		return fs.readFileSync(path.join(__dirname, 'scripts', file));
 	})
 	.join('\n');
 let css = fs
 	.readdirSync(path.join(__dirname, 'styles'))
+	.filter(name => !name.startsWith('!'))
+	.filter(name => name.endsWith('.css'))
 	.map(file => {
 		return fs.readFileSync(path.join(__dirname, 'styles', file));
 	})
