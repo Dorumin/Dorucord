@@ -28,11 +28,6 @@ style.type = 'text/css';
 style.rel = 'stylesheet';
 document.head.appendChild(style);
 style.textContent = \`${css}\`;
-for (let rule of style.sheet.rules) {
-	if (rule.selectorText && !rule.selectorText.includes('#app-mount')) {
-		rule.selectorText = '#app-mount ' + rule.selectorText
-	}
-}
 ${js}
 `;
 
