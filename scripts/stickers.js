@@ -464,9 +464,9 @@ window.Stickers = class {
 	}
 
 	query(selector, container = document) {
-		const patched = selector.replace(/\*(\w+)/, `[class*="$1-"]`);
+		// const patched = selector.replace(/\*(\w+)/, `[class*="$1-"]`);
 
-		return container.querySelector(patched);
+		return container.querySelector(selector);
 	}
 
 	closest(el, parent) {
@@ -498,10 +498,10 @@ window.Stickers = class {
 		const existing = document.getElementById(this.BUTTON_ID);
 		if (existing) return;
 
-		const textarea = this.query('div*channelTextArea');
+		const textarea = this.query('.bd-channelTextArea');
 		if (!textarea) return;
 
-		const buttons = this.query('div*buttons', textarea);
+		const buttons = this.query('.bd-buttons', textarea);
 		if (!buttons) return;
 
 		const classes = this.getButtonClasses(buttons.firstChild);
@@ -768,7 +768,7 @@ window.Stickers = class {
 	}
 
 	reflowPopout() {
-		const form = this.query('div*chatContent form');
+		const form = this.query('.bd-chatContent form');
 		if (!form) return;
 
 		this.popout.scrollHeight; // Force reflow
