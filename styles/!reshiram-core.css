@@ -1,44 +1,43 @@
 /* Just for example, and only the defaults, please edit these */
 /* Derived themes should start with a copy of this ruleset with modified values */
-/* Some values are rgb -- nvm all are lol */
+/* Some values are rgb */
 :root .day {
     /* Main background */
-    --bd-background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
-    --bd-background-position: 50%;
+    --bd-background-image: url(https://media.discordapp.net/attachments/238354899291734017/644470695618805760/pokemon__horizon_by_vtas_d55wyw0.jpg);
+    --bd-background-position: bottom;
     --bd-background-color: rgb(var(--bd-default));
-    --bd-background-brightness: brightness(.7);
+    --bd-background-brightness: brightness(.35);
     --bd-background-contrast: contrast(1.1);
     --bd-background-blur: blur(0);
 
     /* Loading */
-    --bd-loading-background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
-    --bd-loading-background-position: 50%;
+    --bd-loading-background-image: url(https://media.discordapp.net/attachments/238354899291734017/644470695618805760/pokemon__horizon_by_vtas_d55wyw0.jpg);
+    --bd-loading-background-position: bottom;
     --bd-loading-background-color: rgb(var(--bd-default));
-    --bd-loading-background-brightness: brightness(.7);
+    --bd-loading-background-brightness: brightness(.4);
     --bd-loading-background-contrast: contrast(1.1);
     --bd-loading-background-blur: blur(0);
 
     /* Main colors */
-    --bd-default: 49, 10, 10;
+    --bd-default: 41, 0, 56;
     --bd-default-border: var(--bd-darker);
-    --bd-lightest: 70, 0, 0; /* Status */
-    --bd-lighter: 82, 0, 0; /* Guild, tooltips */
-    --bd-light: 50, 0, 0; /* Pins, userpopout */
-    --bd-dark: 39, 0, 0; /* Search, settings */
-    --bd-darker: 30, 0, 0;
+    --bd-lightest: 86, 0, 117; /* Status */
+    --bd-lighter: 53, 0, 72; /* Guild, tooltips */
+    --bd-light: 46, 5, 59; /* Pins, userpopout */
+    --bd-dark: 34, 0, 45; /* Search, settings */
+    --bd-darker: 30, 0, 41;
 
-    /* Depth */
-    /** Just comment this whole thing if you want it to be transparent **/
+    /* Depth 
     --bd-depth-title: rgba(var(--bd-default), 0.2);
     --bd-depth-guilds-list: rgba(var(--bd-default), 0.4);
     --bd-depth-sidebar: rgba(var(--bd-default), 0.2);
     --bd-depth-userbox: rgba(var(--bd-default), 0.25); /* I have no idea */
 
     /* Text colors */
-    --bd-color-link: 255, 145, 107;
-    --bd-color-link-dark: 234, 95, 47;
-    --bd-color-link-hovered: 255, 187, 164;
-    --bd-color-link-hovered-shadow: 234, 82, 29;
+    --bd-color-link: 211, 89, 255;
+    --bd-color-link-dark: 154, 8, 208;
+    --bd-color-link-hovered: 217, 112, 255;
+    --bd-color-link-hovered-shadow: 180, 45, 230;
     --bd-color-mention: var(--bd-color-link);
     --bd-color-lighter: 230, 230, 230;
     --bd-color-light: 200, 200, 200;
@@ -77,7 +76,7 @@
     --bd-embed-wrapper: var(--bd-dark);
     --bd-embed-wrapper-border: var(--bd-darker);
     --bd-embed-pill-color: var(--bd-darker);
-    --bd-embed-icon: hue-rotate(140deg) saturate(200%);
+    --bd-embed-icon: hue-rotate(30deg) saturate(200%);
 
     /* Files */
     --bd-file-progress-bar: var(--bd-color-link-dark);
@@ -102,12 +101,12 @@
 
     /* Image hue */
     /* Uncomment if you know the hues */
-    --bd-image-solid: hue-rotate(140deg) saturate(800%) brightness(.5);
-    --bd-image-translucent: hue-rotate(140deg) saturate(700%);
-    --bd-image-server-invite: hue-rotate(140deg) saturate(700%);
-    --bd-image-server-invite-icons: hue-rotate(-140deg) saturate(14.28%);
-    --bd-image-server-invite-button: hue-rotate(-140deg) saturate(14%);
-    --bd-image-server-welcome-icons: hue-rotate(140deg) saturate(200%);
+    --bd-image-solid: hue-rotate(30deg) saturate(500%);
+    --bd-image-translucent: hue-rotate(40deg) saturate(700%);
+    --bd-image-server-invite: hue-rotate(30deg) saturate(700%);
+    --bd-image-server-invite-icons: hue-rotate(330deg) saturate(14.28%);
+    --bd-image-server-invite-button: hue-rotate(-30deg) saturate(14%);
+    --bd-image-server-welcome-icons: hue-rotate(30deg) saturate(200%);
 
     /* Inputs */
     --bd-input: var(--bd-color-link-dark);
@@ -133,8 +132,8 @@
     --bd-modal-base: var(--bd-light);
     --bd-modal-footer: var(--bd-dark);
     --bd-uploadmodal-base: var(--bd-light);
-    --bd-uploadmodal-footer: var(--bd-darker);
-    --bd-modal-icon: hue-rotate(140deg) saturate(200%);
+    --bd-uploadmodal-footer: var(--bd-darker);   
+    --bd-modal-icon: hue-rotate(30deg) saturate(200%);
 
     /* Pins and recent mentions */
     --bd-popout-header-footer: var(--bd-dark);

@@ -8,5 +8,5 @@ const files = fs.readdirSync(top)
   .map(path => fs.readFileSync(path).toString());
 
 // I don't know where you want this spit out
-fs.writeFileSync('styles/core.css', files.join('\n\n'));
+fs.writeFileSync(path.join(__dirname, 'core.css'), files.join('\n\n'));
 console.log( 'Created!');

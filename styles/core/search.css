@@ -3,7 +3,8 @@
 #app-mount .bd-search > .bd-searchBar,
 #app-mount .bd-searchBar .bd-searchBarComponent,
 #app-mount .bd-libraryFilter .bd-searchBar.bd-container,
-#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-searchBar {
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-searchBar
+#app-mount .bd-popouts .bd-popout .bd-popoutList .bd-popoutListInput {
     background-color: rgba(var(--bd-searchbar), .35);
     border-radius: 3px;
 }

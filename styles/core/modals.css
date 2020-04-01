@@ -4,14 +4,18 @@
 #app-mount .bd-modal .bd-reactors,
 #app-mount .bd-layerContainer [class^="bd-modal"],
 #app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile,
-#app-mount .bd-layerContainer .bd-popouts {
+#app-mount .bd-layerContainer .bd-popouts,
+#app-mount .bd-layerContainer .bd-container section,
+#app-mount .bd-popouts .bd-popout .bd-addGamePopout {
     background-color: rgba(var(--bd-modal-base), .85);
 }
 
 /** Footers **/
 #app-mount .bd-modal .bd-modal .bd-footer,
 #app-mount .bd-modal .bd-sidebar,
-#app-mount .bd-layerContainer .bd-footer {
+#app-mount .bd-layerContainer .bd-footer,
+#app-mount .bd-layerContainer .bd-container .bd-white.bd-header,
+#app-mount .bd-popouts .bd-popout .bd-popoutList {
     background-color: rgba(var(--bd-modal-footer), .85);
 }
 
@@ -36,7 +40,8 @@
 }
 
 /** You sure you wanna pin this? **/
-#app-mount .bd-modal .bd-modal .bd-message {
+#app-mount .bd-modal .bd-modal .bd-content > .bd-message,
+#app-mount .bd-popouts .bd-popout .bd-attachPopout /* Attachments popout when you're listening to something or playing a game */ {
     background: rgb(var(--bd-default));
 }
 

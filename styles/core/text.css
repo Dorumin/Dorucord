@@ -8,7 +8,7 @@
 /*** Selected ***/
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel.bd-selected,
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected .bd-content .bd-name {
-    color: rgb(var(--bd-photonic-variation));
+    color: rgb(var(--bd-monochrome-contrast));
 }
 
 /*** Unread ***/
@@ -25,4 +25,9 @@
 /** Timestamps **/
 #app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-contents .bd-timestamp {
     color: rgb(var(--bd-color-darker));
+}
+
+/** Brighten up your headers **/
+#app-mount .bd-invite .bd-header {
+    color: rgb(var(--bd-color-light));
 }

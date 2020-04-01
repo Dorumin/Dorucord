@@ -59,13 +59,13 @@
 
     /* Bots */
     --bd-bot: var(--bd-color-link);
-    --bd-bot-text: var(--bd-photonic-variation);
+    --bd-bot-text: var(--bd-monochrome-contrast);
 
     /* Buttons */
     --bd-button-default: var(--bd-color-link);
     --bd-button-secondary: var(--bd-lighter);
     --bd-button-green: var(--bd-color-link);
-    --bd-button-text: var(--bd-photonic-variation);
+    --bd-button-text: var(--bd-monochrome-contrast);
 
     /* Context Menu */
     --bd-context-menu: var(--bd-darker);
@@ -85,7 +85,7 @@
 
     /* Mentions */
     --bd-mentions-color: var(--bd-color-link);
-    --bd-mentions-color-hover: var(--bd-photonic-variation);
+    --bd-mentions-color-hover: var(--bd-monochrome-contrast);
     ;
     --bd-mentions: var(--bd-color-link);
     --bd-mentions-border: var(--bd-color-link);
@@ -114,7 +114,7 @@
     --bd-input-border: var(--bd-color-link);
     --bd-checkbox: var(--bd-color-link);
     --bd-checkbox-border: var(--bd-color-link);
-    --bd-checkbox-stroke: var(--bd-photonic-variation);
+    --bd-checkbox-stroke: var(--bd-monochrome-contrast);
     --bd-slider-checked: var(--bd-color-link);
     --bd-slider-unchecked: var(--bd-lightest);
 
@@ -183,5 +183,5 @@
     /* else { */
     /*     this.value = white; */
     /* } */
-    --bd-photonic-variation: 255, 255, 255;
+    --bd-monochrome-contrast: 255, 255, 255;
 }

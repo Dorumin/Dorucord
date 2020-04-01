@@ -69,7 +69,7 @@
 
 /* Loading text */
 #app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
-    color: rgb(var(--bd-photonic-variation));   
+    color: rgb(var(--bd-monochrome-contrast));   
 }
 
 #app-mount .bd-app .bd-container .bd-contentBase,
@@ -106,7 +106,7 @@
 #app-mount .bd-base .bd-content > .bd-container,
 #app-mount .bd-base .bd-content > .bd-container .bd-scroller,
 #app-mount .bd-base .bd-content > .bd-container .bd-scroller .bd-header,
-#app-mount .bd-base .bd-container > .bd-container,
+#app-mount .bd-base .bd-content > .bd-container > .bd-container,
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
 #app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
@@ -115,7 +115,9 @@
 #app-mount .bd-searchResultsWrap .bd-searchResult.bd-expanded .bd-searchResultMessage,
 #app-mount .bd-modal .bd-container .bd-quickswitcher .bd-scroller,
 #app-mount .bd-layerContainer .bd-perksModal,
-#app-mount .bd-modal .bd-flex .bd-tiles {
+#app-mount .bd-modal .bd-flex .bd-tiles,
+#app-mount .bd-modal .bd-content .bd-channelTextArea .bd-scrollableContainer,
+#app-mount .bd-previewContainer .bd-media-video {
     background: transparent;
 }
 
@@ -142,6 +144,7 @@
 #app-mount .bd-css-menu,
 #app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input,
 #app-mount .bd-modal .bd-flex .bd-tiles,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container, 
 #app-mount .bd-app *::before,
 #app-mount .bd-app *::after {
     box-shadow: none;

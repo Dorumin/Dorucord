@@ -101,11 +101,11 @@
 }
 
 /** X button **/
-#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor),
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor),
 #app-mount .bd-card [class*="emove"]:not(.bd-anchor) {
     background-color: rgb(var(--bd-dark));
 }
 
-#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor){
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor){
     right: -11px;
 }

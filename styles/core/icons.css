@@ -1,10 +1,18 @@
 /* Icons */
 #app-mount .bd-quickswitcher .bd-emptyState, /* Quick switcher */
 #app-mount .bd-noticeIcon.bd-icon /* Streamer mode */,
-#app-mount .bd-sadImage /* Emoji picker */ {
+#app-mount .bd-sadImage, /* Emoji picker */
+#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-previewContainer .bd-previewOverlay img {
     filter: var(--bd-image-solid, none);
 }
 
+#app-mount .bd-layerContainer .bd-container section canvas,
+#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-graph.bd-description canvas,
+#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-userSettingsVoice .bd-flex .bd-flex .bd-wrapper .bd-container /* Holy fuck long */ {
+    filter: var(--bd-image-translucent, none);
+}
+
+#app-mount .bd-artworkSpotifySessionEnded, /* Self explanatory jesus */
 #app-mount .bd-userSettingsSecurityImage, /* User settings chestbox */
 #app-mount .bd-emptyPlaceholder .bd-image, /* No pins, recent mentions */
 #app-mount .bd-image.bd-marginBottom40, /* No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assumed it's prefix with "no". Integrations, webhooks, invites, bans,*/
@@ -34,7 +42,7 @@
 
 /** Welcome to your fuckin server, scrub **/
 #app-mount .bd-itemContainer .bd-icon,
-#app-mount [role="dialog"][aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion img[alt].bd-flexChild[src*="svg"] /* Icon at the bottom right of Settings > Widget */ {
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion img[alt].bd-flexChild[src*="svg"] /* Icon at the bottom right of Settings > Widget */ {
     filter: var(--bd-image-server-welcome-icons, none);
 }
 

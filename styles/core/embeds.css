@@ -1,6 +1,8 @@
 /* Embeds & Attachments */
 #app-mount .bd-attachment,
-#app-mount .bd-embedWrapper:not(.bd-imageWrapper) {
+#app-mount .bd-embedWrapper:not(.bd-imageWrapper),
+#app-mount .bd-invite.bd-container,
+#app-mount .bd-invite.bd-preview  {
     background-color: rgba(var(--bd-embed-wrapper), 0.5);
     border-color: rgb(var(--bd-embed-wrapper-border)) !important;
 }
@@ -48,7 +50,7 @@
 
 /*** Specially for videos ***/
 #app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper {
-    color: rgb(var(--bd-photonic-variation));
+    color: rgb(var(--bd-monochrome-contrast));
     transition: var(--bd-transition);
 }
 
@@ -71,5 +73,3 @@
 #app-mount .bd-mediaBarInteraction:hover .bd-mediaBarGrabber {
     background-color: rgb(var(--bd-file-progress-bar-grabber));
 }
-
-/** Spotify invite **/
