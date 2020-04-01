@@ -1,4 +1,4 @@
-Switch = class {
+window.Switch = class {
     constructor() {
         this.initConstructor();
     }
@@ -76,4 +76,4 @@ Switch = class {
 }
 
 // Not BD compatible:
-Switch = new Switch();
+window.switch = new Switch();
