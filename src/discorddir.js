@@ -19,7 +19,7 @@ module.exports = () => {
 		return path.join(location, install[0]);
 	}
 	if (os.platform == 'darwin') {
-		const location = path.join('Library', 'Application Support', 'discord');
+		const location = path.join(home, 'Library', 'Application Support', 'discord');
 		const dir = fs.readdirSync(location);
 		const install = dir
 			.filter(name => /\d+\.\d+\.\d+/.test(name))
