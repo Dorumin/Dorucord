@@ -93,7 +93,7 @@
 /*** Dropdown for settings ***/
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-container .bd-css-menu,
 #app-mount .bd-modal .bd-css-container .bd-css-menu,
-#app-mount .bd-popouts .bd-scroller:not(.bd-systemPad),
+#app-mount .bd-popouts .bd-popout > .bd-scrollerWrap .bd-scroller,
 #app-mount .bd-popouts .bd-popout .bd-css-container .bd-css-menu {
     background-color: rgb(var(--bd-default));
     border-color: rgb(var(--bd-darker));

@@ -2,7 +2,7 @@
 /** Guild without server icons **/
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-childWrapper,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-childWrapper,
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-childWrapper,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-childWrapper,
 /** Error **/
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-anchor.bd-guildsError,
 /*** Discord icon ***/
@@ -29,18 +29,18 @@
 }
 
 /** Folders **/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder,
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper span.bd-expandedFolderBackground {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-folder,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper span.bd-expandedFolderBackground {
     background: rgb(var(--bd-guild-folder));
 }
 
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-expandedFolderIconWrapper svg path {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-expandedFolderIconWrapper svg path {
     fill: rgb(var(--bd-color-link));
 }
 
 /*** Motherfucking piece of shit that made me break my record of not using !important ***/
 /*** It's just to make the guild folders single color ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper[style*="background-color"] {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-folder .bd-folderIconWrapper[style*="background-color"] {
     background-color: transparent !important;
 }
 

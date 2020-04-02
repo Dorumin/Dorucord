@@ -360,6 +360,10 @@
     color: rgb(var(--bd-color-link));
 }
 
+#app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup .bd-clickable:hover {
+    background-color: rgba(var(--bd-color-link), .05);
+}
+
 #app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup > .bd-wrapper {
     display: var(--bd-context-menu-reactions);
 }
@@ -647,7 +651,7 @@
 /** Guild without server icons **/
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-childWrapper,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-childWrapper,
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-childWrapper,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-childWrapper,
 /** Error **/
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-anchor.bd-guildsError,
 /*** Discord icon ***/
@@ -674,18 +678,18 @@
 }
 
 /** Folders **/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder,
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper span.bd-expandedFolderBackground {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-folder,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper span.bd-expandedFolderBackground {
     background: rgb(var(--bd-guild-folder));
 }
 
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-expandedFolderIconWrapper svg path {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-expandedFolderIconWrapper svg path {
     fill: rgb(var(--bd-color-link));
 }
 
 /*** Motherfucking piece of shit that made me break my record of not using !important ***/
 /*** It's just to make the guild folders single color ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper[style*="background-color"] {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-folder .bd-folderIconWrapper[style*="background-color"] {
     background-color: transparent !important;
 }
 
@@ -854,7 +858,7 @@
 /*** Dropdown for settings ***/
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-container .bd-css-menu,
 #app-mount .bd-modal .bd-css-container .bd-css-menu,
-#app-mount .bd-popouts .bd-scroller:not(.bd-systemPad),
+#app-mount .bd-popouts .bd-popout > .bd-scrollerWrap .bd-scroller,
 #app-mount .bd-popouts .bd-popout .bd-css-container .bd-css-menu {
     background-color: rgb(var(--bd-default));
     border-color: rgb(var(--bd-darker));
@@ -1010,7 +1014,7 @@
 #app-mount a.bd-anchor,
 #app-mount a.bd-anchor.bd-embedLink,
 #app-mount span.bd-fakeLink,
-#app-mount button.bd-lookLink.bd-colorBrand {
+#app-mount button.bd-lookLink {
     color: rgb(var(--bd-color-link)) !important;
     text-shadow: var(--bd-link-shadows);
     text-decoration: none;
@@ -1019,14 +1023,14 @@
 #app-mount a.bd-anchor:hover,
 #app-mount a.bd-anchor.bd-embedLink:hover,
 #app-mount span.bd-fakeLink:hover,
-#app-mount button.bd-lookLink.bd-colorBrand:hover {
+#app-mount button.bd-lookLink:hover {
     color: rgb(var(--bd-color-link-hovered)) !important;
     text-shadow: var(--bd-link-shadows-hover);
     text-decoration: none;
     transition: all .4s linear 0s;
 }
 
-#app-mount button.bd-lookLink.bd-colorBrand:hover .bd-contents {
+#app-mount button.bd-lookLink:hover .bd-contents {
     background: none;
 }
 
@@ -1115,7 +1119,7 @@
 }
 
 /** You sure you wanna pin this? **/
-#app-mount .bd-modal .bd-modal .bd-message,
+#app-mount .bd-modal .bd-modal .bd-content > .bd-message,
 #app-mount .bd-popouts .bd-popout .bd-attachPopout /* Attachments popout when you're listening to something or playing a game */ {
     background: rgb(var(--bd-default));
 }
@@ -1512,7 +1516,7 @@
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-kebindGroup {
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-keybindGroup {
     padding: 20px;
 }
 
