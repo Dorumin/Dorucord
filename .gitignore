@@ -1,6 +1,9 @@
 node_modules/
-.vscode
 yarn.lock
+
+packed.js
+
+.vscode
 .vsc
 */.DS_Store
 .DS_Store

@@ -120,16 +120,16 @@ DMSeparators = class {
     onMutation() {
         if (!this.fetched) return;
 
-        const scroller = document.querySelector('div[class*="privateChannels-"] div[class*="scroller-"]');
+        const scroller = document.querySelector('.bd-privateChannels .bd-scroller');
         if (!scroller) return;
 
-        const chan = scroller.querySelector('a[class*="channel-"]');
+        const chan = scroller.querySelector('.bd-channel');
 
         if (!chan) return;
 
         const parent = chan.parentElement;
 
-        const header = parent.querySelector('header[class*="header-"]');
+        const header = parent.querySelector('.bd-privateChannelsHeaderContainer');
         const ids = Array.from(parent.children)
             .filter(a => a && a.href && a.href.includes('/channels/@me/') && !a.querySelector('svg[name="NitroWheel"]'))
             .map(a => a.href.slice(a.href.lastIndexOf('/') + 1));
@@ -138,7 +138,7 @@ DMSeparators = class {
 
         if (
             // buffer.nextSibling == header ||
-            (header.getAttribute('data-fake') != 'true' && header.style.display != 'none') ||
+            (header.getAttribute('data-fake') !== 'true' && header.style.display != 'none') ||
             this.firstId != ids[0] ||
             this.lastId != ids[ids.length - 1]
         ) {
@@ -147,16 +147,17 @@ DMSeparators = class {
             // console.log(this.firstId, ids[0]);
             // console.log(this.lastId, ids[ids.length - 1]);
             this.hcls = header.className;
+            this.scls = header.querySelector('.bd-headerText').className;
             this.updateDMs();
             return;
         }
     }
 
     updateDMs() {
-        if (!this.fetched) return;
+        if (!this.fetched || !this.hcls) return;
 
         // console.log('Called updateDMs');
-        let scroller = document.querySelector('div[class*="privateChannels-"] div[class*="scroller-"]');
+        let scroller = document.querySelector('.bd-privateChannels .bd-scroller');
 
         if (!scroller) {
             return;
@@ -164,7 +165,7 @@ DMSeparators = class {
 
         this.groups = {};
 
-        const chan = scroller.querySelector('a[class*="channel-"]');
+        const chan = scroller.querySelector('.bd-channel');
 
         if (!chan) return;
 
@@ -176,8 +177,8 @@ DMSeparators = class {
         // let i = 0;
 
         children.forEach(li => {
-            if (li.matches('header[class*="header-"]')) {
-                if (li.getAttribute('data-fake') == 'true') {
+            if (li.matches('.bd-privateChannelsHeaderContainer')) {
+                if (li.getAttribute('data-fake') === 'true') {
                     li.remove();
                 } else {
                     li.style.display = 'none';
@@ -232,10 +233,14 @@ DMSeparators = class {
 
                 if (!this.groups[title]) {
                     this.groups[title] = id;
-                    const header = document.createElement('header');
+                    const header = document.createElement('h2');
                     header.setAttribute('data-fake', 'true');
-                    header.setAttribute('class', this.hcls || 'header-zu8eWb container-2ax-kl');
-                    header.textContent = title;
+                    header.setAttribute('class', this.hcls);
+                    const span = document.createElement('span');
+                    span.className = this.scls;
+                    span.textContent = title;
+
+                    header.appendChild(span);
                     scroller.insertBefore(header, li);
                 }
             }
@@ -329,4 +334,4 @@ DMSeparators = class {
 }
 
 // Not BD compatible:
-const dmSeparators = new DMSeparators();
+window.dmSeparators = new DMSeparators();
