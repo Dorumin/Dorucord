@@ -7,6 +7,10 @@
     color: rgb(var(--bd-color-link));
 }
 
+#app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup .bd-clickable:hover {
+    background-color: rgba(var(--bd-color-link), .05);
+}
+
 #app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup > .bd-wrapper {
     display: var(--bd-context-menu-reactions);
 }

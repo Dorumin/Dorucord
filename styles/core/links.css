@@ -2,7 +2,7 @@
 #app-mount a.bd-anchor,
 #app-mount a.bd-anchor.bd-embedLink,
 #app-mount span.bd-fakeLink,
-#app-mount button.bd-lookLink.bd-colorBrand {
+#app-mount button.bd-lookLink {
     color: rgb(var(--bd-color-link)) !important;
     text-shadow: var(--bd-link-shadows);
     text-decoration: none;
@@ -11,13 +11,13 @@
 #app-mount a.bd-anchor:hover,
 #app-mount a.bd-anchor.bd-embedLink:hover,
 #app-mount span.bd-fakeLink:hover,
-#app-mount button.bd-lookLink.bd-colorBrand:hover {
+#app-mount button.bd-lookLink:hover {
     color: rgb(var(--bd-color-link-hovered)) !important;
     text-shadow: var(--bd-link-shadows-hover);
     text-decoration: none;
     transition: all .4s linear 0s;
 }
 
-#app-mount button.bd-lookLink.bd-colorBrand:hover .bd-contents {
+#app-mount button.bd-lookLink:hover .bd-contents {
     background: none;
 }
