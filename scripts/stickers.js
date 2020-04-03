@@ -52,7 +52,11 @@ window.StickerDatabase = class {
 			request.onupgradeneeded = event => {
 				const db = event.target.result;
 
-				db.deleteObjectStore('main');
+				try {
+					db.deleteObjectStore('main');
+				} catch(e) {
+					// do nothing
+				}
 				const store = db.createObjectStore('main', { autoIncrement: true });
 
 				for (const [indexName, keyPath, params] of this.indices) {
