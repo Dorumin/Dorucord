@@ -609,7 +609,7 @@
 
 /** Individual gifs **/
 #app-mount .bd-channelTextArea > .bd-autocomplete .bd-result {
-    background: rgba(var(--bd-default), 0.1);
+    background: rgba(var(--bd-default), 0.1) !important;
 }
 
 #app-mount .bd-channelTextArea > .bd-autocomplete .bd-result:hover:after {
