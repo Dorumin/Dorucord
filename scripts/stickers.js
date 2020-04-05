@@ -812,6 +812,7 @@ window.Stickers = class {
 		document.body.classList.add('stickers-popout-open');
 
 		this.reflowPopout();
+		this.reflowPopout();
 	}
 
 	togglePopout() {
