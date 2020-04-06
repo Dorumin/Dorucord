@@ -22,6 +22,10 @@
 #app-mount .bd-modal .bd-container .bd-quickswitcher .bd-guildIcon.bd-noIcon /* Quickswitcher*/ {
     background-color: rgb(var(--bd-guild));
 }
+/**** Invite link with expired guild icon ****/
+#app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon.bd-guildIconExpired {
+    background-color: transparent;
+}
 
 /*** Error ***/
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-anchor.bd-guildsError {

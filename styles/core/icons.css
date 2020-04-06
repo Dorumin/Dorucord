@@ -20,9 +20,12 @@
 #app-mount .bd-emptyStateImage, /* Gifts */
 #app-mount .bd-emptyIconGuilds, /* Mutual servers */
 #app-mount .bd-emptyIcon, /* Mutual friends */
-#app-mount .bd-errorStateIcon, /* People to GC with */ 
+#app-mount .bd-errorStateIcon, /* People to GC with */
 #app-mount .bd-emptyGuilds, /* Guilds */
-#app-mount .bd-marketingRefreshTier1Graphic, /* Nitro */ 
+#app-mount .bd-marketingRefreshTier1Graphic, /* Nitro */
+#app-mount .channel-settings-overview .bd-flex img, /* Channel settings icon */
+#app-mount .bd-guildIconExpired, /* Guild icon error in invite previews */
+#app-mount .bd-imageError, /* Image errors when Discord fails to preview */
 #app-mount .bd-endContainer::after /* Gif picker favorites */ {
     filter: var(--bd-image-translucent, none);
 }
