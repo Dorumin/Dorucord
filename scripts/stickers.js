@@ -623,7 +623,6 @@ window.Stickers = class {
 
 		sticker.classList.add('sending');
 
-		const token = await this.token.promise;
 		const channel = this.getChannelId();
 
 		if (!channel) {
@@ -658,13 +657,15 @@ window.Stickers = class {
 		return chan;
 	}
 
-	onStickerClick(file, e) {
+	async onStickerClick(file, e) {
 		const container = e.target.closest('.sticker-container');
 
 		if (this.deleting) {
 			container.classList.toggle('marked-delete');
 		} else {
-			this.sendImage(container, file);
+			await this.sendImage(container, file);
+
+			if (document.querySelector('.sending') !== null) return;
 
 			if (!e.shiftKey) {
 				this.hidePopout();
