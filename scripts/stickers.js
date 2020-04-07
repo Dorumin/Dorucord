@@ -665,6 +665,10 @@ window.Stickers = class {
 			container.classList.toggle('marked-delete');
 		} else {
 			this.sendImage(container, file);
+
+			if (!e.shiftKey) {
+				this.hidePopout();
+			}
 		}
 	}
 
