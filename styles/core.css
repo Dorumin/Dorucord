@@ -489,7 +489,7 @@
     border-left: 4px solid rgb(var(--bd-mentions-border));
 }
 
-#app-mount .bd-mentioned {
+#app-mount .bd-base .bd-chat .bd-wrapper.bd-mentioned {
     background: rgba(var(--bd-mentions), .1);
 }
 
@@ -531,8 +531,8 @@
 }
 
 /** Bars and stuff **/
-#app-mount .bd-mediaBarGrabber, 
-#app-mount .bd-mediaBarProgress, 
+#app-mount .bd-mediaBarGrabber,
+#app-mount .bd-mediaBarProgress,
 #app-mount .bd-mediaBarProgress:after,
 #app-mount .bd-mediaBarProgress:before {
     background-color: rgb(var(--bd-file-progress-bar));
