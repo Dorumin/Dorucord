@@ -27,7 +27,7 @@
     --bd-dark: 34, 0, 45; /* Search, settings */
     --bd-darker: 30, 0, 41;
 
-    /* Depth 
+    /* Depth */
     --bd-depth-title: rgba(var(--bd-default), 0.2);
     --bd-depth-guilds-list: rgba(var(--bd-default), 0.4);
     --bd-depth-sidebar: rgba(var(--bd-default), 0.2);
