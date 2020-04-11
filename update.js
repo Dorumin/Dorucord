@@ -81,3 +81,5 @@ console.dir({
 
 syncUp(oldModules[0], newModules[0]);
 syncUp(oldModules[1], newModules[1]);
+
+require('./installer.js');
