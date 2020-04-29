@@ -1,72 +1,72 @@
 /* User popouts */
-/** Header colors **/ 
-#app-mount .bd-userPopout > .bd-headerNormal,
-#app-mount .bd-modal > .bd-inner .bd-topSectionNormal {
+/** Header colors **/
+#app-mount .bd-userPopout .bd-headerNormal,
+#app-mount .bd-modal .bd-inner .bd-topSectionNormal {
     background-color: rgba(var(--bd-user-popouts-header), .95);
 }
 
-#app-mount .bd-userPopout > .bd-headerPlaying,
-#app-mount .bd-modal > .bd-inner .bd-topSectionPlaying {
+#app-mount .bd-userPopout .bd-headerPlaying,
+#app-mount .bd-modal .bd-inner .bd-topSectionPlaying {
     background-color: rgba(var(--bd-user-popouts-header-playing), .95);
 }
 
-#app-mount .bd-userPopout > .bd-headerStreaming,
-#app-mount .bd-modal > .bd-inner .bd-topSectionStreaming {
+#app-mount .bd-userPopout .bd-headerStreaming,
+#app-mount .bd-modal .bd-inner .bd-topSectionStreaming {
     background-color: rgba(var(--bd-user-popouts-header-streaming), .95);
 }
 
-#app-mount .bd-userPopout > .bd-headerSpotify,
-#app-mount .bd-modal > .bd-inner .bd-topSectionSpotify {
+#app-mount .bd-userPopout .bd-headerSpotify,
+#app-mount .bd-modal .bd-inner .bd-topSectionSpotify {
     background-color: rgba(var(--bd-user-popouts-header-spotify), .95);
 }
 
 /*** Send Message with regular status ***/
-#app-mount .bd-modal > .bd-inner .bd-topSectionNormal .bd-button.bd-lookFilled {
+#app-mount .bd-modal .bd-inner .bd-topSectionNormal .bd-button.bd-lookFilled {
     background-color: rgb(var(--bd-color-link));
 }
 
 /**** Bots ****/
-#app-mount .bd-userPopout > .bd-headerNormal .bd-botTagRegular,
-#app-mount .bd-modal > .bd-inner .bd-topSectionNormal .bd-botTagRegular {
+#app-mount .bd-userPopout .bd-headerNormal .bd-botTagRegular,
+#app-mount .bd-modal .bd-inner .bd-topSectionNormal .bd-botTagRegular {
     background-color: rgb(var(--bd-color-link));
 }
 
 /*** Send Message with !regular status ***/
-#app-mount .bd-modal > .bd-inner .bd-topSectionPlaying .bd-lookInverted,
-#app-mount .bd-modal > .bd-inner .bd-topSectionSpotify .bd-lookInverted,
-#app-mount .bd-modal > .bd-inner .bd-topSectionStreaming .bd-lookInverted {
+#app-mount .bd-modal .bd-inner .bd-topSectionPlaying .bd-lookInverted,
+#app-mount .bd-modal .bd-inner .bd-topSectionSpotify .bd-lookInverted,
+#app-mount .bd-modal .bd-inner .bd-topSectionStreaming .bd-lookInverted {
     color: rgb(var(--bd-color-link));
 }
 
 /**** Bots ****/
-#app-mount .bd-userPopout > .bd-headerPlaying .bd-botTagInvert,
-#app-mount .bd-modal > .bd-inner .bd-topSectionPlaying .bd-headerInfo .bd-botTagInvert {
+#app-mount .bd-userPopout .bd-headerPlaying .bd-botTagInvert,
+#app-mount .bd-modal .bd-inner .bd-topSectionPlaying .bd-headerInfo .bd-botTagInvert {
     color: rgb(var(--bd-color-link));
 }
 
 /** Body **/
-#app-mount .bd-userPopout > .bd-body,
-#app-mount .bd-modal > .bd-inner .bd-flex > .bd-body {
+#app-mount .bd-userPopout .bd-body,
+#app-mount .bd-modal .bd-inner .bd-flex .bd-body {
     background-color: rgba(var(--bd-user-popouts-body), .95);
 }
 
-#app-mount .bd-userPopout > .bd-footer {
+#app-mount .bd-userPopout .bd-footer {
     background-color: rgba(var(--bd-user-popouts-footer), .95);
 }
 
-#app-mount .bd-userPopout > .bd-body .bd-note textarea:focus,
-#app-mount .bd-modal > .bd-inner .bd-flex > .bd-body .bd-note textarea:focus {
+#app-mount .bd-userPopout .bd-body .bd-note textarea:focus,
+#app-mount .bd-modal .bd-inner .bd-flex .bd-body .bd-note textarea:focus {
     background-color: rgba(var(--bd-user-popouts-notes-focus), .7);
 }
 
-#app-mount .bd-userPopout > .bd-footer > input.bd-quickMessage {
+#app-mount .bd-userPopout .bd-footer input.bd-quickMessage {
     background-color: rgba(var(--bd-user-popouts-message), .65);
     border-color: transparent;
     transition: var(--bd-transition);
 }
 
-#app-mount .bd-userPopout > .bd-footer > input.bd-quickMessage:hover,
-#app-mount .bd-userPopout > .bd-footer > input.bd-quickMessage:focus {
+#app-mount .bd-userPopout .bd-footer input.bd-quickMessage:hover,
+#app-mount .bd-userPopout .bd-footer input.bd-quickMessage:focus {
     background-color: rgba(var(--bd-user-popouts-message), .95);
 }
 
