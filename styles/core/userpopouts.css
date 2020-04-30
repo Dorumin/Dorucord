@@ -45,7 +45,7 @@
 }
 
 /** Body **/
-#app-mount .bd-userPopout .bd-body:not(.bd-bodyAlignCenter),
+#app-mount .bd-userPopout .bd-body:not(.bd-bodyAlignCenter):not(.bd-bodyNormal),
 #app-mount .bd-modal .bd-inner .bd-flex .bd-body {
     background-color: rgba(var(--bd-user-popouts-body), .95);
 }
