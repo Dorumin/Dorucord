@@ -63,9 +63,9 @@ const oldModules = [
 	getModulePack('styles'),
 ];
 
-cp.execSync('git add .');
-cp.execSync('git reset --hard HEAD');
-cp.execSync('git pull');
+cp.execSync('git add .', { cwd: __dirname });
+cp.execSync('git reset --hard HEAD', { cwd: __dirname });
+cp.execSync('git pull', { cwd: __dirname });
 
 const newModules = [
 	getModulePack('scripts'),
