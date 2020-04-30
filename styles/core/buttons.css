@@ -1,6 +1,7 @@
 /* Buttons */
 /** Jump button **/
-#app-mount .bd-jumpButton {
+#app-mount .bd-jumpButton,
+#app-mount .bd-closeButton.bd-tertiary {
     background-color: rgb(var(--bd-default));
 }
 

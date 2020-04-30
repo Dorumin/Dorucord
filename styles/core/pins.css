@@ -21,3 +21,23 @@
 #app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper:hover {
     border-color: transparent;
 }
+
+/* Recent Mentions */
+#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-header .bd-item.bd-selected,
+#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-header .bd-button.bd-secondary {
+    background: rgb(var(--bd-lighter));
+}
+
+#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-channelHeader,
+#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-messageContainer {
+    background: rgba(var(--bd-lighter));
+}
+
+#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-channelHeader {
+    border-radius: 8px 8px 0 0;
+    padding: 12px 16px;
+}
+
+#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-messageContainer {
+    border-radius: 0 0 8px 8px;
+}
