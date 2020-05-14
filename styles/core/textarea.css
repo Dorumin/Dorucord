@@ -65,6 +65,10 @@
 }
 
 /** Autocomplete **/
+#app-mount .bd-channelTextArea > .bd-autocomplete {
+    background-color: rgb(var(--bd-default), .9);
+}
+
 #app-mount .bd-channelTextArea > .bd-autocomplete .bd-selector.bd-selectorSelected {
     background-color: rgba(var(--bd-lightest), .5);
 }
