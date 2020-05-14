@@ -74,12 +74,12 @@
 
 /* Loading text */
 #app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
-    color: rgb(var(--bd-monochrome-contrast));   
+    color: rgb(var(--bd-monochrome-contrast));
 }
 
 #app-mount .bd-app .bd-container .bd-contentBase,
 #app-mount .bd-app .bd-container .bd-problemsText {
-    color: rgb(var(--bd-color-light));   
+    color: rgb(var(--bd-color-light));
 
 }
 
@@ -130,8 +130,6 @@
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
 #app-mount .bd-base .bd-sidebar .bd-header,
 #app-mount .bd-layerContainer .bd-userPopout,
-#app-mount .bd-layerContainer .bd-emojiPicker,
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-header,
 #app-mount .bd-layerContainer .bd-footer,
 #app-mount .bd-modal,
 #app-mount .bd-modal .bd-footer,
@@ -149,9 +147,10 @@
 #app-mount .bd-css-menu,
 #app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input,
 #app-mount .bd-modal .bd-flex .bd-tiles,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container, 
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container,
 #app-mount .bd-app *::before,
-#app-mount .bd-app *::after {
+#app-mount .bd-app *::after,
+#app-mount .bd-header {
     box-shadow: none;
 }
 
@@ -182,6 +181,11 @@
 }
 
 /* Buttons */
+/** Nav button **/
+#app-mount .bd-navButton {
+    background-color: rgb(var(--bd-lightest), .5);
+}
+
 /** Jump button **/
 #app-mount .bd-jumpButton,
 #app-mount .bd-closeButton.bd-tertiary {
@@ -466,6 +470,30 @@
     background-color: rgba(var(--bd-dropdown), .85);
 }
 
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-focused,
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault.bd-focused,
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover {
+    background-color: rgba(var(--bd-monochrome-contrast), .05);
+}
+
+/** Revert to old settings **/
+/** Can't be helped, inline styles will overwrite this otherwise. **/
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-online .bd-mask .bd-status {
+    background-color: rgb(67, 181, 129) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-idle .bd-mask .bd-status {
+    background-color: rgb(250, 166, 26) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-dnd .bd-mask .bd-status {
+    background-color: rgb(240, 71, 71) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-invisible .bd-mask .bd-status {
+    background-color: rgb(116, 127, 141) !important;
+}
+
 /** Invite buttons **/
 #app-mount .bd-layerContainer .bd-menu .bd-item.bd-invite {
     color: rgb(var(--bd-color-link));
@@ -548,103 +576,95 @@
 }
 
 /* Emoji picker */
-#app-mount .bd-layerContainer .bd-emojiPicker {
+#app-mount .bd-emojiPicker:not([aria-labelledby="emoji-picker-tab"]) {
     background-color: rgba(var(--bd-picker), 0.85);
 }
 
 /** Info of currently hovered emote **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-infoBar {
+#app-mount .bd-emojiPicker .bd-inspector {
     background-color: rgba(var(--bd-dark), .5);
 }
 
 /** Category of emotes **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories {
+#app-mount .bd-categoryList {
+    background: transparent;
+}
+
+#app-mount .bd-emojiPicker .bd-categoryWrapper,
+#app-mount .bd-categoryList .bd-categoryItemDefaultCategorySelected {
     background-color: rgba(var(--bd-darker));
 }
 
 /** Input **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-searchBar {
+#app-mount .bd-emojiPicker .bd-searchBar {
     background-color: rgb(var(--bd-darker));
 }
 
-#app-mount .bd-layerContainer .bd-emojiPicker input {
+#app-mount .bd-emojiPicker input {
     color: rgb(var(--bd-color-darker));
 }
 
-#app-mount .bd-layerContainer .bd-emojiPicker input::placeholder {
+#app-mount .bd-emojiPicker input::placeholder {
     color: rgb(var(--bd-color-placeholder));
 }
 
 /** Diversity picker **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout {
+#app-mount .bd-emojiPicker .bd-diversitySelectorPopout {
     background-color: rgb(var(--bd-dark));
     border-color: rgb(var(--bd-dark));
 }
 
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout .bd-tem:hover {
+#app-mount .bd-emojiPicker .bd-diversitySelectorPopout .bd-diversityEmojiItem:hover {
     background-color: rgb(var(--bd-light));
 }
 
 /** Actual picker **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-emojiItem.bd-selected {
+#app-mount .bd-emojiPicker .bd-emojiItem.bd-emojiItemSelected {
     background-color: rgba(255, 255, 255, .1);
 }
 
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item {
-    filter: hue-rotate(40deg) saturate(1000%) brightness(0.65);
-}
-
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item:hover,
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
-    filter: none;
-}
-
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
-    border-bottom-color: rgb(var(--bd-color-link-dark));
-}
-
 /* Gif picker */
-#app-mount .bd-channelTextArea > .bd-autocomplete {
+#app-mount .bd-channelTextArea .bd-contentWrapper {
     background: rgba(var(--bd-picker), 0.85);
 }
 
 /** Individual gifs **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result {
     background: rgba(var(--bd-default), 0.1) !important;
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result:hover:after {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result:hover:after {
     box-shadow: inset 0 0 0 2px rgb(var(--bd-lightest));
 }
 
 /** Categories **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFade {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFade {
     background-color: rgba(var(--bd-darker), 0.4);
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFade:hover {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFade:hover {
     background-color: rgba(var(--bd-darker), 0.8);
 }
 
 /** Favorites **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFadeBlurple {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFadeBlurple {
     background-color: rgba(var(--bd-color-link-dark), .6);
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFadeBlurple:hover {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFadeBlurple:hover {
     background-color: rgba(var(--bd-color-link-dark), .8);
 }
 
 /** Search **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-searchBar {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-searchBar {
     background-color: rgb(var(--bd-darker));
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete input {
+#app-mount .bd-channelTextArea .bd-contentWrapper input {
     color: rgb(var(--bd-color-darker));
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete input::placeholder {
+#app-mount .bd-channelTextArea .bd-contentWrapper input::placeholder {
     color: rgb(var(--bd-color-placeholder));
 }
 
@@ -669,7 +689,8 @@
 #app-mount .bd-perksModalContentWrapper .bd-ctaBar .bd-guildIcon.bd-noIcon /* Server Boost */,
 #app-mount .bd-modal .bd-avatarUploaderInner, /* Create new guild */
 #app-mount .bd-modal > .bd-inner .bd-flex > .bd-body .bd-guildAvatarWithoutIcon.bd-noIcon /* Mutual servers */,
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-guildIcon.bd-noIcon /* Quickswitcher*/ {
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-guildIcon.bd-noIcon /* Quickswitcher*/,
+#app-mount .bd-guildIconWithoutImage /* Emoji Picker */ {
     background-color: rgb(var(--bd-guild));
 }
 /**** Invite link with expired guild icon ****/
@@ -1331,6 +1352,10 @@
 
 #app-mount .bd-container.bd-elevationBorderHigh > .bd-datePicker .react-datepicker .react-datepicker__day:not(.react-datepicker__day--disabled):hover {
     background-color: rgba(var(--bd-lightest), .95);
+}
+
+.theme-dark .bd-separator {
+    background-color: transparent;
 }
 
 /* Server Boost */

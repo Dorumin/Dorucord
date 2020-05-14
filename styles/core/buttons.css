@@ -1,4 +1,9 @@
 /* Buttons */
+/** Nav button **/
+#app-mount .bd-navButton {
+    background-color: rgb(var(--bd-lightest), .5);
+}
+
 /** Jump button **/
 #app-mount .bd-jumpButton,
 #app-mount .bd-closeButton.bd-tertiary {

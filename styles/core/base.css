@@ -69,12 +69,12 @@
 
 /* Loading text */
 #app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
-    color: rgb(var(--bd-monochrome-contrast));   
+    color: rgb(var(--bd-monochrome-contrast));
 }
 
 #app-mount .bd-app .bd-container .bd-contentBase,
 #app-mount .bd-app .bd-container .bd-problemsText {
-    color: rgb(var(--bd-color-light));   
+    color: rgb(var(--bd-color-light));
 
 }
 
@@ -125,8 +125,6 @@
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
 #app-mount .bd-base .bd-sidebar .bd-header,
 #app-mount .bd-layerContainer .bd-userPopout,
-#app-mount .bd-layerContainer .bd-emojiPicker,
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-header,
 #app-mount .bd-layerContainer .bd-footer,
 #app-mount .bd-modal,
 #app-mount .bd-modal .bd-footer,
@@ -144,8 +142,9 @@
 #app-mount .bd-css-menu,
 #app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input,
 #app-mount .bd-modal .bd-flex .bd-tiles,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container, 
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container,
 #app-mount .bd-app *::before,
-#app-mount .bd-app *::after {
+#app-mount .bd-app *::after,
+#app-mount .bd-header {
     box-shadow: none;
 }

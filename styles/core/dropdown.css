@@ -3,6 +3,30 @@
     background-color: rgba(var(--bd-dropdown), .85);
 }
 
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-focused,
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault.bd-focused,
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover {
+    background-color: rgba(var(--bd-monochrome-contrast), .05);
+}
+
+/** Revert to old settings **/
+/** Can't be helped, inline styles will overwrite this otherwise. **/
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-online .bd-mask .bd-status {
+    background-color: rgb(67, 181, 129) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-idle .bd-mask .bd-status {
+    background-color: rgb(250, 166, 26) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-dnd .bd-mask .bd-status {
+    background-color: rgb(240, 71, 71) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-invisible .bd-mask .bd-status {
+    background-color: rgb(116, 127, 141) !important;
+}
+
 /** Invite buttons **/
 #app-mount .bd-layerContainer .bd-menu .bd-item.bd-invite {
     color: rgb(var(--bd-color-link));

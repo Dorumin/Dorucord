@@ -1,44 +1,44 @@
 /* Gif picker */
-#app-mount .bd-channelTextArea > .bd-autocomplete {
+#app-mount .bd-channelTextArea .bd-contentWrapper {
     background: rgba(var(--bd-picker), 0.85);
 }
 
 /** Individual gifs **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result {
     background: rgba(var(--bd-default), 0.1) !important;
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result:hover:after {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result:hover:after {
     box-shadow: inset 0 0 0 2px rgb(var(--bd-lightest));
 }
 
 /** Categories **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFade {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFade {
     background-color: rgba(var(--bd-darker), 0.4);
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFade:hover {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFade:hover {
     background-color: rgba(var(--bd-darker), 0.8);
 }
 
 /** Favorites **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFadeBlurple {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFadeBlurple {
     background-color: rgba(var(--bd-color-link-dark), .6);
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-result .bd-categoryFadeBlurple:hover {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-result .bd-categoryFadeBlurple:hover {
     background-color: rgba(var(--bd-color-link-dark), .8);
 }
 
 /** Search **/
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-searchBar {
+#app-mount .bd-channelTextArea .bd-contentWrapper .bd-searchBar {
     background-color: rgb(var(--bd-darker));
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete input {
+#app-mount .bd-channelTextArea .bd-contentWrapper input {
     color: rgb(var(--bd-color-darker));
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete input::placeholder {
+#app-mount .bd-channelTextArea .bd-contentWrapper input::placeholder {
     color: rgb(var(--bd-color-placeholder));
 }

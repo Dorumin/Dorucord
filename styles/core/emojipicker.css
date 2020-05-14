@@ -1,55 +1,47 @@
 /* Emoji picker */
-#app-mount .bd-layerContainer .bd-emojiPicker {
+#app-mount .bd-emojiPicker:not([aria-labelledby="emoji-picker-tab"]) {
     background-color: rgba(var(--bd-picker), 0.85);
 }
 
 /** Info of currently hovered emote **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-infoBar {
+#app-mount .bd-emojiPicker .bd-inspector {
     background-color: rgba(var(--bd-dark), .5);
 }
 
 /** Category of emotes **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories {
+#app-mount .bd-categoryList {
+    background: transparent;
+}
+
+#app-mount .bd-emojiPicker .bd-categoryWrapper,
+#app-mount .bd-categoryList .bd-categoryItemDefaultCategorySelected {
     background-color: rgba(var(--bd-darker));
 }
 
 /** Input **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-searchBar {
+#app-mount .bd-emojiPicker .bd-searchBar {
     background-color: rgb(var(--bd-darker));
 }
 
-#app-mount .bd-layerContainer .bd-emojiPicker input {
+#app-mount .bd-emojiPicker input {
     color: rgb(var(--bd-color-darker));
 }
 
-#app-mount .bd-layerContainer .bd-emojiPicker input::placeholder {
+#app-mount .bd-emojiPicker input::placeholder {
     color: rgb(var(--bd-color-placeholder));
 }
 
 /** Diversity picker **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout {
+#app-mount .bd-emojiPicker .bd-diversitySelectorPopout {
     background-color: rgb(var(--bd-dark));
     border-color: rgb(var(--bd-dark));
 }
 
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-diversitySelector .bd-popout .bd-tem:hover {
+#app-mount .bd-emojiPicker .bd-diversitySelectorPopout .bd-diversityEmojiItem:hover {
     background-color: rgb(var(--bd-light));
 }
 
 /** Actual picker **/
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-emojiItem.bd-selected {
+#app-mount .bd-emojiPicker .bd-emojiItem.bd-emojiItemSelected {
     background-color: rgba(255, 255, 255, .1);
-}
-
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item {
-    filter: hue-rotate(40deg) saturate(1000%) brightness(0.65);
-}
-
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item:hover,
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
-    filter: none;
-}
-
-#app-mount .bd-layerContainer .bd-emojiPicker .bd-categories .bd-item.bd-selected {
-    border-bottom-color: rgb(var(--bd-color-link-dark));
 }

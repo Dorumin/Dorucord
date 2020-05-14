@@ -19,7 +19,8 @@
 #app-mount .bd-perksModalContentWrapper .bd-ctaBar .bd-guildIcon.bd-noIcon /* Server Boost */,
 #app-mount .bd-modal .bd-avatarUploaderInner, /* Create new guild */
 #app-mount .bd-modal > .bd-inner .bd-flex > .bd-body .bd-guildAvatarWithoutIcon.bd-noIcon /* Mutual servers */,
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-guildIcon.bd-noIcon /* Quickswitcher*/ {
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-guildIcon.bd-noIcon /* Quickswitcher*/,
+#app-mount .bd-guildIconWithoutImage /* Emoji Picker */ {
     background-color: rgb(var(--bd-guild));
 }
 /**** Invite link with expired guild icon ****/
