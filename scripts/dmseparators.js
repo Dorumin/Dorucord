@@ -179,6 +179,7 @@ DMSeparators = class {
         children.forEach(li => {
             if (li.matches('.bd-privateChannelsHeaderContainer')) {
                 if (li.getAttribute('data-fake') === 'true') {
+                    scroller.scrollTop += li.clientHeight;
                     li.remove();
                 } else {
                     li.style.display = 'none';
