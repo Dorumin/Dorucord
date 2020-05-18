@@ -303,4 +303,4 @@ if (window.groupDMs) {
     window.groupDMs.cleanup();
 }
 
-window.groupDMs = new GroupDMs();
+// window.groupDMs = new GroupDMs();
