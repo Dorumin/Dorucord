@@ -1,14 +1,27 @@
-/* Dropdowns */
-#app-mount .bd-layerContainer .bd-menu {
-    background-color: rgba(var(--bd-dropdown), .85);
+/* Context menu, dropdown */
+#app-mount .bd-layerContainer .bd-menu,
+#app-mount .bd-layerContainer .bd-menu .bd-submenu,
+#app-mount .bd-layerContainer .bd-contextMenu {
+    background-color: rgba(var(--bd-context-menu), .85);
 }
 
 #app-mount .bd-layerContainer .bd-menu .bd-item.bd-focused,
 #app-mount .bd-layerContainer .bd-menu .bd-colorDefault.bd-focused,
-#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover {
-    background-color: rgba(var(--bd-monochrome-contrast), .05);
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover,
+#app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup .bd-clickable:hover {
+    background-color: rgba(var(--bd-color-link), .05);
 }
 
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-colorBrand {
+    color: rgb(var(--bd-color-link));
+}
+
+/** Reactions **/
+#app-mount .bd-layerContainer .bd-menu [role="group"].bd-wrapper {
+    display: var(--bd-context-menu-reactions);
+}
+
+/* Status picker */
 /** Revert to old settings **/
 /** Can't be helped, inline styles will overwrite this otherwise. **/
 #app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-online .bd-mask .bd-status {
@@ -25,9 +38,4 @@
 
 #app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-invisible .bd-mask .bd-status {
     background-color: rgb(116, 127, 141) !important;
-}
-
-/** Invite buttons **/
-#app-mount .bd-layerContainer .bd-menu .bd-item.bd-invite {
-    color: rgb(var(--bd-color-link));
 }

@@ -179,6 +179,11 @@
     stroke: rgb(var(--bd-checkbox));
 }
 
+/*** Circle checkboxes ***/
+#app-mount .bd-iconContainer .bd-icon circle {
+    color: rgba(var(--bd-checbox))
+}
+
 /*** Green checkboxes ***/
 #app-mount .bd-checkbox.bd-checked[style*="border-color"].bd-round {
     border-color: rgba(var(--bd-checkbox-border), .2) !important;

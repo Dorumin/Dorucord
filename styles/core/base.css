@@ -1,9 +1,11 @@
 /* Main */
-#app-mount {
-    background-color: rgba(var(--bd-default), .95);
+#app-mount,
+#app-mount .bd-wrapper.bd-errorPage {
+    background-color: transparent;
 }
 
 /* Background */
+#app-mount::before,
 #app-mount .bd-app > .bd-app > .bd-bg::before {
     content: '';
     background: var(--bd-background-color) var(--bd-background-image) var(--bd-background-position) / cover no-repeat fixed;
@@ -32,6 +34,7 @@
 }
 
 /** Filters and stuff **/
+#app-mount::before,
 #app-mount .bd-app > .bd-app > .bd-bg::before {
     filter: var(--bd-background-brightness) var(--bd-background-contrast) var(--bd-background-blur);
 }
@@ -67,9 +70,13 @@
     color: rgb(var(--bd-color-light));
 }
 
+#app-mount .bd-wrapper.bd-errorPage .bd-note {
+    color: rgb(var(--bd-monochrome-contrast), .7);
+}
+
 /* Loading text */
 #app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
-    color: rgb(var(--bd-monochrome-contrast));
+   color: rgb(var(--bd-monochrome-contrast));
 }
 
 #app-mount .bd-app .bd-container .bd-contentBase,

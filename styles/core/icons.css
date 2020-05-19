@@ -7,6 +7,7 @@
     filter: var(--bd-image-solid, none);
 }
 
+#app-mount .bd-wrapper.bd-errorPage .bd-image, /* Error page icon */
 #app-mount .bd-layerContainer .bd-container section canvas,
 #app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-graph.bd-description canvas,
 #app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-userSettingsVoice .bd-flex .bd-flex .bd-wrapper .bd-container /* Holy fuck long */ {
@@ -16,7 +17,7 @@
 #app-mount .bd-artworkSpotifySessionEnded, /* Self explanatory jesus */
 #app-mount .bd-userSettingsSecurityImage, /* User settings chestbox */
 #app-mount .bd-emptyPlaceholder .bd-image, /* No pins, recent mentions */
-#app-mount .bd-image.bd-marginBottom40, /* No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assumed it's prefix with "no". Integrations, webhooks, invites, bans,*/
+#app-mount .bd-image.bd-marginBottom40, /* No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assume it's prefix with "no". Integrations, webhooks, invites, bans,*/
 #app-mount .bd-emptyStateImage, /* Gifts */
 #app-mount .bd-emptyIconGuilds, /* Mutual servers */
 #app-mount .bd-emptyIcon, /* Mutual friends */

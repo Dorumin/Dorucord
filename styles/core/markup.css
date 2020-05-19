@@ -24,14 +24,16 @@
 
 /** Mentions **/
 #app-mount .bd-markup span.bd-wrapper.bd-mention,
-#app-mount .bd-markup span.bd-wrapper {
+#app-mount .bd-markup span.bd-wrapper,
+#app-mount span.bd-wrapper.mention {
     color: rgb(var(--bd-mentions-color));
     background: rgba(var(--bd-mentions-color), .1);
     transition: var(--bd-transition);
 }
 
 #app-mount .bd-markup span.bd-wrapper.bd-mention:hover,
-#app-mount .bd-markup span.bd-wrapper:hover {
+#app-mount .bd-markup span.bd-wrapper:hover,
+#app-mount span.bd-wrapper.mention:hover {
     color: rgb(var(--bd-mentions-color-hover));
     background-color: rgba(var(--bd-mentions-color), .5);
 }

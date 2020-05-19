@@ -4,11 +4,13 @@
 }
 
 /* Main */
-#app-mount {
-    background-color: rgba(var(--bd-default), .95);
+#app-mount,
+#app-mount .bd-wrapper.bd-errorPage {
+    background-color: transparent;
 }
 
 /* Background */
+#app-mount::before,
 #app-mount .bd-app > .bd-app > .bd-bg::before {
     content: '';
     background: var(--bd-background-color) var(--bd-background-image) var(--bd-background-position) / cover no-repeat fixed;
@@ -37,6 +39,7 @@
 }
 
 /** Filters and stuff **/
+#app-mount::before,
 #app-mount .bd-app > .bd-app > .bd-bg::before {
     filter: var(--bd-background-brightness) var(--bd-background-contrast) var(--bd-background-blur);
 }
@@ -72,9 +75,13 @@
     color: rgb(var(--bd-color-light));
 }
 
+#app-mount .bd-wrapper.bd-errorPage .bd-note {
+    color: rgb(var(--bd-monochrome-contrast), .7);
+}
+
 /* Loading text */
 #app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
-    color: rgb(var(--bd-monochrome-contrast));
+   color: rgb(var(--bd-monochrome-contrast));
 }
 
 #app-mount .bd-app .bd-container .bd-contentBase,
@@ -356,23 +363,6 @@
     background-color: rgba(var(--bd-default), .2);
 }
 
-/* Context menu */
-#app-mount .bd-layerContainer .bd-contextMenu {
-    background-color: rgba(var(--bd-context-menu), .85);
-}
-
-#app-mount .bd-layerContainer .bd-contextMenu .bd-item.bd-brand {
-    color: rgb(var(--bd-color-link));
-}
-
-#app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup .bd-clickable:hover {
-    background-color: rgba(var(--bd-color-link), .05);
-}
-
-#app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup > .bd-wrapper {
-    display: var(--bd-context-menu-reactions);
-}
-
 /* Depth */
 #app-mount .bd-base .bd-chat > .bd-title {
     background-color: var(--bd-depth-title, transparent);
@@ -463,40 +453,6 @@
 #app-mount .bd-divider .bd-content {
     display: flex;
     align-items: center;
-}
-
-/* Dropdowns */
-#app-mount .bd-layerContainer .bd-menu {
-    background-color: rgba(var(--bd-dropdown), .85);
-}
-
-#app-mount .bd-layerContainer .bd-menu .bd-item.bd-focused,
-#app-mount .bd-layerContainer .bd-menu .bd-colorDefault.bd-focused,
-#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover {
-    background-color: rgba(var(--bd-monochrome-contrast), .05);
-}
-
-/** Revert to old settings **/
-/** Can't be helped, inline styles will overwrite this otherwise. **/
-#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-online .bd-mask .bd-status {
-    background-color: rgb(67, 181, 129) !important;
-}
-
-#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-idle .bd-mask .bd-status {
-    background-color: rgb(250, 166, 26) !important;
-}
-
-#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-dnd .bd-mask .bd-status {
-    background-color: rgb(240, 71, 71) !important;
-}
-
-#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-invisible .bd-mask .bd-status {
-    background-color: rgb(116, 127, 141) !important;
-}
-
-/** Invite buttons **/
-#app-mount .bd-layerContainer .bd-menu .bd-item.bd-invite {
-    color: rgb(var(--bd-color-link));
 }
 
 /* Embeds & Attachments */
@@ -623,6 +579,12 @@
     background-color: rgba(255, 255, 255, .1);
 }
 
+/* Emotes */
+/** Rofl **/
+img.emoji[src="/assets/4c537a5536df74dcb65c6feb2ad3ab44.svg"] {
+    content: url("https://cdn.discordapp.com/attachments/505815497598828570/711661274676592720/PngItem_1269410.png");
+}
+
 /* Gif picker */
 #app-mount .bd-channelTextArea .bd-contentWrapper {
     background: rgba(var(--bd-picker), 0.85);
@@ -745,6 +707,7 @@
     filter: var(--bd-image-solid, none);
 }
 
+#app-mount .bd-wrapper.bd-errorPage .bd-image, /* Error page icon */
 #app-mount .bd-layerContainer .bd-container section canvas,
 #app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-graph.bd-description canvas,
 #app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-userSettingsVoice .bd-flex .bd-flex .bd-wrapper .bd-container /* Holy fuck long */ {
@@ -754,7 +717,7 @@
 #app-mount .bd-artworkSpotifySessionEnded, /* Self explanatory jesus */
 #app-mount .bd-userSettingsSecurityImage, /* User settings chestbox */
 #app-mount .bd-emptyPlaceholder .bd-image, /* No pins, recent mentions */
-#app-mount .bd-image.bd-marginBottom40, /* No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assumed it's prefix with "no". Integrations, webhooks, invites, bans,*/
+#app-mount .bd-image.bd-marginBottom40, /* No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assume it's prefix with "no". Integrations, webhooks, invites, bans,*/
 #app-mount .bd-emptyStateImage, /* Gifts */
 #app-mount .bd-emptyIconGuilds, /* Mutual servers */
 #app-mount .bd-emptyIcon, /* Mutual friends */
@@ -974,6 +937,11 @@
     stroke: rgb(var(--bd-checkbox));
 }
 
+/*** Circle checkboxes ***/
+#app-mount .bd-iconContainer .bd-icon circle {
+    color: rgba(var(--bd-checbox))
+}
+
 /*** Green checkboxes ***/
 #app-mount .bd-checkbox.bd-checked[style*="border-color"].bd-round {
     border-color: rgba(var(--bd-checkbox-border), .2) !important;
@@ -1095,16 +1063,58 @@
 
 /** Mentions **/
 #app-mount .bd-markup span.bd-wrapper.bd-mention,
-#app-mount .bd-markup span.bd-wrapper {
+#app-mount .bd-markup span.bd-wrapper,
+#app-mount span.bd-wrapper.mention {
     color: rgb(var(--bd-mentions-color));
     background: rgba(var(--bd-mentions-color), .1);
     transition: var(--bd-transition);
 }
 
 #app-mount .bd-markup span.bd-wrapper.bd-mention:hover,
-#app-mount .bd-markup span.bd-wrapper:hover {
+#app-mount .bd-markup span.bd-wrapper:hover,
+#app-mount span.bd-wrapper.mention:hover {
     color: rgb(var(--bd-mentions-color-hover));
     background-color: rgba(var(--bd-mentions-color), .5);
+}
+
+/* Context menu, dropdown */
+#app-mount .bd-layerContainer .bd-menu,
+#app-mount .bd-layerContainer .bd-menu .bd-submenu {
+    background-color: rgba(var(--bd-context-menu), .85);
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-focused,
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault.bd-focused,
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover {
+    background-color: rgba(var(--bd-color-link), .05);
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-colorBrand {
+    color: rgb(var(--bd-color-link));
+}
+
+/** Reactions **/
+#app-mount .bd-layerContainer .bd-menu [role="group"].bd-wrapper {
+    display: var(--bd-context-menu-reactions);
+}
+
+/* Status picker */
+/** Revert to old settings **/
+/** Can't be helped, inline styles will overwrite this otherwise. **/
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-online .bd-mask .bd-status {
+    background-color: rgb(67, 181, 129) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-idle .bd-mask .bd-status {
+    background-color: rgb(250, 166, 26) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-dnd .bd-mask .bd-status {
+    background-color: rgb(240, 71, 71) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-invisible .bd-mask .bd-status {
+    background-color: rgb(116, 127, 141) !important;
 }
 
 /* Modals */
