@@ -1079,13 +1079,15 @@ img.emoji[src="/assets/4c537a5536df74dcb65c6feb2ad3ab44.svg"] {
 
 /* Context menu, dropdown */
 #app-mount .bd-layerContainer .bd-menu,
-#app-mount .bd-layerContainer .bd-menu .bd-submenu {
+#app-mount .bd-layerContainer .bd-menu .bd-submenu,
+#app-mount .bd-layerContainer .bd-contextMenu {
     background-color: rgba(var(--bd-context-menu), .85);
 }
 
 #app-mount .bd-layerContainer .bd-menu .bd-item.bd-focused,
 #app-mount .bd-layerContainer .bd-menu .bd-colorDefault.bd-focused,
-#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover {
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover,
+#app-mount .bd-layerContainer .bd-contextMenu > .bd-itemGroup .bd-clickable:hover {
     background-color: rgba(var(--bd-color-link), .05);
 }
 
