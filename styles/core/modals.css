@@ -60,3 +60,8 @@
 #app-mount .bd-layerContainer > .bd-layer > * > .bd-container {
     background-color: rgb(var(--bd-default));
 }
+
+/** Group DMs **/
+#app-mount .bd-anchor.bd-tag {
+    background: rgba(var(--bd-lighter));
+}

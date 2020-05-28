@@ -156,9 +156,13 @@
 }
 
 /** Checkboxes **/
-#app-mount .bd-checkbox,
-#app-mount .bd-checkbox .bd-checkboxInner span {
+#app-mount .bd-checkbox {
+    color: rgba(var(--bd-checkbox), .2);
     border-color: rgba(var(--bd-checkbox), .2);
+}
+
+#app-mount .bd-focused .bd-check {
+    color: white;
 }
 
 #app-mount .bd-checkbox.bd-checked[style*="border-color"]:not(.bd-round),
