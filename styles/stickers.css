@@ -50,7 +50,11 @@
 	flex: 1;
 	height: 100%;
 	align-items: center;
-	overflow-x: hidden;
+	overflow-x: scroll;
+}
+
+#stickers-popout-tabs::-webkit-scrollbar {
+    display: none;
 }
 
 .stickers-tab {

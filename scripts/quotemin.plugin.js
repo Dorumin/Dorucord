@@ -38,7 +38,7 @@ class Quotemin {
         this.DISCORD_EPOCH = 1420070400000n;
 
         this.patchXHR();
-        
+
         this.copied;
 
         this.selection;
@@ -72,7 +72,7 @@ class Quotemin {
     getGroupStart(container) {
         let cont = container.parentElement,
             sibling = cont.previousElementSibling;
-    
+
         while (sibling) {
             if (sibling.matches('[class*="groupStart"]')) return sibling;
             sibling = sibling.previousElementSibling
@@ -125,7 +125,7 @@ class Quotemin {
         const container = this.getMessageContainer();
 
         if (!container) return null;
- 
+
 
         const img = container.querySelector('h2 img') ? container.querySelector('h2 img') : this.getGroupStart(container).querySelector('h2 img');
 
@@ -137,7 +137,7 @@ class Quotemin {
 
         return src.replace(/\.(jpg|png|gif|webm|mp4|webp)\?size=\d+$/, `.png?size=${res}`);
     }
-    
+
     isClosestElement(parent, element) {
         if (!parent) return false;
         if (!element) return false;
@@ -152,8 +152,8 @@ class Quotemin {
     }
 
     getContextMenu() {
-        if (document.querySelector('div[class*="contextMenu-"]')) {
-            return document.querySelector('div[class*="contextMenu-"]');
+        if (document.querySelector('.bd-layerContainer .bd-menu')) {
+            return document.querySelector('.bd-layerContainer .bd-menu');
         } else {
             return document.querySelector('div[class*="container"][role="menu"]');
         }
@@ -181,7 +181,7 @@ class Quotemin {
     }
 
     getMessageContainer() {
-        if (!this.selectedMessage) return null; 
+        if (!this.selectedMessage) return null;
 
         return this.selectedMessage.querySelector('div[class*="container-"]');
     }
@@ -229,7 +229,7 @@ class Quotemin {
         const channelId = this.getActiveChannelId();
 
         if (!channelId) return console.log('getActiveChannelId() returned null');
-        
+
         let tries = 10;
         while (tries--) {
             const contextMenu = this.getContextMenu();
@@ -254,10 +254,10 @@ class Quotemin {
                     if (svg) {
                         return svg.innerHTML;
                     }
-                    else { 
+                    else {
                         return action + 'Q';
                     }
-                } 
+                }
             } else return action + 'Q';
         }
 
@@ -296,7 +296,7 @@ class Quotemin {
                 })
             );
         }
-        
+
         if (this.copied && Array.from(document.querySelectorAll('[class*="label"]')).filter(elem => elem.textContent === 'Paste').length) {
             this.insertAfter(target,
                 this.buildMenuItem({
@@ -305,7 +305,7 @@ class Quotemin {
                     contextMenu
                 })
             );
-        } 
+        }
     }
 
     async quoteMessage(contextMenu, channelId, sendNow, selectionText) {
@@ -368,7 +368,7 @@ class Quotemin {
         } else if (message.embeds.length) {
             // description += '\n\n[embed]';
             description += '\n\n' + this.stringifyEmbed(message.embeds[0].description);
-        } 
+        }
 
         if (description.length > 2048) return null;
 
