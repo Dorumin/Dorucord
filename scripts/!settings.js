@@ -112,7 +112,9 @@ window.UI_Config = class {
                             }),
                             events: {
                                 click: e => {
-
+                                    const bound = e.getBoundingClientRect();
+                                    this.colorpicker.style.top = `${bound.top - 272}px`;
+                                    this.colorpicker.style.left = `${bound.left - this.colorpicker.offsetWidth / 2 + 28}px`
                                 }
                             }
                         })
