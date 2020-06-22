@@ -1,43 +1,45 @@
 /* Pins */
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout {
     background-color: rgba(var(--bd-popout-bg), .95);
     border-color: transparent;
     box-shadow: none;
 }
 
 /*** Pinned popout header and footer ***/
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-header,
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-footer {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout > .bd-header,
+#app-mount .bd-layerContainer .bd-recentMentionsPopout > .bd-footer {
     background-color: rgba(var(--bd-popout-header-footer), .9);
     box-shadow: none;
 }
 
 /*** Pinned popout messages ***/
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-messageGroupWrapper {
     background-color: rgba(var(--bd-popout-message-bg), .3);
     border-color: transparent;
 }
 
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper:hover {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-messageGroupWrapper:hover {
     border-color: transparent;
 }
 
 /* Recent Mentions */
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-header .bd-item.bd-selected,
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-header .bd-button.bd-secondary {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-header .bd-item.bd-selected,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-header .bd-button.bd-secondary {
     background: rgb(var(--bd-lighter));
 }
 
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-channelHeader,
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-messageContainer {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-channelHeader,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messageContainer,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messages {
     background: rgba(var(--bd-lighter));
 }
 
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-channelHeader {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-channelHeader {
     border-radius: 8px 8px 0 0;
-    padding: 12px 16px;
+    padding: 12px 16px 12px 30px;
 }
 
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-messageContainer {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messageContainer,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messages {
     border-radius: 0 0 8px 8px;
 }

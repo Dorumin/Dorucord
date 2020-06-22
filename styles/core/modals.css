@@ -12,7 +12,7 @@
 
 /** Footers **/
 #app-mount .bd-modal .bd-modal .bd-footer,
-#app-mount .bd-modal .bd-sidebar,
+#app-mount .bd-modal .bd-thin.bd-fade,
 #app-mount .bd-layerContainer .bd-footer,
 #app-mount .bd-layerContainer .bd-container .bd-white.bd-header,
 #app-mount .bd-popouts .bd-popout .bd-popoutList {

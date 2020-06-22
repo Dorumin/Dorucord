@@ -115,6 +115,7 @@
 #app-mount .bd-base .bd-chat,
 #app-mount .bd-base .bd-chat .bd-wrapper,
 #app-mount .bd-base .bd-chat .bd-scrollerWrap .bd-scroller,
+#app-mount .bd-base .bd-chat .bd-membersWrap .bd-members,
 #app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea,
 #app-mount .bd-base .bd-content .bd-applicationStore,
 #app-mount .bd-base .bd-content .bd-applicationStore .bd-headerBar,
@@ -199,8 +200,15 @@
 
 /** Jump button **/
 #app-mount .bd-jumpButton,
-#app-mount .bd-closeButton.bd-tertiary {
+#app-mount .bd-closeButton.bd-tertiary,
+#app-mount .bd-tertiary.bd-button {
     background-color: rgb(var(--bd-default));
+}
+
+/** Collapse button **/
+#app-mount .bd-collapseButton {
+    position: absolute;
+    left: 6px;
 }
 
 /** Regular buttons **/
@@ -332,7 +340,21 @@
 
 #app-mount .bd-modal .bd-flex .bd-tiles .bd-imageSelected {
     border-color: rgb(var(--bd-color-link));
-} 
+}
+
+/*** Call region ***/
+#app-mount .bd-layerContainer .bd-quickSelectPopout {
+    background-color: rgba(var(--bd-dark));
+}
+
+#app-mount .bd-layerContainer .bd-quickSelectPopout .bd-quickSelectPopoutOption.bd-selected i.bd-check {
+    filter: var(--bd-image-solid);
+}
+
+/*** Call buttons ***/
+#app-mount .bd-videoControls .bd-bottomControls .bd-wrapper .bd-button.bd-controlButton:not(.bd-leaveButton) {
+    background-color: rgba(var(--bd-lightest), .5);
+}
 
 /* DMs / Server channel highlights  */
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel {
@@ -1141,7 +1163,7 @@ img.emoji[aria-label=":rofl:"] {
 
 /** Footers **/
 #app-mount .bd-modal .bd-modal .bd-footer,
-#app-mount .bd-modal .bd-sidebar,
+#app-mount .bd-modal .bd-thin.bd-fade,
 #app-mount .bd-layerContainer .bd-footer,
 #app-mount .bd-layerContainer .bd-container .bd-white.bd-header,
 #app-mount .bd-popouts .bd-popout .bd-popoutList {
@@ -1202,46 +1224,48 @@ img.emoji[aria-label=":rofl:"] {
 }
 
 /* Pins */
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout {
     background-color: rgba(var(--bd-popout-bg), .95);
     border-color: transparent;
     box-shadow: none;
 }
 
 /*** Pinned popout header and footer ***/
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-header,
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap > .bd-footer {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout > .bd-header,
+#app-mount .bd-layerContainer .bd-recentMentionsPopout > .bd-footer {
     background-color: rgba(var(--bd-popout-header-footer), .9);
     box-shadow: none;
 }
 
 /*** Pinned popout messages ***/
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-messageGroupWrapper {
     background-color: rgba(var(--bd-popout-message-bg), .3);
     border-color: transparent;
 }
 
-#app-mount .bd-layerContainer .bd-messagesPopoutWrap .bd-messageGroupWrapper:hover {
+#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-messageGroupWrapper:hover {
     border-color: transparent;
 }
 
 /* Recent Mentions */
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-header .bd-item.bd-selected,
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-header .bd-button.bd-secondary {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-header .bd-item.bd-selected,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-header .bd-button.bd-secondary {
     background: rgb(var(--bd-lighter));
 }
 
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-channelHeader,
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-messageContainer {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-channelHeader,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messageContainer,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messages {
     background: rgba(var(--bd-lighter));
 }
 
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-channelHeader {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-channelHeader {
     border-radius: 8px 8px 0 0;
-    padding: 12px 16px;
+    padding: 12px 16px 12px 30px;
 }
 
-#app-mount .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container .bd-messageContainer {
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messageContainer,
+#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messages {
     border-radius: 0 0 8px 8px;
 }
 

@@ -21,4 +21,18 @@
 
 #app-mount .bd-modal .bd-flex .bd-tiles .bd-imageSelected {
     border-color: rgb(var(--bd-color-link));
-} 
+}
+
+/*** Call region ***/
+#app-mount .bd-layerContainer .bd-quickSelectPopout {
+    background-color: rgba(var(--bd-dark));
+}
+
+#app-mount .bd-layerContainer .bd-quickSelectPopout .bd-quickSelectPopoutOption.bd-selected i.bd-check {
+    filter: var(--bd-image-solid);
+}
+
+/*** Call buttons ***/
+#app-mount .bd-videoControls .bd-bottomControls .bd-wrapper .bd-button.bd-controlButton:not(.bd-leaveButton) {
+    background-color: rgba(var(--bd-lightest), .5);
+}

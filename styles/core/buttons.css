@@ -6,8 +6,15 @@
 
 /** Jump button **/
 #app-mount .bd-jumpButton,
-#app-mount .bd-closeButton.bd-tertiary {
+#app-mount .bd-closeButton.bd-tertiary,
+#app-mount .bd-tertiary.bd-button {
     background-color: rgb(var(--bd-default));
+}
+
+/** Collapse button **/
+#app-mount .bd-collapseButton {
+    position: absolute;
+    left: 6px;
 }
 
 /** Regular buttons **/
