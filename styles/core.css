@@ -1689,6 +1689,11 @@ img.emoji[aria-label=":rofl:"] {
     background-color: rgb(var(--bd-lighter));
 }
 
+.bd-noticeDanger {
+    display: none; /* lol */
+}
+
+
 /* Tabs */
 /** Friends **/
 #app-mount .bd-peopleColumn .bd-peopleListItem .bd-actionButton {
