@@ -8,4 +8,4 @@
             _error.apply(console, args);
         }
     }
-});
+})();
