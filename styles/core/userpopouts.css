@@ -20,6 +20,15 @@
     background-color: rgba(var(--bd-user-popouts-header-spotify), .95);
 }
 
+/** Add role to someone **/
+#app-mount .bd-layerContainer .bd-layer .bd-container header.bd-header {
+    background-color: rgba(var(--bd-user-popouts-header), .95)
+}
+
+#app-mount .bd-layerContainer .bd-layer .bd-container .bd-sectionTag .bd-row.bd-selected {
+    background: rgba(var(--bd-lightest), .4);
+}
+
 /*** Send Message with regular status ***/
 #app-mount .bd-modal .bd-inner .bd-topSectionNormal .bd-button.bd-lookFilled {
     background-color: rgb(var(--bd-color-link));
