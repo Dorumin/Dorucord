@@ -31,7 +31,7 @@
 
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"],
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"]:hover {
-    color: rgb(var(--bd-monochrome-contrast)) !important; 
+    color: rgb(var(--bd-monochrome-contrast)) !important;
 }
 
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"],
@@ -174,6 +174,7 @@
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-descriptionBox {
     background-color: rgba(var(--bd-default), .3);
 }
+
 /** Unsaved changes **/
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container {
     background-color: rgba(var(--bd-default), .7) !important; /* No oher way, sadly */
@@ -192,11 +193,12 @@
     margin-bottom: none;
 }
 
-#app-mount .bd-popouts .bd-popout .bd-popoutList .bd-selectableItem[style*="background"] {
+/*** Audit Log filters ***/
+#app-mount .bd-layerContainer .bd-popoutList .bd-selectableItem[style*="background"] {
     background-color: rgb(var(--bd-color-link)) !important;
     color: rgb(var(--bd-monochrome-contrast)) !important;
 }
 
-#app-mount .bd-popouts .bd-popout .bd-popoutList .bd-selectableItem:hover {
+#app-mount .bd-layerContainer  .bd-popoutList .bd-selectableItem:hover {
     background-color: rgb(var(--bd-lighter));
 }

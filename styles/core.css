@@ -677,7 +677,7 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-perksModalContentWrapper .bd-ctaBar .bd-guildIcon.bd-noIcon /* Server Boost */,
 #app-mount .bd-modal .bd-avatarUploaderInner, /* Create new guild */
 #app-mount .bd-modal > .bd-inner .bd-flex > .bd-body .bd-guildAvatarWithoutIcon.bd-noIcon /* Mutual servers */,
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-guildIcon.bd-noIcon /* Quickswitcher*/,
+#app-mount .bd-guildIcon.bd-noIcon /* Lazy LOL */,
 #app-mount .bd-guildIconWithoutImage /* Emoji Picker */ {
     background-color: rgb(var(--bd-guild));
 }
@@ -729,7 +729,8 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-noticeIcon.bd-icon, /* Streamer mode */
 #app-mount .bd-sadImage, /* Emoji picker */
 #app-mount .bd-imageError, /* Image won't load */
-#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-previewContainer .bd-previewOverlay img {
+#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-previewContainer .bd-previewOverlay img,
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-iconContainer .bd-icon /* No inbox */ {
     filter: var(--bd-image-solid, none);
 }
 
@@ -878,7 +879,8 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-container .bd-css-menu,
 #app-mount .bd-modal .bd-css-container .bd-css-menu,
 #app-mount .bd-popouts .bd-popout > .bd-scrollerWrap .bd-scroller,
-#app-mount .bd-popouts .bd-popout .bd-css-container .bd-css-menu {
+#app-mount .bd-popouts .bd-popout .bd-css-container .bd-css-menu,
+#app-mount .bd-popouts .bd-popout .bd-popout {
     background-color: rgb(var(--bd-default));
     border-color: rgb(var(--bd-darker));
 }
@@ -1166,7 +1168,7 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-modal .bd-thin.bd-fade,
 #app-mount .bd-layerContainer .bd-footer,
 #app-mount .bd-layerContainer .bd-container .bd-white.bd-header,
-#app-mount .bd-popouts .bd-popout .bd-popoutList {
+#app-mount .bd-layerContainer .bd-popoutList {
     background-color: rgba(var(--bd-modal-footer), .85);
 }
 
@@ -1223,49 +1225,67 @@ img.emoji[aria-label=":rofl:"] {
     background: var(--bd-messageWrapper-hover);
 }
 
-/* Pins */
-#app-mount .bd-layerContainer .bd-recentMentionsPopout {
+/* Pins and Inbox */
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) {
     background-color: rgba(var(--bd-popout-bg), .95);
     border-color: transparent;
     box-shadow: none;
 }
 
-/*** Pinned popout header and footer ***/
-#app-mount .bd-layerContainer .bd-recentMentionsPopout > .bd-header,
-#app-mount .bd-layerContainer .bd-recentMentionsPopout > .bd-footer {
+/** Pins and Inbox popout header and footer **/
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) > .bd-header,
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) > .bd-footer {
     background-color: rgba(var(--bd-popout-header-footer), .9);
     box-shadow: none;
 }
 
-/*** Pinned popout messages ***/
-#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-messageGroupWrapper {
+/** Tutorial for all **/
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-tutorial {
     background-color: rgba(var(--bd-popout-message-bg), .3);
     border-color: transparent;
 }
 
-#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-messageGroupWrapper:hover {
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-tutorial .bd-tutorialIcon {
+    background-color: rgb(var(--bd-default));
+}
+
+/** Pinned popout messages **/
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-messageGroupWrapper {
+    background-color: rgba(var(--bd-popout-message-bg), .3);
     border-color: transparent;
 }
 
-/* Recent Mentions */
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-header .bd-item.bd-selected,
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-header .bd-button.bd-secondary {
-    background: rgb(var(--bd-lighter));
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-messageGroupWrapper:hover {
+    border-color: transparent;
 }
 
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-channelHeader,
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messageContainer,
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messages {
-    background: rgba(var(--bd-lighter));
+/** Recent Mentions, Unreads **/
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-header .bd-item.bd-selected,
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-header .bd-button.bd-secondary {
+    background-color: rgb(var(--bd-lighter));
 }
 
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-channelHeader {
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-channelHeader,
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-messageContainer,
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-messages {
+    background-color: rgba(var(--bd-lighter));
+}
+
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-channelHeader {
     border-radius: 8px 8px 0 0;
+    padding: 12px 16px;
+}
+
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-channelHeader .bd-guildIcon.bd-noIcon{
+    background: rgb(var(--bd-default));
+}
+
+#app-mount .bd-recentMentionsPopout:not(.bd-messagesPopoutWrap) .bd-channelHeader {
     padding: 12px 16px 12px 30px;
 }
 
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messageContainer,
-#app-mount .bd-recentMentionsPopout.bd-recentMentionsPopout .bd-messages {
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-messageContainer,
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-messages {
     border-radius: 0 0 8px 8px;
 }
 
@@ -1289,13 +1309,16 @@ img.emoji[aria-label=":rofl:"] {
 }
 
 /* Scrollbars */
-#app-mount .bd-scroller::-webkit-scrollbar-thumb {
+#app-mount .bd-scroller::-webkit-scrollbar-thumb,
+#app-mount .bd-thin::-webkit-scrollbar-thumb {
     background-color: rgba(var(--bd-scrollbar-track-piece), 0.5);
     border-color: transparent;
 }
 
 #app-mount .bd-scroller::-webkit-scrollbar-track,
-#app-mount .bd-scroller::-webkit-scrollbar-track-piece {
+#app-mount .bd-scroller::-webkit-scrollbar-track-piece,
+#app-mount .bd-thin::-webkit-scrollbar-track,
+#app-mount .bd-thin::-webkit-scrollbar-track-piece {
     background: var(--bd-scrollbar);
     border-color: var(--bd-scrollbar);
 }
@@ -1305,8 +1328,8 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-search > .bd-searchBar,
 #app-mount .bd-searchBar .bd-searchBarComponent,
 #app-mount .bd-libraryFilter .bd-searchBar.bd-container,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-searchBar
-#app-mount .bd-popouts .bd-popout .bd-popoutList .bd-popoutListInput {
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-searchBar,
+#app-mount .bd-layerContainer .bd-popoutList .bd-popoutListInput {
     background-color: rgba(var(--bd-searchbar), .35);
     border-radius: 3px;
 }
@@ -1519,7 +1542,7 @@ img.emoji[aria-label=":rofl:"] {
 
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"],
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"]:hover {
-    color: rgb(var(--bd-monochrome-contrast)) !important; 
+    color: rgb(var(--bd-monochrome-contrast)) !important;
 }
 
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"],
@@ -1662,6 +1685,7 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-descriptionBox {
     background-color: rgba(var(--bd-default), .3);
 }
+
 /** Unsaved changes **/
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container {
     background-color: rgba(var(--bd-default), .7) !important; /* No oher way, sadly */
@@ -1680,12 +1704,13 @@ img.emoji[aria-label=":rofl:"] {
     margin-bottom: none;
 }
 
-#app-mount .bd-popouts .bd-popout .bd-popoutList .bd-selectableItem[style*="background"] {
+/*** Audit Log filters ***/
+#app-mount .bd-layerContainer .bd-popoutList .bd-selectableItem[style*="background"] {
     background-color: rgb(var(--bd-color-link)) !important;
     color: rgb(var(--bd-monochrome-contrast)) !important;
 }
 
-#app-mount .bd-popouts .bd-popout .bd-popoutList .bd-selectableItem:hover {
+#app-mount .bd-layerContainer  .bd-popoutList .bd-selectableItem:hover {
     background-color: rgb(var(--bd-lighter));
 }
 
@@ -1865,6 +1890,15 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-userPopout .bd-headerSpotify,
 #app-mount .bd-modal .bd-inner .bd-topSectionSpotify {
     background-color: rgba(var(--bd-user-popouts-header-spotify), .95);
+}
+
+/** Add role to someone **/
+#app-mount .bd-layerContainer .bd-layer .bd-container header.bd-header {
+    background-color: rgba(var(--bd-user-popouts-header), .95)
+}
+
+#app-mount .bd-layerContainer .bd-layer .bd-container .bd-sectionTag .bd-row.bd-selected {
+    background: rgba(var(--bd-lightest), .4);
 }
 
 /*** Send Message with regular status ***/

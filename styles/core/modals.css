@@ -15,7 +15,7 @@
 #app-mount .bd-modal .bd-thin.bd-fade,
 #app-mount .bd-layerContainer .bd-footer,
 #app-mount .bd-layerContainer .bd-container .bd-white.bd-header,
-#app-mount .bd-popouts .bd-popout .bd-popoutList {
+#app-mount .bd-layerContainer .bd-popoutList {
     background-color: rgba(var(--bd-modal-footer), .85);
 }
 
