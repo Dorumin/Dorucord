@@ -3,6 +3,10 @@
     background-color: rgba(var(--bd-picker), 0.85);
 }
 
+#app-mount .bd-emojiPicker .bd-header {
+    background-color: transparent;
+}
+
 /** Info of currently hovered emote **/
 #app-mount .bd-emojiPicker .bd-inspector {
     background-color: rgba(var(--bd-dark), .5);

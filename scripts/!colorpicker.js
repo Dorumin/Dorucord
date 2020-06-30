@@ -1,4 +1,4 @@
-class Colorpicker {
+window.Colorpicker = class {
     // Miss fucking copy paste
     constructor() {
         this.initialize();
@@ -53,8 +53,6 @@ class Colorpicker {
 		this.pickerState.hue = color.hue;
 		this.pickerState.sat = color.sat;
 		this.pickerState.lig = color.lig;
-		// console.log(color);
-		// console.log(`%c${getStateColor()}`, getStateColor());
 
 		const pointer = document.getElementById('bd-canvas-pointer');
 
@@ -70,46 +68,78 @@ class Colorpicker {
 		return `hsl(${hue}deg, ${sat}%, ${lig}%, ${alp})`;
 	}
 
+    updateInputs() {
+        const {hue, sat, lig, alp} = this.pickerState;
+        const hsla = [`${Math.round(hue)}`, `${Math.round(sat)}%`, `${Math.round(lig)}%`, `${alp}`];
+
+        for (let i = 0; i < 4; i++) {
+            document.querySelectorAll('.bd-color-value')[i].value = hsla[i];
+        }
+    }
+
 	updateCurrentColor() {
+        const {hue, sat, lig, alp} = this.pickerState;
+
 		const wasEmpty = this.nextColorUpdate === '';
-		this.nextColorUpdate = this.getStateColor();
+		this.nextColorUpdate = `hsl(${hue}deg, ${sat}%, ${lig}%, ${alp})`;
 
 		if (!wasEmpty) return;
 
 		requestAnimationFrame(() => {
-			document.body.style.setProperty('--bd-currentColor', this.nextColorUpdate);
+            this.updateInputs();
+            document.body.style.setProperty('--bd-currentColor', this.nextColorUpdate);
+            document.body.style.setProperty('--bd-current-color-solid', `hsl(${hue}deg, ${sat}%, ${lig}%)`);
 			this.nextColorUpdate = '';
 		});
     }
 
     RGB_TO_HSL(r, g, b) {
-		r /= 255, g /= 255, b /= 255;
+        r /= 255, g /= 255, b /= 255;
 
-		var max = Math.max(r, g, b), min = Math.min(r, g, b);
-		var h, s, l = (max + min) / 2;
+        var max = Math.max(r, g, b), min = Math.min(r, g, b);
+        var h, s, l = (max + min) / 2;
 
-		if (max == min) {
-			h = s = 0; // achromatic
-		} else {
-			var d = max - min;
-			s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        if (max == min) {
+            h = s = 0; // achromatic
+        } else {
+            var d = max - min;
+            s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+            switch(max) {
+                case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+                case g: h = (b - r) / d + 2; break;
+                case b: h = (r - g) / d + 4; break;
+            }
+            h /= 6;
+        }
 
-			switch (max) {
-				case r:
-					h = (g - b) / d + (g < b ? 6 : 0);
-					break;
-				case g:
-					h = (b - r) / d + 2;
-					break;
-				case b:
-					h = (r - g) / d + 4;
-				break;
-			}
+        return [Math.floor(h * 360), Math.floor(s * 100), Math.floor(l * 100)];
+    }
 
-			h /= 6;
-		}
+    HSL_TO_RGB(h, s, l) {
+        h /= 360; s /= 100; l /= 100;
 
-		return [ h, s, l ];
+        var r, g, b;
+
+        if (s == 0) {
+            r = g = b = l; // achromatic
+        } else {
+            var hue2rgb = (p, q, t) => {
+                if (t < 0) t += 1;
+                if (t > 1) t -= 1;
+                if (t < 1/6) return p + (q - p) * 6 * t;
+                if (t < 1/2) return q;
+                if (t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                return p;
+            }
+
+            var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+            var p = 2 * l - q;
+            r = hue2rgb(p, q, h + 1/3);
+            g = hue2rgb(p, q, h);
+            b = hue2rgb(p, q, h - 1/3);
+        }
+
+        return [ Math.round(r * 255), Math.round(g * 255), Math.round(b * 255) ];
     }
 
     getPixel(width, height, x, y) {
@@ -155,7 +185,7 @@ class Colorpicker {
 	}
 
     createColorpicker() {
-        const hueSlider = build.input({
+        this.hueSlider = build.input({
             type: 'range',
             id: 'bd-hue-slider',
             min: 0,
@@ -171,7 +201,7 @@ class Colorpicker {
             }
         });
 
-        const opacitySlider = build.input({
+        this.opacitySlider = build.input({
             type: 'range',
             id: 'bd-opacity-slider',
             min: '0',
@@ -180,20 +210,24 @@ class Colorpicker {
             events: {
                 input: e => {
                     document.querySelector('#bd-picker-color').style.opacity = e.target.value / 100;
+                    this.pickerState.alp = e.target.value / 100;
+
+                    this.updateCurrentColor();
                 }
             }
         });
 
-        const colorInput = () => {
+        const colorInput = (max) => {
             return build.input({
-                class: 'bd-color-value'
+                class: 'bd-color-value',
+                maxlength: max ? max : 4
             });
         }
 
         const colorType = (text) => {
             return build.span({
-                text: text
-            })
+                text: text,
+            });
         }
 
         const colorCode = build.div({
@@ -201,7 +235,7 @@ class Colorpicker {
             children: [
                 build.div({
                     class: 'bd-color-wrapper',
-                    children: [colorInput(), colorType('H')]
+                    children: [colorInput(3), colorType('H')]
                 }),
                 build.div({
                     class: 'bd-color-wrapper',
@@ -267,7 +301,7 @@ class Colorpicker {
                                 }),
                                 build.div({
                                     id: 'bd-picker-input-wrapper',
-                                    children: [hueSlider, opacitySlider]
+                                    children: [this.hueSlider, this.opacitySlider]
                                 }),
                                 colorCode
                             ]
