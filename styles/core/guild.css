@@ -1,16 +1,16 @@
 /* Guild list */
 /** Guild without server icons **/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-childWrapper,
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-childWrapper,
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-childWrapper,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem .bd-childWrapper,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem .bd-childWrapper,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-wrapper .bd-childWrapper,
 /** Error **/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-anchor.bd-guildsError,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem .bd-anchor.bd-guildsError,
 /*** Discord icon ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem:nth-child(1) a,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem:nth-child(1) a,
 /*** Separator between discord icon and your actual guild list ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem:nth-child(2) .bd-guildSeparator,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem:nth-child(2) .bd-guildSeparator,
 /*** Add new guild ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-circleIconButton,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem .bd-circleIconButton,
 /*** Invite link with default guild icon ***/
 #app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon,
 /*** Guilds with no default icon in settings ***/
@@ -29,29 +29,29 @@
 }
 
 /*** Error ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-anchor.bd-guildsError {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem .bd-anchor.bd-guildsError {
     border-color: rgb(var(--bd-color-link));
 }
 
 /** Folders **/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-folder,
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper span.bd-expandedFolderBackground {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-wrapper .bd-folder,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-wrapper span.bd-expandedFolderBackground {
     background: rgb(var(--bd-guild-folder));
 }
 
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-expandedFolderIconWrapper svg path {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-wrapper .bd-expandedFolderIconWrapper svg path {
     fill: rgb(var(--bd-color-link));
 }
 
 /*** Motherfucking piece of shit that made me break my record of not using !important ***/
 /*** It's just to make the guild folders single color ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-wrapper .bd-folder .bd-folderIconWrapper[style*="background-color"] {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-wrapper .bd-folder .bd-folderIconWrapper[style*="background-color"] {
     background-color: transparent !important;
 }
 
 /*** ANOTHER PIECE OF SHIT ***/
 /*** How many pings in an unread guild ***/
-#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller .bd-listItem .bd-lowerBadge .bd-numberBadge {
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scroller .bd-listItem .bd-lowerBadge .bd-numberBadge {
     background-color: rgb(var(--bd-guild-unread)) !important;
 }
 

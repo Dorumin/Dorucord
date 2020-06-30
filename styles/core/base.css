@@ -111,6 +111,7 @@
 #app-mount .bd-base .bd-chat .bd-wrapper,
 #app-mount .bd-base .bd-chat .bd-scrollerWrap .bd-scroller,
 #app-mount .bd-base .bd-chat .bd-membersWrap .bd-members,
+#app-mount .bd-base .bd-chat .bd-membersWrap .bd-members > div,
 #app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea,
 #app-mount .bd-base .bd-content .bd-applicationStore,
 #app-mount .bd-base .bd-content .bd-applicationStore .bd-headerBar,
