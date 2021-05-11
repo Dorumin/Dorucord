@@ -98,9 +98,10 @@
 } */
 
 #app-mount .bd-app,
-#app-mount .bd-app > .bd-container.bd-fixClipping,
 #app-mount .bd-wrapper.bd-guilds .bd-scroller,
+/* Guild name in sidebar */
 #app-mount .bd-base .bd-sidebar .bd-header:hover,
+/* Selected items */
 #app-mount .bd-base .bd-sidebar .bd-selected .bd-header,
 #app-mount .bd-base .bd-sidebar > .bd-container,
 #app-mount .bd-base .bd-sidebar .bd-panels,
@@ -108,7 +109,8 @@
 #app-mount .bd-base .bd-sidebar .bd-scroller,
 #app-mount .bd-base .bd-children::after,
 #app-mount .bd-base .bd-chat,
-#app-mount .bd-base .bd-chat .bd-wrapper,
+#app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper,
+#app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper > .bd-wrapper,
 #app-mount .bd-base .bd-chat .bd-scrollerWrap .bd-scroller,
 #app-mount .bd-base .bd-chat .bd-membersWrap .bd-members,
 #app-mount .bd-base .bd-chat .bd-membersWrap .bd-members > div,

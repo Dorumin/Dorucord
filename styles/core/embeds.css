@@ -13,8 +13,13 @@
 }
 
 #app-mount .bd-mentioned:before {
-    background: rgba(var(--bd-mentions-border), .1);
+    background: rgba(var(--bd-mentions-border));
     border-left: 4px solid rgb(var(--bd-mentions-border));
+}
+
+#app-mount .bd-replying::before {
+    background: rgba(var(--bd-mentions-border));
+    border-left: 2px solid rgb(var(--bd-mentions-border));
 }
 
 #app-mount .bd-base .bd-chat .bd-wrapper.bd-mentioned {

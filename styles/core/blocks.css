@@ -1,10 +1,10 @@
 /* Block related stuff */
 /** Blocked messages **/
-#app-mount .bd-localBot {
+#app-mount .bd-ephemeral.bd-cozyMessage {
     background-color: rgba(var(--bd-color-link), .05)
 }
 
-#app-mount .bd-localBot::before {
+#app-mount .bd-ephemeral.bd-cozyMessage::before {
     background-color: rgb(var(--bd-color-link))
 }
 

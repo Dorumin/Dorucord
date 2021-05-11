@@ -12,6 +12,6 @@
 #app-mount .bd-thin::-webkit-scrollbar-track-piece,
 #app-mount .bd-auto::-webkit-scrollbar-track,
 #app-mount .bd-auto::-webkit-scrollbar-track-piece {
-    background: var(--bd-scrollbar);
+    background: var(--bd-scrollbar) !important;
     border-color: var(--bd-scrollbar);
 }

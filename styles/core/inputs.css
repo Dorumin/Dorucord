@@ -2,9 +2,6 @@
 /** Modal search textarea **/
 #app-mount .bd-modal .bd-modal .bd-header .bd-container {
     background-color: rgb(var(--bd-light));
-}
-
-#app-mount .bd-modal .bd-modal .bd-header .bd-container {
     color: rgb(var(--bd-color-darker));
 }
 
@@ -12,6 +9,7 @@
     color: rgb(var(--bd-color-placeholder));
 }
 
+#app-mount .bd-layerContainer .bd-select.bd-lookFilled input,
 #app-mount .bd-modal .bd-modal .bd-header .bd-container .bd-input {
     background-color: transparent;
     border-color: transparent;
@@ -24,6 +22,8 @@
 #app-mount .bd-modal .bd-content .bd-channelTextArea,
 #app-mount .bd-layerContainer .bd-modalRoot .bd-input,
 #app-mount .bd-layerContainer .bd-modalRoot .bd-select,
+#app-mount .bd-layerContainer .bd-container .bd-container.bd-medium,
+#app-mount .bd-layerContainer .bd-select.bd-lookFilled,
 #app-mount .bd-popouts .bd-popout .bd-css-control,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input,
@@ -49,6 +49,8 @@
 #app-mount .bd-modal .bd-content .bd-channelTextArea:hover,
 #app-mount .bd-layerContainer .bd-modalRoot .bd-input:hover,
 #app-mount .bd-layerContainer .bd-modalRoot .bd-select:hover,
+#app-mount .bd-layerContainer .bd-container .bd-container.bd-medium:hover,
+#app-mount .bd-layerContainer .bd-select.bd-lookFilled:hover,
 #app-mount .bd-popouts .bd-popout .bd-css-control:hover,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input:hover,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input:hover,
@@ -72,6 +74,8 @@
 #app-mount .bd-modal .bd-content .bd-channelTextArea:focus,
 #app-mount .bd-layerContainer .bd-modalRoot .bd-input:focus,
 #app-mount .bd-layerContainer .bd-modalRoot .bd-select.bd-selectOpen,
+#app-mount .bd-layerContainer .bd-container .bd-container.bd-medium:focus,
+#app-mount .bd-layerContainer .bd-select.bd-lookFilled.bd-open,
 #app-mount .bd-popouts .bd-popout .bd-css-control:focus,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input:focus,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input:focus,
@@ -93,11 +97,21 @@
 /*** Dropdown for settings ***/
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-container .bd-css-menu,
 #app-mount .bd-modal .bd-css-container .bd-css-menu,
+#app-mount .bd-layerContainer .bd-popout,
 #app-mount .bd-popouts .bd-popout > .bd-scrollerWrap .bd-scroller,
 #app-mount .bd-popouts .bd-popout .bd-css-container .bd-css-menu,
 #app-mount .bd-popouts .bd-popout .bd-popout {
     background-color: rgb(var(--bd-default));
     border-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-layerContainer .bd-popout .bd-option:hover,
+#app-mount .bd-layerContainer .bd-popout .bd-option:focus {
+    background-color: rgba(var(--bd-lighter), .5);
+}
+
+#app-mount .bd-layerContainer .bd-popout .bd-option[aria-selected=true] {
+    background-color: rgba(var(--bd-darker), .6);
 }
 
 /**** Game activity ****/
@@ -114,14 +128,20 @@
 }
 
 /** Radio selects **/
-#app-mount .bd-cardPrimaryEditable[style*="background"] {
-    background-color: rgb(var(--bd-color-link)) !important;
-    border-color: rgb(var(--bd-color-link)) !important;
+#app-mount [role="radiogroup"] svg {
+    display: none;
 }
 
-#app-mount .bd-cardPrimaryEditable {
-    background-color: rgba(var(--bd-color-link), .05);
-    border-color: rgba(var(--bd-color-link), .2);
+#app-mount [role="radiogroup"] .bd-item[aria-checked=true] {
+    background-color: rgb(var(--bd-darker), .8);
+}
+
+#app-mount [role="radiogroup"] .bd-item {
+    background-color: rgba(var(--bd-lighter), .5);
+}
+
+#app-mount [role="radiogroup"] .bd-item:not([aria-checked=true]):hover {
+    background-color: rgba(var(--bd-lighter), .4);
 }
 
 /*** Settings ***/
@@ -203,16 +223,16 @@
 }
 
 /** Sliders **/
-#app-mount .bd-switch.bd-valueUnchecked {
-    background-color: rgb(var(--bd-slider-unchecked));
+#app-mount .bd-control .bd-container[style*="background-color: rgb(114, 118, 125)"] {
+    background-color: rgb(var(--bd-slider-unchecked)) !important;
 }
 
-#app-mount .bd-switch.bd-valueChecked {
-    background-color: rgb(var(--bd-slider-checked));
-}
-
-#app-mount .bd-switch.bd-valueChecked[style*="background"] {
+#app-mount .bd-control .bd-container {
     background-color: rgb(var(--bd-slider-checked)) !important;
+}
+
+#app-mount .bd-control .bd-container .bd-slider svg {
+    display: none;
 }
 
 /** Super long sliders **/

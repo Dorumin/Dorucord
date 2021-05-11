@@ -69,6 +69,6 @@
     background-color: rgb(var(--bd-default), .9);
 }
 
-#app-mount .bd-channelTextArea > .bd-autocomplete .bd-selector.bd-selectorSelected {
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-selectable.bd-selected {
     background-color: rgba(var(--bd-lightest), .5);
 }

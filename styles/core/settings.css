@@ -2,7 +2,8 @@
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]),
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView .bd-sidebarRegionScroller,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView .bd-contentRegionScroller {
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView .bd-contentRegionScroller,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView .bd-contentRegionScroller .bd-scrollerBase {
     background-color: transparent;
 }
 
@@ -46,13 +47,35 @@
 
 /** Tabs **/
 /** Not every tab has individual styles because of general selectors. Thank god for that. **/
+/*** My account ***/
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background {
+    background-color: rgba(var(--bd-darker), .4);
+}
+
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background .bd-fieldList {
+    background-color: transparent;
+}
+
 /*** Connections ***/
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-accountList {
+    background-color: rgba(var(--bd-lighter), .25);
+}
+
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner {
-    background-color: rgba(var(--bd-default), .4)
+    background-color: rgba(var(--bd-default), .4);
 }
 
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner:hover {
-    background-color: rgba(var(--bd-default), .6)
+    background-color: rgba(var(--bd-default), .6);
+}
+
+/**** Connection items ****/
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-connection {
+    background-color: rgba(var(--bd-default), .5);
+}
+
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-connection .bd-connectionHeader {
+    background-color: rgba(var(--bd-darker), .4);
 }
 
 /*** Biling ***/
@@ -194,11 +217,11 @@
 }
 
 /*** Audit Log filters ***/
-#app-mount .bd-layerContainer .bd-popoutList .bd-selectableItem[style*="background"] {
-    background-color: rgb(var(--bd-color-link)) !important;
-    color: rgb(var(--bd-monochrome-contrast)) !important;
+#app-mount .bd-layerContainer .bd-list .bd-item.bd-selectedBrand {
+    background-color: rgb(var(--bd-color-link));
+    color: rgb(var(--bd-monochrome-contrast));
 }
 
-#app-mount .bd-layerContainer  .bd-popoutList .bd-selectableItem:hover {
+#app-mount .bd-layerContainer .bd-list .bd-item:hover {
     background-color: rgb(var(--bd-lighter));
 }
