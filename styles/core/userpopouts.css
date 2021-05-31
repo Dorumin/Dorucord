@@ -1,4 +1,47 @@
 /* User popouts */
+/** Reverting shitty designer choices **/
+#app-mount .bd-userPopout {
+    width: 240px !important; /* No other way, sadly */
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-profileBanner {
+    display: none;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop {
+    text-align: center;
+    padding-top: 108px;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-size20 {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-profileBadges,
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-setIdentityLink {
+    display: none;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal {
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal .bd-avatar {
+    border: none;
+    background: none;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal .bd-avatarHint {
+    top: 0;
+    left: 0;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-activityUserPopout {
+    padding: 16px;
+}
+
 /** Header colors **/
 #app-mount .bd-userPopout .bd-headerNormal,
 #app-mount .bd-modal .bd-inner .bd-topSectionNormal {
@@ -68,14 +111,14 @@
     background-color: rgba(var(--bd-user-popouts-notes-focus), .7);
 }
 
-#app-mount .bd-userPopout .bd-footer input.bd-quickMessage {
+#app-mount .bd-userPopout .bd-footer .bd-input {
     background-color: rgba(var(--bd-user-popouts-message), .65);
     border-color: transparent;
     transition: var(--bd-transition);
 }
 
-#app-mount .bd-userPopout .bd-footer input.bd-quickMessage:hover,
-#app-mount .bd-userPopout .bd-footer input.bd-quickMessage:focus {
+#app-mount .bd-userPopout .bd-footer .bd-input:hover,
+#app-mount .bd-userPopout .bd-footer .bd-input:focus {
     background-color: rgba(var(--bd-user-popouts-message), .95);
 }
 

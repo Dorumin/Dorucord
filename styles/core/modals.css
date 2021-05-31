@@ -1,4 +1,10 @@
 /* Modals */
+/** Killing borders for the new file popout **/
+#app-mount .bd-layerContainer [class^="bd-modal"],
+#app-mount .bd-modal .bd-modal .bd-footer {
+    border: none;
+}
+
 /** Base **/
 #app-mount .bd-modal .bd-modal,
 #app-mount .bd-modal .bd-reactors,

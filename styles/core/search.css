@@ -19,14 +19,17 @@
     margin-left: 0;
 }
 
-/** Search results wrap **/
-#app-mount .bd-searchResultsWrap .bd-searchResult::before,
-#app-mount .bd-searchResultsWrap .bd-searchResult::after {
-    background-image: none;
+/** Search header **/
+#app-mount .bd-searchHeader .bd-tab:hover {
+    background-color: rgb(var(--bd-default), .5);
 }
 
-#app-mount .bd-searchResultsWrap .bd-searchResultMessage.bd-hit,
-#app-mount .bd-searchResultsWrap .bd-searchResult.bd-expanded {
+#app-mount .bd-searchHeader .bd-tab.bd-selected {
+    background-color: rgb(var(--bd-default));
+}
+
+/** Search results wrap **/
+#app-mount .bd-searchResultsWrap .bd-searchResult {
     border-color: transparent;
     background-color: rgba(var(--bd-search-item), .6);
     box-shadow: none;

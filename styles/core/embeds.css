@@ -7,6 +7,13 @@
     border-color: rgb(var(--bd-embed-wrapper-border)) !important;
 }
 
+/** Account for embed text **/
+#app-mount .bd-embedWrapper > .bd-textContainer,
+#app-mount .bd-embedWrapper > .bd-textContainer + .bd-footer {
+    background-color: transparent;
+    border-color: rgb(var(--bd-embed-wrapper-border));
+}
+
 /** Embed default pill + quote color **/
 #app-mount .bd-blockquoteDivider {
     background-color: rgb(var(--bd-embed-pill-color));

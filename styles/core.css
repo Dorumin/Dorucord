@@ -130,9 +130,8 @@
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
 #app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
+#app-mount .bd-searchResultsWrap .bd-searchHeader,
 #app-mount .bd-searchResultsWrap .bd-channelName,
-#app-mount .bd-searchResultsWrap .bd-channelName,
-#app-mount .bd-searchResultsWrap .bd-searchResult.bd-expanded .bd-searchResultMessage,
 #app-mount .bd-modal .bd-container .bd-quickswitcher .bd-scroller,
 #app-mount .bd-layerContainer .bd-perksModal,
 #app-mount .bd-modal .bd-flex .bd-tiles,
@@ -204,7 +203,8 @@
 /** Jump button **/
 #app-mount .bd-jumpButton,
 #app-mount .bd-closeButton.bd-tertiary,
-#app-mount .bd-tertiary.bd-button {
+#app-mount .bd-tertiary.bd-button,
+#app-mount .bd-searchResultsWrap .bd-button {
     background-color: rgb(var(--bd-default));
 }
 
@@ -493,6 +493,13 @@
     border-color: rgb(var(--bd-embed-wrapper-border)) !important;
 }
 
+/** Account for embed text **/
+#app-mount .bd-embedWrapper > .bd-textContainer,
+#app-mount .bd-embedWrapper > .bd-textContainer + .bd-footer {
+    background-color: transparent;
+    border-color: rgb(var(--bd-embed-wrapper-border));
+}
+
 /** Embed default pill + quote color **/
 #app-mount .bd-blockquoteDivider {
     background-color: rgb(var(--bd-embed-pill-color));
@@ -693,6 +700,13 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-guildIconWithoutImage /* Emoji Picker */ {
     background-color: rgb(var(--bd-guild));
 }
+
+/** Not rounded guild icons ew **/
+#app-mount .bd-icon.bd-iconActiveMedium,
+#app-mount .bd-icon.bd-iconSizeMedium {
+    border-radius: 50%;
+}
+
 /**** Invite link with expired guild icon ****/
 #app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon.bd-guildIconExpired {
     background-color: transparent;
@@ -1063,14 +1077,14 @@ img.emoji[aria-label=":rofl:"] {
 #app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar,
 #app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar,
 #app-mount .bd-base .bd-sidebar .bd-unread.bd-bar,
-#app-mount .bd-channelTextArea > .bd-container {
+#app-mount .bd-channelTextArea > .bd-replyBar {
     background-color: rgba(var(--bd-jumpto));
 }
 
 #app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar:hover,
 #app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar:hover,
 #app-mount .bd-base .bd-sidebar .bd-unread.bd-bar:hover,
-#app-mount .bd-channelTextArea > .bd-container:hover {
+#app-mount .bd-channelTextArea > .bd-replyBar:hover {
     background-color: rgba(var(--bd-jumpto-hover));
 }
 
@@ -1186,6 +1200,12 @@ img.emoji[aria-label=":rofl:"] {
 }
 
 /* Modals */
+/** Killing borders for the new file popout **/
+#app-mount .bd-layerContainer [class^="bd-modal"],
+#app-mount .bd-modal .bd-modal .bd-footer {
+    border: none;
+}
+
 /** Base **/
 #app-mount .bd-modal .bd-modal,
 #app-mount .bd-modal .bd-reactors,
@@ -1404,14 +1424,17 @@ img.emoji[aria-label=":rofl:"] {
     margin-left: 0;
 }
 
-/** Search results wrap **/
-#app-mount .bd-searchResultsWrap .bd-searchResult::before,
-#app-mount .bd-searchResultsWrap .bd-searchResult::after {
-    background-image: none;
+/** Search header **/
+#app-mount .bd-searchHeader .bd-tab:hover {
+    background-color: rgb(var(--bd-default), .5);
 }
 
-#app-mount .bd-searchResultsWrap .bd-searchResultMessage.bd-hit,
-#app-mount .bd-searchResultsWrap .bd-searchResult.bd-expanded {
+#app-mount .bd-searchHeader .bd-tab.bd-selected {
+    background-color: rgb(var(--bd-default));
+}
+
+/** Search results wrap **/
+#app-mount .bd-searchResultsWrap .bd-searchResult {
     border-color: transparent;
     background-color: rgba(var(--bd-search-item), .6);
     box-shadow: none;
@@ -1954,6 +1977,49 @@ img.emoji[aria-label=":rofl:"] {
 }
 
 /* User popouts */
+/** Reverting shitty designer choices **/
+#app-mount .bd-userPopout {
+    width: 240px !important; /* No other way, sadly */
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-profileBanner {
+    display: none;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop {
+    text-align: center;
+    padding-top: 108px;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-size20 {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-profileBadges,
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-setIdentityLink {
+    display: none;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal {
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal .bd-avatar {
+    border: none;
+    background: none;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal .bd-avatarHint {
+    top: 0;
+    left: 0;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-activityUserPopout {
+    padding: 16px;
+}
+
 /** Header colors **/
 #app-mount .bd-userPopout .bd-headerNormal,
 #app-mount .bd-modal .bd-inner .bd-topSectionNormal {
@@ -2023,14 +2089,14 @@ img.emoji[aria-label=":rofl:"] {
     background-color: rgba(var(--bd-user-popouts-notes-focus), .7);
 }
 
-#app-mount .bd-userPopout .bd-footer input.bd-quickMessage {
+#app-mount .bd-userPopout .bd-footer .bd-input {
     background-color: rgba(var(--bd-user-popouts-message), .65);
     border-color: transparent;
     transition: var(--bd-transition);
 }
 
-#app-mount .bd-userPopout .bd-footer input.bd-quickMessage:hover,
-#app-mount .bd-userPopout .bd-footer input.bd-quickMessage:focus {
+#app-mount .bd-userPopout .bd-footer .bd-input:hover,
+#app-mount .bd-userPopout .bd-footer .bd-input:focus {
     background-color: rgba(var(--bd-user-popouts-message), .95);
 }
 

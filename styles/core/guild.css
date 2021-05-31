@@ -23,6 +23,13 @@
 #app-mount .bd-guildIconWithoutImage /* Emoji Picker */ {
     background-color: rgb(var(--bd-guild));
 }
+
+/** Not rounded guild icons ew **/
+#app-mount .bd-icon.bd-iconActiveMedium,
+#app-mount .bd-icon.bd-iconSizeMedium {
+    border-radius: 50%;
+}
+
 /**** Invite link with expired guild icon ****/
 #app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon.bd-guildIconExpired {
     background-color: transparent;
