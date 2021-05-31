@@ -1,0 +1,187 @@
+/* Just for example, and only the defaults, please edit these */
+/* Derived themes should start with a copy of this ruleset with modified values */
+/* Some values are rgb -- nvm all are lol */
+:root {
+    /* Main background */
+    --bd-background-image: url(https://media.discordapp.net/attachments/595506142126538753/602478618001801216/Hopal.png);
+    --bd-background-position: center top;
+    --bd-background-color: linear-gradient(to right, rgba(45, 7, 40, .65), rgba(41, 7, 40, .65)),;
+    --bd-background-brightness: brightness(.85);
+    --bd-background-contrast: contrast(1);
+    --bd-background-blur: blur(0);
+
+    /* Loading */
+    --bd-loading-background-image: url(https://media.discordapp.net/attachments/595506142126538753/602478618001801216/Hopal.png);
+    --bd-loading-background-position: center top;
+    --bd-loading-background-color: linear-gradient(to right, rgba(45, 7, 40, .65), rgba(41, 7, 40, .65)),;
+    --bd-loading-background-brightness: brightness(.85);
+    --bd-loading-background-contrast: contrast(1);
+    --bd-loading-background-blur: blur(0);
+
+    /* Main colors */
+    --bd-default: 56, 8, 49;
+    --bd-default-border: var(--bd-darker);
+    --bd-lightest: 86, 10, 77; /* Status */
+    --bd-lighter: 78, 16, 55; /* Guild, tooltips */
+    --bd-light: 39, 3, 26; /* Pins, userpopout */
+    --bd-dark: 33, 4, 29; /* Search, settings */
+    --bd-darker: 45, 7, 40;
+
+    /* Depth */
+    /** Just comment this whole thing if you want it to be transparent **/
+    --bd-depth-title: rgba(var(--bd-lighter), 0.2);
+    --bd-depth-guilds-list: rgba(var(--bd-lighter), 0.3);
+    --bd-depth-sidebar: rgba(var(--bd-lighter), 0.2);
+    --bd-depth-userbox: rgba(var(--bd-lighter), 0.1); /* I have no idea */
+
+    /* Text colors */
+    --bd-color-link: 204, 62, 151;
+    --bd-color-link-dark: 152, 31, 107;
+    --bd-color-link-hovered: 245, 98, 190;
+    --bd-color-link-hovered-shadow: 190, 38, 135;
+    --bd-color-mention: var(--bd-color-link);
+    --bd-color-lighter: 230, 230, 230;
+    --bd-color-light: 200, 200, 200;
+    --bd-color-dark: 220, 220, 220;
+    --bd-color-darker: 150, 150, 150;
+    --bd-color-darkest: 100, 100, 100;
+    --bd-color-placeholder: 90, 90, 90;
+
+    /* Link shadows */
+    --bd-link-shadows: 0 -15px 2.5px transparent, 0 15px 2.5px transparent;
+    --bd-link-shadows-hover: 0 0 2.5px rgb(var(--bd-color-link-hovered-shadow)), 0 0 2.5px rgb(var(--bd-color-link-hovered-shadow));
+
+    /* Display settings */
+    --bd-transition: .3s; /* Or 'none' if you don't want any animations */
+    --bd-context-menu-reactions: none; /* Possible values: block, none */
+    --bd-edit-button: none; /* Possible values: block, none */
+    --bd-messageWrapper-hover: transparent; /* When you hover on a message */
+
+    /* Bots */
+    --bd-bot: var(--bd-color-link);
+    --bd-bot-text: var(--bd-monochrome-contrast);
+
+    /* Buttons */
+    --bd-button-default: var(--bd-color-link);
+    --bd-button-secondary: var(--bd-lighter);
+    --bd-button-green: var(--bd-color-link);
+    --bd-button-text: var(--bd-monochrome-contrast);
+
+    /* Context Menu */
+    --bd-context-menu: var(--bd-darker);
+
+    /* Dropdowns */
+    --bd-dropdown: var(--bd-dark);
+
+    /* Embeds */
+    --bd-embed-wrapper: var(--bd-dark);
+    --bd-embed-wrapper-border: var(--bd-darker);
+    --bd-embed-pill-color: var(--bd-darker);
+    --bd-embed-icon: hue-rotate(100deg) saturate(100%);
+
+    /* Files */
+    --bd-file-progress-bar: var(--bd-color-link-dark);
+    --bd-file-progress-bar-grabber: var(--bd-color-link);
+
+    /* Mentions */
+    --bd-mentions-color: var(--bd-color-link);
+    --bd-mentions-color-hover: var(--bd-monochrome-contrast);
+    ;
+    --bd-mentions: var(--bd-color-link);
+    --bd-mentions-border: var(--bd-color-link);
+
+    /* Emoji Picker / Gif picker */
+    --bd-picker: var(--bd-default);
+
+    /* Guild icons */
+    --bd-guild: var(--bd-lighter);
+    --bd-guild-folder: var(--bd-dark);
+    --bd-guild-unread: var(--bd-lightest);
+    --bd-guild-unread-bar: var(--bd-default);
+    --bd-guild-unread-bar-hover: var(--bd-lighter);
+
+    /* Image hue */
+    /* Uncomment if you know the hues */
+    --bd-image-solid: hue-rotate(100deg) saturate(800%) brightness(.5);
+    --bd-image-translucent: hue-rotate(95deg) saturate(700%);
+    --bd-image-server-invite: hue-rotate(95deg) saturate(700%);
+    --bd-image-server-invite-icons: hue-rotate(-95deg) saturate(14.28%);
+    --bd-image-server-invite-button: hue-rotate(-95deg) saturate(14%);
+    --bd-image-server-welcome-icons: hue-rotate(95deg) saturate(200%);
+
+    /* Inputs */
+    --bd-input: var(--bd-color-link-dark);
+    --bd-input-border: var(--bd-color-link);
+    --bd-checkbox: var(--bd-color-link);
+    --bd-checkbox-border: var(--bd-color-link);
+    --bd-checkbox-stroke: var(--bd-monochrome-contrast);
+    --bd-slider-checked: var(--bd-color-link);
+    --bd-slider-unchecked: var(--bd-lightest);
+
+    /* Jump tos */
+    --bd-jumpto: var(--bd-default);
+    --bd-jumpto-hover: var(--bd-light);
+
+    /* Markup */
+    --bd-spoiler-hidden: var(--bd-color-link-dark);
+    --bd-spoiler-hidden-hover: var(--bd-color-link-dark);
+    --bd-spoiler: var(--bd-color-link-dark);
+    --bd-code: var(--bd-light);
+    --bd-code-border: var(--bd-light);
+
+    /* Modals */
+    --bd-modal-base: var(--bd-light);
+    --bd-modal-footer: var(--bd-dark);
+    --bd-uploadmodal-base: var(--bd-light);
+    --bd-uploadmodal-footer: var(--bd-darker);
+    --bd-modal-icon: hue-rotate(95deg) saturate(200%);
+
+    /* Pins and recent mentions */
+    --bd-popout-header-footer: var(--bd-dark);
+    --bd-popout-bg: var(--bd-light);
+    --bd-popout-message-bg: var(--bd-lightest);
+
+    /* Quick switcher */
+    --bd-quickswitcher: var(--bd-default);
+
+    /* Scrollbar */
+    --bd-scrollbar-track-piece: var(--bd-default);
+    --bd-scrollbar: transparent;
+
+    /* Search */
+    --bd-searchbar: var(--bd-dark);
+    --bd-search-item: var(--bd-dark);
+    --bd-search-popout: var(--bd-dark);
+    --bd-search-popout-option: var(--bd-default);
+
+    /* Server Boost */
+    --bd-serverboost-header: var(--bd-color-link-dark);
+    --bd-serverboost-body: var(--bd-color-link-dark);
+
+    /* Settings */
+    --bd-settings-sidebar: var(--bd-dark);
+    --bd-settings-sidebar-item: var(--bd-default);
+    --bd-settings-sidebar-item-hover: var(--bd-default);
+    --bd-settings-content: var(--bd-darker);
+
+    /* Tooltips */
+    --bd-tooltips: var(--bd-default);
+
+    /* User popouts */
+    --bd-user-popouts-header: var(--bd-darker);
+    --bd-user-popouts-header-playing: var(--bd-lightest);
+    --bd-user-popouts-header-spotify: var(--bd-lightest);
+    --bd-user-popouts-header-streaming: var(--bd-lightest);
+    --bd-user-popouts-body: var(--bd-default);
+    --bd-user-popouts-footer: var(--bd-default);
+    --bd-user-popouts-message: var(--bd-lightest);
+    --bd-user-popouts-notes-focus: var(--bd-lightest);
+
+    /* Whatever big word but */
+    /* if (theme == light) { */
+    /*     this.value = black; */
+    /* else { */
+    /*     this.value = white; */
+    /* } */
+    --bd-monochrome-contrast: 255, 255, 255;
+}
