@@ -128,6 +128,7 @@
 #app-mount .bd-base .bd-content > .bd-container .bd-scroller .bd-header,
 #app-mount .bd-base .bd-content > .bd-container > .bd-container,
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn,
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-container,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
 #app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
 #app-mount .bd-searchResultsWrap .bd-searchHeader,
@@ -1849,6 +1850,10 @@ img.emoji[aria-label=":rofl:"] {
 
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body {
     background-color: rgba(var(--bd-lighter), .4);
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body .bd-section {
+    background-color: transparent;
 }
 
 /* Some adjustments to make text more readable */

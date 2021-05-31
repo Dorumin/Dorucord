@@ -23,3 +23,7 @@
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body {
     background-color: rgba(var(--bd-lighter), .4);
 }
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body .bd-section {
+    background-color: transparent;
+}

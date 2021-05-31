@@ -123,6 +123,7 @@
 #app-mount .bd-base .bd-content > .bd-container .bd-scroller .bd-header,
 #app-mount .bd-base .bd-content > .bd-container > .bd-container,
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn,
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-container,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
 #app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
 #app-mount .bd-searchResultsWrap .bd-searchHeader,
