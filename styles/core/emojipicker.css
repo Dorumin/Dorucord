@@ -1,14 +1,17 @@
 /* Emoji picker */
-#app-mount .bd-contentWrapper:not([aria-labelledby="emoji-picker-tab"]) {
+#app-mount .bd-contentWrapper:not([aria-labelledby="emoji-picker-tab"]),
+#app-mount .bd-emojiPicker:not([aria-labelledby="emoji-picker-tab"]) {
     background-color: rgba(var(--bd-picker), 0.85);
 }
 
-#app-mount .bd-contentWrapper .bd-header {
+#app-mount .bd-contentWrapper .bd-header,
+#app-mount .bd-emojiPicker .bd-header {
     background-color: transparent;
 }
 
 /** Info of currently hovered emote **/
-#app-mount .bd-contentWrapper .bd-inspector {
+#app-mount .bd-contentWrapper .bd-inspector,
+#app-mount .bd-emojiPicker .bd-inspector {
     background-color: rgba(var(--bd-dark), .5);
 }
 
@@ -18,34 +21,41 @@
 }
 
 #app-mount .bd-contentWrapper .bd-categoryWrapper,
+#app-mount .bd-emojiPicker .bd-categoryWrapper,
 #app-mount .bd-categoryList .bd-categoryItemDefaultCategorySelected {
     background-color: rgba(var(--bd-darker));
 }
 
 /** Input **/
-#app-mount .bd-contentWrapper .bd-searchBar {
+#app-mount .bd-contentWrapper .bd-searchBar,
+#app-mount .bd-emojiPicker .bd-searchBar {
     background-color: rgb(var(--bd-darker));
 }
 
-#app-mount .bd-contentWrapper input {
+#app-mount .bd-contentWrapper input,
+#app-mount .bd-emojiPicker input {
     color: rgb(var(--bd-color-darker));
 }
 
-#app-mount .bd-contentWrapper input::placeholder {
+#app-mount .bd-contentWrapper input::placeholder,
+#app-mount .bd-emojiPicker input::placeholder {
     color: rgb(var(--bd-color-placeholder));
 }
 
 /** Diversity picker **/
-#app-mount .bd-contentWrapper .bd-diversitySelectorPopout {
+#app-mount .bd-contentWrapper .bd-diversitySelectorPopout,
+#app-mount .bd-emojiPicker .bd-diversitySelectorPopout {
     background-color: rgb(var(--bd-dark));
     border-color: rgb(var(--bd-dark));
 }
 
-#app-mount .bd-contentWrapper .bd-diversitySelectorPopout .bd-diversityEmojiItem:hover {
+#app-mount .bd-contentWrapper .bd-diversitySelectorPopout .bd-diversityEmojiItem:hover,
+#app-mount .bd-emojiPicker .bd-diversitySelectorPopout .bd-diversityEmojiItem:hover {
     background-color: rgb(var(--bd-light));
 }
 
 /** Actual picker **/
-#app-mount .bd-contentWrapper .bd-emojiItem.bd-emojiItemSelected {
+#app-mount .bd-contentWrapper .bd-emojiItem.bd-emojiItemSelected,
+#app-mount .bd-emojiPicker .bd-emojiItem.bd-emojiItemSelected {
     background-color: rgba(255, 255, 255, .1);
 }

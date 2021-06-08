@@ -4,7 +4,8 @@
     width: 240px !important; /* No other way, sadly */
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-profileBanner {
+#app-mount .bd-userPopout .bd-headerNormal .bd-banner,
+#app-mount .bd-userPopout .bd-headerNormal .bd-aboutMeSection {
     display: none;
 }
 
@@ -14,9 +15,15 @@
     padding-top: 108px;
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-size20 {
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-nickname,
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-headerTagWithNickname,
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-headerTagNoNickname {
     font-size: 16px;
     line-height: 16px;
+}
+
+#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-headerTagWithNickname {
+    margin-top: 2px;
 }
 
 #app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-profileBadges,
@@ -25,6 +32,7 @@
 }
 
 #app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal {
+    top: 16px;
     left: 50%;
     transform: translate(-50%);
 }
