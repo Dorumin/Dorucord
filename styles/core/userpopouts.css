@@ -1,9 +1,10 @@
 /* User popouts */
 /** Reverting shitty designer choices **/
 #app-mount .bd-userPopout {
-    width: 240px !important; /* No other way, sadly */
+    width: 250px !important; /* No other way, sadly */
 }
 
+#app-mount .bd-layerContainer .bd-root .bd-topSection .bd-banner,
 #app-mount .bd-userPopout .bd-headerNormal .bd-banner,
 #app-mount .bd-userPopout .bd-headerNormal .bd-aboutMeSection {
     display: none;
@@ -49,6 +50,73 @@
 
 #app-mount .bd-userPopout .bd-headerNormal .bd-activityUserPopout {
     padding: 16px;
+}
+
+/*** Not mini modals ***/
+#app-mount .bd-layerContainer .bd-root .bd-topSection header {
+    padding: 20px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header > .bd-avatar {
+    width: 80px !important;
+    height: 80px !important;
+    top: 0;
+    left: 0;
+    border: 0;
+    position: relative;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop {
+    padding: 0;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop .bd-badgeList {
+    margin: 30px 0 0;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-nameTag {
+    top: 32px;
+    left: 120px;
+    position: absolute;
+    margin: 0px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-nameTag .bd-username {
+    font-size: 18px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-nameTag .bd-discriminator {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-customStatusActivity {
+    padding: 40px 0 0;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-customStatusActivity::before {
+    content: 'Custom Status';
+    color: var(--header-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-customStatusActivity .bd-customStatusText {
+    margin-top: 8px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-body .bd-userInfoSection .bd-userInfoSectionHeader:first-of-type,
+#app-mount .bd-layerContainer .bd-root .bd-body .bd-userInfoSection .bd-userBio {
+    display: none;
 }
 
 /** Header colors **/
