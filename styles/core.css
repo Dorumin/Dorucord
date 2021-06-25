@@ -2198,6 +2198,12 @@ img.emoji[aria-label=":rofl:"] {
     margin: 0;
 }
 
+#app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper > .bd-flex {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+    padding: 4px 16px;
+    margin: 0;
+}
+
 #app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper .bd-note {
     background-color: rgba(var(--bd-user-popouts-body), .95);
     padding: 0px 12px;
