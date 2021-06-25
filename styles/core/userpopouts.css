@@ -2,54 +2,51 @@
 /** Reverting shitty designer choices **/
 #app-mount .bd-userPopout {
     width: 250px !important; /* No other way, sadly */
+    background-color: transparent;
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection .bd-banner,
 #app-mount .bd-userPopout .bd-headerNormal .bd-banner,
-#app-mount .bd-userPopout .bd-headerNormal .bd-aboutMeSection {
+#app-mount .bd-userPopout .bd-body .bd-aboutMeSection {
     display: none;
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop {
-    background-color: transparent;
+#app-mount .bd-userPopout .bd-headerTop {
     text-align: center;
     padding-top: 108px;
+    background-color: rgba(var(--bd-user-popouts-header), .95);
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-nickname,
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-headerTagWithNickname,
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-headerTagNoNickname {
+#app-mount .bd-userPopout .bd-headerTop .bd-nickname,
+#app-mount .bd-userPopout .bd-headerTop .bd-headerTagWithNickname,
+#app-mount .bd-userPopout .bd-headerTop .bd-headerTagNoNickname {
     font-size: 16px;
     line-height: 16px;
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-headerTagWithNickname {
+#app-mount .bd-userPopout .bd-headerTop .bd-headerTagWithNickname {
     margin-top: 2px;
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-profileBadges,
-#app-mount .bd-userPopout .bd-headerNormal .bd-headerTop .bd-setIdentityLink {
+#app-mount .bd-userPopout .bd-headerTop .bd-profileBadges,
+#app-mount .bd-userPopout .bd-headerTop .bd-setIdentityLink {
     display: none;
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal {
+#app-mount .bd-userPopout .bd-avatarWrapperNormal {
     top: 16px;
     left: 50%;
     transform: translate(-50%);
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal .bd-avatar {
+#app-mount .bd-userPopout .bd-avatarWrapperNormal .bd-avatar {
     border: none;
     background: none;
 }
 
-#app-mount .bd-userPopout .bd-headerNormal .bd-avatarWrapperNormal .bd-avatarHint {
+#app-mount .bd-userPopout .bd-avatarWrapperNormal .bd-avatarHint {
     top: 0;
     left: 0;
-}
-
-#app-mount .bd-userPopout .bd-headerNormal .bd-activityUserPopout {
-    padding: 16px;
 }
 
 /*** Not mini modals ***/
@@ -72,13 +69,12 @@
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop {
-    padding: 0;
-    margin-left: 20px;
-    flex-grow: 1;
+    left: 96px;
+    top: 16px;
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop .bd-badgeList {
-    margin: 30px 0 0;
+    margin: 26px 0 0;
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag {
@@ -178,13 +174,48 @@
 }
 
 /** Body **/
-#app-mount .bd-userPopout .bd-body:not(.bd-bodyAlignCenter):not(.bd-bodyNormal),
+#app-mount .bd-userPopout .bd-body {
+    overflow: hidden !important;
+}
+
+#app-mount .bd-userPopout .bd-body .bd-divider {
+    display: none;
+}
+
+#app-mount .bd-userPopout .bd-body .bd-customStatus {
+    text-align: center;
+    background: rgba(var(--bd-user-popouts-header), .95);
+    padding: 0 16px 12px;
+}
+
+#app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper {
+    padding: 0;
+    background: transparent;
+}
+
+#app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper .bd-bodyTitle {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+    padding: 16px 16px 8px;
+    margin: 0;
+}
+
+#app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper .bd-note {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+    padding: 0px 12px;
+    margin: 0;
+}
+
+#app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper .bd-activityUserPopout {
+    background: rgba(var(--bd-user-popouts-header), .95);
+    padding: 16px;
+}
+
 #app-mount .bd-layerContainer .bd-root .bd-body:not(.bd-bodyAlignCenter):not(.bd-bodyNormal) {
     background-color: rgba(var(--bd-user-popouts-body), .95);
 }
 
 #app-mount .bd-userPopout .bd-footer {
-    background-color: rgba(var(--bd-user-popouts-footer), .95);
+    background-color: rgba(var(--bd-user-popouts-footer), .95) !important;
 }
 
 #app-mount .bd-userPopout .bd-body .bd-note textarea:focus,
