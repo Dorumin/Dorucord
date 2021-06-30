@@ -176,6 +176,7 @@
 /** Body **/
 #app-mount .bd-userPopout .bd-body {
     overflow: hidden !important;
+    padding: 0 !important;
 }
 
 #app-mount .bd-userPopout .bd-body .bd-divider {
@@ -207,8 +208,12 @@
 
 #app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper .bd-note {
     background-color: rgba(var(--bd-user-popouts-body), .95);
-    padding: 0px 12px;
+    padding: 0px 16px 8px;
     margin: 0;
+}
+
+#app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper .bd-note > .bd-textarea {
+    padding: 0;
 }
 
 #app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper .bd-activityUserPopout {
