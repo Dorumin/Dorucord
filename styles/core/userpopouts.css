@@ -187,6 +187,7 @@
     text-align: center;
     background: rgba(var(--bd-user-popouts-header), .95);
     padding: 0 16px 12px;
+    margin: 0;
 }
 
 #app-mount .bd-userPopout .bd-body .bd-bodyInnerWrapper {
