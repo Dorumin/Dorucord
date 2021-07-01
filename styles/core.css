@@ -2113,10 +2113,10 @@ img.emoji[aria-label=":rofl:"] {
     margin-top: 8px;
 }
 
-#app-mount .bd-layerContainer .bd-root .bd-body .bd-userInfoSection .bd-userInfoSectionHeader:first-of-type,
+/* #app-mount .bd-layerContainer .bd-root .bd-body .bd-userInfoSection .bd-userInfoSectionHeader:first-of-type,
 #app-mount .bd-layerContainer .bd-root .bd-body .bd-userInfoSection .bd-userBio {
     display: none;
-}
+} */
 
 /** Header colors **/
 #app-mount .bd-userPopout .bd-headerNormal,
