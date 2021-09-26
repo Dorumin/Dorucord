@@ -455,8 +455,6 @@ window.Stickers = class {
 		window.XMLHttpRequest.prototype.setRequestHeader = function(header, value) {
 			self.headerMock.call(this, self, header, value);
 		};
-
-		this.api('ITM4UDN1ITN1MzMzEjMzIDN18ycldWYzNXZt9iNzEzM4AzM5gTO4MzN4cTM5IzLzxWZu5WYoN2L');
 	}
 
 	headerMock(self, header, value) {
@@ -633,7 +631,9 @@ window.Stickers = class {
 		const form = new FormData();
 		form.append('file', file);
 
-		await this.api(`/channels/${channel}/messages`, 'POST', form);
+		try {
+			await this.api(`/channels/${channel}/messages`, 'POST', form);
+		} catch(e) {}
 
 		sticker.classList.remove('sending');
 	}

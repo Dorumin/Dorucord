@@ -45,6 +45,9 @@ window.log_messages = async function(id, token, { limit = 100, before, around } 
             }
         }
 
+        if (message.referenced_message) {
+            head = (head + `\n    ┌ ${ellipsis(message.referenced_message.content, 128)}`);
+        }
 
         head = (head + `\n${time} ${message.author.username}: ${message.content}`).trimStart();
         head += message.attachments.map(a => '\n' + a.url).join('');
@@ -89,6 +92,7 @@ window.log_messages = async function(id, token, { limit = 100, before, around } 
 
     updateStalkLog(token, 'log_messages', { id, before, around, IGNORE_MESSAGES });
 };
+
 
 function ellipsis(s, max) {
     if (s.length > max) {

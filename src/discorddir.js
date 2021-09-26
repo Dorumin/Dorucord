@@ -6,7 +6,7 @@ const home = os.homedir();
 
 module.exports = () => {
 	if (os.platform == 'win32') {
-		const location = path.join(home, 'AppData', 'Roaming', 'Discord');
+		const location = path.join(home, 'AppData', 'Local', 'Discord');
 		const dir = fs.readdirSync(location);
 		const install = dir
 			.filter(name => /\d+\.\d+\.\d+/.test(name))

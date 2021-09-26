@@ -17,9 +17,9 @@ const killAll = require('./src/killall.js');
 ps.lookup({
 	command: '.*app-\\d+.\\d+.\\d+.*discord.*'
 }, (_, processes) => {
-	killAll(processes).then(() => {
+	// killAll(processes).then(() => {
 		const extractPath = readTar(getDir());
 
 		monkeyPatch(getDir(), extractPath);
-	});
+	// });
 });

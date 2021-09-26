@@ -4,7 +4,7 @@ const fs = require('fs');
 const rimraf = require('rimraf');
 
 module.exports = (dir, extractPath) => {
-	let window = fs.readFileSync(path.join(extractPath, 'app', 'mainScreen.js')).toString();
+	let code = fs.readFileSync(path.join(extractPath, 'app_bootstrap', 'bootstrap.js')).toString();
 	let js = fs
 		.readdirSync(path.join(path.dirname(__dirname), 'scripts'))
 		.filter(name => !name.startsWith('!'))
@@ -29,39 +29,58 @@ module.exports = (dir, extractPath) => {
 		.replace(/\${/g, '\\${')
 		.replace(/\*(\w+)/g, '[class*="$1-"]');
 
+	code = code.replace(/function startApp\(\) {/, `
+		app.on('web-contents-created', (_, webContents) => {
+			webContents.executeJavaScript('console.log("autorun?");');
 
-	window = window.replace(/mainWindow.minimize[^}]+}/, `$&
+			webContents.executeJavaScript(\`${js}\`);
 
-		_electron.session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-			const keys = Object.keys(details).join('|');
-			const serialized = JSON.stringify(details);
+			webContents.executeJavaScript(\`console.log(\\\`${css}\\\`)\`);
 
-			if (details.responseHeaders['content-security-policy']) {
-				details.responseHeaders['content-security-policy'] = details.responseHeaders['content-security-policy'];
-			}
-
-			callback(details);
+			webContents.executeJavaScript(\`
+				let style = document.createElement('style');
+				style.type = 'text/css';
+				style.rel = 'stylesheet';
+				document.head.appendChild(style);
+				style.textContent = \\\`${css}\\\`;
+			\`);
 		});
 
-		mainWindow.webContents.executeJavaScript('console.log("autorun?????");');
-
-		mainWindow.webContents.executeJavaScript(\`${js}\`);
-
-		mainWindow.webContents.executeJavaScript(\`console.log(\\\`${css}\\\`)\`);
-
-		mainWindow.webContents.executeJavaScript(\`
-			let style = document.createElement('style');
-			style.type = 'text/css';
-			style.rel = 'stylesheet';
-			document.head.appendChild(style);
-			style.textContent = \\\`${css}\\\`;
-		\`);
+		$&
 	`);
 
-	fs.writeFileSync(path.join(extractPath, 'app', 'mainScreen.js'), window);
+	// code = code.replace(/mainWindow.minimize[^}]+}/, `$&
 
-	asar.createPackage(extractPath, path.join(dir, 'modules', 'discord_desktop_core', 'core.asar')).then(() => {
+	// 	_electron.session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+	// 		const keys = Object.keys(details).join('|');
+	// 		const serialized = JSON.stringify(details);
+
+	// 		if (details.responseHeaders['content-security-policy']) {
+	// 			details.responseHeaders['content-security-policy'] = details.responseHeaders['content-security-policy'];
+	// 		}
+
+	// 		callback(details);
+	// 	});
+
+	// 	mainWindow.webContents.executeJavaScript('console.log("autorun?????");');
+
+	// 	mainWindow.webContents.executeJavaScript(\`${js}\`);
+
+	// 	mainWindow.webContents.executeJavaScript(\`console.log(\\\`${css}\\\`)\`);
+
+	// 	mainWindow.webContents.executeJavaScript(\`
+	// 		let style = document.createElement('style');
+	// 		style.type = 'text/css';
+	// 		style.rel = 'stylesheet';
+	// 		document.head.appendChild(style);
+	// 		style.textContent = \\\`${css}\\\`;
+	// 	\`);
+	// `);
+
+	fs.writeFileSync(path.join(extractPath, 'app_bootstrap', 'bootstrap.js'), code);
+
+	asar.createPackage(extractPath, path.join(dir, 'resources', 'app.asar')).then(() => {
 		console.log('Patched!');
-		rimraf.sync(extractPath);
+		// rimraf.sync(extractPath);
 	});
 };
