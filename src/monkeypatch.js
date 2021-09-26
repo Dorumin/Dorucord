@@ -33,8 +33,8 @@ module.exports = (dir, extractPath) => {
 	window = window.replace(/mainWindow.minimize[^}]+}/, `$&
 
 		_electron.session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
-			const keys = Object.keys(details).join('|');
-			const serialized = JSON.stringify(details);
+			// const keys = Object.keys(details).join('|');
+			// const serialized = JSON.stringify(details);
 
 			if (details.responseHeaders['content-security-policy']) {
 				details.responseHeaders['content-security-policy'] = details.responseHeaders['content-security-policy'];
