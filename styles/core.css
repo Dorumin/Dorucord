@@ -637,7 +637,7 @@
 
 /* Emotes */
 /** Rofl **/
-img.emoji[aria-label=":rofl:"] {
+img.emoji[data-name=":rofl:"] {
     content: url("https://cdn.discordapp.com/attachments/595506142126538753/723161422338457630/rofl.png");
 }
 
@@ -2058,7 +2058,7 @@ img.emoji[aria-label=":rofl:"] {
     justify-content: space-between;
 }
 
-#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header > .bd-avatar {
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header > div > .bd-avatar {
     width: 80px !important;
     height: 80px !important;
     top: 0;
