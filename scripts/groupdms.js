@@ -70,7 +70,7 @@ window.GroupDMs = class {
 
         let last = 0;
         channels.forEach(channel => {
-            var id = channel.last_message_id || last - 1;
+            const id = channel.last_message_id || last;
             last = id;
             this.dates[channel.id] = new Date(Number((BigInt(id) >> 22n) + 1420070400000n));
             this.order.push(channel.id);
@@ -105,6 +105,11 @@ window.GroupDMs = class {
         const scroller = document.querySelector('.bd-privateChannels .bd-scroller');
         if (!scroller) return;
 
+        if (!scroller.getAttribute('listened-on')) {
+            scroller.setAttribute('listened-on', 'yea');
+            scroller.addEventListener('scroll', this.callback);
+        }
+
         const chan = scroller.querySelector('.bd-channel');
 
         if (!chan) return;
@@ -122,7 +127,8 @@ window.GroupDMs = class {
             // buffer.nextSibling == header ||
             (header.getAttribute('data-fake') !== 'true' && header.style.display != 'none') ||
             this.firstId != ids[0] ||
-            this.lastId != ids[ids.length - 1]
+            this.lastId != ids[ids.length - 1] ||
+            parent.querySelector('.bd-privateChannelsHeaderContainer + .bd-channel a[href="/channels/@me"]') !== null
         ) {
             // console.log(header.getAttribute('data-fake') != 'true' && header.style.display != 'none', this.firstId != ids[0], this.lastId != ids[ids.length - 1]);
             // console.log(header);
@@ -156,6 +162,7 @@ window.GroupDMs = class {
         const children = Array.from(scroller.children);
         const filtered = children.filter(li => li.className.includes('channel-'));
         let firsted = false;
+        let lastDate = new Date();
         // let i = 0;
 
         children.forEach(li => {
@@ -166,7 +173,7 @@ window.GroupDMs = class {
                     li.style.display = 'none';
                 }
             } else {
-                const a = li;
+                const a = li.querySelector('a');
                 if (!a) {
                     return;
                 }
@@ -182,7 +189,9 @@ window.GroupDMs = class {
                     // isFirst = true;
                     if (this.firstId != id) {
                         this.dates[id] = new Date();
+                        lastDate = new Date();
                     }
+
                     this.firstId = id;
                 }
 
@@ -208,12 +217,16 @@ window.GroupDMs = class {
                 // i++;
 
                 if (!this.dates[id]) {
-                    this.dates[id] = new Date();
+                    this.dates[id] = lastDate;
+                } else {
+                    lastDate = this.dates[id];
                 }
 
                 const title = this.relativeTime(this.dates[id]);
 
                 if (!this.groups[title]) {
+                    // console.log(title, id, this.dates[id]);
+
                     this.groups[title] = id;
                     const header = document.createElement('h2');
                     header.setAttribute('data-fake', 'true');
@@ -228,7 +241,11 @@ window.GroupDMs = class {
             }
         });
 
-        this.lastId = filtered[filtered.length - 1].getAttribute('href').slice('/channels/@me/'.length);
+        // console.log(filtered);
+
+        if (filtered.length) {
+            this.lastId = filtered[filtered.length - 1].querySelector('a').getAttribute('href').slice('/channels/@me/'.length);
+        }
     }
 
     toDate(date) {
@@ -236,13 +253,13 @@ window.GroupDMs = class {
     }
 
     relativeTime(then) {
-        const now = new Date(),
-        absThen = then.getTime() - then.getTimezoneOffset() * 60 * 1000,
-        absNow = now.getTime() - now.getTimezoneOffset() * 60 * 1000,
-        dateThen = Math.floor(absThen / 86400000),
-        dateNow = Math.floor(absNow / 86400000),
-        yearThen = then.getFullYear(),
-        yearNow = now.getFullYear();
+        const now = new Date();
+        const absThen = then.getTime() - then.getTimezoneOffset() * 60 * 1000;
+        const absNow = now.getTime() - now.getTimezoneOffset() * 60 * 1000;
+        const dateThen = Math.floor(absThen / 86400000);
+        const dateNow = Math.floor(absNow / 86400000);
+        const yearThen = then.getFullYear();
+        const yearNow = now.getFullYear();
 
         if (dateThen == dateNow) {
             return 'Today';
@@ -274,12 +291,12 @@ window.GroupDMs = class {
     }
 
     bindEvents() {
-        const callback = this.defer(this.onMutation);
+        const callback = this.callback = this.defer(this.onMutation);
 
         this.mo = new MutationObserver(callback);
 
-        this.app.addEventListener('click', callback);
-        this.app.addEventListener('keyup', callback);
+        document.body.addEventListener('click', callback);
+        document.body.addEventListener('keyup', callback);
         this.mo.observe(document.body, {
             attributes: true,
             childList: true
@@ -288,6 +305,8 @@ window.GroupDMs = class {
 
     cleanup() {
         this.mo.disconnect();
+        document.body.removeEventListener('click', this.callback);
+        document.body.removeEventListener('keyup', this.callback);
     }
 
     wait(ms) {
@@ -303,4 +322,4 @@ if (window.groupDMs) {
     window.groupDMs.cleanup();
 }
 
-// window.groupDMs = new GroupDMs();
+window.groupDMs = new GroupDMs();
