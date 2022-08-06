@@ -367,14 +367,14 @@
 
 /** Selected **/
 /*** DMs ***/
-#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected .bd-layout,
-#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected:hover .bd-layout,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel .bd-selected.bd-interactive,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel .bd-selected.bd-interactive:hover,
 /*** Guilds ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected .bd-content,
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected:hover .bd-content,
 /*** Guild member list ***/
-#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected .bd-layout,
-#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected:hover .bd-layout,
+#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected .bd-interactive,
+#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected:hover .bd-interactive,
 /*** Guild VC ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected > .bd-content,
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected:hover > .bd-content {
@@ -383,11 +383,11 @@
 
 /** Hover **/
 /*** DMs ***/
-#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel:hover .bd-layout,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel:hover .bd-interactive,
 /*** Guilds ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-wrapper:hover .bd-content,
 /*** Guild member list ***/
-#app-mount .bd-base .bd-membersWrap .bd-container:hover .bd-layout,
+#app-mount .bd-base .bd-membersWrap .bd-container:hover .bd-interactive,
 /*** Guild VC ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser:hover > .bd-content {
     background-color: rgba(var(--bd-default), .2);
@@ -637,9 +637,10 @@
 
 /* Emotes */
 /** Rofl **/
-img.emoji[data-name=":rofl:"] {
+img.emoji[data-name=":rofl:"]{
     content: url("https://cdn.discordapp.com/attachments/595506142126538753/723161422338457630/rofl.png");
 }
+
 
 /* Gif picker */
 #app-mount .bd-channelTextArea .bd-contentWrapper {
@@ -1610,130 +1611,134 @@ img.emoji[data-name=":rofl:"] {
 }
 
 /* Settings */
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]),
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView .bd-sidebarRegionScroller,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView .bd-contentRegionScroller,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView .bd-contentRegionScroller .bd-scrollerBase {
+#app-mount .bd-baseLayer + .bd-layer,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-sidebarRegionScroller,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller .bd-scrollerBase {
     background-color: transparent;
 }
 
 /** List **/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion {
     background-color: rgba(var(--bd-settings-sidebar), 0.4);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected:hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected:hover {
     background-color: rgba(var(--bd-settings-sidebar-item), 0.4);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item:hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item:hover {
     background-color: rgba(var(--bd-settings-sidebar-item-hover), 0.2);
 }
 
 /*** Server Boost / Nitro ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(114, 137, 218)"] {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(114, 137, 218)"] {
     color: rgb(var(--bd-color-link)) !important;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(114, 137, 218)"]:hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(114, 137, 218)"]:hover {
     background-color: rgba(var(--bd-color-link), .1) !important;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"],
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"]:hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"],
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="color: rgb(255, 255, 255)"]:hover {
     color: rgb(var(--bd-monochrome-contrast)) !important;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"],
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"]:hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"],
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item[style*="background-color: rgb(114, 137, 218)"]:hover {
     background-color: rgb(var(--bd-color-link)) !important;
 }
 
 /** Actual settings **/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion {
     background-color: rgba(var(--bd-settings-content), .1);
 }
 
 /** Tabs **/
 /** Not every tab has individual styles because of general selectors. Thank god for that. **/
 /*** My account ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background {
-    background-color: rgba(var(--bd-darker), .4);
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-accountProfileCard {
+    background-color: rgba(var(--bd-darker), .6);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background .bd-fieldList {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background {
+    background-color: rgba(var(--bd-lightest), .2);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background .bd-fieldList {
     background-color: transparent;
 }
 
 /*** Connections ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-accountList {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-accountList {
     background-color: rgba(var(--bd-lighter), .25);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner {
     background-color: rgba(var(--bd-default), .4);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner:hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-accountList .bd-accountBtnInner:hover {
     background-color: rgba(var(--bd-default), .6);
 }
 
 /**** Connection items ****/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-connection {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connection {
     background-color: rgba(var(--bd-default), .5);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-connection .bd-connectionHeader {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connection .bd-connectionHeader {
     background-color: rgba(var(--bd-darker), .4);
 }
 
 /*** Biling ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane {
     background-color: rgba(var(--bd-default), .5);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment {
     background-color: transparent;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo {
     background-color: rgba(var(--bd-lighter), .5);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo .bd-paymentHeader {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo .bd-paymentHeader {
     border-color: rgba(255, 255, 255, .1);
 }
 
 /**** Navigation ****/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonNext,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonPrev,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageIndicator  {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonNext,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonPrev,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageIndicator  {
     border-color: rgba(255, 255, 255, .1);
 }
 
 /*** Server Boost ***/
 /**** Active boosts ****/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildHeader {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildHeader {
     background-color: rgba(var(--bd-darker), .6);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildSubscriptionSlots {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildSubscriptionSlots {
     background-color: rgba(var(--bd-lighter), .4);
 }
 
 /**** Boost level ****/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer {
     background-color: rgba(var(--bd-lighter), .5);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer .bd-gemWithoutLabel {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer .bd-gemWithoutLabel {
     color: rgb(var(--bd-color-link));
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorProgressCircle .bd-circleBackgroundAlt {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorProgressCircle .bd-circleBackgroundAlt {
     fill: rgba(255, 255, 255, 0.1);
 }
 
@@ -1744,36 +1749,36 @@ img.emoji[data-name=":rofl:"] {
 }
 
 /*** Game Activity ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-activeGame.bd-notDetected {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-activeGame.bd-notDetected {
     background-color: rgba(var(--bd-default), .5)
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-activeGame {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-activeGame {
     background-color: rgba(var(--bd-color-link), .5)
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game:not(:last-of-type),
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow:not(:last-of-type),
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member:not(:last-of-type),
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser:not(:last-of-type),
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-inviteSettingsInviteRow:not(:last-of-type),
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-keybindGroup:not(:last-of-type) {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-inviteSettingsInviteRow:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-keybindGroup:not(:last-of-type) {
     margin-bottom: 10px;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-keybindGroup {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-keybindGroup {
     padding: 20px;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-inviteSettingsInviteRow {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-inviteSettingsInviteRow {
     padding: 0 20px;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card::before {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card::before {
     opacity: 1;
     bottom: 0;
     left: 0;
@@ -1782,7 +1787,7 @@ img.emoji[data-name=":rofl:"] {
 }
 
 /*** Language ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:not(.bd-vertical)
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:not(.bd-vertical)
 {
     background-color: rgba(var(--bd-color-link), .1);
     border: 1px solid rgba(var(--bd-color-link), .1);
@@ -1790,40 +1795,40 @@ img.emoji[data-name=":rofl:"] {
     transition: var(--bd-transition);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:not(.bd-vertical):hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:not(.bd-vertical):hover {
     background-color: rgba(var(--bd-color-link), .2);
     border: 1px solid rgba(var(--bd-color-link), .2);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:not(.bd-vertical):not(:last-of-type) {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-noWrap.bd-item:not(.bd-vertical):not(:last-of-type) {
     margin-bottom: 10px;
 }
 
 /*** Audit Log ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-auditLog:nth-of-type(2) {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-auditLog:nth-of-type(2) {
     margin-top: 10px;
 }
 
 /*** Server Template ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-descriptionBox {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-descriptionBox {
     background-color: rgba(var(--bd-default), .3);
 }
 
 /** Unsaved changes **/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container {
     background-color: rgba(var(--bd-default), .7) !important; /* No oher way, sadly */
 }
 
 /** Misc **/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noWrap:last-of-type .bd-divider {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-noWrap:last-of-type .bd-divider {
     display: none;
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-bottomDivider {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-bottomDivider {
     border-color: rgba(255, 255, 255, .1);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion [class*="marginBottom"]:last-of-type {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion [class*="marginBottom"]:last-of-type {
     margin-bottom: none;
 }
 
@@ -2006,7 +2011,7 @@ img.emoji[data-name=":rofl:"] {
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection .bd-banner,
 #app-mount .bd-userPopout .bd-headerNormal .bd-banner,
-#app-mount .bd-userPopout .bd-body .bd-aboutMeSection {
+#app-mount .bd-userPopout .bd-body .bd-userInfoSection {
     display: none;
 }
 
