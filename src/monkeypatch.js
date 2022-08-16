@@ -1,10 +1,13 @@
 const asar = require('asar');
 const path = require('path');
 const fs = require('fs');
+const os = require('os');
 const rimraf = require('rimraf');
 
 module.exports = (dir, extractPath) => {
-	let code = fs.readFileSync(path.join(extractPath, 'app_bootstrap', 'bootstrap.js')).toString();
+	let code = os.platform() === 'win32'
+		? fs.readFileSync(path.join(extractPath, 'app_bootstrap', 'bootstrap.js')).toString()
+		: fs.readFileSync(path.join(extractPath, 'app', 'mainScreen.js')).toString();
 	let js = fs
 		.readdirSync(path.join(path.dirname(__dirname), 'scripts'))
 		.filter(name => !name.startsWith('!'))
@@ -77,10 +80,47 @@ module.exports = (dir, extractPath) => {
 	// 	\`);
 	// `);
 
-	fs.writeFileSync(path.join(extractPath, 'app_bootstrap', 'bootstrap.js'), code);
+	if (os.platform() === 'win32') {
+		fs.writeFileSync(path.join(extractPath, 'app_bootstrap', 'bootstrap.js'), code);
 
-	asar.createPackage(extractPath, path.join(dir, 'resources', 'app.asar')).then(() => {
-		console.log('Patched!');
-		// rimraf.sync(extractPath);
-	});
+		asar.createPackage(extractPath, path.join(dir, 'resources', 'app.asar')).then(() => {
+			console.log('Patched!');
+			// rimraf.sync(extractPath);
+		});
+	} else {
+		code = code.replace(/mainWindow.minimize[^}]+}/, `$&
+
+			_electron.session.defaultSession.webRequest.onHeadersReceived((details, callback) => {
+				// const keys = Object.keys(details).join('|');
+				// const serialized = JSON.stringify(details);
+
+				if (details.responseHeaders['content-security-policy']) {
+					details.responseHeaders['content-security-policy'] = details.responseHeaders['content-security-policy'];
+				}
+
+				callback(details);
+			});
+
+			mainWindow.webContents.executeJavaScript('console.log("autorun?????");');
+
+			mainWindow.webContents.executeJavaScript(\`${js}\`);
+
+			mainWindow.webContents.executeJavaScript(\`console.log(\\\`${css}\\\`)\`);
+
+			mainWindow.webContents.executeJavaScript(\`
+				let style = document.createElement('style');
+				style.type = 'text/css';
+				style.rel = 'stylesheet';
+				document.head.appendChild(style);
+				style.textContent = \\\`${css}\\\`;
+			\`);
+		`);
+
+		fs.writeFileSync(path.join(extractPath, 'app', 'mainScreen.js'), code);
+
+		asar.createPackage(extractPath, path.join(dir, 'modules', 'discord_desktop_core', 'core.asar')).then(() => {
+			console.log('Patched!');
+			rimraf.sync(extractPath);
+		});
+	}
 };
