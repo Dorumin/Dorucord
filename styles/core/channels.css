@@ -5,14 +5,14 @@
 
 /** Selected **/
 /*** DMs ***/
-#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected .bd-layout,
-#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel.bd-selected:hover .bd-layout,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel .bd-selected.bd-interactive,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel .bd-selected.bd-interactive:hover,
 /*** Guilds ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected .bd-content,
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected:hover .bd-content,
 /*** Guild member list ***/
-#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected .bd-layout,
-#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected:hover .bd-layout,
+#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected .bd-interactive,
+#app-mount .bd-base .bd-membersWrap .bd-container.bd-selected:hover .bd-interactive,
 /*** Guild VC ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected > .bd-content,
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected:hover > .bd-content {
@@ -21,11 +21,11 @@
 
 /** Hover **/
 /*** DMs ***/
-#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel:hover .bd-layout,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-channel:hover .bd-interactive,
 /*** Guilds ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-wrapper:hover .bd-content,
 /*** Guild member list ***/
-#app-mount .bd-base .bd-membersWrap .bd-container:hover .bd-layout,
+#app-mount .bd-base .bd-membersWrap .bd-container:hover .bd-interactive,
 /*** Guild VC ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser:hover > .bd-content {
     background-color: rgba(var(--bd-default), .2);

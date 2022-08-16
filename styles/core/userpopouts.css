@@ -7,7 +7,7 @@
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection .bd-banner,
 #app-mount .bd-userPopout .bd-headerNormal .bd-banner,
-#app-mount .bd-userPopout .bd-body .bd-aboutMeSection {
+#app-mount .bd-userPopout .bd-body .bd-userInfoSection {
     display: none;
 }
 
