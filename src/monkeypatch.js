@@ -35,6 +35,7 @@ module.exports = (dir, extractPath) => {
 	code = code.replace(/function startApp\(\) {/, `
 		app.on('web-contents-created', (_, webContents) => {
 			webContents.executeJavaScript('console.log("autorun?");');
+			// webContents.openDevTools();
 
 			webContents.executeJavaScript(\`${js}\`);
 

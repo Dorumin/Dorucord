@@ -322,4 +322,8 @@ if (window.groupDMs) {
     window.groupDMs.cleanup();
 }
 
+<<<<<<< HEAD:scripts/groupdms.js
 window.groupDMs = new GroupDMs();
+=======
+window.groupDMs = new GroupDMs();
+>>>>>>> b102d904b637cdecf01921c2cf68fe6a5a45c8a0:scripts/groupdms.js
