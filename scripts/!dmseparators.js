@@ -1,28 +1,12 @@
 //META{"name":"DMSeparators","website":"","source":""}*//
 
 // TODO: Rewrite.
-DMSeparators = class {
-    getName() {
-        return "DMSeparators";
-    }
-
-    getVersion() {
-        return "0.0.1";
-    }
-
-    getAuthor() {
-        return "Doru";
-    }
-
-    getDescription() {
-        return "Separates recent DMs.";
-    }
-
+class DMSeparators {
     constructor() {
-        this.initConstructor();
+        this.init();
     }
 
-    initConstructor() {
+    init() {
         this.weekDays = [
             'Sunday',
             'Monday',
@@ -67,6 +51,21 @@ DMSeparators = class {
         this.fetchDates();
     }
 
+    getName() {
+        return "DMSeparators";
+    }
+
+    getVersion() {
+        return "0.0.1";
+    }
+
+    getAuthor() {
+        return "Doru";
+    }
+
+    getDescription() {
+        return "Separates recent DMs.";
+    }
     fetch(url, args) {
         return fetch(url, args).then(res => res.json());
     }
