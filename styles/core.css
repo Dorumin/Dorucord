@@ -711,8 +711,8 @@ img.emoji[data-name=":rofl:"]{
 /*** Invite link with default guild icon ***/
 #app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon,
 /*** Guilds with no default icon in settings ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-guilds .bd-icon.bd-noIcon,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-avatarUploader .bd-avatarUploaderInner,
+#app-mount .bd-baseLayer + .bd-layer  .bd-standardSidebarView > .bd-contentRegion .bd-guilds .bd-icon.bd-noIcon,
+#app-mount .bd-baseLayer + .bd-layer  .bd-standardSidebarView > .bd-contentRegion .bd-avatarUploader .bd-avatarUploaderInner,
 #app-mount .bd-perksModalContentWrapper .bd-ctaBar .bd-guildIcon.bd-noIcon /* Server Boost */,
 #app-mount .bd-modal .bd-avatarUploaderInner, /* Create new guild */
 #app-mount .bd-modal > .bd-inner .bd-flex > .bd-body .bd-guildAvatarWithoutIcon.bd-noIcon /* Mutual servers */,
@@ -776,7 +776,7 @@ img.emoji[data-name=":rofl:"]{
 #app-mount .bd-noticeIcon.bd-icon, /* Streamer mode */
 #app-mount .bd-sadImage, /* Emoji picker */
 #app-mount .bd-imageError, /* Image won't load */
-#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-previewContainer .bd-previewOverlay img,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cameraWrapper .bd-previewImage,
 #app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-iconContainer .bd-icon /* No inbox */ {
     filter: var(--bd-image-solid, none);
 }
@@ -1628,6 +1628,8 @@ img.emoji[data-name=":rofl:"]{
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView,
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-sidebarRegionScroller,
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller .bd-titleContainer,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller .bd-contentWidth > .bd-header,
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller .bd-scrollerBase {
     background-color: transparent;
 }
@@ -1716,29 +1718,9 @@ img.emoji[data-name=":rofl:"]{
     background-color: rgba(var(--bd-darker), .4);
 }
 
-/*** Biling ***/
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane {
-    background-color: rgba(var(--bd-default), .5);
-}
-
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator,
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment {
-    background-color: transparent;
-}
-
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo {
-    background-color: rgba(var(--bd-lighter), .5);
-}
-
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo .bd-paymentHeader {
-    border-color: rgba(255, 255, 255, .1);
-}
-
-/**** Navigation ****/
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonNext,
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonPrev,
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageIndicator  {
-    border-color: rgba(255, 255, 255, .1);
+/*** Nitro ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-featureGrid .bd-feature {
+    background-color: rgba(var(--bd-darker), .5);
 }
 
 /*** Server Boost ***/
@@ -1764,8 +1746,53 @@ img.emoji[data-name=":rofl:"]{
     fill: rgba(255, 255, 255, 0.1);
 }
 
+/**** Subscriptions ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-subscriptionDetails .bd-detailsBlock {
+    background-color: rgba(var(--bd-darker), .2);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-sectionAccountCredit .bd-noItemIcon {
+    background-color: transparent;
+    color: rgba(var(--bd-monochrome-contrast), .9);
+}
+
+/**** Gift Inventory ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-promotions {
+    background-color: rgba(var(--bd-darker), .3);
+}
+
+/*** Billing ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane {
+    background-color: rgba(var(--bd-default), .5);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment {
+    background-color: transparent;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo {
+    background-color: rgba(var(--bd-lighter), .5);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo .bd-paymentHeader {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+/**** Navigation ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonNext,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonPrev,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageIndicator  {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+/*** Accessibility ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-preview .bd-previewMessage {
+    background-color: rgba(var(--bd-default), .2);
+}
+
 /*** Voice & Video ***/
-#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-previewContainer .bd-previewOverlay {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cameraWrapper {
     background-color: rgba(var(--bd-default), .4);
     border-color: rgba(var(--bd-default), .8);
 }
@@ -1829,6 +1856,19 @@ img.emoji[data-name=":rofl:"]{
 /*** Audit Log ***/
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-auditLog:nth-of-type(2) {
     margin-top: 10px;
+}
+
+/*** Roles ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-customContainer .bd-container {
+    background-color: rgba(var(--bd-default), .3);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-customContainer .bd-roleRow:hover {
+    background-color: rgba(var(--bd-darker), .3);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-customContainer .bd-roleRow .bd-circleButton {
+    background-color: rgba(var(--bd-darker), .6);
 }
 
 /*** Server Template ***/

@@ -19,8 +19,8 @@
 /*** Invite link with default guild icon ***/
 #app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon,
 /*** Guilds with no default icon in settings ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-guilds .bd-icon.bd-noIcon,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-avatarUploader .bd-avatarUploaderInner,
+#app-mount .bd-baseLayer + .bd-layer  .bd-standardSidebarView > .bd-contentRegion .bd-guilds .bd-icon.bd-noIcon,
+#app-mount .bd-baseLayer + .bd-layer  .bd-standardSidebarView > .bd-contentRegion .bd-avatarUploader .bd-avatarUploaderInner,
 #app-mount .bd-perksModalContentWrapper .bd-ctaBar .bd-guildIcon.bd-noIcon /* Server Boost */,
 #app-mount .bd-modal .bd-avatarUploaderInner, /* Create new guild */
 #app-mount .bd-modal > .bd-inner .bd-flex > .bd-body .bd-guildAvatarWithoutIcon.bd-noIcon /* Mutual servers */,

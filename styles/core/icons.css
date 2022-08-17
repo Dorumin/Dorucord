@@ -3,7 +3,7 @@
 #app-mount .bd-noticeIcon.bd-icon, /* Streamer mode */
 #app-mount .bd-sadImage, /* Emoji picker */
 #app-mount .bd-imageError, /* Image won't load */
-#app-mount .bd-layer[aria-label$="_SETTINGS"] .bd-standardSidebarView > .bd-contentRegion .bd-previewContainer .bd-previewOverlay img,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cameraWrapper .bd-previewImage,
 #app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-iconContainer .bd-icon /* No inbox */ {
     filter: var(--bd-image-solid, none);
 }
