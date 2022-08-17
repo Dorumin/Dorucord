@@ -126,9 +126,11 @@
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-container,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
 #app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
+/* Search/Channel name */
 #app-mount .bd-searchResultsWrap .bd-searchHeader,
 #app-mount .bd-searchResultsWrap .bd-channelName,
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-scroller,
+/* Quick switcher */
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller,
 #app-mount .bd-layerContainer .bd-perksModal,
 #app-mount .bd-modal .bd-flex .bd-tiles,
 #app-mount .bd-modal .bd-content .bd-channelTextArea .bd-scrollableContainer,

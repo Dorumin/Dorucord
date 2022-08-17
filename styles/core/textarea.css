@@ -72,3 +72,9 @@
 #app-mount .bd-channelTextArea > .bd-autocomplete .bd-selectable.bd-selected {
     background-color: rgba(var(--bd-lightest), .5);
 }
+
+/** Stickers **/
+#app-mount .bd-channelTextArea > .bd-container .bd-containerBackground {
+    background-color: rgba(var(--bd-darker), .7);
+    border-color: rgba(var(--bd-darker));
+}

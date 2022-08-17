@@ -1,6 +1,8 @@
 /* Embeds & Attachments */
 #app-mount .bd-attachment,
 #app-mount .bd-inlineMediaEmbed,
+#app-mount .bd-embedFull,
+#app-mount .bd-embedWrapper.bd-container,
 #app-mount .bd-invite.bd-container,
 #app-mount .bd-invite.bd-preview  {
     background-color: rgba(var(--bd-embed-wrapper), 0.5);

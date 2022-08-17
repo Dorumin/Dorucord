@@ -60,6 +60,15 @@
     background-color: transparent;
 }
 
+/*** Profile ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-profileCustomizationSection .bd-profileBannerPreview {
+    background-color: rgba(var(--bd-user-popouts-header), .95);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-profileCustomizationSection .bd-bioTextArea {
+    background-color: rgba(var(--bd-dark), .4);
+}
+
 /*** Connections ***/
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-accountList {
     background-color: rgba(var(--bd-lighter), .25);

@@ -131,9 +131,11 @@
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-container,
 #app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
 #app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
+/* Search/Channel name */
 #app-mount .bd-searchResultsWrap .bd-searchHeader,
 #app-mount .bd-searchResultsWrap .bd-channelName,
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-scroller,
+/* Quick switcher */
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller,
 #app-mount .bd-layerContainer .bd-perksModal,
 #app-mount .bd-modal .bd-flex .bd-tiles,
 #app-mount .bd-modal .bd-content .bd-channelTextArea .bd-scrollableContainer,
@@ -406,7 +408,7 @@
 #app-mount .bd-base .bd-sidebar,
 #app-mount .bd-base .bd-chat > .bd-content > .bd-membersWrap,
 #app-mount .bd-searchResultsWrap {
-    background-color: var(--bd-depth-sidebar, transparent);   
+    background-color: var(--bd-depth-sidebar, transparent);
 }
 
 #app-mount .bd-base .bd-sidebar .bd-panels {
@@ -488,6 +490,8 @@
 /* Embeds & Attachments */
 #app-mount .bd-attachment,
 #app-mount .bd-inlineMediaEmbed,
+#app-mount .bd-embedFull,
+#app-mount .bd-embedWrapper.bd-container,
 #app-mount .bd-invite.bd-container,
 #app-mount .bd-invite.bd-preview  {
     background-color: rgba(var(--bd-embed-wrapper), 0.5);
@@ -640,7 +644,6 @@
 img.emoji[data-name=":rofl:"]{
     content: url("https://cdn.discordapp.com/attachments/595506142126538753/723161422338457630/rofl.png");
 }
-
 
 /* Gif picker */
 #app-mount .bd-channelTextArea .bd-contentWrapper {
@@ -846,6 +849,7 @@ img.emoji[data-name=":rofl:"]{
 
 /** Text input or similar **/
 #app-mount .bd-modal .bd-input,
+#app-mount .bd-modal .bd-input,
 #app-mount .bd-modal .bd-copyInput,
 #app-mount .bd-modal .bd-css-control,
 #app-mount .bd-modal .bd-content .bd-channelTextArea,
@@ -854,15 +858,16 @@ img.emoji[data-name=":rofl:"]{
 #app-mount .bd-layerContainer .bd-container .bd-container.bd-medium,
 #app-mount .bd-layerContainer .bd-select.bd-lookFilled,
 #app-mount .bd-popouts .bd-popout .bd-css-control,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-copyInput {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-copyInput,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-select.bd-lookFilled {
     border-color: rgba(var(--bd-input-border), .2);
     background-color: rgba(var(--bd-input), .05);
 }
@@ -881,15 +886,16 @@ img.emoji[data-name=":rofl:"]{
 #app-mount .bd-layerContainer .bd-container .bd-container.bd-medium:hover,
 #app-mount .bd-layerContainer .bd-select.bd-lookFilled:hover,
 #app-mount .bd-popouts .bd-popout .bd-css-control:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-copyInput:hover {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-copyInput:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-select.bd-lookFilled:hover {
     border-color: rgba(var(--bd-color-link), .4);
 }
 
@@ -906,15 +912,15 @@ img.emoji[data-name=":rofl:"]{
 #app-mount .bd-layerContainer .bd-container .bd-container.bd-medium:focus,
 #app-mount .bd-layerContainer .bd-select.bd-lookFilled.bd-open,
 #app-mount .bd-popouts .bd-popout .bd-css-control:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input.bd-focused,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container:focus,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-input:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-inputWrapper > .bd-inputMaxLength .bd-input:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild > * > .bd-inputWrapper > .bd-input.bd-focused,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children form .bd-flex .bd-inputWrapper > .bd-input:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-emojiRow .bd-inputWrapper > .bd-input:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-inputWrapper .bd-input:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-flexChild .bd-container:focus,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-control:focus,
 #app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-input:focus {
     border-color: rgb(var(--bd-color-link));
 }
@@ -924,7 +930,7 @@ img.emoji[data-name=":rofl:"]{
 }
 
 /*** Dropdown for settings ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-container .bd-css-menu,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-css-container .bd-css-menu,
 #app-mount .bd-modal .bd-css-container .bd-css-menu,
 #app-mount .bd-layerContainer .bd-popout,
 #app-mount .bd-popouts .bd-popout > .bd-scrollerWrap .bd-scroller,
@@ -944,8 +950,8 @@ img.emoji[data-name=":rofl:"]{
 }
 
 /**** Game activity ****/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-gameNameInput:hover,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-gameNameInput:focus {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gameNameInput:hover,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gameNameInput:focus {
     border-color: rgba(var(--bd-dark), .5);
     background-color: rgba(var(--bd-color-link-dark), .05);
 }
@@ -974,25 +980,25 @@ img.emoji[data-name=":rofl:"]{
 }
 
 /*** Settings ***/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card:not(.bd-game):not(.bd-emojiRow):not(.bd-keybindGroup),
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card::before,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-header, /* Audit Log */
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-changeDetails {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card:not(.bd-game):not(.bd-emojiRow):not(.bd-keybindGroup),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card::before,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-header, /* Audit Log */
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-changeDetails {
     background-color: rgba(var(--bd-darker), .3);
     border-color: rgba(var(--bd-darker), .5);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-auditLog /* Audit Log */ {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-auditLog /* Audit Log */ {
     border-color: rgba(var(--bd-darker), .5);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card:hover::before,
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-headerExpanded {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card:hover::before,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-auditLog .bd-headerExpanded {
     background-color: rgba(var(--bd-darker), .5);
     border-color: rgba(var(--bd-darker), .8);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-cardWrapper {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cardWrapper {
     background-color: transparent;
 }
 
@@ -1065,15 +1071,15 @@ img.emoji[data-name=":rofl:"]{
 }
 
 /** Super long sliders **/
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-bar {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-bar {
     background-color: rgba(var(--bd-color-link-dark), .5);
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-bar .bd-barFill {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-bar .bd-barFill {
     background-color: rgb(var(--bd-color-link));
 }
 
-#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-track .bd-grabber {
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-slider .bd-track .bd-grabber {
     background-color: rgb(var(--bd-monochrome-contrast));
 }
 
@@ -1227,9 +1233,10 @@ img.emoji[data-name=":rofl:"]{
 /** Base **/
 #app-mount .bd-modal .bd-modal,
 #app-mount .bd-modal .bd-reactors,
-#app-mount .bd-layerContainer [class^="bd-modal"],
+#app-mount .bd-layerContainer [class^="bd-modal"]:not(.bd-modalTitle, .bd-modalSubtitle),
 #app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile,
 #app-mount .bd-layerContainer .bd-popouts,
+#app-mount .bd-layerContainer .bd-keyboardShortcutsModal,
 #app-mount .bd-layerContainer .bd-container section,
 #app-mount .bd-popouts .bd-popout .bd-addGamePopout {
     background-color: rgba(var(--bd-modal-base), .85);
@@ -1289,6 +1296,13 @@ img.emoji[data-name=":rofl:"]{
 /** Group DMs **/
 #app-mount .bd-anchor.bd-tag {
     background: rgba(var(--bd-lighter));
+}
+
+/** Keyboard Shortcuts modal keys **/
+#app-mount .bd-keybindShortcut span {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+    box-shadow: inset 0 -4px 0 rgba(var(--bd-default), .8);
+    border-color: rgb(var(--bd-darker));
 }
 
 /* Mousemode */
@@ -1362,23 +1376,22 @@ img.emoji[data-name=":rofl:"]{
 }
 
 /* Quick Switcher */
-#app-mount .bd-modal .bd-container .bd-quickswitcher {
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher {
     background-color: rgb(var(--bd-quickswitcher));
 }
 
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input {
-    background-color: rgba(var(--bd-color-link-dark), .2);
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-input {
+    background-color: rgba(var(--bd-default));
 }
 
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-keybindShortcut span {
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-protip .bd-autocompleteQuerySymbol {
     background-color: rgba(var(--bd-color-link-dark), .3);
-    box-shadow: inset 0 -4px 0 rgba(var(--bd-default), .8);
-    border-color: rgb(var(--bd-darker));
 }
 
-#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-result.bd-resultFocused {
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-result[aria-selected=true] {
     background-color: rgb(var(--bd-lighter), .8);
 }
+
 
 #app-mount .bd-reaction {
     background-color: rgba(var(--bd-monochrome-contrast), .06);
@@ -1670,6 +1683,15 @@ img.emoji[data-name=":rofl:"]{
 
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background .bd-fieldList {
     background-color: transparent;
+}
+
+/*** Profile ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-profileCustomizationSection .bd-profileBannerPreview {
+    background-color: rgba(var(--bd-user-popouts-header), .95);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-profileCustomizationSection .bd-bioTextArea {
+    background-color: rgba(var(--bd-dark), .4);
 }
 
 /*** Connections ***/
@@ -1986,6 +2008,13 @@ img.emoji[data-name=":rofl:"]{
     background-color: rgba(var(--bd-lightest), .5);
 }
 
+/** Stickers **/
+#app-mount .bd-channelTextArea > .bd-container .bd-containerBackground {
+    background-color: rgba(var(--bd-darker), .7);
+    border-color: rgba(var(--bd-darker));
+}
+
+
 /*** Click server boost from settings */
 #app-mount .bd-subscribeTooltipWrapper,
 #app-mount .bd-layerContainer .bd-layer .bd-tooltip,
@@ -2000,6 +2029,16 @@ img.emoji[data-name=":rofl:"]{
 
 #app-mount .bd-subscribeTooltipWrapper::after {
     border-bottom-color: rgba(var(--bd-tooltips));
+}
+
+/* Userbox */
+/* The thingy at the bottom left where you set your custom status and stuff */
+#app-mount .bd-base .bd-sidebar .bd-panels .bd-container .bd-avatarWrapper:hover {
+    background-color: transparent;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-profileBody .bd-bodyInnerWrapper {
+    background-color: transparent;
 }
 
 /* User popouts */
@@ -2072,6 +2111,10 @@ img.emoji[data-name=":rofl:"]{
     position: relative;
 }
 
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-headerTop {
+    min-height: 80px;
+}
+
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop {
     left: 96px;
     top: 16px;
@@ -2081,15 +2124,15 @@ img.emoji[data-name=":rofl:"]{
     margin: 26px 0 0;
 }
 
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop .bd-badgeList {
+    margin-top: 10px !important;
+}
+
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag {
     top: 32px;
     left: 120px;
     position: absolute;
     margin: 0px;
-}
-
-#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag.bd-nameTagNoCustomStatus {
-    top: 48px;
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag .bd-username {
@@ -2099,6 +2142,11 @@ img.emoji[data-name=":rofl:"]{
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag .bd-discriminator {
     font-size: 14px;
     font-weight: normal;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTagWithCustomStatus,
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTagNoCustomStatus {
+    top: 42px !important;
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-customStatusActivity {
@@ -2252,5 +2300,14 @@ img.emoji[data-name=":rofl:"]{
 
 /** Tabs **/
 #app-mount .bd-tabBarContainer {
+    border-bottom-color: rgba(255, 255, 255, .1);
+}
+
+/** Connected accounts **/
+#app-mount .bd-connectedAccounts {
     border-top-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount .bd-connectedAccounts .bd-connectedAccountContainer {
+    background-color: rgba(var(--bd-darker), .5);
 }

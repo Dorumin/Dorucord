@@ -1,0 +1,9 @@
+/* Userbox */
+/* The thingy at the bottom left where you set your custom status and stuff */
+#app-mount .bd-base .bd-sidebar .bd-panels .bd-container .bd-avatarWrapper:hover {
+    background-color: transparent;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-profileBody .bd-bodyInnerWrapper {
+    background-color: transparent;
+}

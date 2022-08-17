@@ -68,6 +68,10 @@
     position: relative;
 }
 
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-headerTop {
+    min-height: 80px;
+}
+
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop {
     left: 96px;
     top: 16px;
@@ -77,15 +81,15 @@
     margin: 26px 0 0;
 }
 
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop .bd-badgeList {
+    margin-top: 10px !important;
+}
+
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag {
     top: 32px;
     left: 120px;
     position: absolute;
     margin: 0px;
-}
-
-#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag.bd-nameTagNoCustomStatus {
-    top: 48px;
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag .bd-username {
@@ -95,6 +99,11 @@
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag .bd-discriminator {
     font-size: 14px;
     font-weight: normal;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTagWithCustomStatus,
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTagNoCustomStatus {
+    top: 42px !important;
 }
 
 #app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-customStatusActivity {
@@ -248,5 +257,14 @@
 
 /** Tabs **/
 #app-mount .bd-tabBarContainer {
+    border-bottom-color: rgba(255, 255, 255, .1);
+}
+
+/** Connected accounts **/
+#app-mount .bd-connectedAccounts {
     border-top-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount .bd-connectedAccounts .bd-connectedAccountContainer {
+    background-color: rgba(var(--bd-darker), .5);
 }

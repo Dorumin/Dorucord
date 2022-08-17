@@ -146,7 +146,7 @@
     --bd-popout-message-bg: var(--bd-lightest);
 
     /* Quick switcher */
-    --bd-quickswitcher: var(--bd-default);
+    --bd-quickswitcher: var(--bd-darker);
 
     /* Scrollbar */
     --bd-scrollbar-track-piece: var(--bd-default);

@@ -8,9 +8,10 @@
 /** Base **/
 #app-mount .bd-modal .bd-modal,
 #app-mount .bd-modal .bd-reactors,
-#app-mount .bd-layerContainer [class^="bd-modal"],
+#app-mount .bd-layerContainer [class^="bd-modal"]:not(.bd-modalTitle, .bd-modalSubtitle),
 #app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile,
 #app-mount .bd-layerContainer .bd-popouts,
+#app-mount .bd-layerContainer .bd-keyboardShortcutsModal,
 #app-mount .bd-layerContainer .bd-container section,
 #app-mount .bd-popouts .bd-popout .bd-addGamePopout {
     background-color: rgba(var(--bd-modal-base), .85);
@@ -70,4 +71,11 @@
 /** Group DMs **/
 #app-mount .bd-anchor.bd-tag {
     background: rgba(var(--bd-lighter));
+}
+
+/** Keyboard Shortcuts modal keys **/
+#app-mount .bd-keybindShortcut span {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+    box-shadow: inset 0 -4px 0 rgba(var(--bd-default), .8);
+    border-color: rgb(var(--bd-darker));
 }

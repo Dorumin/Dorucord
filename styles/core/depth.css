@@ -11,7 +11,7 @@
 #app-mount .bd-base .bd-sidebar,
 #app-mount .bd-base .bd-chat > .bd-content > .bd-membersWrap,
 #app-mount .bd-searchResultsWrap {
-    background-color: var(--bd-depth-sidebar, transparent);   
+    background-color: var(--bd-depth-sidebar, transparent);
 }
 
 #app-mount .bd-base .bd-sidebar .bd-panels {
