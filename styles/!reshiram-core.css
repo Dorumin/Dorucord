@@ -3,6 +3,7 @@
 /* Some values are rgb */
 :root .day {
     /* Main background */
-    --bd-background-image: url(https://media.discordapp.net/attachments/238354899291734017/644470695618805760/pokemon__horizon_by_vtas_d55wyw0.jpg);
+    --bd-background-image: url(https://cdn.discordapp.com/attachments/590474367113232385/1002905906931040286/unknown.png);
     --bd-background-position: bottom;
+    --bd-background-brightness: brightness(.35);
 }

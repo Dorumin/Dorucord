@@ -5,6 +5,20 @@
     /* Main background */
     --bd-background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
     --bd-background-position: 50%;
+
+    /* Loading */
+    --bd-loading-background-image: var(--bd-background-image);
+    --bd-loading-background-position: var(--bd-background-position);
+    --bd-loading-background-color: var(--bd-background-color);
+    --bd-loading-background-brightness: var(--bd-background-brightness);
+    --bd-loading-background-contrast: var(--bd-background-contrast);
+    --bd-loading-background-blur: var(--bd-background-blur);
+}
+
+:root {
+    /* Main background */
+    --bd-background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
+    --bd-background-position: 50%;
     --bd-background-color: rgb(var(--bd-default));
     --bd-background-brightness: brightness(.7);
     --bd-background-contrast: contrast(1.1);

@@ -31,6 +31,21 @@
     --bd-color-link-hovered: 245, 98, 190;
     --bd-color-link-hovered-shadow: 190, 38, 135;
 
+    /* Embeds */
+    --bd-embed-icon: hue-rotate(100deg) saturate(100%);
+
+    /* Image hue */
+    /* Uncomment if you know the hues */
+    --bd-image-solid: hue-rotate(100deg) saturate(800%) brightness(.5);
+    --bd-image-translucent: hue-rotate(95deg) saturate(700%);
+    --bd-image-server-invite: hue-rotate(95deg) saturate(700%);
+    --bd-image-server-invite-icons: hue-rotate(-95deg) saturate(14.28%);
+    --bd-image-server-invite-button: hue-rotate(-95deg) saturate(14%);
+    --bd-image-server-welcome-icons: hue-rotate(95deg) saturate(200%);
+
+    /* Modals */
+    --bd-modal-icon: hue-rotate(95deg) saturate(200%);
+
     /* Whatever big word but */
     /* if (theme == light) { */
     /*     this.value = black; */
