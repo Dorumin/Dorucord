@@ -1,0 +1,7 @@
+{
+    "name": "Reshiram theme",
+    "description": "Theme based around Reshiram, I guess.",
+    "dependencies": [
+        "core"
+    ]
+}

@@ -32,9 +32,20 @@ window.GroupDMs = class {
         this.groups = {};
 
         this.patchXHR();
-        this.bindEvents();
         this.fetchDates();
     }
+
+	activate() {
+		this.activated = true;
+
+		this.bindEvents();
+	}
+
+	deactivate() {
+		this.activated = false;
+
+		this.cleanup();
+	}
 
 	patchXHR() {
         this.token = this.createResolvable();
@@ -318,8 +329,12 @@ window.GroupDMs = class {
     }
 }
 
-if (window.groupDMs) {
-    window.groupDMs.cleanup();
-}
+if (window.PLUGIN_LOADING) {
+	module.exports = GroupDMs;
+} else {
+    if (window.groupDMs) {
+        window.groupDMs.cleanup();
+    }
 
-window.groupDMs = new GroupDMs();
+    window.groupDMs = new GroupDMs();
+}

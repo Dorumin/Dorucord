@@ -42,9 +42,9 @@
     border-radius: 100%;
     right: 28px;
     bottom: 0px;
-    background: #ff916b;
+    background: #b9bbbe;
     transform: rotate(-45deg);
-    box-shadow: 0 0 10px #ff916b;
+    box-shadow: 0 0 10px #b9bbbe;
 }
 
 #dayNightLabel-left:after {
@@ -53,10 +53,10 @@
     width: 40px;
     height: 22px;
     border-radius: 15px;
-    background: rgba(255, 255, 255, 0.15);
+    background: transparent;
     vertical-align: middle;
     margin: 0 10px;
-    border: 2px solid #ff916b;
+    border: 2px solid #b9bbbe;
 }
 
 #dayNightToggle input[type=checkbox]:checked + #dayNightLabel-left:before {

@@ -1,10 +1,14 @@
 window.Classy = class {
 	constructor() {
 		this.classyElements = document.querySelectorAll('[class]');
+		this.disabled = false;
 
 		this.patchPrototypes();
 		// this.patchStylesheets();
 		this.updateClasses();
+
+		// Disable Classy when closing Discord to prevent leaks/loops
+		window.addEventListener('beforeunload', () => this.disabled = true);
 	}
 
 	findAllImplementers(Class) {
@@ -38,8 +42,10 @@ window.Classy = class {
 		const previous = Class.prototype.setAttribute;
 		if (!previous) return;
 
+		const classy = this;
+
 		Class.prototype.setAttribute = function(key, value) {
-			if (key === 'class' && typeof value === 'string') {
+			if (!classy.disabled && key === 'class' && typeof value === 'string') {
 				const classes = value.split(' ');
 				const adding = [];
 

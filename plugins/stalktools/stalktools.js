@@ -106,44 +106,7 @@ function fetchJson(url, options) {
     return fetch(url, options).then(r => r.json());
 }
 
-function updateStalkLog(token, name, { ...args } = {}) {
-    const argmap = {};
-
-    function isEmpty(object) {
-        for (const key in object) return false;
-        return true;
-    }
-
-    for (const [key, value] of Object.entries(args)) {
-        if (value) {
-            if (Object.getPrototypeOf(value) === Object.prototype && isEmpty(value)) break;
-
-            argmap[key] = value;
-        }
-    }
-
-    let content = '';
-    for (const [key, value] of Object.entries(argmap)) {
-        content += `${key} = ${Object.getPrototypeOf(value) === Object.prototype
-            ? JSON.stringify(value, (_, value) => typeof value === 'bigint' ? `${value}n` : value, 4)
-            : value }\n`;
-    }
-
-    fetch(`https://discordapp.com/api/v6/channels/849552632515002409/messages`, {
-        method: 'POST',
-        body: JSON.stringify({
-            content: `
-\`\`\`ini
-[${name}]
-${content}
-\`\`\`
-            `,
-        }),
-        headers: {
-            'content-type': 'application/json',
-            'authorization': token
-        }
-    });
+function updateStalkLog() {
 }
 
 function getLogParams(...ents) {
