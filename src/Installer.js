@@ -195,18 +195,18 @@ class DorucordInstaller {
                 const home = os.homedir();
                 const root = path.join(home, 'AppData', 'Local');
                 const possibleDirectories = ['Discord', 'DiscordPTB', 'DiscordCanary'].map(folder => path.join(root, folder));
-                const installedPaths = await Promise.all(possibleDirectories.filter(async discordPath => this.exists(discordPath)));
+                const installedPaths = await Promise.all(possibleDirectories.map(async discordPath => this.exists(discordPath)));
 
-                return installedPaths;
+                return possibleDirectories.filter((_, i) => installedPaths[i]);
             }
             case 'darwin': {
                 const home = os.homedir();
                 const root = path.join(home, 'Library', 'Application Support');
                 // TODO: Make sure PTB and canary are correct
                 const possibleDirectories = ['discord', 'discordptb', 'discordcanary'].map(folder => path.join(root, folder));
-                const installedPaths = await Promise.all(possibleDirectories.filter(async discordPath => this.exists(discordPath)));
+                const installedPaths = await Promise.all(possibleDirectories.map(async discordPath => this.exists(discordPath)));
 
-                return installedPaths;
+                return possibleDirectories.filter((_, i) => installedPaths[i]);
             }
         }
 
@@ -286,7 +286,12 @@ class DorucordInstaller {
     async getLatestAppDirectory(discordDirectory) {
         const directories = await fs.readdir(discordDirectory);
 
-        const matches = directories.map(directory => directory.match(/app-((?:\d+.)+\d+)/i)).filter(Boolean);
+        let matches;
+        if (os.platform() === 'win32') {
+            matches = directories.map(directory => directory.match(/app-((?:\d+.)+\d+)/i)).filter(Boolean);
+        } else {
+            matches = directories.map(directory => directory.match(/((?:\d+.)+\d+)/i)).filter(Boolean);
+        }
 
         if (matches.length === 0) {
             console.log(`There's something wrong with your Discord installation. (no app folder)`);
