@@ -5,10 +5,8 @@
     /* Main background */
     --bd-background-image: url(https://cdn.discordapp.com/attachments/595506142126538753/602478617553010704/Opalset.png);
     --bd-background-position: 50%;
-    --bd-background-color: rgb(var(--bd-default));
     --bd-background-brightness: brightness(.7);
     --bd-background-contrast: contrast(1.1);
-    --bd-background-blur: blur(0);
 
     /* Main colors */
     --bd-default: 49, 10, 10;

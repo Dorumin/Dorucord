@@ -7,8 +7,6 @@
     --bd-background-position: center top;
     --bd-background-color: linear-gradient(to right, rgba(45, 7, 40, .65), rgba(41, 7, 40, .65)),;
     --bd-background-brightness: brightness(.85);
-    --bd-background-contrast: contrast(1);
-    --bd-background-blur: blur(0);
 
     /* Main colors */
     --bd-default: 56, 8, 49;
