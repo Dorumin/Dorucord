@@ -1,0 +1,7 @@
+{
+    "name": "NGNL",
+    "description": "No Gay No Life theme.",
+    "dependencies": [
+        "core"
+    ]
+}

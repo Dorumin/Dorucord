@@ -1,0 +1,171 @@
+#app-mount .bd-dorucordConfigButton {
+    color: #0ff;
+}
+
+.bd-dorucordLetter {
+    animation: bouncy-letters 1s ease-in-out infinite;
+    animation-direction: alternate;
+    display: inline-block;
+}
+
+.bd-dorucordLetter:nth-child(0) {
+    animation-delay: -1000ms;
+}
+
+.bd-dorucordLetter:nth-child(1) {
+    animation-delay: -900ms;
+}
+
+.bd-dorucordLetter:nth-child(2) {
+    animation-delay: -800ms;
+}
+
+.bd-dorucordLetter:nth-child(3) {
+    animation-delay: -700ms;
+}
+
+.bd-dorucordLetter:nth-child(4) {
+    animation-delay: -600ms;
+}
+
+.bd-dorucordLetter:nth-child(5) {
+    animation-delay: -500ms;
+}
+
+.bd-dorucordLetter:nth-child(6) {
+    animation-delay: -400ms;
+}
+
+.bd-dorucordLetter:nth-child(7) {
+    animation-delay: -300ms;
+}
+
+@keyframes bouncy-letters {
+    from {
+        transform: translateY(-1px);
+    }
+    to {
+        transform: translateY(1px);
+    }
+}
+
+.bd-focusedItem {
+    background-color: var(--background-modifier-selected);
+    text-shadow: 0 0 2px white;
+}
+
+/* TODO: This selector is slow. But whatever */
+#dorucord-tab > * {
+    display: none;
+}
+
+#dorucord-tab-injected-content {
+    display: none;
+}
+
+#dorucord-tab #dorucord-tab-injected-content {
+    display: block;
+}
+
+.dorucord-global-focused-config-item #app-mount#app-mount .bd-sidebarRegionScroller .bd-side .bd-selected.bd-item {
+    background-color: transparent;
+    color: var(--interactive-normal);
+    cursor: pointer;
+}
+
+.dorucord-global-focused-config-item #app-mount#app-mount .bd-sidebarRegionScroller .bd-side .bd-selected.bd-item:hover {
+    background-color: var(--background-modifier-hover);
+    color: var(--interactive-hover);
+
+    /* core.css support */
+    background-color: rgba(var(--bd-settings-sidebar-item-hover), 0.2);
+}
+
+#dorucord-tab-injected-content {
+    color: var(--text-normal);
+}
+
+.bd-configSection {
+    padding-bottom: 8px;
+}
+
+.bd-dorucordHeading {
+    font-family: var(--font-display);
+    color: var(--header-primary);
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+    padding-bottom: 8px;
+    font-weight: 500;
+}
+
+.bd-plugin {
+    background-color: var(--background-secondary);
+    background-color: rgba(var(--bd-default), .5);
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.bd-pluginHeader {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.bd-pluginName {
+    flex-grow: 1;
+}
+
+.bd-pluginInfo {
+    padding: 20px 10px;
+}
+
+.bd-pluginSwitch {
+    display: flex;
+}
+
+.bd-pluginSwitchCheckbox {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+  margin: 0;
+}
+
+.bd-pluginSwitchLabel {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 24px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  line-height: 0;
+  font-size: 0;
+}
+
+.bd-pluginSwitchLabel::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.bd-pluginSwitchCheckbox:checked + label {
+    background-color: #bada55;
+    background-color: rgb(var(--bd-slider-checked)) !important;
+}
+
+.bd-pluginSwitchCheckbox:checked + label:after {
+  left: calc(100% - 4px);
+  transform: translateX(-100%);
+}
+
+.bd-pluginSwitchLabel:active::after {
+    width: 26px;
+}

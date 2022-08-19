@@ -1,4 +1,4 @@
-window.Resolvable = class {
+window.Resolvable = class Resolvable {
 	constructor() {
 		this._res = null;
 		this._rej = null;
@@ -29,7 +29,7 @@ window.Resolvable = class {
 	}
 }
 
-window.StickerDatabase = class {
+window.StickerDatabase = class StickerDatabase {
 	constructor(key, version) {
 		this.key = key;
 		this.version = version;
@@ -141,7 +141,7 @@ window.StickerDatabase = class {
 	}
 }
 
-window.Stickers = class {
+window.Stickers = class Stickers {
 	constructor() {
 		this.onMutation = this.onMutation.bind(this);
 		this.onResize = this.onResize.bind(this);
@@ -159,7 +159,6 @@ window.Stickers = class {
 		this.upload = this.createStickersUpload();
 		// this.button = this.createStickersButton();
 		this.popout = this.createStickersPopout();
-		this.observer = this.createMutationObserver();
 
 		this.deleting = false;
 		this.creatingPack = false;
@@ -172,7 +171,21 @@ window.Stickers = class {
 		this.patchXHR();
 		this.hidePopout();
 		this.updatePopoutStickers();
+	}
+
+	activate() {
+		this.activated = true;
+
+		this.observer = this.createMutationObserver();
 		this.onMutation();
+	}
+
+	deactivate() {
+		this.activated = false;
+
+		document.getElementById(this.BUTTON_ID)?.remove();
+
+		this.observer.disconnect();
 	}
 
 	createDatabase() {
@@ -790,8 +803,6 @@ window.Stickers = class {
 		const verticalMargin = parseInt(styles.marginTop) + parseInt(styles.marginBottom);
 		const verticalPadding = parseInt(formStyle.paddingTop) + parseInt(formStyle.paddingBottom);
 
-		// what is outerHeight?
-		// The window's height
 		this.popout.style.left = `${bounds.left}px`;
 		this.popout.style.top = `${bounds.top - rect.height - verticalMargin + verticalPadding}px`;
 		this.popout.style.width = `${bounds.width - horizontalMargin}px`;
@@ -842,8 +853,12 @@ window.Stickers = class {
 	}
 }
 
-if (window.stickers) {
-	window.stickers.cleanup();
-}
+if (window.PLUGIN_LOADING) {
+	module.exports = Stickers;
+} else {
+	if (window.stickers) {
+		window.stickers.cleanup();
+	}
 
-window.stickers = new Stickers();
+	window.stickers = new Stickers();
+}

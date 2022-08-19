@@ -16,8 +16,8 @@ packed.js
 Icon?
 ehthumbs.db
 Thumbs.db
-*maverick.css
-*modverick.css
-*opal-vars.css
-*reshiram-core.css
-*ngnl.css
+# *maverick.css
+# *modverick.css
+# *opal-vars.css
+# *reshiram-core.css
+# *ngnl.css

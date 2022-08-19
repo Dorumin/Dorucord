@@ -1,0 +1,125 @@
+/* Buttons */
+/** Nav button **/
+#app-mount .bd-navButton {
+    background-color: rgb(var(--bd-lightest), .5);
+}
+
+/** Jump button **/
+#app-mount .bd-jumpButton,
+#app-mount .bd-closeButton.bd-tertiary,
+#app-mount .bd-tertiary.bd-button,
+#app-mount .bd-searchResultsWrap .bd-button {
+    background-color: rgb(var(--bd-default));
+}
+
+/** Collapse button **/
+#app-mount .bd-collapseButton {
+    position: absolute;
+    left: 6px;
+}
+
+/** Regular buttons **/
+#app-mount .bd-lookFilled.bd-colorBrand,
+#app-mount .bd-questionMark {
+    background-color: rgb(var(--bd-button-default));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookFilled.bd-colorPrimary,
+#app-mount .bd-lookFilled.bd-colorGrey {
+    background-color: rgb(var(--bd-button-secondary));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-colorBrand {
+    border-color: rgba(var(--bd-button-default), .5);
+    color: rgb(var(--bd-button-default));
+}
+
+#app-mount .bd-lookInverted.bd-colorBrand.bd-subscribeTooltipButton {
+    color: rgb(var(--bd-default));
+    background-color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookInverted.bd-colorBrand {
+    color: rgb(var(--bd-button-default));
+    background-color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookGhost.bd-colorBrand {
+    background-color: rgba(var(--bd-button-default), .1);
+    color: rgb(var(--bd-button-default));
+}
+
+#app-mount .bd-lookGhost.bd-colorGrey {
+    background-color: rgba(var(--bd-button-default), .05);
+    color: rgba(var(--bd-button-default), .6);
+}
+
+/** Green buttons **/
+#app-mount .bd-lookFilled.bd-colorGreen {
+    background-color: rgb(var(--bd-button-green));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-colorGreen {
+    border-color: rgba(var(--bd-button-green), .2);
+    color: rgb(var(--bd-button-green));
+}
+
+#app-mount .bd-lookGhost.bd-colorGreen {
+    background-color: rgba(var(--bd-button-green), .1);
+    color: rgb(var(--bd-button-green));
+}
+
+/** Load more messages **/
+#app-mount .bd-hasMore {
+    background: rgba(var(--bd-color-link), .1);
+    color: rgb(var(--bd-color-link));
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-hasMore:hover {
+    background: rgba(var(--bd-color-link), .2);
+    color: rgb(var(--bd-color-link));
+}
+
+/** Button on the right side of messages **/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper {
+    background-color: rgba(var(--bd-default), 0.3);
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button:hover {
+    background-color: rgba(var(--bd-default), 0.4);
+    color: rgba(255, 255, 255, .8);
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button.bd-selected {
+    background-color: rgba(var(--bd-default), 0.5);
+    color: rgb(var(--bd-button-text));
+}
+
+/*** Hide edit button ***/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button[aria-label="Edit"] {
+    display: var(--bd-edit-button);
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer {
+    top: 39px;
+}
+
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer {
+    top: calc(100% - -2px);
+}
+
+/** X button **/
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor),
+#app-mount .bd-card [class*="emove"]:not(.bd-anchor) {
+    background-color: rgb(var(--bd-dark));
+}
+
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-card [class*="emove"]:not(.bd-anchor){
+    right: -11px;
+}

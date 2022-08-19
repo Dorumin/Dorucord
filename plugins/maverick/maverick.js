@@ -11,7 +11,7 @@ window.Switch = class {
             subtree: true
         });
     }
-    
+
     onMutation() {
         var appMount = document.querySelector('body');
         if (document.querySelector('#app-mount [class*="app"] [class*="app"] [class*="layers"] [class*="layer"] [class*="toolbar"] a[class*="anchor"]') != null && document.querySelector('#dayNightSwitch') == null) {
@@ -31,14 +31,14 @@ window.Switch = class {
             this.switchLabelLeft.id = 'dayNightLabel-left';          // A
             this.switchLabel.setAttribute('for', 'dayNightBox');     // N
             this.switchLabel.id = 'dayNightLabel';                   // T
-    
+
             this.switchButton.appendChild(this.switchToggle);
             this.switchToggle.appendChild(this.switchInput);
             this.switchToggle.appendChild(this.switchLabelLeft);
             this.switchToggle.appendChild(this.switchLabel);
             this.toolbar.insertBefore(this.switchButton, this.helpButton);
-    
-            // And now for the actual switch 
+
+            // And now for the actual switch
             this.switchInput.addEventListener('change', function() {
                 if (appMount.classList.contains('day')) {
                     appMount.classList.remove('day');
@@ -48,7 +48,7 @@ window.Switch = class {
                     document.cookie = 'switch=day';
                 }
             });
-            
+
             function getCookie(name) {
                 var value = "; " + document.cookie;
                 var parts = value.split("; " + name + "=");
@@ -63,7 +63,7 @@ window.Switch = class {
                 this.switchInput.setAttribute('checked', 'checked');
             }
         }
-        
+
         // Make it day or night by time.
         if (this.timeSet) return;
         this.timeSet = true;
@@ -71,7 +71,7 @@ window.Switch = class {
             hour = time.getHours();
         if (hour >= 7 && hour <= 19) {
             appMount.classList.add('day');
-        } 
+        }
     }
 }
 

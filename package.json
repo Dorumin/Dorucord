@@ -4,7 +4,7 @@
 	"description": "Bootleg BD without an UI and you have to run every time Discord updates",
 	"main": "installer.js",
 	"scripts": {
-		"install": "node installer.js",
+		"installer": "node installer.js",
 		"dev": "nodemon --watch styles/core -e css styles/core.js"
 	},
 	"keywords": [
@@ -16,7 +16,9 @@
 	"license": "ISC",
 	"dependencies": {
 		"asar": "^3.0.1",
+		"balanced-match": "^2.0.0",
 		"ps-node": "^0.1.6",
+		"recursive-readdir": "^2.2.2",
 		"rimraf": "^3.0.2"
 	},
 	"devDependencies": {
