@@ -10,10 +10,8 @@
     /* Main background */
     --bd-background-image: url('https://cdn.discordapp.com/attachments/595506142126538753/830876691474939974/68292953_p1.png');
     --bd-background-position: top left;
-    --bd-background-color: rgb(var(--bd-default));
     --bd-background-brightness: brightness(.35);
     --bd-background-contrast: contrast(1.1);
-    --bd-background-blur: blur(0);
 
     /* Main colors */
     --bd-default: 41, 0, 56;
@@ -22,12 +20,6 @@
     --bd-light: 46, 5, 59; /* Pins, userpopout */
     --bd-dark: 34, 0, 45; /* Search, settings */
     --bd-darker: 30, 0, 41;
-
-    /* Depth */
-    --bd-depth-title: rgba(var(--bd-default), 0);
-    --bd-depth-guilds-list: rgba(var(--bd-default), 0);
-    --bd-depth-sidebar: rgba(var(--bd-default), 0);
-    --bd-depth-userbox: rgba(var(--bd-default), 0); /* I have no idea */
 
     /* Text colors */
     --bd-color-link: 211, 89, 255;
