@@ -9,7 +9,7 @@ a.bd-originalLink[href^="https://cdn.discordapp.com"]:not(:hover)::after {
 	z-index: 1000;
 	content: attr(href);
 	white-space: nowrap;
-	margin-left: -748px;
+	margin-left: calc(-78ch + 1px);
 	color: white;
 	font-family: monospace;
 	font-size: 16px;

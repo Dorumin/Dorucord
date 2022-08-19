@@ -1,5 +1,5 @@
 {
-    "name": "Opal themes",
+    "name": "Opal Themes",
     "description": "Opalset and Hopal themes as day/night switches. Depends on maverick and core.",
     "dependencies": [
         "maverick",

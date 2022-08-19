@@ -1,0 +1,8 @@
+{
+    "name": "Resiram + No Game No Life Theme",
+    "description": "Reshiram and No Game No Life as day/night switches. Depends on maverick and core.",
+    "dependencies": [
+        "maverick",
+        "core"
+    ]
+}
