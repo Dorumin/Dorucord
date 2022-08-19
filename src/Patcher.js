@@ -9,17 +9,28 @@ class DorucordPatcher {
     async patch(extractedPath) {
         const split = this.split(extractedPath);
 
-        if (split[split.length - 4] === 'modules') {
-            await this.patchCore(extractedPath);
-        } else if (split[split.length - 2] === 'resources') {
-            await this.patchApp(extractedPath);
+        if (this.isWin()) {
+            if (split[split.length - 4] === 'modules') {
+                await this.patchCore(extractedPath);
+            } else if (split[split.length - 2] === 'resources') {
+                await this.patchApp(extractedPath);
+            }
+        } else {
+            if (split[split.length - 3] === 'modules') {
+                await this.patchCore(extractedPath);
+                await this.patchApp(extractedPath);
+            }
         }
     }
 
     async patchCore(extractedPath) {
         const split = this.split(extractedPath);
         // Only core module supported for now
-        if (!split[split.length - 3].startsWith('discord_desktop_core')) return;
+        if (this.isWin()) {
+            if (!split[split.length - 3].startsWith('discord_desktop_core')) return;
+        } else {
+            if (!split[split.length - 2].startsWith('discord_desktop_core')) return;
+        }
 
         const appPath = path.join(extractedPath, 'app');
         const appPathChildren = await fs.readdir(appPath);
@@ -65,9 +76,10 @@ class DorucordPatcher {
     }
 
     async patchApp(extractedPath) {
-        const codePath = os.platform() === 'win32'
+        const codePath = this.isWin()
             ? path.join(extractedPath, 'app_bootstrap', 'bootstrap.js')
             : path.join(extractedPath, 'app', 'mainScreen.js');
+
         const code = await fs.readFile(codePath, {
             encoding: 'utf8'
         });
@@ -105,17 +117,34 @@ class DorucordPatcher {
         const pluginsInject = this.makeInjectable(plugins, `window._plugins = <injected-content>;`);
 
         // require('electron').contextBridge.exposeInMainWorld('exposetest', 'test');
-        const replacedCode = code.replace(/function startApp\(\) {/, `
-            app.on('web-contents-created', (_, webContents) => {
-                webContents.executeJavaScript('console.log("Dorucord injection successful");');
+        let replacedCode;
 
-                webContents.executeJavaScript(${pluginsInject});
-                webContents.executeJavaScript(${jsInject});
-                webContents.executeJavaScript(${cssInject});
-            });
+        if (this.isWin()) {
+            replacedCode = code.replace(/function startApp\(\) {/, `
+                app.on('web-contents-created', (_, webContents) => {
+                    webContents.executeJavaScript('console.log("Dorucord injection successful");');
 
-            $&
-        `);
+                    webContents.executeJavaScript(${pluginsInject});
+                    webContents.executeJavaScript(${jsInject});
+                    webContents.executeJavaScript(${cssInject});
+                });
+
+                $&
+            `);
+        } else {
+            replacedCode = code.replace(/mainWindow.minimize[^}]+}/, `$&
+
+                mainWindow.webContents.executeJavaScript('console.log("Dorucord injection successful");');
+
+                mainWindow.webContents.executeJavaScript(${pluginsInject});
+                mainWindow.webContents.executeJavaScript(${jsInject});
+                mainWindow.webContents.executeJavaScript(${cssInject});
+            `);
+        }
+
+        if (replacedCode !== code) {
+            console.log('Updating app successful');
+        }
 
     	await fs.writeFile(codePath, replacedCode);
 
@@ -139,7 +168,15 @@ class DorucordPatcher {
         //     await Promise.all(scriptsWithContent.map(script => this.patchScript(script)));
         // }
 
-        await asar.createPackage(extractedPath, path.join(extractedPath, '..', 'app.asar'));
+        if (this.isWin()) {
+            await asar.createPackage(extractedPath, path.join(extractedPath, '..', 'app.asar'));
+        } else {
+            await asar.createPackage(extractedPath, path.join(extractedPath, '..', 'core.asar'));
+        }
+    }
+
+    isWin() {
+        return os.platform() === 'win32';
     }
 
     makeInjectable(injectable, wrapper) {

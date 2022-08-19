@@ -156,7 +156,7 @@ class DorucordInstaller {
             return null;
         }
 
-        if (directories.length === 0) {
+        if (directories.length === 1) {
             const directory = directories[0];
             console.log(`Installing in ${directory}`);
 

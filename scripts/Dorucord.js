@@ -40,7 +40,7 @@ window.PluginWrapper = class PluginWrapper {
         }
 
         if (!manifest.description) {
-            manifest.description = "No information provided.";
+            manifest.description = 'No information provided.';
         }
 
         if (!manifest.type) {
