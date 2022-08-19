@@ -1,62 +1,66 @@
 window.Switch = class {
-    constructor() {
-        this.initConstructor();
-    }
-
-    initConstructor() {
+    activate() {
+        this.body = document.querySelector('body');
         this.mo = new MutationObserver(this.onMutation.bind(this));
-        this.mo.observe(document.querySelector('body'), {
+        this.mo.observe(this.body, {
             attributes: true,
             childList: true,
             subtree: true
         });
     }
 
-    onMutation() {
-        var appMount = document.querySelector('body');
-        if (document.querySelector('#app-mount [class*="app"] [class*="app"] [class*="layers"] [class*="layer"] [class*="toolbar"] a[class*="anchor"]') != null && document.querySelector('#dayNightSwitch') == null) {
-            this.helpButton = document.querySelector('[class*="toolbar"] a[class*="anchor"]');
-            this.toolbar = this.helpButton.parentElement;
-            this.switchButton = document.createElement('div'); // Is there no easier way to do this?
-            this.switchToggle = document.createElement('div'); // Wtf?
-            this.switchInput = document.createElement('input'); // Seriously; I got confused typing this out
-            this.switchLabelLeft = document.createElement('label'); // Literally had to open the raw <div> and JS side by side
-            this.switchLabel = document.createElement('label');
-            this.switchButton.id = 'dayNightSwitch';                 // R
-            this.switchToggle.id = 'dayNightToggle';                 // E
-            this.switchInput.type = 'checkbox';                      // D
-            this.switchInput.name = 'dayNightBox';                   // U
-            this.switchInput.id = 'dayNightBox';                     // N
-            this.switchLabelLeft.setAttribute('for', 'dayNightBox'); // D
-            this.switchLabelLeft.id = 'dayNightLabel-left';          // A
-            this.switchLabel.setAttribute('for', 'dayNightBox');     // N
-            this.switchLabel.id = 'dayNightLabel';                   // T
+    deactivate() {
+        this.cleanup();
+    }
 
-            this.switchButton.appendChild(this.switchToggle);
-            this.switchToggle.appendChild(this.switchInput);
-            this.switchToggle.appendChild(this.switchLabelLeft);
-            this.switchToggle.appendChild(this.switchLabel);
+    cleanup() {
+        document.getElementById('bd-theme-switch')?.remove();
+        this.mo.disconnect();
+    }
+
+    onMutation() {
+        this.helpButton = document.querySelector('#app-mount .bd-toolbar .bd-anchor');
+
+        if (this.helpButton && document.getElementById('bd-theme-switch') === null) {
+            this.switchButton = ui.div({
+                id: 'bd-theme-switch',
+                children: [
+                    this.switchInput = ui.input({
+                        type: 'checkbox',
+                        id: 'bd-theme-switch-checkbox',
+                        events: {
+                            change: () => {
+                                // And now for the actual switch
+                                if (this.body.classList.contains('day')) {
+                                    this.body.classList.remove('day');
+                                    document.cookie = 'switch=night';
+                                } else {
+                                    this.body.classList.add('day');
+                                    document.cookie = 'switch=day';
+                                }
+                            }
+                        }
+                    }),
+                    ui.label({
+                        id: 'bd-theme-switch-label',
+                        attrs: {
+                            for: 'bd-theme-switch-checkbox'
+                        }
+                    })
+                ]
+            })
+
+            this.toolbar = this.helpButton.parentElement;
             this.toolbar.insertBefore(this.switchButton, this.helpButton);
 
-            // And now for the actual switch
-            this.switchInput.addEventListener('change', function() {
-                if (appMount.classList.contains('day')) {
-                    appMount.classList.remove('day');
-                    document.cookie = 'switch=night';
-                } else {
-                    appMount.classList.add('day');
-                    document.cookie = 'switch=day';
-                }
-            });
-
             function getCookie(name) {
-                var value = "; " + document.cookie;
-                var parts = value.split("; " + name + "=");
+                const value = "; " + document.cookie;
+                const parts = value.split("; " + name + "=");
                 if (parts.length == 2) return parts.pop().split(";").shift();
             }
 
-            var time = new Date(),
-                hour = time.getHours();
+            const time = new Date();
+            const hour = time.getHours();
             if (getCookie('switch') == 'day') {
                 return;
             } else if (getCookie('switch') == 'night' || hour >= 20 || hour <= 8) {
@@ -67,13 +71,20 @@ window.Switch = class {
         // Make it day or night by time.
         if (this.timeSet) return;
         this.timeSet = true;
-        var time = new Date(),
-            hour = time.getHours();
+        const time = new Date();
+        const hour = time.getHours();
         if (hour >= 7 && hour <= 19) {
-            appMount.classList.add('day');
+            this.body.classList.add('day');
         }
     }
 }
 
-// Not BD compatible:
-window.switch = new Switch();
+if (window.PLUGIN_LOADING) {
+	module.exports = Switch;
+} else {
+	if (window.switch) {
+		window.switch.cleanup();
+	}
+
+    window.switch = new Switch();
+}
