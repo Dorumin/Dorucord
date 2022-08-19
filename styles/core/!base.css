@@ -1,0 +1,151 @@
+/* Main */
+/** Background **/
+#app-mount .bd-app > .bd-app > .bd-bg::before {
+    content: '';
+    background: var(--bd-background-color) var(--bd-background-image) var(--bd-background-position) / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+#app-mount .bd-app > .bd-app > .bd-bg::before {
+    filter: var(--bd-background-brightness) var(--bd-background-contrast) var(--bd-background-blur);
+}
+
+/** Login form **/
+#app-mount .bd-rightSplit {
+    background: var(--bd-background-color) var(--bd-loading-background-image) var(--bd-loading-background-position) / cover no-repeat fixed;
+}
+
+#app-mount .bd-splashBackground {
+    background: transparent;
+}
+
+#app-mount .bd-splashBackground > canvas,
+#app-mount .bd-rightSplit img {
+    display: none;
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox {
+    background: rgba(var(--bd-default), 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/*** Text ***/
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-colorHeaderSecondary,
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-title.bd-h5 {
+    color: rgb(var(--bd-color-dark));
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-needAccount {
+    color: rgb(var(--bd-color-light));
+}
+
+#app-mount .bd-wrapper.bd-errorPage .bd-note {
+    color: rgb(var(--bd-monochrome-contrast), .7);
+}
+
+/** Loading **/
+#app-mount .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount .bd-app > .bd-app + .bd-container::before {
+    content: '';
+    background: var(--bd-loading-background-color) var(--bd-loading-background-image) var(--bd-loading-background-position) / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+#app-mount .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount .bd-app > .bd-app + .bd-container::before {
+    filter: var(--bd-loading-background-brightness) var(--bd-loading-background-contrast) var(--bd-loading-background-blur);
+    z-index: -1;
+}
+
+/*** Text ***/
+#app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
+    color: rgb(var(--bd-monochrome-contrast));
+}
+
+#app-mount .bd-app .bd-container .bd-contentBase,
+#app-mount .bd-app .bd-container .bd-problemsText {
+    color: rgb(var(--bd-color-light));
+}
+
+/* Insurance? */
+/* #app-mount,
+#app-mount *,
+#app-mount *::after,
+#app-mount *::before {
+    background-color: transparent;
+} */
+
+#app-mount .bd-wrapper.bd-errorPage,
+/*** Guilds list ***/
+#app-mount .bd-wrapper.bd-guilds,
+#app-mount .bd-wrapper.bd-guilds .bd-scroller,
+/*** Sidebar ***/
+#app-mount .bd-base .bd-sidebar,
+/*** Userbox ***/
+#app-mount .bd-base .bd-sidebar .bd-panels,
+/*** Guild name in channel sidebar ***/
+#app-mount .bd-base .bd-sidebar .bd-header,
+/*** Channel list ***/
+#app-mount .bd-base .bd-sidebar > .bd-container,
+/*** DMs ***/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels,
+/*** DMs scroller ***/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-scroller,
+/*** Main chat ***/
+#app-mount .bd-base .bd-chat,
+/*** For chat that hasn't loaded ***/
+#app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper,
+#app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper > .bd-wrapper,
+/*** Header for DM channels and channel info ***/
+#app-mount .bd-base .bd-chat > .bd-title,
+/*** Shitty box shadow like thing that appears after the title if search is open ***/
+#app-mount .bd-base .bd-chat > .bd-title .bd-children::after,
+/*** Guild member list / Group chat participants ***/
+#app-mount .bd-base .bd-chat .bd-membersWrap .bd-members,
+#app-mount .bd-base .bd-chat .bd-membersWrap .bd-members > div,
+#app-mount .bd-base .bd-content > .bd-container,
+/*** Friends | Library header ***/
+#app-mount .bd-base .bd-content > .bd-container > .bd-container,
+/*** Library > Settings ***/
+#app-mount .bd-base .bd-content > .bd-container .bd-scroller,
+/*** Library > Name | Platform | Last Played ***/
+#app-mount .bd-base .bd-content > .bd-container .bd-scroller .bd-header,
+/*** Friends > Active Now ***/
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn,
+/*** If there's no one playing anything ***/
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-container,
+/*** Nitro tab ***/
+#app-mount .bd-base .bd-content .bd-applicationStore,
+/**** Header ****/
+#app-mount .bd-base .bd-content .bd-applicationStore .bd-headerBar,
+/**** Main content ****/
+#app-mount .bd-base .bd-content .bd-applicationStore .bd-scroller,
+/*** Search ***/
+#app-mount .bd-searchResultsWrap,
+/*** Search > Results | New | Old | Relevant  ***/
+#app-mount .bd-searchResultsWrap .bd-searchHeader,
+/*** Search > #channel-name ***/
+#app-mount .bd-searchResultsWrap .bd-channelName,
+/*** Quick switcher ***/
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller {
+    background: transparent;
+}
+
+/** Weird shading and stuff **/
+/*** Below 'Find or start a conversation' ***/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
+/*** Below guild name in the channel sidebar ***/
+#app-mount .bd-base .bd-sidebar .bd-header,
+/*** I am so not looking for pseudo elements, sorry ***/
+#app-mount .bd-app *::before,
+#app-mount .bd-app *::after {
+    box-shadow: none;
+}

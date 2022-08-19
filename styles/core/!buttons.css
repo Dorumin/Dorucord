@@ -1,0 +1,87 @@
+/* Buttons */
+/** GIFs | Stickers | Emojis **/
+#app-mount .bd-navButton {
+    background-color: transparent;
+}
+
+#app-mount .bd-navButtonActive {
+    background-color: rgb(var(--bd-lightest), .5);
+}
+
+/** Jump Button **/
+/** #app-mount .bd-closeButton.bd-tertiary, **/
+/** #app-mount .bd-tertiary.bd-button, **/
+/** Start of thread message **/
+#app-mount .bd-jump,
+/** Pins **/
+#app-mount .bd-jumpButton,
+/** Search results **/
+#app-mount .bd-searchResultsWrap .bd-button {
+    background-color: rgb(var(--bd-default));
+}
+
+/** Regular buttons **/
+/*** Blue buttons ***/
+#app-mount .bd-lookFilled.bd-colorBrand,
+#app-mount .bd-lookFilled.bd-colorBrandNew {
+    background-color: rgb(var(--bd-button-default));
+    color: rgb(var(--bd-button-text));
+}
+
+/*** Gray buttons ***/
+#app-mount .bd-lookFilled.bd-colorPrimary {
+    background-color: rgb(var(--bd-button-secondary));
+    color: rgb(var(--bd-button-text));
+}
+
+/*** Outlined buttons ***/
+#app-mount .bd-lookOutlined.bd-colorBrand {
+    border-color: rgba(var(--bd-button-default), .5);
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-colorBrand:hover {
+    background-color: rgba(var(--bd-button-default));
+    color: rgb(var(--bd-button-text));
+}
+
+/*** Green buttons ***/
+#app-mount .bd-lookFilled.bd-colorGreen {
+    background-color: rgb(var(--bd-button-green));
+    color: rgb(var(--bd-button-text));
+}
+
+/** Button on the right side of messages **/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper {
+    background-color: rgba(var(--bd-default), 0.3);
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button:hover {
+    background-color: rgba(var(--bd-default), 0.4);
+    color: rgba(255, 255, 255, .8);
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button.bd-selected {
+    background-color: rgba(var(--bd-default), 0.5);
+    color: rgb(var(--bd-button-text));
+}
+
+/*** Hide edit button ***/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button[aria-label="Edit"] {
+    display: var(--bd-edit-button);
+}
+
+/*** Fix the positioning ***/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy.bd-groupStart .bd-buttonContainer {
+    top: 20px;
+}
+
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer {
+    top: calc(100% - 4px);
+}
+
+/** X button, in settings mostly **/
+/** Settings > Keybinard **/
+#app-mount .bd-card [class*="emove"]:not(.bd-anchor) {
+    background-color: rgb(var(--bd-default));
+}

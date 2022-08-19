@@ -1,11 +1,11 @@
 /* Block related stuff */
 /** Blocked messages **/
 #app-mount .bd-ephemeral.bd-cozyMessage {
-    background-color: rgba(var(--bd-color-link), .05)
+    background-color: rgba(var(--bd-color-link), .05);
 }
 
 #app-mount .bd-ephemeral.bd-cozyMessage::before {
-    background-color: rgb(var(--bd-color-link))
+    background-color: rgb(var(--bd-color-link));
 }
 
 /** Can't talk because you blocked them lool **/
