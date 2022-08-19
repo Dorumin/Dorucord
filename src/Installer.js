@@ -104,15 +104,16 @@ class DorucordInstaller {
         const modulePaths = await fs.readdir(path.join(appDirectory, 'modules'));
         const coreName = modulePaths.find(mod => mod.startsWith('discord_desktop_core'));
 
-        const packagePaths = [
-            path.join(appDirectory, 'modules', coreName, 'discord_desktop_core', 'core.asar')
-        ];
-
         if (os.platform() === 'win32') {
-            packagePaths.push(path.join(appDirectory, 'resources', 'app.asar'));
+            return [
+                path.join(appDirectory, 'modules', coreName, 'discord_desktop_core', 'core.asar'),
+                path.join(appDirectory, 'resources', 'app.asar')
+            ];
+        } else {
+            return [
+                path.join(appDirectory, 'modules', coreName, 'core.asar')
+            ];
         }
-
-        return packagePaths;
     }
 
     async extractPackages(appDirectory) {
