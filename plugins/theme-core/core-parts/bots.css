@@ -1,0 +1,10 @@
+/* Bots */
+#app-mount .bd-botTagRegular.bd-botTag {
+    background-color: rgb(var(--bd-bot));
+    color: rgb(var(--bd-bot-text));
+}
+
+#app-mount .bd-botTagInvert.bd-botTag {
+    background-color: rgb(var(--bd-bot-text));
+    color: rgb(var(--bd-bot));
+}

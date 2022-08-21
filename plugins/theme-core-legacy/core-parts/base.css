@@ -1,0 +1,167 @@
+/* Main */
+#app-mount,
+#app-mount .bd-wrapper.bd-errorPage {
+    background: transparent;
+}
+
+/* Background */
+#app-mount::before,
+#app-mount .bd-app > .bd-app > .bd-bg::before {
+    content: '';
+    background: var(--bd-background-color) var(--bd-background-image) var(--bd-background-position) / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+#app-mount::before {
+    z-index: -1;
+}
+
+/** Login form **/
+#app-mount .bd-rightSplit {
+    background: var(--bd-background-color) var(--bd-loading-background-image) var(--bd-loading-background-position) / cover no-repeat fixed;
+}
+
+/** Loading **/
+#app-mount .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount .bd-app > .bd-app + .bd-container::before {
+    content: '';
+    background: var(--bd-loading-background-color) var(--bd-loading-background-image) var(--bd-loading-background-position) / cover no-repeat fixed;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+/** Filters and stuff **/
+#app-mount::before,
+#app-mount .bd-app > .bd-app > .bd-bg::before {
+    filter: var(--bd-background-brightness) var(--bd-background-contrast) var(--bd-background-blur);
+}
+
+#app-mount .bd-app > .bd-container.bd-fixClipping::before,
+#app-mount .bd-app > .bd-app + .bd-container::before {
+    filter: var(--bd-loading-background-brightness) var(--bd-loading-background-contrast) var(--bd-loading-background-blur);
+    z-index: -1;
+}
+
+/* Login form */
+#app-mount .bd-splashBackground {
+    background: transparent;
+}
+
+#app-mount .bd-splashBackground > canvas,
+#app-mount .bd-rightSplit img {
+    display: none;
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox {
+    background: rgba(var(--bd-default), 0.5);
+    backdrop-filter: blur(5px);
+}
+
+/** Text **/
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-colorHeaderSecondary,
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-title.bd-h5 {
+    color: rgb(var(--bd-color-dark));
+}
+
+#app-mount .bd-leftSplit .bd-wrapper .bd-authBox .bd-needAccount {
+    color: rgb(var(--bd-color-light));
+}
+
+#app-mount .bd-wrapper.bd-errorPage .bd-note {
+    color: rgb(var(--bd-monochrome-contrast), .7);
+}
+
+/* Loading text */
+#app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
+   color: rgb(var(--bd-monochrome-contrast));
+}
+
+#app-mount .bd-app .bd-container .bd-contentBase,
+#app-mount .bd-app .bd-container .bd-problemsText {
+    color: rgb(var(--bd-color-light));
+
+}
+
+/* Insurance?
+#app-mount,
+#app-mount *,
+#app-mount *::after,
+#app-mount *::before {
+    background-color: transparent;
+} */
+
+#app-mount .bd-app,
+#app-mount .bd-wrapper.bd-guilds .bd-scroller,
+/* Guild name in sidebar */
+#app-mount .bd-base .bd-sidebar .bd-header:hover,
+/* Selected items */
+#app-mount .bd-base .bd-sidebar .bd-selected .bd-header,
+#app-mount .bd-base .bd-sidebar > .bd-container,
+#app-mount .bd-base .bd-sidebar .bd-panels,
+#app-mount .bd-base .bd-sidebar .bd-privateChannels,
+#app-mount .bd-base .bd-sidebar .bd-scroller,
+#app-mount .bd-base .bd-children::after,
+#app-mount .bd-base .bd-chat,
+#app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper,
+#app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper > .bd-wrapper,
+#app-mount .bd-base .bd-chat .bd-scrollerWrap .bd-scroller,
+#app-mount .bd-base .bd-chat .bd-membersWrap .bd-members,
+#app-mount .bd-base .bd-chat .bd-membersWrap .bd-members > div,
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea,
+#app-mount .bd-base .bd-content .bd-applicationStore,
+#app-mount .bd-base .bd-content .bd-applicationStore .bd-headerBar,
+#app-mount .bd-base .bd-content .bd-applicationStore .bd-scroller,
+#app-mount .bd-base .bd-content > .bd-container,
+#app-mount .bd-base .bd-content > .bd-container .bd-scroller,
+#app-mount .bd-base .bd-content > .bd-container .bd-scroller .bd-header,
+#app-mount .bd-base .bd-content > .bd-container > .bd-container,
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn,
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-container,
+#app-mount .bd-unreadMentionsIndicatorTop + .bd-scrollerWrap > .bd-scroller > .bd-wrapper .bd-folder .bd-folderIconWrapper,
+#app-mount .bd-userPopout .bd-scrollerWrap .bd-scroller,
+/* Search/Channel name */
+#app-mount .bd-searchResultsWrap .bd-searchHeader,
+#app-mount .bd-searchResultsWrap .bd-channelName,
+/* Quick switcher */
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller,
+#app-mount .bd-layerContainer .bd-perksModal,
+#app-mount .bd-modal .bd-flex .bd-tiles,
+#app-mount .bd-modal .bd-content .bd-channelTextArea .bd-scrollableContainer,
+#app-mount .bd-previewContainer .bd-media-video {
+    background: transparent;
+}
+
+#app-mount .bd-searchResultsWrap .bd-searchHeader,
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
+#app-mount .bd-base .bd-sidebar .bd-header,
+#app-mount .bd-layerContainer .bd-userPopout,
+#app-mount .bd-layerContainer .bd-footer,
+#app-mount .bd-modal,
+#app-mount .bd-modal .bd-footer,
+#app-mount .bd-modal .bd-message,
+#app-mount .bd-modal .bd-container .bd-quickswitcher,
+#app-mount .bd-uploadModal,
+#app-mount .bd-uploadModal .bd-footer,
+#app-mount .bd-layerContainer .bd-contextMenu,
+#app-mount .bd-hasMore,
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper,
+#app-mount .bd-game,
+#app-mount .bd-elevationBorderHigh,
+#app-mount .bd-slider .bd-track .bd-grabber,
+#app-mount .bd-item.bd-noWrap,
+#app-mount .bd-css-menu,
+#app-mount .bd-modal .bd-container .bd-quickswitcher .bd-input,
+#app-mount .bd-modal .bd-flex .bd-tiles,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container,
+#app-mount .bd-app *::before,
+#app-mount .bd-app *::after,
+#app-mount .bd-header {
+    box-shadow: none;
+}

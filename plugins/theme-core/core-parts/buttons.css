@@ -81,7 +81,7 @@
 }
 
 /** X button, in settings mostly **/
-/** Settings > Keybinard **/
+/** Settings > Keybinds **/
 #app-mount .bd-card [class*="emove"]:not(.bd-anchor) {
     background-color: rgb(var(--bd-default));
 }

@@ -1,0 +1,27 @@
+/* Depth */
+/** Title **/
+#app-mount .bd-base .bd-content .bd-chat > .bd-title {
+    background-color: var(--bd-depth-title, transparent);
+}
+
+/** Guild list / Area on top of it for Macs **/
+#app-mount .bd-titleBar.bd-typeMacOS,
+#app-mount .bd-container .bd-wrapper.bd-guilds {
+    background-color: var(--bd-depth-guilds-list, transparent);
+}
+
+/** Sidebar **/
+#app-mount .bd-base .bd-content .bd-sidebar,
+/** Search results **/
+#app-mount .bd-base .bd-content .bd-searchResultsWrap,
+/** Guild member listing **/
+#app-mount .bd-base .bd-chat .bd-chatContent + .bd-container,
+/** Group member listing **/
+#app-mount .bd-base .bd-chat .bd-chatContent + .bd-membersWrap {
+    background-color: var(--bd-depth-sidebar, transparent);
+}
+
+/** Userbox **/
+#app-mount .bd-base .bd-content .bd-sidebar .bd-panels {
+    background-color: var(--bd-depth-userbox, transparent);
+}
