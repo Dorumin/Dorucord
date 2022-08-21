@@ -1,7 +1,7 @@
 /* Just for example, and only the defaults, please edit these */
 /* Derived themes should start with a copy of this ruleset with modified values */
 /* Some values are rgb -- nvm all are lol */
-:root {
+:root:root {
     /* Main background */
     --bd-background-image: url(https://media.discordapp.net/attachments/595506142126538753/602478618001801216/Hopal.png);
     --bd-background-position: center top;

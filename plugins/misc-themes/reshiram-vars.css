@@ -1,7 +1,7 @@
 /* Just for example, and only the defaults, please edit these */
 /* Derived themes should start with a copy of this ruleset with modified values */
 /* Some values are rgb */
-:root {
+:root:root .day {
     /* Main background */
     --bd-background-image: url(https://cdn.discordapp.com/attachments/590474367113232385/1002905906931040286/unknown.png);
     --bd-background-position: bottom;

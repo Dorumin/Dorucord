@@ -1,18 +1,8 @@
 /* Just for example, and only the defaults, please edit these */
 /* Derived themes should start with a copy of this ruleset with modified values */
 /* Some values are rgb */
-:not(.day) > #app-mount::before,
-:not(.day) > #app-mount .bd-app > .bd-app > .bd-bg::before {
-    transform: scaleX(-1);
-}
-
-:root {
-    /* Main background */
-    --bd-background-image: url('https://cdn.discordapp.com/attachments/595506142126538753/830876691474939974/68292953_p1.png');
-    --bd-background-position: top left;
-    --bd-background-brightness: brightness(.35);
-    --bd-background-contrast: contrast(1.1);
-
+:root:root,
+:root:root .day {
     /* Main colors */
     --bd-default: 41, 0, 56;
     --bd-lightest: 86, 0, 117; /* Status */
