@@ -1,0 +1,72 @@
+#bd-devbyn-tools {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    width: 36px;
+    color: #b9bbbe;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin: 0 8px;
+}
+
+.bd-devbyn-popout {
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    min-width: 400px;
+    background-color: rgb(var(--bd-dark, 47, 49, 54), .9);
+    border-radius: 5px;
+    margin-bottom: 0;
+    overflow: hidden;
+    z-index: 1000;
+    position: fixed;
+}
+
+.bd-devbyn-popout .bd-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bd-devbyn-popout .bd-toolbar .bd-button {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 24px;
+    line-height: 20px;
+    color: rgb(255, 255, 255, .7);
+    transition: .3s color;
+}
+
+.bd-devbyn-popout .bd-toolbar .bd-button:hover {
+    color: rgb(255, 255, 255, .9);
+}
+
+.bd-devbyn-popout .bd-tabs {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.bd-devbyn-popout .bd-tabs .bd-tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 24px;
+    font-variant-caps: all-small-caps;
+    letter-spacing: 2px;
+    transition: .3s background-color;
+}
+
+.bd-devbyn-popout .bd-tabs .bd-tab.bd-active {
+    background-color: rgb(255 255 255 / 10%);
+}
+
+.bd-devbyn-popout .bd-contents {
+    display: flex;
+    flex-grow: 1;
+    border: 4px solid rgb(255 255 255 / 10%);
+    padding: 4px;
+}

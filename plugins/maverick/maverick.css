@@ -1,23 +1,20 @@
 #bd-theme-switch {
-    margin: 0 6px;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    margin: 0 8px;
 }
 
 #bd-theme-switch #bd-theme-switch-checkbox,
 #bd-theme-switch #bd-theme-switch-checkbox:active {
-    height: 0;
-    width: 0;
     display: none;
 }
 
 #bd-theme-switch-label {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     position: relative;
     cursor: pointer;
-    color: rgba(149, 149, 149, 0.51);
-}
-
-#bd-theme-switch-label:empty {
-    margin: 0 -14px;
 }
 
 #bd-theme-switch-label::before,
@@ -34,13 +31,11 @@
     display: block;
     position: absolute;
     z-index: 1;
-    line-height: 34px;
-    text-indent: 40px;
-    height: 14px;
-    width: 14px;
+    height: 12px;
+    width: 12px;
     margin: 4px;
     border-radius: 100%;
-    right: 28px;
+    right: 14px;
     bottom: 0px;
     background: #b9bbbe;
     transform: rotate(-45deg);
@@ -49,34 +44,25 @@
 
 #bd-theme-switch-label::after {
     content: "";
-    display: inline-block;
-    width: 40px;
-    height: 22px;
+    display: flex;
+    width: 34px;
+    height: 20px;
     border-radius: 15px;
     background: transparent;
-    vertical-align: middle;
-    margin: 0 10px;
     border: 2px solid #b9bbbe;
 }
 
 #bd-theme-switch #bd-theme-switch-checkbox + #bd-theme-switch-label {
-    color: rgba(250, 250, 250, 0.51);
-    font-weight: bold;
-}
-
-#bd-theme-switch #bd-theme-switch-checkbox:checked + #bd-theme-switch-label {
-    color: rgba(149, 149, 149, 0.51);
-    font-weight: normal;
+    height: 20px;
 }
 
 #bd-theme-switch #bd-theme-switch-checkbox:checked + #bd-theme-switch-label::before {
-    right: 17px;
-    box-shadow: 5px 5px 0 0 #b9bbbe;
+    right: 6px;
+    box-shadow: 4px 4px 0 0 #b9bbbe;
     background: transparent;
 }
 
 #bd-theme-switch #bd-theme-switch-checkbox:checked + #bd-theme-switch-label::after {
-    background: rgba(0, 0, 0, 0.15);
     border: 2px solid #b9bbbe;
 }
 
