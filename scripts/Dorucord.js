@@ -195,7 +195,7 @@ window.Dorucord = class Dorucord {
             plugin.init();
 
             if (this.settings[`plugin-active-${plugin.id}`]) {
-                plugin.activate();
+                this.activatePlugin(plugin);
             }
         }
     }
@@ -445,23 +445,23 @@ window.Dorucord = class Dorucord {
         });
     }
 
-    activatePlugin(plugin) {
-        // TODO: Activate dependencies
+    activatePlugin(plugin, isDependency) {
         plugin.activate();
 
         for (const dependency of plugin.dependencies) {
             const dep = this.plugins.find(plugin => plugin.id === dependency);
 
             if (dep) {
-                this.activatePlugin(dep);
+                this.activatePlugin(dep, true);
             }
         }
 
-        this.setSetting(`plugin-active-${plugin.id}`, 'true');
+        if (!isDependency) {
+            this.setSetting(`plugin-active-${plugin.id}`, 'true');
+        }
     }
 
     deactivatePlugin(plugin) {
-        // TODO: Deactivate dependencies by ref count
         plugin.deactivate();
 
         for (const dependency of plugin.dependencies) {

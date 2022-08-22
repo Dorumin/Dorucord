@@ -142,31 +142,11 @@ class DorucordPatcher {
             `);
         }
 
-        if (replacedCode !== code) {
-            console.log('Updating app successful');
-        }
+        // if (replacedCode !== code) {
+        //     console.log('Updating app successful');
+        // }
 
     	await fs.writeFile(codePath, replacedCode);
-
-        // Taken from patchCore. Not necessary, but might help exposure through splash screen if ever needed
-        // {
-        //     const appPath = path.join(extractedPath, 'app_bootstrap');
-        //     const appPathChildren = await fs.readdir(appPath);
-        //     const scripts = appPathChildren.filter(fileName => fileName.endsWith('.js'));
-        //     const scriptsWithContent = await Promise.all(scripts.map(async scriptName => {
-        //         const scriptPath = path.join(appPath, scriptName);
-        //         const contents = await fs.readFile(scriptPath, {
-        //             encoding: 'utf8'
-        //         });
-
-        //         return {
-        //             path: scriptPath,
-        //             text: contents
-        //         };
-        //     }));
-
-        //     await Promise.all(scriptsWithContent.map(script => this.patchScript(script)));
-        // }
 
         if (this.isWin()) {
             await asar.createPackage(extractedPath, path.join(extractedPath, '..', 'app.asar'));
@@ -199,7 +179,7 @@ class DorucordPatcher {
     }
 
     async patchScript(script) {
-        console.log(`Patching script: ${script.path}`);
+        // console.log(`Patching script: ${script.path}`);
 
         // TODO: Patching core's webPreferences does not work. Not sure why.
         // Instead, we patch settings.json to enable devtools the official way
@@ -221,7 +201,7 @@ class DorucordPatcher {
         // Expose require to render process
         const indexOfExposure = script.text.indexOf('contextBridge.exposeInMainWorld');
         if (indexOfExposure !== -1) {
-            console.log(`Found exposure: ${script.path}`);
+            // console.log(`Found exposure: ${script.path}`);
             const exposeScript = `
                 /* DORUCORD EXPOSURE */
                 contextBridge.exposeInMainWorld('require', require);

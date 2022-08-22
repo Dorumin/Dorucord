@@ -45,6 +45,18 @@ window.GroupDMs = class {
 		this.activated = false;
 
 		this.cleanup();
+
+        const headers = document.getElementsByClassName('bd-privateChannelsHeaderContainer');
+        for (let i = 0; i < headers.length; i++) {
+            const header = headers[i];
+
+            if (header.getAttribute('data-fake')) {
+                header.remove();
+            } else {
+                header.style.display = '';
+            }
+        }
+
 	}
 
 	patchXHR() {
@@ -337,4 +349,5 @@ if (window.PLUGIN_LOADING) {
     }
 
     window.groupDMs = new GroupDMs();
+    window.groupDMs.activate();
 }
