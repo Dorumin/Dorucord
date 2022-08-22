@@ -85,39 +85,44 @@
     color: var(--text-normal);
 }
 
-.bd-configSection {
-    padding-bottom: 8px;
+#dorucord-tab-injected-content .bd-configSection {
+    margin-bottom: 32px;
 }
 
-.bd-dorucordHeading {
+#dorucord-tab-injected-content .bd-configSection .bd-dorucordHeading {
     font-family: var(--font-display);
     color: var(--header-primary);
     font-size: 20px;
     line-height: 24px;
     font-weight: 700;
-    padding-bottom: 8px;
+    margin-bottom: 12px;
     font-weight: 500;
 }
 
-.bd-plugin {
+#dorucord-tab-injected-content .bd-configSection .bd-pluginsList {
+    display: flex;
+    flex-direction: column;
+}
+
+#dorucord-tab-injected-content .bd-configSection .bd-pluginsList .bd-plugin {
     background-color: var(--background-secondary);
     background-color: rgba(var(--bd-default), .5);
     border-radius: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
-.bd-pluginHeader {
-    padding: 20px;
+#dorucord-tab-injected-content .bd-configSection .bd-pluginsList .bd-plugin .bd-pluginHeader {
+    padding: 18px 24px 0 18px;
     display: flex;
     align-items: center;
 }
 
-.bd-pluginName {
+#dorucord-tab-injected-content .bd-configSection .bd-pluginsList .bd-plugin .bd-pluginHeader .bd-pluginName {
     flex-grow: 1;
 }
 
-.bd-pluginInfo {
-    padding: 20px 10px;
+#dorucord-tab-injected-content .bd-configSection .bd-pluginsList .bd-plugin .bd-pluginInfo {
+    padding: 12px 18px 24px;
 }
 
 .bd-pluginSwitch {
@@ -125,45 +130,45 @@
 }
 
 .bd-pluginSwitchCheckbox {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-  margin: 0;
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    margin: 0;
 }
 
 .bd-pluginSwitchLabel {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 40px;
-  height: 24px;
-  background: grey;
-  display: block;
-  border-radius: 100px;
-  position: relative;
-  line-height: 0;
-  font-size: 0;
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 24px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    line-height: 0;
+    font-size: 0;
 }
 
 .bd-pluginSwitchLabel::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 4px;
-  width: 18px;
-  height: 18px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
 }
 
-.bd-pluginSwitchCheckbox:checked + label {
+.bd-pluginSwitchCheckbox:checked+label {
     background-color: #bada55;
     background-color: rgb(var(--bd-slider-checked)) !important;
 }
 
-.bd-pluginSwitchCheckbox:checked + label:after {
-  left: calc(100% - 4px);
-  transform: translateX(-100%);
+.bd-pluginSwitchCheckbox:checked+label:after {
+    left: calc(100% - 4px);
+    transform: translateX(-100%);
 }
 
 .bd-pluginSwitchLabel:active::after {
