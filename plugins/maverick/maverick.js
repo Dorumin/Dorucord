@@ -1,4 +1,8 @@
 window.Switch = class {
+    get body() {
+        return document.querySelector('body');
+    }
+
     activate() {
         if (this.timeSet) return;
         this.timeSet = true;
@@ -7,7 +11,6 @@ window.Switch = class {
             this.body.classList.add('day');
         }
 
-        this.body = document.querySelector('body');
         this.observer = new MutationObserver(this.onMutation.bind(this));
         this.observer.observe(this.body, {
             attributes: true,
