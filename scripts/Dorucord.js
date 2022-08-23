@@ -1,3 +1,8 @@
+const localforage = require('localforage');
+const dorui = require('dorui');
+
+console.log('dorui', dorui);
+
 window.PluginWrapper = class PluginWrapper {
     constructor(rawPlugin) {
         this._rawPlugin = rawPlugin;
@@ -446,18 +451,24 @@ window.Dorucord = class Dorucord {
     }
 
     activatePlugin(plugin, isDependency) {
-        plugin.activate();
+        try {
+            plugin.activate();
 
-        for (const dependency of plugin.dependencies) {
-            const dep = this.plugins.find(plugin => plugin.id === dependency);
+            for (const dependency of plugin.dependencies) {
+                const dep = this.plugins.find(plugin => plugin.id === dependency);
 
-            if (dep) {
-                this.activatePlugin(dep, true);
+                if (dep) {
+                    this.activatePlugin(dep, true);
+                }
             }
-        }
 
-        if (!isDependency) {
-            this.setSetting(`plugin-active-${plugin.id}`, 'true');
+            if (!isDependency) {
+                this.setSetting(`plugin-active-${plugin.id}`, 'true');
+            }
+        } catch(e) {
+            console.error('Failure while activating Dorucord plugin');
+            console.error('Original error below:');
+            console.error(e);
         }
     }
 
@@ -505,3 +516,5 @@ if (window.dorucord) {
 setTimeout(() => {
     window.dorucord = new Dorucord();
 }, 0);
+
+globalThis.module = globalThis.module ?? {};

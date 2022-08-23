@@ -176,7 +176,7 @@ window.Stickers = class Stickers {
 	activate() {
 		this.activated = true;
 
-		this.observer = this.createMutationObserver();
+		window.dorucord.onMutation(this.onMutation);
 		this.onMutation();
 	}
 
@@ -185,7 +185,7 @@ window.Stickers = class Stickers {
 
 		document.getElementById(this.BUTTON_ID)?.remove();
 
-		this.observer.disconnect();
+		window.dorucord.offMutation(this.onMutation);
 	}
 
 	createDatabase() {
@@ -195,149 +195,136 @@ window.Stickers = class Stickers {
 	}
 
 	createStickersButton(classes) {
-		const button = document.createElement('button');
-		button.id = this.BUTTON_ID;
-		button.title = 'Stickers'; // TODO: Move to Discord-style tooltips
-		button.setAttribute('class', classes.button);
-
-		const contents = document.createElement('div');
-		contents.id = 'stickers-button-contents';
-		contents.setAttribute('class', classes.div);
-
-		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-		svg.id = 'sticker-button';
-		svg.setAttribute('width', '20');
-		svg.setAttribute('height', '20');
-		svg.setAttribute('viewBox', '0 0 22 22');
-		svg.setAttribute('class', classes.svg);
-
-		const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-
-		svg.appendChild(path);
-		contents.appendChild(svg);
-		button.appendChild(contents);
-
-		button.addEventListener('click', this.togglePopout.bind(this));
-
-		return button;
+		return ui.button({
+			id: this.BUTTON_ID,
+			title: 'Stickers',
+			class: classes.button,
+			child: ui.div({
+				id: 'stickers-button-contents',
+				class: classes.div,
+				child: ui.svg({
+					id: 'sticker-button',
+					class: classes.svg,
+					width: '20',
+					height: '20',
+					viewBox: '0 0 22 22',
+					child: ui.path()
+				})
+			}),
+			events: {
+				click: this.togglePopout.bind(this)
+			}
+		});
 	}
 
 	createStickersInput() {
-		const input = document.createElement('input');
-		input.id = 'stickers-hidden-file-input';
-		input.type = 'file';
-		input.multiple = true;
-		input.addEventListener('change', this.onFiles);
-
-		return input;
+		return ui.input({
+			id: 'stickers-hidden-file-input',
+			type: 'file',
+			multiple: true,
+			events: {
+				change: this.onFiles
+			},
+		});
 	}
 
 	createStickersContainer() {
-		const stickers = document.createElement('div');
-		stickers.id = 'stickers-popout-stickers';
-
-		return stickers;
+		return ui.div({
+			id: 'stickers-popout-stickers'
+		});
 	}
 
 	createStickersUpload() {
-		const upload = document.createElement('div');
-		upload.id = 'stickers-popout-upload';
-
-		const button = document.createElement('button');
-		button.id = 'stickers-popout-upload-button';
-		button.textContent = 'Create a sticker pack!';
-
-		button.addEventListener('click', this.onCreateStickerPack.bind(this));
-
-		upload.appendChild(button);
-
-		return upload;
+		return ui.div({
+			id: 'stickers-popout-upload',
+			child: ui.button({
+				id: 'stickers-popout-upload-button',
+				text: 'Create a sticker pack!',
+				events: {
+					click: this.onCreateStickerPack.bind(this)
+				}
+			})
+		});
 	}
 
-	createHeaderButton(id, emoji, text) {
+	createHeaderButton(id, emoji, text, click) {
 		// @TODO: Get proper icons rather than emoji
-		const button = document.createElement('div');
-		button.className = 'stickers-popout-header-button';
-		button.id = `stickers-popout-${id}`;
-
-		const icon = document.createElement('span');
-		icon.className = 'stickers-header-button-icon';
-		icon.textContent = emoji;
-
-		const label = document.createElement('span');
-		label.className = 'stickers-header-button-label';
-		label.textContent = text;
-
-		button.appendChild(icon);
-		button.appendChild(label);
-
-		return button;
+		return ui.div({
+			class: 'stickers-popout-header-button',
+			id: `stickers-popout-${id}`,
+			children: [
+				ui.span({
+					class: 'stickers-header-button-icon',
+					text: emoji
+				}),
+				ui.span({
+					class: 'stickers-header-button-label',
+					text
+				})
+			],
+			events: {
+				click
+			}
+		});
 	}
 
 	createStickersPopout() {
-		const popout = document.createElement('div');
-		popout.id = 'stickers-popout';
-
-		const header = this.createStickersHeader();
-
-		const body = document.createElement('div');
-		body.id = 'stickers-popout-body';
-
-		body.appendChild(this.sticks);
-		body.appendChild(this.upload);
-		body.appendChild(this.input);
-
-		popout.appendChild(header);
-		popout.appendChild(body);
-
-		document.body.appendChild(popout);
-
-		return popout;
+		return document.body.appendChild(
+			ui.div({
+				id: 'stickers-popout',
+				children: [
+					this.createStickersHeader(),
+					ui.div({
+						id: 'stickers-popout-body',
+						children: [
+							this.sticks,
+							this.upload,
+							this.input
+						]
+					})
+				]
+			})
+		);
 	}
 
 	createStickersHeader() {
-		const header = document.createElement('div');
-		header.id = 'stickers-popout-header';
-
-		const tabs = document.createElement('div');
-		tabs.id = 'stickers-popout-tabs';
-		this.tabs = tabs;
-
-		const trash = this.createHeaderButton('trash', '🗑️', 'Delete');
-
-		const add = this.createHeaderButton('add', '➕', 'Add');
-
-		const body = document.createElement('div');
-		body.id = 'stickers-popout-body';
-
-		add.addEventListener('click', this.addToPack.bind(this));
-		trash.addEventListener('click', this.onTrashClick.bind(this));
-
-		header.appendChild(tabs);
-		header.appendChild(trash);
-		header.appendChild(add);
-
-		return header;
+		return ui.div({
+			id: 'stickers-popout-header',
+			children: [
+				this.tabs = ui.div({
+					id: 'stickers-popout-tabs'
+				}),
+				this.createHeaderButton('trash', '🗑️', 'Delete', this.onTrashClick.bind(this)).
+				this.createHeaderButton('add', '➕', 'Add', this.addToPack.bind(this)),
+				ui.div({
+					id: 'stickers-popout-body'
+				})
+			]
+		});
 	}
 
 	createSticker(key, file) {
-		const sticker = document.createElement('div');
-		sticker.className = 'sticker-container';
-		sticker.title = file.name;
-		sticker.setAttribute('data-key', key);
+		const stickerImage = stickerImage = ui.img({
+			classes: ['sticker-image', 'loading'],
+			alt: '',
+			src: ''
+		});
 
-		const stickerImage = document.createElement('img');
-		stickerImage.className = 'sticker-image loading';
-		stickerImage.alt = '';
-		stickerImage.src = '';
 		this.blobToUrl(file).then(url => {
 			stickerImage.classList.remove('loading');
 			stickerImage.src = url;
 		});
 		// stickerImage.src = await this.blobToUrl(file);
 
-		sticker.appendChild(stickerImage);
-		sticker.addEventListener('click', this.onStickerClick.bind(this, file));
+		const sticker = ui.div({
+			class: 'sticker-container',
+			title: file.name,
+			'data-key': key,
+			child: stickerImage,
+			events: {
+				click: this.onStickerClick.bind(this, file)
+			}
+		})
 
 		return sticker;
 	}
@@ -353,70 +340,64 @@ window.Stickers = class Stickers {
 	}
 
 	createStickerTab(pack, container) {
-		const tab = document.createElement('div');
-		tab.className = 'stickers-tab';
-		tab.setAttribute('data-key', pack.key);
-
-		const icon = document.createElement('img');
-		icon.className = 'stickers-tab-icon loading';
-		icon.alt = '';
-		icon.src = '';
+		const icon = ui.img({
+			classes: ['stickers-tab-icon', 'loading'],
+			alt: '',
+			src: ''
+		});
 
 		this.blobToUrl(pack.value.files[0]).then(url => {
 			icon.classList.remove('loading'),
 			icon.src = url;
 		});
 
-		tab.appendChild(icon);
+		return ui.div({
+			class: 'stickers-tab',
+			'data-key': pack.key,
+			child: icon,
+			events: {
+				click: () => {
+					if (this.deleting) {
+						tab.classList.toggle('marked-delete');
+						return;
+					}
 
-		tab.addEventListener('click', () => {
-			if (this.deleting) {
-				tab.classList.toggle('marked-delete');
-				return;
+					this.resetSelectedTab();
+					this.selectedStickerPack = pack.key;
+					tab.classList.add('selected');
+					container.classList.add('visible');
+					this.reflowPopout();
+				}
 			}
-
-			this.resetSelectedTab();
-			this.selectedStickerPack = pack.key;
-			tab.classList.add('selected');
-			container.classList.add('visible');
-			this.reflowPopout();
 		});
-
-		return tab;
 	}
 
 	createStickerPackContainer(pack) {
-		const container = document.createElement('div');
-		container.className = 'stickers-pack-container';
-		container.setAttribute('data-key', pack.key);
-
-		this.each(pack.value.files, (file, index) => {
-			container.appendChild(this.createSticker(`${pack.key}:${index}`, file));
+		return ui.div({
+			class: 'stickers-pack-container',
+			'data-key': pack.key,
+			children: this.each(pack.value.files, (file, index) => {
+				return this.createSticker(`${pack.key}:${index}`, file);
+			})
 		});
-
-		return container;
 	}
 
 	createAddStickerPackTab() {
-		const tab = document.createElement('div');
-		tab.id = 'stickers-create-pack-tab';
-		tab.className = 'stickers-tab';
-		// tab.textContent = '➕'; // @TODO: Add sticker pack icon
-
-		const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-		svg.id = 'stickers-create-pack-icon';
-		svg.setAttribute('width', '30');
-		svg.setAttribute('height', '30');
-		svg.setAttribute('viewBox', '0 0 24 24');
-
-		const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-
-		svg.appendChild(path);
-		tab.appendChild(svg);
-
-		tab.addEventListener('click', this.onCreateStickerPack.bind(this));
-
-		return tab;
+		return ui.div({
+			id: 'stickers-create-pack-tab',
+			class: 'stickers-tab',
+			// text: '➕', // @TODO: Add sticker pack icon
+			child: ui.svg({
+				id: 'stickers-create-pack-icon',
+				width: '30',
+				height: '30',
+				viewBox: '0 0 24 24',
+				child: ui.path()
+			}),
+			events: {
+				click: this.onCreateStickerPack.bind(this)
+			}
+		});
 	}
 
 	onCreateStickerPack() {
@@ -435,14 +416,7 @@ window.Stickers = class Stickers {
 	}
 
 	createMutationObserver() {
-		const observer = new MutationObserver(this.onMutation);
-
-		observer.observe(document.getElementById('app-mount'), {
-			childList: true,
-			subtree: true
-		});
-
-		return observer;
+		window.dorucord.onMutation(this.onMutation);
 	}
 
 	getButtonClasses(button) {

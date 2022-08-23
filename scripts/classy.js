@@ -11,8 +11,11 @@ window.Classy = class {
 		window.addEventListener('beforeunload', () => this.disabled = true);
 	}
 
-	findAllImplementers(Class) {
+	findAllImplementors(Class) {
 		const classes = Object.getOwnPropertyNames(window)
+			// Only check uppercase classes
+			// Partly to hide deprecation warnings with lowercase webkit- stuff
+			.filter(key => key.charAt(0).toUpperCase() === key.charAt(0))
 			.map(key => window[key]);
 
 		return classes.filter(cls => {
@@ -33,7 +36,7 @@ window.Classy = class {
 
 	patchPrototypes() {
 		this.each(
-			this.findAllImplementers(Element),
+			this.findAllImplementors(Element),
 			this.patchPrototype.bind(this)
 		);
 	}

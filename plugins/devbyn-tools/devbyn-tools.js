@@ -5,8 +5,11 @@ window.DevbynTools = class {
 		// this.onClick = this.onClick.bind(this);
 
 		this.popout = this.buildPopout();
+        this.button = null;
 
-		document.addEventListener('click', this.onClick);
+        this.windowState = null;
+
+		// document.addEventListener('click', this.onClick);
 		// window.addEventListener('resize', this.onResize);
 
 		this.hidePopout();
@@ -20,12 +23,31 @@ window.DevbynTools = class {
             childList: true,
             subtree: true
         });
+
+        this.onMutation();
     }
 
     deactivate() {
         this.activated = false;
 
+        this.popout.remove();
+        this.button?.remove();
+
         this.observer.disconnect();
+    }
+
+    onMouseDown(action, e) {
+
+    }
+
+    getStyles() {
+        const { top, left, width, height } = this.windowState;
+
+        return {
+            transform: `translate(${top}px, ${left}px)`,
+            width: `${width}px`,
+            height: `${height}px`,
+        };
     }
 
     buildButton() {
@@ -33,25 +55,19 @@ window.DevbynTools = class {
             id: 'bd-devbyn-tools',
             text: '</>',
             events: {
-                click: this.showPopout.bind(this)
+                click: this.togglePopout.bind(this)
             }
         });
     }
 
-    buildPopoutTab(headerText, contents) {
+    buildPopoutTab(headerText, isActive) {
         return ui.div({
-            class: 'tab',
-            children: [
-                ui.div({
-                    class: 'tab-header',
-                    text: headerText
-                }),
-                ui.div({
-                    class: 'tab-contents',
-                    children: contents ?? []
-                })
-            ]
-        })
+            classes: {
+                'bd-tab': true,
+                'bd-active': isActive
+            },
+            text: headerText
+        });
     }
 
     buildPopout() {
@@ -59,25 +75,33 @@ window.DevbynTools = class {
             class: 'bd-devbyn-popout',
             children: [
                 ui.div({
-                    class: 'buttons',
+                    class: 'bd-toolbar',
+                    events: {
+                        mousedown: this.onMouseDown.bind(this, 'drag')
+                    },
                     children: [
                         ui.div({
-                            class: 'pseudo-selector'
+                            class: 'bd-button bd-selector',
+                            text: '⇱'
                         }),
                         ui.div({
-                            class: 'minimize'
-                        }),
-                        ui.div({
-                            class: 'close'
+                            class: 'bd-button bd-close',
+                            text: 'x',
+                            events: {
+                                click: this.hidePopout.bind(this)
+                            }
                         })
                     ]
                 }),
                 ui.div({
-                    class: 'tabs',
+                    class: 'bd-tabs',
                     children: [
-                        this.buildPopoutTab('Selector'),
+                        this.buildPopoutTab('Selector', true),
                         this.buildPopoutTab('Stylesheet')
                     ]
+                }),
+                ui.div({
+                    class: 'bd-contents'
                 })
             ]
         });
@@ -105,10 +129,31 @@ window.DevbynTools = class {
 	}
 
 	showPopout() {
+        this.initWindowState();
+
 		this.popoutOpen = true;
-		this.popout.style.display = '';
-		document.body.classList.add('devbyn-popout-open');
+
+        Object.assign(this.popout.style, this.getStyles());
+        this.popout.style.display = '';
+
+        document.body.classList.add('devbyn-popout-open');
 	}
+
+    initWindowState() {
+        if (!this.windowState) {
+            const width = 300;
+            const height = 300;
+            const top = innerHeight / 2 - height / 2;
+            const left = innerWidth / 2 - width / 2;
+
+            this.windowState = {
+                top,
+                left,
+                width,
+                height
+            };
+        }
+    }
 
 	togglePopout() {
 		if (this.popoutOpen) {
@@ -119,7 +164,7 @@ window.DevbynTools = class {
 	}
 
     cleanup() {
-        this.observer.disconnect();
+        this.deactivate();
     }
 }
 
@@ -131,5 +176,5 @@ if (window.PLUGIN_LOADING) {
     }
 
     window.devbynTools = new DevbynTools();
-    // window.devbynTools.activate();
+    window.devbynTools.activate();
 }

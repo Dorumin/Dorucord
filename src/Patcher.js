@@ -1,9 +1,14 @@
 const os = require('node:os');
 const fs = require('node:fs/promises');
 const path = require('node:path');
+
 const asar = require('asar');
 const balanced = require('balanced-match');
 const recursiveReadDir = require('recursive-readdir');
+
+const { rollup } = require('rollup');
+const rollupCJS = require('@rollup/plugin-commonjs');
+const { nodeResolve } = require('@rollup/plugin-node-resolve');
 
 class DorucordPatcher {
     async patch(extractedPath) {
@@ -75,6 +80,29 @@ class DorucordPatcher {
         };
     }
 
+    async compileFile(filePath) {
+        const result = await rollup({
+            input: [
+                filePath
+            ],
+            onwarn: () => {},
+            plugins: [
+                rollupCJS(),
+                nodeResolve()
+            ]
+        })
+
+        const { output } = await result.generate({
+            file: 'out.js',
+            format: 'iife',
+            exports: 'auto'
+        });
+
+        // console.log(path.basename(filePath), output[0].code.slice(0, 300));
+
+        return output[0].code;
+    }
+
     async patchApp(extractedPath) {
         const codePath = this.isWin()
             ? path.join(extractedPath, 'app_bootstrap', 'bootstrap.js')
@@ -90,10 +118,12 @@ class DorucordPatcher {
         const scriptsContents = await Promise.all(scripts
             .filter(name => !name.startsWith('!'))
             .filter(name => name.endsWith('.js'))
-            .map(file => {
-                return fs.readFile(path.join(path.dirname(__dirname), 'scripts', file), {
-                    encoding: 'utf8'
-                });
+            .map(async file => {
+                return await this.compileFile(path.join(path.dirname(__dirname), 'scripts', file));
+                // const code = await fs.readFile(path.join(path.dirname(__dirname), 'scripts', file), {
+                    // encoding: 'utf8'
+                // });
+                // return
             })
         );
         const stylesContents = await Promise.all(styles
