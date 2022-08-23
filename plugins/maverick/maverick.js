@@ -1,6 +1,6 @@
 window.Switch = class {
-    get body() {
-        return document.querySelector('body');
+    constructor() {
+        this.onMutation = this.onMutation.bind(this);
     }
 
     activate() {
@@ -8,11 +8,11 @@ window.Switch = class {
         this.timeSet = true;
 
         if (this.isDay()) {
-            this.body.classList.add('day');
+            document.body.classList.add('day');
         }
 
-        this.observer = new MutationObserver(this.onMutation.bind(this));
-        this.observer.observe(this.body, {
+        this.observer = new MutationObserver(this.onMutation);
+        this.observer.observe(document.body, {
             attributes: true,
             childList: true,
             subtree: true
@@ -27,7 +27,7 @@ window.Switch = class {
         document.getElementById('bd-theme-switch')?.remove();
         this.observer.disconnect();
         this.timeset = false;
-        this.body.classList.remove('day');
+        document.body.classList.remove('day');
     }
 
     isDay() {
@@ -52,11 +52,11 @@ window.Switch = class {
                     events: {
                         change: () => {
                             // And now for the actual switch
-                            if (this.body.classList.contains('day')) {
-                                this.body.classList.remove('day');
+                            if (document.body.classList.contains('day')) {
+                                document.body.classList.remove('day');
                                 document.cookie = 'switch=night';
                             } else {
-                                this.body.classList.add('day');
+                                document.body.classList.add('day');
                                 document.cookie = 'switch=day';
                             }
                         }
