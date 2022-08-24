@@ -183,9 +183,7 @@ window.Stickers = class Stickers {
 	deactivate() {
 		this.activated = false;
 
-		document.getElementById(this.BUTTON_ID)?.remove();
-
-		window.dorucord.offMutation(this.onMutation);
+		this.cleanup();
 	}
 
 	createDatabase() {
@@ -221,7 +219,9 @@ window.Stickers = class Stickers {
 		return ui.input({
 			id: 'stickers-hidden-file-input',
 			type: 'file',
-			multiple: true,
+			props: {
+				multiple: true
+			},
 			events: {
 				change: this.onFiles
 			},
@@ -269,32 +269,84 @@ window.Stickers = class Stickers {
 	}
 
 	createStickersPopout() {
-		return document.body.appendChild(
-			ui.div({
-				id: 'stickers-popout',
-				children: [
-					this.createStickersHeader(),
-					ui.div({
-						id: 'stickers-popout-body',
-						children: [
-							this.sticks,
-							this.upload,
-							this.input
-						]
-					})
-				]
-			})
-		);
+		const popout = ui.div({
+			id: 'stickers-popout',
+			children: [
+				this.createStickersHeader(),
+				ui.div({
+					id: 'stickers-popout-body',
+					children: [
+						this.sticks,
+						this.upload,
+						this.input
+					]
+				})
+			]
+		});
+
+		document.body.appendChild(popout);
+
+		return popout;
+	}
+
+	rafLoop(callback) {
+		let cancelled = false;
+
+		function onFrame() {
+			if (cancelled) return;
+
+			const result = callback();
+
+			if (result === false) return;
+
+			requestAnimationFrame(onFrame);
+		}
+
+		onFrame();
+
+		return {
+			cancel: () => cancelled = true
+		};
 	}
 
 	createStickersHeader() {
+		let lastLoop;
+
 		return ui.div({
 			id: 'stickers-popout-header',
 			children: [
 				this.tabs = ui.div({
-					id: 'stickers-popout-tabs'
+					id: 'stickers-popout-tabs',
+					events: {
+						mousemove: e => {
+							if (this.tabs.scrollWidth <= this.tabs.clientWidth) return;
+
+							const bounds = this.tabs.getBoundingClientRect();
+
+							lastLoop?.cancel();
+							if (e.screenX - bounds.left < 24) {
+								// console.log('left side', e.offsetX);
+								lastLoop = this.rafLoop(() => {
+									// console.log('raf left');
+									if (!this.popoutOpen) return false;
+									if (this.tabs.scrollLeft === 0) return false;
+
+									this.tabs.scrollLeft -= 2;
+								});
+							} else if (e.screenX - bounds.left > bounds.width - 24) {
+								// console.log('right side', e.offsetX);
+								lastLoop = this.rafLoop(() => {
+									// console.log('raf right');
+									if (!this.popoutOpen) return false;
+									if (this.tabs.scrollLeft >= this.tabs.scrollWidth - this.tabs.clientWidth) return false;
+
+									this.tabs.scrollLeft += 2;
+								});
+							}
+						}
+					}
 				}),
-				this.createHeaderButton('trash', '🗑️', 'Delete', this.onTrashClick.bind(this)).
+				this.createHeaderButton('trash', '🗑️', 'Delete', this.onTrashClick.bind(this)),
 				this.createHeaderButton('add', '➕', 'Add', this.addToPack.bind(this)),
 				ui.div({
 					id: 'stickers-popout-body'
@@ -304,7 +356,7 @@ window.Stickers = class Stickers {
 	}
 
 	createSticker(key, file) {
-		const stickerImage = stickerImage = ui.img({
+		const stickerImage = ui.img({
 			classes: ['sticker-image', 'loading'],
 			alt: '',
 			src: ''
@@ -351,7 +403,7 @@ window.Stickers = class Stickers {
 			icon.src = url;
 		});
 
-		return ui.div({
+		const tab = ui.div({
 			class: 'stickers-tab',
 			'data-key': pack.key,
 			child: icon,
@@ -370,13 +422,15 @@ window.Stickers = class Stickers {
 				}
 			}
 		});
+
+		return tab;
 	}
 
 	createStickerPackContainer(pack) {
 		return ui.div({
 			class: 'stickers-pack-container',
 			'data-key': pack.key,
-			children: this.each(pack.value.files, (file, index) => {
+			children: pack.value.files.map((file, index) => {
 				return this.createSticker(`${pack.key}:${index}`, file);
 			})
 		});
@@ -415,10 +469,6 @@ window.Stickers = class Stickers {
 		this.eachChild(this.sticks, tab => tab.classList.remove('visible'));
 	}
 
-	createMutationObserver() {
-		window.dorucord.onMutation(this.onMutation);
-	}
-
 	getButtonClasses(button) {
 		if (!button) return null;
 
@@ -452,12 +502,6 @@ window.Stickers = class Stickers {
 		self.oldSRH.call(this, header, value);
 	}
 
-	query(selector, container = document) {
-		// const patched = selector.replace(/\*(\w+)/, `[class*="$1-"]`);
-
-		return container.querySelector(selector);
-	}
-
 	closest(el, parent) {
 		while (el !== parent) {
 			el = el.parentElement;
@@ -487,10 +531,10 @@ window.Stickers = class Stickers {
 		const existing = document.getElementById(this.BUTTON_ID);
 		if (existing) return;
 
-		const textarea = this.query('.bd-channelTextArea');
+		const textarea = document.querySelector('.bd-channelTextArea');
 		if (!textarea) return;
 
-		const buttons = this.query('.bd-buttons', textarea);
+		const buttons = textarea.querySelector('.bd-buttons');
 		if (!buttons) return;
 
 		const classes = this.getButtonClasses(buttons.firstChild);
@@ -764,7 +808,23 @@ window.Stickers = class Stickers {
 	}
 
 	reflowPopout() {
-		const form = this.query('.bd-chatContent form');
+		// Reflow popout header to downscale icons if there's too many packs
+		const header = document.getElementById('stickers-popout-header');
+		const tabs = document.getElementById('stickers-popout-tabs');
+		if (tabs !== null && header !== null) {
+			if (tabs.scrollWidth > tabs.clientWidth) {
+				header.classList.add('stickers-header-collapsed');
+			} else {
+				header.classList.remove('stickers-header-collapsed');
+
+				if (tabs.scrollWidth > tabs.clientWidth) {
+					header.classList.add('stickers-header-collapsed');
+				}
+			}
+		}
+
+		// Reflow popout position and width to match textarea width
+		const form = document.querySelector('.bd-chatContent form');
 		if (!form) return;
 
 		this.popout.scrollHeight; // Force reflow
@@ -788,7 +848,10 @@ window.Stickers = class Stickers {
 		document.body.classList.remove('stickers-popout-open');
 
 		this.deleting = false;
-		document.getElementById('stickers-popout-trash').querySelector('.stickers-header-button-label').textContent = 'Delete';
+		const label = document.getElementById('stickers-popout-trash')?.querySelector('.stickers-header-button-label');
+		if (label) {
+			label.textContent = 'Delete';
+		}
 
 		const marked = document.querySelectorAll('.marked-delete');
 		this.each(marked, elem => {
@@ -802,7 +865,7 @@ window.Stickers = class Stickers {
 		document.body.classList.add('stickers-popout-open');
 
 		this.reflowPopout();
-		this.reflowPopout();
+		// this.reflowPopout();
 	}
 
 	togglePopout() {
@@ -818,10 +881,10 @@ window.Stickers = class Stickers {
 	}
 
 	cleanup() {
-		if (this.button) this.button.remove();
+		this.button?.remove();
+		this.popout?.remove();
 
-		this.popout.remove();
-		this.observer.disconnect();
+		window.dorucord.offMutation(this.onMutation);
 
 		document.removeEventListener('click', this.onClick);
 	}
@@ -830,9 +893,9 @@ window.Stickers = class Stickers {
 if (window.PLUGIN_LOADING) {
 	module.exports = Stickers;
 } else {
-	if (window.stickers) {
-		window.stickers.cleanup();
-	}
+	window.stickers?.cleanup();
+	dorucord.getPlugin('stickers')?.instance?.cleanup();
 
 	window.stickers = new Stickers();
+	stickers.activate();
 }

@@ -83,16 +83,29 @@ window.PluginWrapper = class PluginWrapper {
         }
 
         for (const jsFile of jsFiles) {
-            window.PLUGIN_LOADING = true;
-            let module = {
-                exports: null
-            };
-            eval(this.wrapScript(jsFile.text, 'module'));
-            window.PLUGIN_LOADING = false;
+            // This try..catch block serves two purposes
+            // For one, it catches errors when loading plugin files,
+            // which we should've done anyways
+            // Two, it disables Rollup optimizations in this block
+            // This means that module.exports !== null won't be optimized away
+            try {
+                window.PLUGIN_LOADING = true;
+                let module = {
+                    exports: null
+                };
+                // fuck you optimizer
+                const null_lmao = Math.random() > 10 ? {} : null;
+                eval(this.wrapScript(jsFile.text, 'module'));
+                window.PLUGIN_LOADING = false;
 
-            if (module.exports !== null) {
-                this._rawExports.push(module.exports);
-                this.mainExport = module.exports;
+                if (module.exports !== null_lmao) {
+                    this._rawExports.push(module.exports);
+                    this.mainExport = module.exports;
+                }
+            } catch(e) {
+                console.error('Caught error while executing plugin:', this.name);
+                console.error('Error was:');
+                console.error(e);
             }
         }
 
@@ -168,6 +181,10 @@ window.Dorucord = class Dorucord {
             this.onMutation(this.attachDorucordConfig);
             this.initPlugins();
         });
+    }
+
+    getPlugin(pluginId) {
+        return this.plugins.find(plugin => plugin.id === pluginId);
     }
 
     async loadSettings() {

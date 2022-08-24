@@ -44,6 +44,11 @@
 	flex-shrink: 0;
 }
 
+/** Collapsed header for too many sticker tabs **/
+.stickers-header-collapsed .bd-stickers-button-label {
+    display: none;
+}
+
 /* Sticker pack tabs */
 #stickers-popout-tabs {
 	display: flex;
