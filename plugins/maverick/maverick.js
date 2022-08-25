@@ -4,11 +4,9 @@ window.Switch = class {
     }
 
     activate() {
-        if (this.timeSet) return;
-        this.timeSet = true;
-
         if (this.isDay()) {
             document.body.classList.add('day');
+            this.checked = false;
         }
 
         this.observer = new MutationObserver(this.onMutation);
@@ -25,9 +23,8 @@ window.Switch = class {
 
     cleanup() {
         document.getElementById('bd-theme-switch')?.remove();
-        this.observer.disconnect();
-        this.timeset = false;
         document.body.classList.remove('day');
+        this.observer.disconnect();
     }
 
     isDay() {
@@ -37,12 +34,6 @@ window.Switch = class {
     }
 
     buildSwitch() {
-        function getCookie(name) {
-            const value = "; " + document.cookie;
-            const parts = value.split("; " + name + "=");
-            if (parts.length == 2) return parts.pop().split(";").shift();
-        }
-
         return ui.div({
             id: 'bd-theme-switch',
             children: [
@@ -51,18 +42,12 @@ window.Switch = class {
                     id: 'bd-theme-switch-checkbox',
                     events: {
                         change: () => {
-                            // And now for the actual switch
-                            if (document.body.classList.contains('day')) {
-                                document.body.classList.remove('day');
-                                document.cookie = 'switch=night';
-                            } else {
-                                document.body.classList.add('day');
-                                document.cookie = 'switch=day';
-                            }
+                            document.body.classList.toggle('day');
+                            this.checked = !this.checked;
                         }
                     },
                     props: {
-                        checked: getCookie('switch') == 'night' || !this.isDay()
+                        checked: this.checked ?? !this.isDay()
                     }
                 }),
                 ui.label({
