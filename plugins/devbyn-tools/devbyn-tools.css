@@ -1,13 +1,23 @@
+:root {
+    --bd-devbyn-button: var(--bd-monochrome-contrast);
+    --bd-devbyn-opacity: 0.75;
+    --bd-devbyn-opacity-hovered: 0.95;
+}
+
 #bd-devbyn-tools {
     display: flex;
     align-items: center;
     height: 24px;
     width: 36px;
-    color: rgba(var(--bd-monochrome-contrast));
+    color: rgba(var(--bd-devbyn-button), var(--bd-devbyn-opacity));
     font-weight: 500;
     font-size: 20px;
     letter-spacing: 1px;
     margin: 0 8px;
+}
+
+#bd-devbyn-tools:hover {
+    color: rgba(var(--bd-devbyn-button), var(--bd-devbyn-opacity-hovered));
 }
 
 .bd-devbyn-popout {

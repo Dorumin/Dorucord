@@ -1,3 +1,10 @@
+:root {
+    --bd-theme-switch: var(--bd-monochrome-contrast);
+    --bd-theme-switch-border: var(--bd-monochrome-contrast);
+    --bd-theme-switch-opacity: 0.75;
+    --bd-theme-switch-opacity-hovered: 0.95;
+}
+
 #bd-theme-switch {
     display: flex;
     align-items: center;
@@ -10,15 +17,15 @@
     display: none;
 }
 
-#bd-theme-switch-label {
+#bd-theme-switch #bd-theme-switch-label {
     display: flex;
     align-items: center;
     position: relative;
     cursor: pointer;
 }
 
-#bd-theme-switch-label::before,
-#bd-theme-switch-label::after {
+#bd-theme-switch #bd-theme-switch-label::before,
+#bd-theme-switch #bd-theme-switch-label::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -26,7 +33,7 @@
     outline: none;
 }
 
-#bd-theme-switch-label::before {
+#bd-theme-switch #bd-theme-switch-label::before {
     content: '';
     display: block;
     position: absolute;
@@ -37,19 +44,18 @@
     border-radius: 100%;
     right: 14px;
     bottom: 0px;
-    background: #b9bbbe;
+    background: rgba(var(--bd-theme-switch, --bd-monochrome-contrast), var(--bd-theme-switch-opacity));
     transform: rotate(-45deg);
-    box-shadow: 0 0 10px #b9bbbe;
 }
 
-#bd-theme-switch-label::after {
+#bd-theme-switch #bd-theme-switch-label::after {
     content: "";
     display: flex;
     width: 34px;
     height: 20px;
     border-radius: 15px;
     background: transparent;
-    border: 2px solid #b9bbbe;
+    border: 2px solid rgba(var(--bd-theme-switch-border, --bd-monochrome-contrast), var(--bd-theme-switch-opacity));
 }
 
 #bd-theme-switch #bd-theme-switch-checkbox + #bd-theme-switch-label {
@@ -58,12 +64,20 @@
 
 #bd-theme-switch #bd-theme-switch-checkbox:checked + #bd-theme-switch-label::before {
     right: 6px;
-    box-shadow: 4px 4px 0 0 #b9bbbe;
+    box-shadow: 4px 4px 0 0 rgba(var(--bd-theme-switch, --bd-monochrome-contrast), var(--bd-theme-switch-opacity));
     background: transparent;
 }
 
-#bd-theme-switch #bd-theme-switch-checkbox:checked + #bd-theme-switch-label::after {
-    border: 2px solid #b9bbbe;
+#bd-theme-switch:hover #bd-theme-switch-label::before {
+    background: rgba(var(--bd-theme-switch, --bd-monochrome-contrast), var(--bd-theme-switch-opacity-hovered));
+}
+
+#bd-theme-switch:hover #bd-theme-switch-label::after {
+    border: 2px solid rgba(var(--bd-theme-switch-border, --bd-monochrome-contrast), var(--bd-theme-switch-opacity-hovered));
+}
+
+#bd-theme-switch:hover #bd-theme-switch-checkbox:checked + #bd-theme-switch-label::before {
+    box-shadow: 4px 4px 0 0 rgba(var(--bd-theme-switch, --bd-monochrome-contrast), var(--bd-theme-switch-opacity-hovered));
 }
 
 /* Make background changes smoother */
