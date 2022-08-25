@@ -1,6 +1,10 @@
 window.DevbynTools = class {
     constructor() {
         this.onMutation = this.onMutation.bind(this);
+        this.onMouseDown = this.onMouseDown.bind(this);
+        this.onMouseMove = this.onMouseMove.bind(this);
+        this.onMouseUp = this.onMouseUp.bind(this);
+        this.onSelectorClick = this.onSelectorClick.bind(this);
 		// this.onResize = this.onResize.bind(this);
 		// this.onClick = this.onClick.bind(this);
 
@@ -36,15 +40,56 @@ window.DevbynTools = class {
         this.observer.disconnect();
     }
 
-    onMouseDown(action, e) {
+    onSelectorClick() {
 
+    }
+
+    onMouseDown(action, e) {
+        console.log('down', action, e);
+
+        this.mouseAction = action;
+        this.initialMouse = {
+            top: e.screenY,
+            left: e.screenX
+        };
+        this.initialWindowState = {
+            ...this.windowState
+        };
+
+        window.addEventListener('mousemove', this.onMouseMove, { passive: true });
+        window.addEventListener('mouseup', this.onMouseUp, { passive: true });
+    }
+
+    getMouseDelta(e) {
+        return {
+            top: e.screenY - this.initialMouse.top,
+            left: e.screenX - this.initialMouse.left
+        };
+    }
+
+    onMouseMove(e) {
+        const delta = this.getMouseDelta(e);
+
+        console.log('move', delta);
+
+        if (this.mouseAction === 'drag') {
+            this.windowState.top = this.initialWindowState.top + delta.top;
+            this.windowState.left = this.initialWindowState.left + delta.left;
+
+            Object.assign(this.popout.style, this.getStyles());
+        }
+    }
+
+    onMouseUp() {
+        window.removeEventListener('mousemove', this.onMouseMove);
+        window.removeEventListener('mouseup', this.onMouseUp);
     }
 
     getStyles() {
         const { top, left, width, height } = this.windowState;
 
         return {
-            transform: `translate(${top}px, ${left}px)`,
+            transform: `translate(${left}px, ${top}px)`,
             width: `${width}px`,
             height: `${height}px`,
         };
@@ -82,7 +127,10 @@ window.DevbynTools = class {
                     children: [
                         ui.div({
                             class: 'bd-button bd-selector',
-                            text: '⇱'
+                            text: '⇱',
+                            events: {
+                                click: this.onSelectorClick
+                            }
                         }),
                         ui.div({
                             class: 'bd-button bd-close',
