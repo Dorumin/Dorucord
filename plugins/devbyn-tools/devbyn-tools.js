@@ -1,3 +1,7 @@
+// Traverse ^ v < > | Clear
+
+// ◀︎ ▶︎ ▲ ▼
+
 window.DevbynTools = class {
     constructor() {
         this.onMutation = this.onMutation.bind(this);
@@ -12,6 +16,7 @@ window.DevbynTools = class {
         this.button = null;
 
         this.windowState = null;
+        this.highlightedElement = null;
 
 		// document.addEventListener('click', this.onClick);
 		// window.addEventListener('resize', this.onResize);
@@ -41,7 +46,6 @@ window.DevbynTools = class {
     }
 
     onSelectorClick() {
-
     }
 
     onMouseDown(action, e) {
@@ -78,9 +82,21 @@ window.DevbynTools = class {
 
             Object.assign(this.popout.style, this.getStyles());
         }
+
+        if (this.mouseAction === 'selector') {
+            if (e.target === this.highlightedElement) return;
+
+            this.highlightedElement.classList.remove('bd-devbyn-highlighted');
+            this.highlightedElement = e.target;
+            this.highlightedElement.classList.add('bd-devbyn-highlighted');
+        }
     }
 
     onMouseUp() {
+        if (this.mouseAction === 'selector') {
+            this.selectedElement = this.highlightedElement;
+        }
+
         window.removeEventListener('mousemove', this.onMouseMove);
         window.removeEventListener('mouseup', this.onMouseUp);
     }
@@ -115,6 +131,49 @@ window.DevbynTools = class {
         });
     }
 
+    buildSelectorTab() {
+        const arrow = text => ui.div({
+            class: 'bd-traverse-arrow',
+            text
+        });
+
+        return ui.div({
+            class: ['bd-contents', 'bd-selectors'],
+            children: [
+                ui.div({
+                    class: 'bd-controls',
+                    children: [
+                        ui.div({
+                            class: 'bd-traverse',
+                            children: [
+                                ui.div({
+                                    text: 'Traverse'
+                                }),
+                                arrow('▲'),
+                                arrow('▼'),
+                                arrow('◀︎'),
+                                arrow('▶︎'),
+                            ]
+                        }),
+                        ui.div({
+                            class: 'bd-clear',
+                            text: 'Clear'
+                        })
+                    ]
+                }),
+                ui.div({
+                    class: 'bd-highlight-output',
+                    children: [
+                        ui.div({
+                            text: 'Highlighted: '
+                        }),
+                        this.highlightOutput = ui.div()
+                    ]
+                })
+            ]
+        });
+    }
+
     buildPopout() {
         const popout = ui.div({
             class: 'bd-devbyn-popout',
@@ -126,14 +185,14 @@ window.DevbynTools = class {
                     },
                     children: [
                         ui.div({
-                            class: 'bd-button bd-selector',
+                            classes: ['bd-button', 'bd-selector'],
                             text: '⇱',
                             events: {
                                 click: this.onSelectorClick
                             }
                         }),
                         ui.div({
-                            class: 'bd-button bd-close',
+                            classes: ['bd-button', 'bd-close'],
                             text: 'x',
                             events: {
                                 click: this.hidePopout.bind(this)
@@ -148,9 +207,7 @@ window.DevbynTools = class {
                         this.buildPopoutTab('Stylesheet')
                     ]
                 }),
-                ui.div({
-                    class: 'bd-contents'
-                })
+                this.buildSelectorTab()
             ]
         });
 
