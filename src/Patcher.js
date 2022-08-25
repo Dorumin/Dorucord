@@ -9,6 +9,7 @@ const recursiveReadDir = require('recursive-readdir');
 const { rollup } = require('rollup');
 const rollupCJS = require('@rollup/plugin-commonjs');
 const { nodeResolve } = require('@rollup/plugin-node-resolve');
+const nodePolyfill = require('rollup-plugin-polyfill-node');
 
 class DorucordPatcher {
     async patch(extractedPath) {
@@ -85,16 +86,21 @@ class DorucordPatcher {
             input: [
                 filePath
             ],
-            onwarn: () => {},
+            // onwarn: () => {},
             plugins: [
+                // nodePolyfill(),
                 rollupCJS(),
-                nodeResolve()
+                nodeResolve(),
             ]
         })
 
         const { output } = await result.generate({
             file: 'out.js',
+            name: 'out',
             format: 'iife',
+            globals: {
+                util: 'null'
+            },
             exports: 'auto'
         });
 
@@ -162,7 +168,7 @@ class DorucordPatcher {
                 $&
             `);
         } else {
-            replacedCode = code.replace(/mainWindow.minimize[^}]+}/, `$&
+            replacedCode = code.replace(/mainWindow.minimize.+\s+}/, `$&
 
                 mainWindow.webContents.executeJavaScript('console.log("Dorucord injection successful");');
 
@@ -250,6 +256,29 @@ class DorucordPatcher {
                 });
             `;
             script.text = script.text.slice(0, indexOfExposure) + exposeScript + script.text.slice(indexOfExposure);
+            changedText = true;
+        }
+
+        const mainWindowMatch = script.text.match(/mainWindow.minimize.+\s+}/);
+
+        if (mainWindowMatch !== null) {
+            // console.log('Matched main window', script.path, mainWindowMatch);
+
+            const prefix = script.text.slice(0, mainWindowMatch.index + mainWindowMatch[0].length);
+            const suffix = script.text.slice(mainWindowMatch.index + mainWindowMatch[0].length);
+
+            const injection = `mainWindow.webContents.executeJavaScript('console.log("Hello, world.");');`;
+
+            script.text = prefix + injection + suffix;
+
+            // replacedCode = code.replace(/mainWindow.minimize.+\s+}/, `$&
+
+            //     mainWindow.webContents.executeJavaScript('console.log("Dorucord injection successful");');
+
+            //     mainWindow.webContents.executeJavaScript(${pluginsInject});
+            //     mainWindow.webContents.executeJavaScript(${jsInject});
+            //     mainWindow.webContents.executeJavaScript(${cssInject});
+            // `);
             changedText = true;
         }
 

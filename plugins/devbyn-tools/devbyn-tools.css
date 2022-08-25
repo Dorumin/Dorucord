@@ -21,6 +21,7 @@
     overflow: hidden;
     z-index: 1000;
     position: fixed;
+    color: var(--text-normal);
 }
 
 .bd-devbyn-popout .bd-toolbar {

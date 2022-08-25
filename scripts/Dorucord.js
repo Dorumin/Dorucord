@@ -1,6 +1,15 @@
 const localforage = require('localforage');
 const dorui = require('dorui');
 
+// import erp from 'erlpackjs';
+
+window.erlpack = require('erlpackjs');
+window.pako = require('pako');
+// window.zlib = require('browserify-zlib');
+
+window.msgpack = require('@msgpack/msgpack');
+// window.erlpack = require('erlpackjs');
+
 console.log('dorui', dorui);
 
 window.PluginWrapper = class PluginWrapper {
@@ -153,12 +162,279 @@ window.PluginWrapper = class PluginWrapper {
     }
 };
 
+window.WebSocketInterceptor = class WebSocketInterceptor {
+    // static listenPatch(onMessage) {
+    //     const oldSend = window.WebSocket.prototype.send;
+    //     let startedListening = false;
+
+    //     window.WebSocket.prototype.send = function(payload) {
+    //         if (!this._dorucordPatched) {
+    //             this._dorucordPatched = true;
+
+    //             const oldOnMessage = this.onmessage;
+    //             // const inflator = new pako.Inflate();
+    //             let inflator = new pako.Inflate();
+
+    //             this.onmessage = function(event) {
+    //                 // let data;
+    //                 if (event.data instanceof ArrayBuffer) {
+    //                     const u8 = new Uint8Array(event.data);
+
+    //                     const isFlush = u8.byteLength > 4
+    //                         && u8[u8.byteLength - 4] === 0x00
+    //                         && u8[u8.byteLength - 3] === 0x00
+    //                         && u8[u8.byteLength - 2] === 0xFF
+    //                         && u8[u8.byteLength - 1] === 0xFF;
+
+    //                     console.log('Is flush', isFlush);
+
+    //                     if (isFlush) {
+    //                         if (startedListening) {
+    //                             inflator.push(u8, true);
+
+    //                             if (inflator.err) {
+    //                                 console.log('New inflator');
+    //                                 inflator = new pako.Inflate();
+    //                             } else {
+    //                                 onMessage(inflator.result);
+    //                             }
+    //                         } else {
+    //                             startedListening = true;
+    //                         }
+    //                     } else {
+    //                         if (startedListening) {
+    //                             inflator.push(u8);
+    //                         }
+    //                     }
+    //                 } else {
+    //                     // data = JSON.parse(event.data);
+    //                     onMessage(JSON.parse(event.data));
+    //                 }
+    //                 // const data = erlpack.unpack(event.data);
+    //                 // const data = event.data;
+
+    //                 // onMessage(data, event);
+
+    //                 oldOnMessage?.call(this, event);
+    //             };
+    //         }
+    //         oldSend.call(this, payload);
+    //     };
+    // }
+
+    static overwriteConstructor() {
+        this.OldWebSocket = this.OldWebSocket || window.WebSocket;
+
+        window.WebSocket = WebSocketInterceptor;
+    }
+
+    static forceReconnect() {
+        const oldSend = window.WebSocket.prototype.send;
+
+        WebSocketInterceptor.forcingReconnect = true;
+
+        window.WebSocket.prototype.send = function(payload) {
+            if (WebSocketInterceptor.forcingReconnect) {
+                try {
+                    const unpacked = erlpack.unpack(payload);
+
+                    if (unpacked.op === 1) {
+                        WebSocketInterceptor.forcingReconnect = false;
+                        console.log('Caught heartbeat');
+                        return;
+                    }
+                } catch(e) {}
+            }
+
+            oldSend.call(this, payload);
+        }
+    }
+
+    static addIntercept(callback) {
+        WebSocketInterceptor.intercepts ??= [];
+
+        WebSocketInterceptor.intercepts.push(callback);
+    }
+
+    constructor(...args) {
+        console.log('Intercept constructor', this);
+
+        this.inner = new WebSocketInterceptor.OldWebSocket(...args);
+
+        this.interceptor = {
+            inflator: new pako.Inflate({
+                // to: 'string'
+            }),
+            stream: null
+        };
+
+        window.lastInterceptor = this;
+
+        const oldEnd = this.interceptor.inflator.onEnd;
+        this.interceptor.inflator.onEnd = function(...args) {
+            console.log('end', args);
+
+            oldEnd.apply(this, args);
+        }
+
+        // this.interceptor.inflator.onData = (data) => {
+        //     console.log('data?', data);
+        // };
+    }
+
+    get binaryType() {
+        return this.inner.binaryType;
+    }
+
+    set binaryType(type) {
+        return this.inner.binaryType = type;
+    }
+
+    get bufferedAmount() {
+        return this.inner.bufferedAmount;
+    }
+
+    get extensions() {
+        return this.inner.extensions;
+    }
+
+    close(...args) {
+        this.inner.close(...args);
+    }
+
+    send(...args) {
+        this.inner.send(...args);
+    }
+
+    onMessageIntercept(event) {
+        if (!this.interceptor) return;
+
+        let data;
+
+        if (event.data instanceof ArrayBuffer) {
+            const u8 = new Uint8Array(event.data);
+
+            const isFlush = u8.byteLength > 4
+                && u8[u8.byteLength - 4] === 0x00
+                && u8[u8.byteLength - 3] === 0x00
+                && u8[u8.byteLength - 2] === 0xFF
+                && u8[u8.byteLength - 1] === 0xFF;
+
+            window.lastPayload = u8;
+
+            this.interceptor.inflator.push(u8, isFlush && pako.constants.Z_FINISH);
+
+            if (isFlush) {
+                const oldStream = this.interceptor.stream;
+                const stream = this.interceptor.inflator.strm;
+
+                let bytes;
+
+                if (oldStream && oldStream !== stream) {
+                    let length = oldStream.output.length - oldStream.last_out + stream.next_out;
+                    console.log('CHANGELING length', length);
+                    bytes = new Uint8Array(length);
+                    let i = 0;
+
+                    for (let j = oldStream.last_out; j < oldStream.output.length; j++) {
+                        bytes[i++] = oldStream.output[j];
+                    }
+
+                    for (let j = 0; j < stream.output.length; j++) {
+                        bytes[i++] = stream.output[j];
+                    }
+                } else {
+                    if ((stream.last_out ?? 0) > stream.next_out) {
+                        // console.log('reading', stream.last_out ?? 0, stream.next_out);
+                        let length = stream.output.length - stream.last_out + stream.next_out;
+                        bytes = new Uint8Array(length);
+                        let i = 0;
+
+                        const lastChunk = this.interceptor.inflator.chunks.pop();
+
+                        for (let j = stream.last_out; j < lastChunk.length; j++) {
+                            bytes[i++] = lastChunk[j];
+                        }
+
+                        for (let j = 0; j < stream.next_out; j++) {
+                            bytes[i++] = stream.output[j];
+                        }
+
+                        stream.last_out = stream.next_out;
+                    } else {
+                        bytes = stream.output.slice(stream.last_out ?? 0, stream.next_out);
+                        stream.last_out = stream.next_out;
+                    }
+                }
+
+                this.interceptor.stream = stream;
+
+                try {
+                    data = erlpack.unpack(bytes);
+                } catch(e) {
+                    console.log(oldStream, stream);
+                    console.error('Error unpacking', e);
+                }
+
+                // console.log('data', data);
+            }
+        } else {
+            data = JSON.parse(event.data);
+            // onMessage(JSON.parse(event.data));
+        }
+
+        if (data) {
+            for (const intercept of WebSocketInterceptor.intercepts) {
+                intercept(data);
+            }
+        }
+    }
+
+    set onmessage(callback) {
+        const interceptor = this;
+
+        this.inner.onmessage = function(event) {
+            interceptor.onMessageIntercept(event);
+
+            callback.call(this, event);
+        };
+    }
+
+    set onclose(callback) {
+        this.inner.onclose = callback;
+    }
+
+    set onerror(callback) {
+        this.inner.onerror = callback;
+    }
+
+    set onopen(callback) {
+        this.inner.onopen = callback;
+    }
+}
+
+WebSocketInterceptor.CONNECTING = window.WebSocket.CONNECTING;
+WebSocketInterceptor.OPEN = window.WebSocket.OPEN;
+WebSocketInterceptor.CLOSING = window.WebSocket.CLOSING;
+WebSocketInterceptor.CLOSED = window.WebSocket.CLOSED;
+
 /**
  * This file is injected into the Discord webContents
  * It will run in a web context, unlike other src/ files
  */
 window.Dorucord = class Dorucord {
     constructor() {
+        this.mutationCallback = this.mutationCallback.bind(this);
+        this.attachDorucordConfig = this.attachDorucordConfig.bind(this);
+        this.showConfigScreen = this.showConfigScreen.bind(this);
+        this.onGlobalClick = this.onGlobalClick.bind(this);
+        this.onSocketMessage = this.onSocketMessage.bind(this);
+
+        // WebSocketInterceptor.listenPatch(this.onSocketMessage);
+        WebSocketInterceptor.forceReconnect();
+        WebSocketInterceptor.overwriteConstructor();
+        WebSocketInterceptor.addIntercept(this.onSocketMessage);
+
         this.onMutationHandlers = [];
 
         this._pluginsRaw = window._plugins;
@@ -170,17 +446,16 @@ window.Dorucord = class Dorucord {
             console.warn('Not empty; no plugins. Likely installation error.');
         }
 
-        this.mutationCallback = this.mutationCallback.bind(this);
-        this.attachDorucordConfig = this.attachDorucordConfig.bind(this);
-        this.showConfigScreen = this.showConfigScreen.bind(this);
-        this.onGlobalClick = this.onGlobalClick.bind(this);
-
         this.bindEvents();
         this.initMutationObserver();
         this.loadSettings().then(() => {
             this.onMutation(this.attachDorucordConfig);
             this.initPlugins();
         });
+    }
+
+    onSocketMessage(data) {
+        console.log('Received', data);
     }
 
     getPlugin(pluginId) {

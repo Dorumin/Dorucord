@@ -18,15 +18,21 @@
 		"@babel/core": "^7.18.13",
 		"@babel/preset-react": "^7.18.6",
 		"@babel/preset-typescript": "^7.18.6",
+		"@msgpack/msgpack": "^2.7.2",
 		"@rollup/plugin-commonjs": "^22.0.2",
 		"@rollup/plugin-node-resolve": "^13.3.0",
 		"asar": "^3.0.1",
 		"balanced-match": "^2.0.0",
+		"browserify-zlib": "^0.2.0",
 		"dorui": "^2.0.0",
+		"erlpack": "^0.1.4",
+		"erlpackjs": "^1.0.1",
+		"pako": "^2.0.4",
 		"ps-node": "^0.1.6",
 		"recursive-readdir": "^2.2.2",
 		"rimraf": "^3.0.2",
-		"rollup": "^2.78.1"
+		"rollup": "^2.78.1",
+		"rollup-plugin-polyfill-node": "^0.10.2"
 	},
 	"devDependencies": {
 		"localforage": "^1.10.0",
