@@ -9,6 +9,7 @@ window.DevbynTools = class {
         this.onMouseMove = this.onMouseMove.bind(this);
         this.onMouseUp = this.onMouseUp.bind(this);
         this.onSelectorClick = this.onSelectorClick.bind(this);
+        this.onSelectorSelect = this.onSelectorSelect.bind(this);
 		// this.onResize = this.onResize.bind(this);
 		// this.onClick = this.onClick.bind(this);
 
@@ -45,7 +46,25 @@ window.DevbynTools = class {
         this.observer.disconnect();
     }
 
-    onSelectorClick() {
+    onSelectorClick(e) {
+        e.stopPropagation();
+        this.mouseAction = 'selector';
+        this.selector.classList.add('bd-active');
+        window.addEventListener('mousemove', this.onMouseMove, { passive: true });
+        window.addEventListener('click', this.onSelectorSelect, {
+            once: true,
+            passive: true,
+            capture: true
+        });
+    }
+
+    onSelectorSelect() {
+        this.mouseAction = null;
+        this.selector.classList.remove('bd-active');
+        this.highlightedElement.classList.remove('bd-devbyn-highlighted')
+        this.selectedElement = this.highlightedElement;
+        window.removeEventListener('mousemove', this.onMouseMove);
+        return;
     }
 
     onMouseDown(action, e) {
@@ -71,10 +90,25 @@ window.DevbynTools = class {
         };
     }
 
+    getElementInfo(element) {
+        const tag = element.localName;
+        const id = element.id;
+        const classes = element.className
+            .split(' ')
+            .filter(className => className !== 'bd-devbyn-highlighted')
+            .filter(className => className.startsWith('bd-'))
+            .join('.');
+        const selectors = [ id && `#${id}`, classes && `.${classes}` ]
+            .filter(Boolean)
+            .join('');
+
+        return [ tag, selectors ];
+    }
+
     onMouseMove(e) {
         const delta = this.getMouseDelta(e);
 
-        console.log('move', delta);
+        // console.log('move', delta);
 
         if (this.mouseAction === 'drag') {
             this.windowState.top = this.initialWindowState.top + delta.top;
@@ -84,11 +118,21 @@ window.DevbynTools = class {
         }
 
         if (this.mouseAction === 'selector') {
-            if (e.target === this.highlightedElement) return;
+            if (e.target === this.highlightedElement) {
+                console.log('is highlighted');
+                return;
+            };
 
-            this.highlightedElement.classList.remove('bd-devbyn-highlighted');
+            if (this.highlightedElement)  {
+                this.highlightedElement.classList.remove('bd-devbyn-highlighted');
+            }
+
             this.highlightedElement = e.target;
             this.highlightedElement.classList.add('bd-devbyn-highlighted');
+            const [ tag, selector ] = this.highlightOutput.children;
+            const [ tagName, selectors ] = this.getElementInfo(this.highlightedElement);
+            tag.textContent = tagName;
+            selector.textContent = selectors;
         }
     }
 
@@ -138,7 +182,7 @@ window.DevbynTools = class {
         });
 
         return ui.div({
-            class: ['bd-contents', 'bd-selectors'],
+            classes: ['bd-contents', 'bd-selectors'],
             children: [
                 ui.div({
                     class: 'bd-controls',
@@ -165,9 +209,20 @@ window.DevbynTools = class {
                     class: 'bd-highlight-output',
                     children: [
                         ui.div({
+                            class: 'bd-highlight-text',
                             text: 'Highlighted: '
                         }),
-                        this.highlightOutput = ui.div()
+                        this.highlightOutput = ui.div({
+                            class: 'bd-highlight-selector',
+                            children: [
+                                ui.span({
+                                    class: 'bd-element'
+                                }),
+                                ui.span({
+                                    class: 'bd-selectors'
+                                })
+                            ]
+                        })
                     ]
                 })
             ]
@@ -184,7 +239,7 @@ window.DevbynTools = class {
                         mousedown: this.onMouseDown.bind(this, 'drag')
                     },
                     children: [
-                        ui.div({
+                        this.selector = ui.div({
                             classes: ['bd-button', 'bd-selector'],
                             text: '⇱',
                             events: {

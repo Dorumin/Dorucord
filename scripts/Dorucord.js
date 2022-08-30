@@ -455,7 +455,7 @@ window.Dorucord = class Dorucord {
     }
 
     onSocketMessage(data) {
-        console.log('Received', data);
+        // console.log('Received', data);
     }
 
     getPlugin(pluginId) {
