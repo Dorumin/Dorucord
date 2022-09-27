@@ -1,7 +1,6 @@
 // Traverse ^ v < > | Clear
 
 // ◀︎ ▶︎ ▲ ▼
-
 window.DevbynTools = class {
     constructor() {
         this.onMutation = this.onMutation.bind(this);
@@ -14,10 +13,11 @@ window.DevbynTools = class {
 		// this.onClick = this.onClick.bind(this);
 
 		this.popout = this.buildPopout();
+        this.overlay = this.buildOverlay();
         this.button = null;
 
         this.windowState = null;
-        this.highlightedElement = null;
+        this.highlightElement = null;
 
 		// document.addEventListener('click', this.onClick);
 		// window.addEventListener('resize', this.onResize);
@@ -41,9 +41,46 @@ window.DevbynTools = class {
         this.activated = false;
 
         this.popout.remove();
+        this.overlay.remove();
         this.button?.remove();
 
         this.observer.disconnect();
+    }
+
+    traverseUp() {
+
+    }
+
+    traverseRight() {
+        this.selectedElement
+    }
+
+    traverseDown() {
+
+    }
+
+    traverseLeft() {
+
+    }
+
+    getElementInfo(element) {
+        const tag = element.localName;
+        const attributes = [...element.attributes]
+            .filter(attr => attr.name !== 'class');
+        const classes = element.className
+            .split(' ')
+            .filter(className => className.startsWith('bd-'))
+            .join(' ');
+        const info = {
+            tag,
+            class: classes,
+        };
+
+        for (const { name, value } of attributes) {
+            info[name] = value;
+        }
+
+        return info;
     }
 
     onSelectorClick(e) {
@@ -53,16 +90,17 @@ window.DevbynTools = class {
         window.addEventListener('mousemove', this.onMouseMove, { passive: true });
         window.addEventListener('click', this.onSelectorSelect, {
             once: true,
-            passive: true,
-            capture: true
         });
     }
 
-    onSelectorSelect() {
+    onSelectorSelect(e) {
+        e.stopPropagation();
         this.mouseAction = null;
+        this.overlay.style.display = '';
         this.selector.classList.remove('bd-active');
-        this.highlightedElement.classList.remove('bd-devbyn-highlighted')
-        this.selectedElement = this.highlightedElement;
+        this.selectedElement = this.highlightElement;
+        this.selectorOutput.innerHTML = '';
+        this.selectorOutput.appendChild(this.buildElement(this.selectedElement));
         window.removeEventListener('mousemove', this.onMouseMove);
         return;
     }
@@ -90,19 +128,28 @@ window.DevbynTools = class {
         };
     }
 
-    getElementInfo(element) {
-        const tag = element.localName;
-        const id = element.id;
-        const classes = element.className
+    updateHighlightInfo() {
+        const tagName = this.highlightElement.localName;
+        const id = this.highlightElement.id;
+        const classes = this.highlightElement.className
             .split(' ')
-            .filter(className => className !== 'bd-devbyn-highlighted')
             .filter(className => className.startsWith('bd-'))
             .join('.');
         const selectors = [ id && `#${id}`, classes && `.${classes}` ]
             .filter(Boolean)
             .join('');
+        const [ tag, selector ] = this.highlightOutput.children;
 
-        return [ tag, selectors ];
+        tag.textContent = tagName;
+        selector.textContent = selectors;
+    }
+
+    updateHighlightBounds() {
+        const { width, height, x, y } = this.highlightElement.getBoundingClientRect();
+        this.highlighter.style.width = `${width}px`;
+        this.highlighter.style.height = `${height}px`;
+        this.highlighter.style.top = `${y}px`;
+        this.highlighter.style.left = `${x}px`;
     }
 
     onMouseMove(e) {
@@ -118,29 +165,21 @@ window.DevbynTools = class {
         }
 
         if (this.mouseAction === 'selector') {
-            if (e.target === this.highlightedElement) {
-                console.log('is highlighted');
-                return;
-            };
+            const { clientX, clientY } = e;
 
-            if (this.highlightedElement)  {
-                this.highlightedElement.classList.remove('bd-devbyn-highlighted');
-            }
+            this.overlay.style.display = '';
+            this.overlay.scrollHeight;
+            const element = document.elementFromPoint(clientX, clientY);
+            this.overlay.style.display = 'flex';
 
-            this.highlightedElement = e.target;
-            this.highlightedElement.classList.add('bd-devbyn-highlighted');
-            const [ tag, selector ] = this.highlightOutput.children;
-            const [ tagName, selectors ] = this.getElementInfo(this.highlightedElement);
-            tag.textContent = tagName;
-            selector.textContent = selectors;
+            if (element === this.highlightElement) return;
+            this.highlightElement = element;
+            this.updateHighlightInfo();
+            this.updateHighlightBounds();
         }
     }
 
     onMouseUp() {
-        if (this.mouseAction === 'selector') {
-            this.selectedElement = this.highlightedElement;
-        }
-
         window.removeEventListener('mousemove', this.onMouseMove);
         window.removeEventListener('mouseup', this.onMouseUp);
     }
@@ -153,6 +192,19 @@ window.DevbynTools = class {
             width: `${width}px`,
             height: `${height}px`,
         };
+    }
+
+    buildOverlay() {
+        const overlay = ui.div({
+            class: 'bd-devbyn-overlay',
+            child: this.highlighter = ui.div({
+                class: 'bd-devbyn-highlighter'
+            })
+        });
+
+        document.body.appendChild(overlay);
+
+        return overlay;
     }
 
     buildButton() {
@@ -173,6 +225,60 @@ window.DevbynTools = class {
             },
             text: headerText
         });
+    }
+
+    buildElement(element, selected) {
+        const { tag, ...attributes } = this.getElementInfo(element);
+        const hasChildren = element.hasChildNodes();
+
+        const n = text => ui.span({
+            class: 'bd-normal',
+            text
+        });
+
+        const attribute = (name, value) => ui.span({
+            class: 'bd-attribute',
+            children: [
+                ui.span({
+                    class: 'bd-attribute-name',
+                    text: name
+                }),
+                n('="'),
+                ui.span({
+                    class: 'bd-attribute-value',
+                    text: value
+                }),
+                n('"'),
+            ]
+        });
+
+        const more = () => ui.span({
+            class: 'bd-more',
+            text: '∙∙∙'
+        });
+
+        return ui.div({
+            classes: {
+                'bd-element': true,
+                selected
+            },
+            children: [
+                ui.div({
+                    class: 'bd-syntax',
+                    children: [
+                        n(`<${tag}`),
+                        ...Object.entries(attributes).map(([ name, value ]) => attribute(name, value)),
+                        n(`${hasChildren ? '>' : '/>'}`),
+                        hasChildren && more(),
+                        hasChildren && n(`</${tag}>`)
+                    ]
+                })
+            ]
+        });
+    }
+
+    buildChildren(elements) {
+        return [...elements].map(this.buildElement.bind(this));
     }
 
     buildSelectorTab() {
@@ -224,6 +330,9 @@ window.DevbynTools = class {
                             ]
                         })
                     ]
+                }),
+                this.selectorOutput = ui.div({
+                    class: 'bd-selected-output',
                 })
             ]
         });

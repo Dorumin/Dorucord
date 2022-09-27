@@ -2,6 +2,12 @@
     --bd-devbyn-button: var(--bd-monochrome-contrast);
     --bd-devbyn-opacity: 0.75;
     --bd-devbyn-opacity-hovered: 0.95;
+    --bd-devbyn-highlighter-element: #faabff;
+    --bd-devbyn-highlighter-selectors: #9fc2ff;
+    --bd-devbyn-highlight-normal: #5d8fe6;
+    --bd-devbyn-highlight-attribute: #9fc2ff;
+    --bd-devbyn-highlight-value: #d984de;
+    --bd-devbyn-highlight-more: #5d8fe680;
 }
 
 #bd-devbyn-tools {
@@ -146,26 +152,61 @@
 }
 
 .bd-devbyn-popout .bd-highlight-output .bd-highlight-selector .bd-element {
-    color: #faabff
+    color: var(--bd-devbyn-highlighter-element);
 }
 
 .bd-devbyn-popout .bd-highlight-output .bd-highlight-selector .bd-selectors {
-    color: #9fc2ff;
+    color: var(--bd-devbyn-highlighter-selectors);
     white-space: nowrap;
 }
 
-.bd-devbyn-highlighted {
-    position: relative;
-}
-
-.bd-devbyn-highlighted::after {
-    content: '';
+.bd-devbyn-overlay {
     position: absolute;
-    background: #00ffff1a;
     top: 0;
     left: 0;
-    right: 0;
     bottom: 0;
-    z-index: 10;
-    pointer-events: none;
+    right: 0;
+    z-index: 100000;
+    display: none;
+}
+
+.bd-devbyn-overlay .bd-devbyn-highlighter {
+    position: absolute;
+    background: #00ffff1a;
+}
+
+.bd-selected-output {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    font-family: monospace;
+    padding: 4px;
+}
+
+.bd-selected-output .bd-element {
+    display: flex;
+    /* word-break: break-word; */
+}
+
+.bd-selected-output .bd-element .bd-syntax .bd-normal {
+    color: var(--bd-devbyn-highlight-normal);
+}
+
+.bd-selected-output .bd-element .bd-syntax .bd-attribute {
+    margin-left: 1ch;
+}
+
+.bd-selected-output .bd-element .bd-syntax .bd-attribute .bd-attribute-name {
+    color: var(--bd-devbyn-highlight-attribute);
+}
+
+.bd-selected-output .bd-element .bd-syntax .bd-attribute .bd-attribute-value {
+    color: var(--bd-devbyn-highlight-value);
+}
+
+.bd-selected-output .bd-element .bd-syntax .bd-more {
+    background: var(--bd-devbyn-highlight-more);
+    border-radius: 10px;
+    padding: 0 6px 0 4px;
+    letter-spacing: -2px;
 }
