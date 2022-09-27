@@ -1,0 +1,105 @@
+/* Embeds & Attachments */
+/** Zips and unpreviewable stuff **/
+#app-mount .bd-attachment,
+/** Links with embeds, or embeds in general, such a those created by bots **/
+#app-mount .bd-embedFull,
+/** Embeded file previews **/
+#app-mount .bd-embedWrapper.bd-container {
+    background-color: rgba(var(--bd-embed-wrapper), 0.5);
+    border-color: rgb(var(--bd-embed-wrapper-border)) !important;
+}
+
+/** Invite embeds **/
+#app-mount .bd-chat > .bd-content .bd-message .bd-wrapper.bd-userSelectNone.bd-cursorDefault {
+    background-color: rgba(var(--bd-embed-wrapper), 0.5);
+    border: 1px solid rgb(var(--bd-embed-wrapper-border));
+}
+
+/** Account for embed text of embeded files **/
+#app-mount .bd-embedWrapper > .bd-textContainer,
+#app-mount .bd-embedWrapper > .bd-textContainer + .bd-footer {
+    background-color: transparent;
+    border-color: rgb(var(--bd-embed-wrapper-border));
+}
+
+/** Weird fucking gif behavior, don't stretch **/
+#app-mount .bd-inlineMediaEmbed .bd-imageWrapper {
+    width: initial !important;
+}
+
+/** Quote color **/
+#app-mount .bd-blockquoteDivider {
+    background-color: rgb(var(--bd-embed-pill-color));
+}
+
+/** Mentions **/
+#app-mount .bd-mentioned::before {
+    background-color: rgba(var(--bd-mentions-border));
+    width: 6px;
+}
+
+#app-mount .bd-base .bd-chat .bd-wrapper.bd-mentioned {
+    background-color: rgba(var(--bd-mentions), .1);
+}
+
+/** Replying **/
+#app-mount .bd-replying::before {
+    background-color: rgba(var(--bd-mentions-border));
+    width: 4px;
+}
+
+/** Attachments **/
+/*** Icons ***/
+/*** Zips, misc files ***/
+#app-mount .bd-attachment .bd-icon,
+/*** Music files ***/
+#app-mount .bd-embedWrapper .bd-audioMetadata::before,
+/*** Upload files ***/
+#app-mount .bd-uploadContainer .bd-icon {
+    filter: var(--bd-embed-icon);
+}
+
+#app-mount .bd-attachment .bd-cancelButton,
+#app-mount .bd-embedWrapper .bd-downloadButton,
+#app-mount .bd-embedWrapper .bd-metadataIcon {
+    color: rgb(var(--bd-color-link));
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-attachment .bd-cancelButton:hover,
+#app-mount .bd-embedWrapper .bd-downloadButton:hover,
+#app-mount .bd-embedWrapper .bd-metadataIcon:hover {
+    color: rgb(var(--bd-color-link-dark));
+}
+
+/*** Specially for videos ***/
+#app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper {
+    background-color: rgb(var(--bd-lightest), 0.5);
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper:hover {
+    background-color: rgb(var(--bd-lightest), 0.7);
+}
+
+#app-mount .bd-embedWrapper .bd-wrapper .bd-playCenter .bd-wrapper .bd-iconWrapper {
+    opacity: 1;
+}
+
+/** General progress bars for videos files and music files **/
+#app-mount .bd-mediaBarGrabber,
+#app-mount .bd-mediaBarProgress,
+#app-mount .bd-mediaBarProgress:after,
+#app-mount .bd-mediaBarProgress:before {
+    background-color: rgb(var(--bd-file-progress-bar));
+}
+
+/*** Highlighting on skipping videos and music files ***/
+#app-mount .bd-mediaBarInteraction:hover .bd-mediaBarGrabber {
+    background-color: rgb(var(--bd-file-progress-bar-grabber));
+}
+
+/*** Progress bar for uploading files ***/
+#app-mount .bd-progressContainer .bd-progress .bd-progressBar.bd-animating {
+    background-color: rgb(var(--bd-file-progress-bar)) !important;
+}

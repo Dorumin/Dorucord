@@ -1,0 +1,41 @@
+
+/* Gif picker */
+/** Individual gifs **/
+#app-mount .bd-contentWrapper .bd-result {
+    background: rgba(var(--bd-default), 0.1) !important;
+}
+
+#app-mount .bd-contentWrapper .bd-result:hover:after {
+    box-shadow: inset 0 0 0 2px rgb(var(--bd-lightest));
+}
+
+/** Categories **/
+#app-mount .bd-contentWrapper .bd-result .bd-categoryFade {
+    background-color: rgba(var(--bd-darker), 0.4);
+}
+
+#app-mount .bd-contentWrapper .bd-result .bd-categoryFade:hover {
+    background-color: rgba(var(--bd-darker), 0.8);
+}
+
+/** Favorites **/
+#app-mount .bd-contentWrapper .bd-result .bd-categoryFadeBlurple {
+    background-color: rgba(var(--bd-color-link-dark), .6);
+}
+
+#app-mount .bd-contentWrapper .bd-result .bd-categoryFadeBlurple:hover {
+    background-color: rgba(var(--bd-color-link-dark), .8);
+}
+
+/** Search **/
+#app-mount .bd-contentWrapper .bd-searchBar {
+    background-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-contentWrapper .bd-searchBar input {
+    color: rgb(var(--bd-color-darker));
+}
+
+#app-mount .bd-contentWrapper .bd-searchBar input::placeholder {
+    color: rgb(var(--bd-color-placeholder));
+}

@@ -20,7 +20,7 @@
 }
 
 #app-mount .bd-splashBackground {
-    background: transparent;
+    background-color: transparent;
 }
 
 #app-mount .bd-splashBackground > canvas,
@@ -29,7 +29,7 @@
 }
 
 #app-mount .bd-leftSplit .bd-wrapper .bd-authBox {
-    background: rgba(var(--bd-default), 0.5);
+    background-color: rgba(var(--bd-default), 0.5);
     backdrop-filter: blur(5px);
 }
 
