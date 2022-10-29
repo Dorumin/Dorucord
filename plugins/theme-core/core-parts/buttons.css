@@ -52,22 +52,22 @@
 }
 
 /** Button on the right side of messages **/
-#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper {
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper {
     background-color: rgba(var(--bd-default), 0.3);
 }
 
-#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button:hover {
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper .bd-button:hover {
     background-color: rgba(var(--bd-default), 0.4);
     color: rgba(255, 255, 255, .8);
 }
 
-#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button.bd-selected {
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper .bd-button.bd-selected {
     background-color: rgba(var(--bd-default), 0.5);
     color: rgb(var(--bd-button-text));
 }
 
 /*** Hide edit button ***/
-#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-wrapper .bd-button[aria-label="Edit"] {
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper .bd-button[aria-label="Edit"] {
     display: var(--bd-edit-button);
 }
 

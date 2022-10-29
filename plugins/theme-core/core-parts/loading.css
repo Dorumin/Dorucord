@@ -1,0 +1,4 @@
+/* Loading stuff */
+#app-mount .bd-wanderingCubesItem {
+    background-color: rgb(var(--bd-color-link-dark));
+}

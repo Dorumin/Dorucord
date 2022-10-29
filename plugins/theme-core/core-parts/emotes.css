@@ -1,0 +1,5 @@
+/* Emotes */
+/** Rofl **/
+.bd-emojiContainer .emoji[data-name=":rofl:"]{
+    content: url("https://cdn.discordapp.com/attachments/595506142126538753/723161422338457630/rofl.png");
+}

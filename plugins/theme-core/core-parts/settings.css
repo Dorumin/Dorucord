@@ -1,0 +1,360 @@
+/* Settings */
+#app-mount .bd-baseLayer + .bd-layer,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-sidebarRegionScroller,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller {
+    background-color: transparent;
+}
+
+/** Sidebar **/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion {
+    background-color: rgba(var(--bd-settings-sidebar), 0.4);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item:hover {
+    background-color: rgba(var(--bd-settings-sidebar-item-hover), 0.2);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-selected:hover {
+    background-color: rgba(var(--bd-settings-sidebar-item), 0.4);
+}
+
+/*** Beta keyword ***/
+/**** Devices, Gift Inventory ****/
+/**** Privacy & Safety > In-game rewards (aka Drops) ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-textBadge {
+    background: rgb(var(--bd-color-link-dark)) !important;
+}
+
+/*** Server Boost | Nitro ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-premiumTab:hover {
+    background-color: rgba(var(--bd-color-link), .1);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-premiumTab.bd-selected,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-premiumTab.bd-selected:hover {
+    background-color: rgba(var(--bd-color-link), .2);
+}
+
+/**** Icon ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-premiumTab svg path {
+    fill: rgb(var(--bd-color-link));
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-premiumTab.bd-selected svg path {
+    fill: white;
+}
+
+/**** Shitty uses a background div ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-premiumTab .bd-background {
+    background-color: transparent;
+}
+
+/** Content **/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion {
+    background-color: rgba(var(--bd-settings-content), .1);
+}
+
+/*** General selectors ***/
+/**** Cards found throughout settings ****/
+/***** Privacy & Safety *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cardPrimary,
+/***** Billing *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-codeRedemptionRedirect {
+    background-color: rgba(var(--bd-darker), .3);
+    border-color: rgba(var(--bd-darker), .5);
+}
+
+/***** Authorized Apps *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cardPrimaryOutline {
+    background-color: rgba(var(--bd-darker), .2);
+    border-color: rgba(var(--bd-darker), .5);
+}
+
+/***** Nitro header *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-container {
+    background-color: rgba(var(--bd-darker), .2);
+    border-color: rgba(var(--bd-darker), .5);
+}
+
+/***** Server cards in Server Boost *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cardWrapper {
+    background-color: rgba(var(--bd-darker), .3);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cardWrapper:hover {
+    background-color: rgba(var(--bd-darker), .5);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cardWrapper:hover .bd-card {
+    background-color: transparent;
+}
+
+/***** Subscriptions > Subscription Credit  *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-noItemsCard {
+    background-color: rgba(var(--bd-darker), .3);
+}
+
+/*** My account ***/
+/**** Main profile card ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-accountProfileCard {
+    background-color: rgba(var(--bd-darker), .5);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background {
+    background-color: rgba(var(--bd-color-link), .1);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-background .bd-fieldList {
+    background-color: transparent;
+}
+
+/*** Profiles ***/
+/**** User Profile | Server Profiles ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-tabBar {
+    border-color: rgb(255 255 255 / .1);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-tabBar .bd-item {
+    border-width: 4px;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-tabBar .bd-item:hover {
+    border-color: rgba(var(--bd-color-link-dark));
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-tabBar .bd-item.bd-selected {
+    border-color: rgba(var(--bd-color-link));
+}
+
+/**** Preview ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-profileCustomizationSection .bd-profileBannerPreview {
+    background-color: rgba(var(--bd-user-popouts-header), .95);
+}
+
+/**** About Me ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-profileCustomizationSection .bd-bioTextArea {
+    background-color: rgba(var(--bd-dark), .4);
+}
+
+/*** Connections ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connectContainer {
+    background-color: rgba(var(--bd-lighter), .25);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connectContainer .bd-accountButtonInner {
+    background-color: rgba(var(--bd-default), .2);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connectContainer .bd-accountButtonInner:hover {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+/**** Connection items ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connection {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connection .bd-connectionHeader {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-connection .bd-connectionOptionsWrapper {
+    background-color: rgba(var(--bd-default), .2);
+}
+
+/*** Nitro ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-perksGrid .bd-feature {
+    background-color: rgba(var(--bd-darker), .5);
+}
+
+/*** Server Boost ***/
+/**** Active boosts ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildHeader {
+    background-color: rgba(var(--bd-default), .6);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-guild .bd-guildSubscriptionSlots {
+    background-color: rgba(var(--bd-default), .4);
+}
+
+/***** Boost level *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer {
+    background-color: rgba(var(--bd-lighter), .5);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer .bd-gemWithLabel {
+    color: rgb(var(--bd-color-link));
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorContainer .bd-gemWithoutLabel {
+    color: rgb(var(--bd-color-link-dark));
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-gemIndicatorProgressCircle .bd-circleBackgroundAlt {
+    fill: rgba(255, 255, 255, 0.05);
+}
+
+/**** Subscriptions ****/
+/***** Payment *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-subscriptionDetails .bd-detailsBlock {
+    background-color: rgba(var(--bd-darker), .4);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-sectionAccountCredit .bd-gameIcon {
+    background-color: transparent;
+    color: rgba(var(--bd-monochrome-contrast), .9);
+}
+
+/**** Gift Inventory ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-promotions {
+    background-color: rgba(var(--bd-darker), .3);
+}
+
+/*** Billing ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane {
+    background-color: rgba(var(--bd-default), .5);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment {
+    background-color: transparent;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo {
+    background-color: rgba(var(--bd-color-link), .1);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-paymentHistory .bd-paymentPane .bd-paginator .bd-payment .bd-expandedInfo .bd-paymentHeader {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+/**** Navigation ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonNext,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageButtonPrev,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-pageActions .bd-pageIndicator {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+/*** Accessibility ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-preview .bd-previewMessage {
+    background-color: rgba(var(--bd-default), .2);
+}
+
+/*** Voice & Video ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cameraWrapper {
+    background-color: rgba(var(--bd-default), .4);
+    border-color: rgba(var(--bd-default), .8);
+}
+
+/*** Registered Games ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-activeGame.bd-notDetected {
+    background-color: rgba(var(--bd-default), .5)
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-activeGame {
+    background-color: rgba(var(--bd-color-link), .5)
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-inviteSettingsInviteRow:not(:last-of-type),
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-keybindGroup:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-game,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-emojiRow,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-member,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-bannedUser,
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-keybindGroup {
+    padding: 20px;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card.bd-inviteSettingsInviteRow {
+    padding: 0 20px;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-card::before {
+    opacity: 1;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: var(--bd-transition);
+}
+
+/*** Language ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-item.bd-itemFilled {
+    background-color: rgba(var(--bd-color-link), .1);
+    border: 1px solid rgba(var(--bd-color-link), .1);
+    border-radius: 5px;
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-item.bd-itemFilled:hover {
+    background-color: rgba(var(--bd-color-link), .2);
+    border: 1px solid rgba(var(--bd-color-link), .2);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-item.bd-itemFilled:not(:last-of-type) {
+    margin-bottom: 10px;
+}
+
+/*** Roles ***/
+/**** Back ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller .bd-titleContainer,
+/**** Edit Role - ROLE ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-contentRegionScroller .bd-contentWidth > .bd-header {
+    background-color: transparent;
+}
+
+/**** Default Permissions | Search Roles ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-customContainer .bd-container {
+    background-color: rgba(var(--bd-default), .3);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-customContainer .bd-roleRow:hover {
+    background-color: rgba(var(--bd-darker), .3);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-customContainer .bd-roleRow .bd-circleButton {
+    background-color: rgba(var(--bd-darker), .6);
+}
+
+/*** Server Template ***/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-contentColumn .bd-descriptionBox {
+    background-color: rgba(var(--bd-default), .3);
+}
+
+/** Unsaved changes **/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-noticeRegion .bd-container {
+    background-color: rgba(var(--bd-default), .7) !important;
+    /* No oher way, sadly */
+}
+
+/** Misc **/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-noWrap:last-of-type .bd-divider {
+    display: none;
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-bottomDivider {
+    border-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion [class*="marginBottom"]:last-of-type {
+    margin-bottom: none;
+}
+
+/*** Audit Log filters ***/
+#app-mount .bd-layerContainer .bd-list .bd-item.bd-selectedBrand {
+    background-color: rgb(var(--bd-color-link));
+    color: rgb(var(--bd-monochrome-contrast));
+}
+
+#app-mount .bd-layerContainer .bd-list .bd-item:hover {
+    background-color: rgb(var(--bd-lighter));
+}

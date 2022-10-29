@@ -1,0 +1,33 @@
+/* Sticker picker */
+#app-mount .bd-layerContainer .bd-listWrapper .bd-packHeader {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/** Selected category of stickers **/
+#app-mount .bd-layerContainer .bd-categoryList .bd-stickerCategoryGenericSelected {
+    background-color: rgba(var(--bd-lightest), .5);
+}
+
+/** Info of currently hovered sticker **/
+#app-mount .bd-layerContainer .bd-contentWrapper .bd-inspector {
+    background-color: rgba(var(--bd-darker), .4);
+}
+
+/** Selected item **/
+#app-mount .bd-layerContainer .bd-contentWrapper .bd-sticker.bd-stickerInspected .bd-inspectedIndicator {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+/** Input **/
+#app-mount .bd-layerContainer .bd-contentWrapper .bd-container.bd-medium {
+    background-color: rgb(var(--bd-darker));
+}
+
+#app-mount .bd-layerContainer .bd-contentWrapper .bd-container.bd-medium input {
+    color: rgb(var(--bd-color-darker));
+}
+
+#app-mount .bd-layerContainer .bd-contentWrapper .bd-container.bd-medium input::placeholder {
+    color: rgb(var(--bd-color-placeholder));
+}

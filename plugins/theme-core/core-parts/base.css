@@ -20,7 +20,7 @@
 }
 
 #app-mount .bd-splashBackground {
-    background: transparent;
+    background-color: transparent;
 }
 
 #app-mount .bd-splashBackground > canvas,
@@ -29,7 +29,7 @@
 }
 
 #app-mount .bd-leftSplit .bd-wrapper .bd-authBox {
-    background: rgba(var(--bd-default), 0.5);
+    background-color: rgba(var(--bd-default), 0.5);
     backdrop-filter: blur(5px);
 }
 
@@ -63,6 +63,11 @@
 #app-mount .bd-app > .bd-app + .bd-container::before {
     filter: var(--bd-loading-background-brightness) var(--bd-loading-background-contrast) var(--bd-loading-background-blur);
     z-index: -1;
+}
+
+/*** Speshul goopy halloween loading discord ***/
+#app-mount .bd-app > .bd-container.bd-fixClipping .bd-ready {
+    filter: hue-rotate(280deg) brightness(1.1) contrast(1.1);
 }
 
 /*** Text ***/
@@ -135,7 +140,9 @@
 /*** Search > #channel-name ***/
 #app-mount .bd-searchResultsWrap .bd-channelName,
 /*** Quick switcher ***/
-#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller {
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller,
+/*** Server Boost ***/
+#app-mount .bd-layerContainer .bd-perksModal {
     background: transparent;
 }
 
@@ -144,6 +151,8 @@
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
 /*** Below guild name in the channel sidebar ***/
 #app-mount .bd-base .bd-sidebar .bd-header,
+/*** Quick Switcher ***/
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher,
 /*** I am so not looking for pseudo elements, sorry ***/
 #app-mount .bd-app *::before,
 #app-mount .bd-app *::after {

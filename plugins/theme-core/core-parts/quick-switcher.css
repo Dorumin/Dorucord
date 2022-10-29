@@ -1,0 +1,16 @@
+/* Quick Switcher */
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher {
+    background-color: rgb(var(--bd-quickswitcher));
+}
+
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-input {
+    background-color: rgba(var(--bd-default));
+}
+
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-protip .bd-autocompleteQuerySymbol {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+}
+
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-result[aria-selected=true] {
+    background-color: rgb(var(--bd-lighter), .8);
+}

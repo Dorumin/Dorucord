@@ -1,0 +1,334 @@
+/* User popouts */
+/** Reverting shitty designer choices **/
+#app-mount .bd-userPopoutOuter,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter {
+    padding: 0;
+    background: transparent;
+}
+
+#app-mount .bd-userPopoutOuter {
+    width: 250px;
+}
+
+/*** Dictates the background ***/
+#app-mount .bd-userPopoutInner,
+#app-mount .bd-userPopoutInner::before,
+#app-mount .bd-userProfileInner,
+#app-mount .bd-userProfileInner::before {
+    background: transparent;
+}
+
+/*** COLORS ***/
+/*** Fuck you Doru ***/
+#app-mount .bd-userPopoutOuter .bd-title,
+/**** Username ****/
+#app-mount .bd-userPopoutOuter .bd-userTag .bd-username {
+    color: white;
+}
+
+/**** About Me ****/
+#app-mount .bd-userPopoutOuter .bd-lineClamp2Plus,
+/**** Custom Status ****/
+#app-mount .bd-userPopoutOuter .bd-customStatusText,
+/**** Member Since ****/
+#app-mount .bd-userPopoutOuter .bd-body,
+/**** Notes ****/
+#app-mount .bd-userPopoutOuter .bd-note textarea {
+    color: #dcddde;
+}
+
+#app-mount .bd-userPopoutOuter .bd-userTag .bd-discrimBase {
+    color: #b9bbbe
+}
+
+/*** Kill the ugly banner and profile badges ***/
+#app-mount .bd-userPopoutOuter .bd-banner,
+#app-mount .bd-userPopoutOuter .bd-profileBadges,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-banner,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-profileBadges {
+    display: none;
+}
+
+/*** Header top ***/
+#app-mount .bd-userPopoutOuter .bd-bannerSVGWrapper,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-bannerSVGWrapper {
+    background-color: rgba(var(--bd-user-popouts-header), .95);
+    height: 112px;
+    min-height: 0px !important;
+}
+
+/*** Avatar ***/
+#app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-avatarWrapperNormal {
+    top: 16px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal .bd-avatar,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-avatarWrapperNormal .bd-avatar {
+    border: none;
+    background: none;
+}
+
+#app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal .bd-avatarHint,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-avatarWrapperNormal .bd-avatarHint {
+    top: 0;
+    left: 0;
+}
+
+#app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal circle,
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-avatarWrapperNormal circle {
+    fill: transparent;
+}
+
+/*** Body ***/
+#app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground {
+    background-color: transparent;
+    border-radius: 0;
+    margin: 0;
+}
+
+#app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground > .bd-section {
+    background: rgba(var(--bd-user-popouts-header), .95);
+    padding: 0 14px 12px;
+    text-align: center;
+}
+
+#app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground > .bd-section .bd-userTag {
+    font-size: 16px;
+    line-height: 16px;
+}
+
+#app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground > .bd-divider {
+    display: none;
+}
+
+#app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground > .bd-scroller {
+    background: rgba(var(--bd-user-popouts-body), .95);
+    overflow: hidden auto !important;
+}
+
+/*** Not mini modals ***/
+#app-mount .bd-layerContainer .bd-root .bd-userProfileOuter .bd-bannerSVGWrapper {
+    display: none;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header {
+    padding: 20px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header > div > .bd-avatar {
+    width: 80px !important;
+    height: 80px !important;
+    top: 0;
+    left: 0;
+    border: 0;
+    position: relative;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-headerTop {
+    min-height: 80px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop {
+    left: 96px;
+    top: 16px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop .bd-badgeList {
+    margin: 26px 0 0;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-header .bd-headerTop .bd-badgeList {
+    margin-top: 10px !important;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag {
+    top: 32px;
+    left: 120px;
+    position: absolute;
+    margin: 0px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag .bd-username {
+    font-size: 18px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTag .bd-discriminator {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTagWithCustomStatus,
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-nameTagNoCustomStatus {
+    top: 42px !important;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-customStatusActivity {
+    padding: 40px 0 0;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-customStatusActivity::before {
+    content: 'Custom Status';
+    color: var(--header-secondary);
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-topSection header .bd-customStatusActivity .bd-customStatusText {
+    margin-top: 8px;
+}
+
+/* #app-mount .bd-layerContainer .bd-root .bd-body .bd-userInfoSection .bd-userInfoSectionHeader:first-of-type,
+#app-mount .bd-layerContainer .bd-root .bd-body .bd-userInfoSection .bd-userBio {
+    display: none;
+} */
+
+/** Header colors **/
+#app-mount .bd-userPopoutOuter .bd-headerNormal,
+#app-mount .bd-layerContainer .bd-root .bd-topSection {
+    background-color: rgba(var(--bd-user-popouts-header), .95);
+}
+
+#app-mount .bd-userPopoutOuter .bd-headerPlaying,
+#app-mount .bd-layerContainer .bd-root .bd-topSectionPlaying {
+    background-color: rgba(var(--bd-user-popouts-header-playing), .95);
+}
+
+#app-mount .bd-userPopoutOuter .bd-headerStreaming,
+#app-mount .bd-layerContainer .bd-root .bd-topSectionStreaming {
+    background-color: rgba(var(--bd-user-popouts-header-streaming), .95);
+}
+
+#app-mount .bd-userPopoutOuter .bd-headerSpotify,
+#app-mount .bd-layerContainer .bd-root .bd-topSectionSpotify {
+    background-color: rgba(var(--bd-user-popouts-header-spotify), .95);
+}
+
+/** Add role to someone **/
+#app-mount .bd-layerContainer .bd-layer .bd-container header.bd-header {
+    background-color: rgba(var(--bd-user-popouts-header), .95)
+}
+
+#app-mount .bd-layerContainer .bd-layer .bd-container .bd-sectionTag .bd-row.bd-selected {
+    background: rgba(var(--bd-lightest), .4);
+}
+
+/*** Send Message with regular status ***/
+#app-mount .bd-layerContainer .bd-root .bd-topSection .bd-button.bd-lookFilled {
+    background-color: rgb(var(--bd-color-link));
+}
+
+/**** Bots ****/
+#app-mount .bd-userPopoutOuter .bd-headerNormal .bd-botTagRegular,
+#app-mount .bd-layerContainer .bd-root .bd-topSection .bd-botTagRegular {
+    background-color: rgb(var(--bd-color-link));
+}
+
+/*** Send Message with !regular status ***/
+#app-mount .bd-layerContainer .bd-root .bd-topSectionPlaying .bd-lookInverted,
+#app-mount .bd-layerContainer .bd-root .bd-topSectionSpotify .bd-lookInverted,
+#app-mount .bd-layerContainer .bd-root .bd-topSectionStreaming .bd-lookInverted {
+    color: rgb(var(--bd-color-link));
+}
+
+/**** Bots ****/
+#app-mount .bd-userPopoutOuter .bd-headerPlaying .bd-botTagInvert,
+#app-mount .bd-layerContainer .bd-root .bd-topSectionPlaying .bd-headerInfo .bd-botTagInvert {
+    color: rgb(var(--bd-color-link));
+}
+
+/** Body **/
+#app-mount .bd-userPopoutOuter .bd-body {
+    overflow: hidden !important;
+    padding: 0 !important;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-divider {
+    display: none;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-customStatus {
+    text-align: center;
+    background: rgba(var(--bd-user-popouts-header), .95);
+    padding: 0 16px 12px;
+    margin: 0;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-bodyInnerWrapper {
+    padding: 0;
+    background: transparent;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-bodyInnerWrapper .bd-bodyTitle {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+    padding: 16px 16px 8px;
+    margin: 0;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-bodyInnerWrapper > .bd-flex {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+    padding: 4px 16px;
+    margin: 0;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-bodyInnerWrapper .bd-note {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+    padding: 0px 16px 8px;
+    margin: 0;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-bodyInnerWrapper .bd-note > .bd-textarea {
+    padding: 0;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-bodyInnerWrapper .bd-activityuserPopoutOuter {
+    background: rgba(var(--bd-user-popouts-header), .95);
+    padding: 16px;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-body:not(.bd-bodyAlignCenter):not(.bd-bodyNormal) {
+    background-color: rgba(var(--bd-user-popouts-body), .95);
+}
+
+#app-mount .bd-userPopoutOuter .bd-footer {
+    background-color: rgba(var(--bd-user-popouts-footer), .95) !important;
+}
+
+#app-mount .bd-userPopoutOuter .bd-body .bd-note textarea:focus,
+#app-mount .bd-layerContainer .bd-root .bd-body .bd-note textarea:focus {
+    background-color: rgba(var(--bd-user-popouts-notes-focus), .7);
+}
+
+#app-mount .bd-userPopoutOuter .bd-footer .bd-input {
+    background-color: rgba(var(--bd-user-popouts-message), .65);
+    border-color: transparent;
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-userPopoutOuter .bd-footer .bd-input:hover,
+#app-mount .bd-userPopoutOuter .bd-footer .bd-input:focus {
+    background-color: rgba(var(--bd-user-popouts-message), .95);
+}
+
+/** Tabs **/
+#app-mount .bd-tabBarContainer {
+    border-bottom-color: rgba(255, 255, 255, .1);
+}
+
+/** Connected accounts **/
+#app-mount .bd-connectedAccounts {
+    border-top-color: rgba(255, 255, 255, .1);
+}
+
+#app-mount .bd-connectedAccounts .bd-connectedAccountContainer {
+    background-color: rgba(var(--bd-darker), .5);
+}

@@ -1,0 +1,32 @@
+/* Markup */
+/** Spoilers **/
+#app-mount .bd-spoilerText.bd-hidden {
+    background-color: rgba(var(--bd-spoiler-hidden), .8);
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-spoilerText.bd-hidden:hover {
+    background-color: rgb(var(--bd-spoiler-hidden-hover));
+}
+
+#app-mount .bd-spoilerText {
+    background-color: rgba(var(--bd-spoiler), 0.1);
+}
+
+/** Small `codes` **/
+#app-mount .bd-markup code {
+    background-color: rgba(var(--bd-code), 0.6);
+    border-color: rgba(var(--bd-code-border), 0.8);
+}
+
+/** Mentions **/
+#app-mount .bd-markup .bd-wrapper.mention {
+    color: rgb(var(--bd-mentions-color));
+    background: rgba(var(--bd-mentions-color), .1);
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-markup .bd-wrapper.mention:hover {
+    color: rgb(var(--bd-mentions-color-hover));
+    background-color: rgba(var(--bd-mentions-color), .5);
+}

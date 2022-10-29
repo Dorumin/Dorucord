@@ -1,0 +1,33 @@
+/* Some adjustments to make text more readable */
+/** Make default channels a bit brighter **/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-content .bd-name {
+    color: rgb(var(--bd-color-darker));
+}
+
+/*** Selected ***/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel.bd-selected,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault.bd-selected .bd-content .bd-name {
+    color: rgb(var(--bd-monochrome-contrast));
+}
+
+/*** Unread ***/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-modeUnread .bd-content .bd-name {
+    color: rgb(var(--bd-color-lighter));
+}
+
+/*** Muted ***/
+#app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-channel .bd-muted,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-modeMuted .bd-content .bd-name {
+    color: rgb(var(--bd-color-darkest));
+}
+
+/** Timestamps **/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-contents .bd-timestamp {
+    color: rgb(var(--bd-color-darker));
+}
+
+/** Brighten up your headers **/
+#app-mount .bd-invite .bd-header {
+    color: rgb(var(--bd-color-light));
+}

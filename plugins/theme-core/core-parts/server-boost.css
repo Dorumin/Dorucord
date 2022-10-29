@@ -1,0 +1,78 @@
+/* Server Boost */
+/** Info about server **/
+#app-mount .bd-perksModalContentWrapper .bd-ctaBar {
+ background-color: rgba(var(--bd-color-link-dark), .2)
+}
+
+/** Levels **/
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierHeader {
+    background: rgba(var(--bd-serverboost-header), .3);
+    color: rgb(var(--bd-color-light));
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierBody,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierBody {
+    background-color: rgba(var(--bd-serverboost-body), .1);
+}
+
+/*** Unlocked levels ***/
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader.bd-tierHeaderUnlocked,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierHeader.bd-tierHeaderUnlocked .bd-tierHeaderUnlockedBackground {
+    background: linear-gradient(90deg, rgba(var(--bd-color-link-dark), .5), rgba(var(--bd-color-link), .5)) ;
+    color: rgb(var(--bd-color-light));
+}
+
+/**** Unlocked text ****/
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader .bd-tierUnlocked,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-tierUnlocked {
+    background-color: rgb(var(--bd-monochrome-contrast));
+    color: rgb(var(--bd-color-link));
+}
+
+/*** Icons ***/
+/*** e.g. Gem, Locked ***/
+#app-mount .bd-perksModalContentWrapper .bd-carouselContainer > .bd-carousel .bd-tier .bd-tierHeader svg,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-tier .bd-tierHeader svg {
+    color: rgb(var(--bd-color-link));
+}
+
+/** Progress bar **/
+/*** Background ***/
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-barBackground {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+}
+
+/*** Filled ***/
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-barBackground .bd-barForeground {
+    background-color: rgba(var(--bd-color-link), .9);
+}
+
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-bar.bd-foreground {
+    color: rgba(var(--bd-color-link), .9);
+}
+
+/*** Hovered bar ***/
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-barBackground .bd-barSecondary {
+    background-color: rgba(var(--bd-color-link-dark), .5);
+}
+
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-bar.bd-background {
+    color: rgba(var(--bd-color-link-dark), .5);
+}
+
+/** Tiers **/
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-tierMarkerBackground,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-tier.bd-tierDefault {
+    background-color: rgb(var(--bd-color-link-dark));
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-tierMarkerInProgress,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-tier.bd-tierInProgress {
+    background-color: rgba(var(--bd-color-link), .6) !important;
+}
+
+#app-mount .bd-perksModalContentWrapper .bd-progressBar .bd-tierMarkerAccomplished,
+#app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-standardSidebarView > .bd-contentRegion .bd-content .bd-progressBar .bd-tier.bd-tierCurrent  {
+    background-color: rgb(var(--bd-color-link)) !important;
+}
