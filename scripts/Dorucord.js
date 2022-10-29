@@ -331,40 +331,35 @@ window.WebSocketInterceptor = class WebSocketInterceptor {
                 let bytes;
 
                 if (oldStream && oldStream !== stream) {
-                    let length = oldStream.output.length - oldStream.last_out + stream.next_out;
-                    console.log('CHANGELING length', length);
-                    bytes = new Uint8Array(length);
+                    console.log('STREAM CHANGED LOL THIS SHOULD NOT HAPPEN I THINK');
+                }
+
+                if (this.interceptor.inflator.chunks.length !== 0) {
+                    const firstChunk = this.interceptor.inflator.chunks.shift();
+                    const midChunks = this.interceptor.inflator.chunks.splice(0, this.interceptor.inflator.chunks.length);
+
+                    const bytesLength = stream.output.length - stream.last_out + stream.next_out + midChunks.reduce((sum, c) => sum + c.length, 0);
+                    bytes = new Uint8Array(bytesLength);
                     let i = 0;
 
-                    for (let j = oldStream.last_out; j < oldStream.output.length; j++) {
-                        bytes[i++] = oldStream.output[j];
+                    for (let j = stream.last_out; j < firstChunk.length; j++) {
+                        bytes[i++] = firstChunk[j];
                     }
 
-                    for (let j = 0; j < stream.output.length; j++) {
+                    for (const midChunk of midChunks) {
+                        for (let j = 0; j < midChunk.length; j++) {
+                            bytes[i++] = midChunk[j];
+                        }
+                    }
+
+                    for (let j = 0; j < stream.next_out; j++) {
                         bytes[i++] = stream.output[j];
                     }
+
+                    stream.last_out = stream.next_out;
                 } else {
-                    if ((stream.last_out ?? 0) > stream.next_out) {
-                        // console.log('reading', stream.last_out ?? 0, stream.next_out);
-                        let length = stream.output.length - stream.last_out + stream.next_out;
-                        bytes = new Uint8Array(length);
-                        let i = 0;
-
-                        const lastChunk = this.interceptor.inflator.chunks.pop();
-
-                        for (let j = stream.last_out; j < lastChunk.length; j++) {
-                            bytes[i++] = lastChunk[j];
-                        }
-
-                        for (let j = 0; j < stream.next_out; j++) {
-                            bytes[i++] = stream.output[j];
-                        }
-
-                        stream.last_out = stream.next_out;
-                    } else {
-                        bytes = stream.output.slice(stream.last_out ?? 0, stream.next_out);
-                        stream.last_out = stream.next_out;
-                    }
+                    bytes = stream.output.slice(stream.last_out ?? 0, stream.next_out);
+                    stream.last_out = stream.next_out;
                 }
 
                 this.interceptor.stream = stream;
@@ -372,8 +367,10 @@ window.WebSocketInterceptor = class WebSocketInterceptor {
                 try {
                     data = erlpack.unpack(bytes);
                 } catch(e) {
-                    console.log(oldStream, stream);
+                    console.error(oldStream, stream);
                     console.error('Error unpacking', e);
+                    console.error('Payload:', bytes);
+                    console.error('Chunks:', this.interceptor.inflator.chunks);
                 }
 
                 // console.log('data', data);
@@ -439,12 +436,14 @@ window.Dorucord = class Dorucord {
 
         this._pluginsRaw = window._plugins;
 
-        this.plugins = this._pluginsRaw.map(rawPlugin => new PluginWrapper(rawPlugin));
-
         if (!this._pluginsRaw) {
             console.warn('No plugins were exposed to Dorucord.');
             console.warn('Not empty; no plugins. Likely installation error.');
+
+            this._pluginsRaw = [];
         }
+
+        this.plugins = this._pluginsRaw.map(rawPlugin => new PluginWrapper(rawPlugin));
 
         this.bindEvents();
         this.initMutationObserver();
