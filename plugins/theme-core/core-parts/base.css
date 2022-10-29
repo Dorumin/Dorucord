@@ -65,6 +65,11 @@
     z-index: -1;
 }
 
+/*** Speshul goopy halloween loading discord ***/
+#app-mount .bd-app > .bd-container.bd-fixClipping .bd-ready {
+    filter: hue-rotate(280deg) brightness(1.1) contrast(1.1);
+}
+
 /*** Text ***/
 #app-mount .bd-app .bd-container .bd-quote.bd-contentBase {
     color: rgb(var(--bd-monochrome-contrast));
@@ -135,7 +140,9 @@
 /*** Search > #channel-name ***/
 #app-mount .bd-searchResultsWrap .bd-channelName,
 /*** Quick switcher ***/
-#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller {
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller,
+/*** Server Boost ***/
+#app-mount .bd-layerContainer .bd-perksModal {
     background: transparent;
 }
 
@@ -144,6 +151,8 @@
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
 /*** Below guild name in the channel sidebar ***/
 #app-mount .bd-base .bd-sidebar .bd-header,
+/*** Quick Switcher ***/
+#app-mount .bd-layerContainer .bd-container .bd-quickswitcher,
 /*** I am so not looking for pseudo elements, sorry ***/
 #app-mount .bd-app *::before,
 #app-mount .bd-app *::after {

@@ -1,0 +1,63 @@
+/* Modals */
+/** Background for the whole modal **/
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile {
+    background-color: transparent;
+}
+
+/** Killing evil box shadows **/
+#app-mount .bd-layerContainer .bd-root,
+#app-mount .bd-layerContainer .bd-root .bd-footer {
+    box-shadow: none;
+}
+
+/** Base of the modal **/
+#app-mount .bd-layerContainer .bd-root .bd-header.bd-flex,
+#app-mount .bd-layerContainer .bd-root .bd-content.bd-thin,
+/*** For Group Chat popout body ***/
+#app-mount .bd-layerContainer .bd-root .bd-thin.bd-fade,
+/*** Upload modals ***/
+#app-mount .bd-layerContainer .bd-root .bd-inner,
+/*** Keyboard Shortcuts modal ***/
+#app-mount .bd-layerContainer .bd-keyboardShortcutsModal {
+    background-color: rgba(var(--bd-modal-base), .85);
+}
+
+/*** Fix the border-radius of the base of the modal ***/
+#app-mount .bd-layerContainer .bd-root .bd-content.bd-thin {
+    border-radius: 0;
+}
+
+/** Footers **/
+#app-mount .bd-layerContainer .bd-root .bd-footer {
+    background-color: rgba(var(--bd-modal-footer), .85);
+}
+
+/** Upload modals **/
+#app-mount .bd-layerContainer .bd-root > .bd-inner {
+    margin: 0;
+    padding: 4px;
+}
+
+/*** Drag and drops ***/
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-bgScale {
+    background: rgb(var(--bd-default));
+}
+
+/**** File icon ****/
+#app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-icon,
+/***** File icon for files that aren't images, such as text, misc files *****/
+#app-mount .bd-uploadModal .bd-icon:not(.bd-image) {
+    filter: var(--bd-modal-icon, none);
+}
+
+/** You sure you wanna pin this? **/
+#app-mount .bd-layerContainer .bd-content > .bd-message {
+    background-color: rgb(var(--bd-lighter));
+}
+
+/** Keyboard Shortcuts modal keys **/
+#app-mount .bd-keybindShortcut span {
+    background-color: rgba(var(--bd-color-link-dark), .3);
+    border-color: rgb(var(--bd-darker));
+    box-shadow: inset 0 -4px 0 rgba(var(--bd-default), .8);
+}

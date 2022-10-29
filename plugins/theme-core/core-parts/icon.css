@@ -1,0 +1,76 @@
+/* Icons */
+/** Quick switcher, no results **/
+#app-mount .bd-quickswitcher .bd-emptyState,
+/** Streamer mode **/
+#app-mount .bd-noticeIcon.bd-icon,
+/** Emoji picker, no emoji found **/
+#app-mount .bd-sadImage,
+/** Image won't load **/
+#app-mount .bd-imageError,
+/** User Settings > Voice & Video > Video Settings **/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-cameraWrapper .bd-previewImage,
+/** No inbox. You're all caught up **/
+#app-mount :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) .bd-iconContainer .bd-icon {
+    filter: var(--bd-image-solid, none);
+}
+
+/** Error page icon **/
+#app-mount .bd-wrapper.bd-errorPage .bd-image,
+#app-mount .bd-layerContainer .bd-container section canvas {
+    filter: var(--bd-image-translucent, none);
+}
+
+/** Self explanatory jesus **/
+#app-mount .bd-artworkSpotifySessionEnded,
+/** User Settings > My Account **/
+#app-mount .bd-userSettingsSecurityImage,
+/** No pins, recent mentions **/
+#app-mount .bd-emptyPlaceholder .bd-image,
+/** No online users, no friends, no pending friend requests, no blocked users, no authorized apps, no connections, no emotes, from here on out assume it's prefix with "no". Integrations, webhooks, invites, bans,**/
+#app-mount .bd-image.bd-marginBottom40,
+/** User Settings > Gift Inventory **/
+#app-mount .bd-emptyStateImage,
+/** Mutual servers/friends **/
+#app-mount .bd-emptyIcon,
+/** No friends found when attempting to add them to a GC **/
+#app-mount .bd-errorStateIcon,
+/** Guilds **/
+#app-mount .bd-emptyGuilds,
+/** User Settings > Nitro **/
+#app-mount .bd-marketingRefreshTier1Graphic,
+/** Edit Channel > Overview **/
+#app-mount .channel-settings-overview .bd-flex img,
+/** Guild icon error in invite previews **/
+#app-mount .bd-guildIconExpired,
+/** Image errors when Discord fails to preview **/
+#app-mount .bd-imageError,
+/** Gif picker favorites **/
+#app-mount .bd-endContainer::after  {
+    filter: var(--bd-image-translucent, none);
+}
+
+/** Some super hacky shit b did for server invite **/
+#app-mount .bd-channelNotice {
+    filter: var(--bd-image-server-invite, none);
+}
+
+#app-mount .bd-channelNotice > .bd-close,
+#app-mount .bd-channelNotice > .bd-message {
+    filter: var(--bd-image-server-invite-icons, none);
+}
+
+#app-mount .bd-channelNotice > .bd-button {
+    filter: var(--bd-image-server-invite-button, none);
+}
+
+/** Welcome to your fuckin server, scrub **/
+/* #app-mount .bd-itemContainer .bd-icon, */
+/** Icon at the bottom right of Settings > Widget **/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion img.bd-infoItem[src*="svg"] {
+    filter: var(--bd-image-server-welcome-icons, none);
+}
+
+/** Verified icon, boosted server ***/
+#app-mount .bd-flowerStar path {
+    fill: rgb(var(--bd-color-link));
+}

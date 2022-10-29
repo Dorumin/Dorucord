@@ -1,0 +1,6 @@
+/* Mousemode */
+.mouse-mode .bd-message.bd-cozyMessage.bd-cozy:hover,
+/** Selected message under context menu **/
+#app-mount .bd-message.bd-cozyMessage.bd-cozy.bd-selected {
+    background-color: var(--bd-messageWrapper-hover);
+}

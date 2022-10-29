@@ -18,11 +18,11 @@
 
 #app-mount .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill::after {
 	content: '';
-	position: absolute;
-	left: 100%;
 	border-width: 10px 0 10px 10px;
 	border-color: transparent transparent transparent rgba(var(--bd-color-link-dark), .8);
 	border-style: solid;
+	position: absolute;
+	left: 100%;
 }
 
 /*** Hides the red thingy ***/

@@ -1,0 +1,23 @@
+/* Jump tos */
+/** New messages **/
+#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar,
+/** Jump to present **/
+#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar,
+/** Unread indicator on channel list **/
+#app-mount .bd-base .bd-sidebar .bd-unread.bd-bar,
+/** Reply bars when replying **/
+#app-mount .bd-channelTextArea .bd-attachedBars {
+    background-color: rgba(var(--bd-jumpto));
+}
+
+#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar:hover,
+#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar:hover,
+#app-mount .bd-base .bd-sidebar .bd-unread.bd-bar:hover,
+#app-mount .bd-channelTextArea .bd-attachedBars:hover {
+    background-color: rgba(var(--bd-jumpto-hover));
+}
+
+/** I'm not sure why this isn't the same as attachedBar. Discord being stupid **/
+#app-mount .bd-channelTextArea .bd-replyBar {
+    background-color: transparent;
+}

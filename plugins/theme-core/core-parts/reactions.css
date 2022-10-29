@@ -1,0 +1,22 @@
+#app-mount .bd-reaction {
+    background-color: rgba(var(--bd-monochrome-contrast), .06);
+    border-radius: 4px;
+}
+
+#app-mount .bd-reaction:hover {
+    background-color: rgba(var(--bd-monochrome-contrast), .06);
+    border-color: transparent;
+}
+
+#app-mount .bd-reactionMe {
+    background-color: rgba(var(--bd-default), .3);
+    border-color: transparent;
+}
+
+#app-mount .bd-reactionMe:hover {
+    background-color: rgba(var(--bd-default), .5);
+}
+
+#app-mount .bd-reactionInner {
+    padding: 1px 6px;
+}

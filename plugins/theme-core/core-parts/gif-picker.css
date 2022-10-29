@@ -20,11 +20,11 @@
 
 /** Favorites **/
 #app-mount .bd-contentWrapper .bd-result .bd-categoryFadeBlurple {
-    background-color: rgba(var(--bd-color-link-dark), .6);
+    background-color: rgba(var(--bd-color-link-dark), .3);
 }
 
 #app-mount .bd-contentWrapper .bd-result .bd-categoryFadeBlurple:hover {
-    background-color: rgba(var(--bd-color-link-dark), .8);
+    background-color: rgba(var(--bd-color-link-dark), .5);
 }
 
 /** Search **/

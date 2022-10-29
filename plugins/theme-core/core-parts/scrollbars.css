@@ -1,0 +1,20 @@
+/* Scrollbars */
+/** General scrollbars **/
+#app-mount .bd-scroller::-webkit-scrollbar-thumb,
+/** Gif picker **/
+#app-mount .bd-thin::-webkit-scrollbar-thumb,
+/** Found in settings **/
+#app-mount .bd-auto::-webkit-scrollbar-thumb {
+    background-color: rgba(var(--bd-scrollbar-track-piece), 0.5);
+    border-color: transparent;
+}
+
+#app-mount .bd-scroller::-webkit-scrollbar-track,
+#app-mount .bd-scroller::-webkit-scrollbar-track-piece,
+#app-mount .bd-thin::-webkit-scrollbar-track,
+#app-mount .bd-thin::-webkit-scrollbar-track-piece,
+#app-mount .bd-auto::-webkit-scrollbar-track,
+#app-mount .bd-auto::-webkit-scrollbar-track-piece {
+    background: var(--bd-scrollbar) !important;
+    border-color: var(--bd-scrollbar);
+}

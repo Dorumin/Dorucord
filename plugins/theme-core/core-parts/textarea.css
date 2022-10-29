@@ -1,0 +1,80 @@
+/* Textarea */
+/** Area around the textarea **/
+#app-mount .bd-base .bd-chat .bd-content form.bd-form:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: -webkit-fill-available;
+    border-bottom: 1px solid rgba(var(--bd-monochrome-contrast), 0.1);
+    box-sizing: border-box;
+    margin: 0 16px;
+}
+
+#app-mount .bd-base .bd-chat .bd-content form.bd-form {
+    padding-top: 12px;
+    margin-top: 0;
+}
+
+/** Actual textarea **/
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea .bd-scrollableContainer {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+/** Icons near textarea **/
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-button svg path:not(.bd-attachButtonPlay) {
+    fill: rgba(var(--bd-monochrome-contrast), 0.3);
+    color: rgba(var(--bd-monochrome-contrast), 0.3);
+    transition: var(--bd-transition);
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-button:hover path:not(.bd-attachButtonPlay) {
+    fill: rgba(var(--bd-monochrome-contrast), 0.7);
+    color: rgba(var(--bd-monochrome-contrast), 0.7);
+}
+
+/*** Emoji ***/
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-sprite {
+    filter: grayscale(100%) opacity(.5) !important;
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-button:hover .bd-sprite {
+    filter: none !important;
+}
+
+/** Text area placeholder color **/
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-textArea .bd-placeholder {
+    color: rgba(var(--bd-monochrome-contrast), .45);
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-textArea .bd-placeholder,
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-textArea .bd-slateTextArea{
+    padding-left: 10px;
+}
+
+#app-mount .bd-base .bd-chat .bd-content form .bd-channelTextArea .bd-inner .bd-attachWrapper::after {
+    content: '';
+    background-color: rgba(var(--bd-monochrome-contrast), 0.1);
+    height: 70%;
+    width: 1px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+/** Autocomplete **/
+#app-mount .bd-channelTextArea > .bd-autocomplete {
+    background-color: rgb(var(--bd-default), .9);
+}
+
+#app-mount .bd-channelTextArea > .bd-autocomplete .bd-selectable.bd-selected {
+    background-color: rgba(var(--bd-lightest), .5);
+}
+
+/** Stickers **/
+#app-mount .bd-channelTextArea > .bd-container .bd-containerBackground {
+    background-color: rgba(var(--bd-darker), .7);
+    border-color: rgba(var(--bd-darker));
+}

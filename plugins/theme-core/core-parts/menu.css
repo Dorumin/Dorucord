@@ -1,0 +1,39 @@
+
+
+/* Context menu, dropdown */
+#app-mount .bd-layerContainer .bd-menu {
+    background-color: rgba(var(--bd-context-menu), .85);
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault.bd-focused,
+#app-mount .bd-layerContainer .bd-menu .bd-colorDefault:hover {
+    background-color: rgba(var(--bd-color-link), .05);
+}
+
+/** Invite people to server **/
+#app-mount .bd-layerContainer .bd-menu .bd-item.bd-colorBrand {
+    color: rgb(var(--bd-color-link));
+}
+/** Reactions in the context menu **/
+#app-mount .bd-layerContainer .bd-menu [role="group"].bd-wrapper {
+    display: var(--bd-context-menu-reactions);
+}
+
+/* Status picker */
+/** Revert to old settings **/
+/** Can't be helped, inline styles will overwrite this otherwise. **/
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-online .bd-mask .bd-status {
+    background-color: rgb(67, 181, 129) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-idle .bd-mask .bd-status {
+    background-color: rgb(250, 166, 26) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-dnd .bd-mask .bd-status {
+    background-color: rgb(240, 71, 71) !important;
+}
+
+#app-mount .bd-layerContainer .bd-menu .bd-item#status-picker-invisible .bd-mask .bd-status {
+    background-color: rgb(116, 127, 141) !important;
+}
