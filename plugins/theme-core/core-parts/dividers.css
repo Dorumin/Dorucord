@@ -31,20 +31,20 @@
 }
 
 /*** Sets the old dividers back ***/
-#app-mount .bd-scroller .bd-divider {
+#app-mount .bd-chat .bd-scroller .bd-divider {
     border-color: transparent;
     margin: 18px 0;
 }
 
-#app-mount .bd-scroller .bd-divider.bd-isUnread {
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-isUnread {
     margin: 8px 0;
 }
 
-#app-mount .bd-scroller .bd-divider.bd-isUnread.bd-hasContent {
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-isUnread.bd-hasContent {
     margin: 18px 0;
 }
 
-#app-mount .bd-scroller .bd-divider.bd-beforeGroup {
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-beforeGroup {
     top: 0;
     margin: 14px 0;
 }

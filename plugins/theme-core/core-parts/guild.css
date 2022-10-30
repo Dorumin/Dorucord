@@ -19,6 +19,8 @@
 #app-mount .bd-baseLayer + .bd-layer  .bd-standardSidebarView > .bd-contentRegion .bd-avatarUploader .bd-avatarUploaderInner,
 /** General catch-all. Yes, lazy LOL **/
 #app-mount .bd-guildIcon.bd-noIcon,
+/** Mutual servers found in User Popouts **/
+#app-mount .bd-noIcon,
 /** Mutual servers **/
 #app-mount .bd-guildAvatarWithoutIcon,
 /** Emoji Picker **/

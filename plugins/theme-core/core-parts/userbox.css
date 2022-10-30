@@ -7,3 +7,11 @@
 #app-mount .bd-layerContainer .bd-menu .bd-profileBody .bd-bodyInnerWrapper {
     background-color: transparent;
 }
+
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-bannerSVGWrapper,
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-avatarWrapperNormal,
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-profileBadges,
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-userPopoutOverlayBackground > div:not(.bd-menu),
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-menu .bd-item:first-of-type {
+    display: none;
+}

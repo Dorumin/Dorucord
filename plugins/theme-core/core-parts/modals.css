@@ -14,7 +14,7 @@
 #app-mount .bd-layerContainer .bd-root .bd-header.bd-flex,
 #app-mount .bd-layerContainer .bd-root .bd-content.bd-thin,
 /*** For Group Chat popout body ***/
-#app-mount .bd-layerContainer .bd-root .bd-thin.bd-fade,
+/* #app-mount .bd-layerContainer .bd-root .bd-thin.bd-fade, */
 /*** Upload modals ***/
 #app-mount .bd-layerContainer .bd-root .bd-inner,
 /*** Keyboard Shortcuts modal ***/

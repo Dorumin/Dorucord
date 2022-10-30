@@ -133,6 +133,8 @@
 #app-mount .bd-base .bd-content .bd-applicationStore .bd-headerBar,
 /**** Main content ****/
 #app-mount .bd-base .bd-content .bd-applicationStore .bd-scroller,
+/*** Channel text area ***/
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea,
 /*** Search ***/
 #app-mount .bd-searchResultsWrap,
 /*** Search > Results | New | Old | Relevant  ***/

@@ -51,6 +51,12 @@
     color: rgb(var(--bd-button-text));
 }
 
+/*** Action buttons, found in User Popouts like View Repository, etc ***/
+#app-mount .bd-lookFilled.bd-button {
+    background-color: rgb(var(--bd-button-default));
+    color: rgb(var(--bd-button-text));
+}
+
 /** Button on the right side of messages **/
 #app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper {
     background-color: rgba(var(--bd-default), 0.3);
