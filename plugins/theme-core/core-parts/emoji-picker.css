@@ -1,6 +1,6 @@
 /* Emoji picker */
-#app-mount .bd-layerContainer .bd-contentWrapper,
-#app-mount .bd-layerContainer .bd-animatorLeft {
+#app-mount .bd-layerContainer .bd-contentWrapper
+/* #app-mount .bd-layerContainer .bd-animatorLeft */ {
     background-color: rgba(var(--bd-picker), 0.85);
 }
 

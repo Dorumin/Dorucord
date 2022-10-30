@@ -1,0 +1,56 @@
+/* Just for example, and only the defaults, please edit these */
+/* Derived themes should start with a copy of this ruleset with modified values */
+/* Some values are rgb -- nvm all are lol */
+:root:root {
+    /* Main background */
+    --bd-background-color: linear-gradient(to right, transparent, rgb(0 0 0 / .2), transparent),;
+    --bd-background-image: url(https://cdn.discordapp.com/attachments/590474367113232385/1036288999096070144/unknown.png);
+    --bd-background-position: center;
+    --bd-background-brightness: brightness(.5);
+    --bd-background-contrast: contrast(1.1);
+    --bd-background-blur: blur(2px);
+
+    /* Main colors */
+    --bd-default: 43, 56, 88;
+    --bd-lightest: 99, 127, 193; /* Status */
+    --bd-lighter: 70, 89, 134; /* Guild, tooltips */
+    --bd-light: 52, 66, 100; /* Pins, userpopout */
+    --bd-dark: 30, 39, 64; /* Search, settings */
+    --bd-darker: 21, 28, 46;
+
+    /* Depth */
+    /** Just comment this whole thing if you want it to be transparent **/
+    --bd-depth-title: rgba(var(--bd-default), 0.2);
+    --bd-depth-guilds-list: rgba(var(--bd-default), 0.4);
+    --bd-depth-sidebar: rgba(var(--bd-default), 0.2);
+    --bd-depth-userbox: rgba(var(--bd-default), 0.25); /* I have no idea */
+
+    /* Text colors */
+    --bd-color-link: 155, 182, 247;
+    --bd-color-link-dark: 132, 163, 237;
+    --bd-color-link-hovered: 181, 202, 251;
+    --bd-color-link-hovered-shadow: 108, 141, 219;
+
+    /* Embeds */
+    --bd-embed-icon: hue-rotate(140deg) saturate(200%);
+
+    /* Image hue */
+    /* Uncomment if you know the hues */
+    --bd-image-solid: hue-rotate(140deg) saturate(800%) brightness(.5);
+    --bd-image-translucent: hue-rotate(140deg) saturate(700%);
+    --bd-image-server-invite: hue-rotate(140deg) saturate(700%);
+    --bd-image-server-invite-icons: hue-rotate(-140deg) saturate(14.28%);
+    --bd-image-server-invite-button: hue-rotate(-140deg) saturate(14%);
+    --bd-image-server-welcome-icons: hue-rotate(140deg) saturate(200%);
+
+    /* Modals */
+    --bd-modal-icon: hue-rotate(140deg) saturate(200%);
+
+    /* Whatever big word but */
+    /* if (theme == light) { */
+    /*     this.value = black; */
+    /* else { */
+    /*     this.value = white; */
+    /* } */
+    --bd-monochrome-contrast: 255, 255, 255;
+}
