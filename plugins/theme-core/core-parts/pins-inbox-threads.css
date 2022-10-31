@@ -1,12 +1,22 @@
-/* Pins and Inbox */
-#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) {
-    background-color: rgba(var(--bd-popout-bg), .95);
+/* Pins | Inbox | Threads */
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout, .bd-browser) {
+    background: transparent;
     border-color: transparent;
     box-shadow: none;
 }
 
-/** Pins and Inbox popout header and footer **/
-#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) > .bd-header,
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout, .bd-browser) .bd-header + :-webkit-any(.bd-thin, .bd-container) {
+    background-color: rgba(var(--bd-popout-bg), .95);
+}
+
+/** Inbox **/
+#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-scroller.bd-thin {
+    overflow: hidden auto !important;
+    padding: 0 16px !important;
+}
+
+/** Pins, Inbox and Threads popout header and footer **/
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout, .bd-browser) > .bd-header,
 #app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout) > .bd-footer {
     background-color: rgba(var(--bd-popout-header-footer), .9);
     box-shadow: none;
@@ -18,13 +28,30 @@
     border-color: transparent;
 }
 
+/** Threads **/
+/*** Search ***/
+#app-mount .bd-layerContainer .bd-browser .bd-searchBox,
+/*** Entries ***/
+#app-mount .bd-layerContainer .bd-browser .bd-content > .bd-container {
+    background-color: rgba(var(--bd-popout-message-bg), .3);
+    border-color: transparent;
+}
+
+#app-mount .bd-layerContainer .bd-browser .bd-content > .bd-container:hover {
+    background-color: rgba(var(--bd-popout-message-bg), .5);
+    border-color: transparent;
+}
+
 /** Recent Mentions, Unreads **/
 /*** Selected header for Mentions/Unreads ***/
+#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-header .bd-item:hover {
+    background-color: rgb(var(--bd-color-link), .2);
+}
+
 #app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-header .bd-item.bd-selected,
 /*** Filter | Mark as Read ***/
-#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-header .bd-button.bd-secondary
-{
-    background-color: rgb(var(--bd-lighter));
+#app-mount .bd-layerContainer .bd-recentMentionsPopout .bd-header .bd-button.bd-secondary {
+    background-color: rgb(var(--bd-color-link), .4);
 }
 
 /*** Channel header ***/
@@ -49,7 +76,7 @@
 }
 
 #app-mount .bd-layerContainer .bd-recentMentionsPopout.bd-messagesPopoutWrap .bd-container {
-    margin: 16px 16px 16px;
+    margin: 16px 0 16px;
     border-radius: 16px;
     padding: 0;
 }
