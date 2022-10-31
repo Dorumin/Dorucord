@@ -1,6 +1,8 @@
 /* Depth */
 /** Title **/
-#app-mount .bd-base .bd-content .bd-chat > .bd-title {
+#app-mount .bd-base .bd-content .bd-chat > .bd-title,
+/** Friends | Library **/
+#app-mount .bd-base .bd-content .bd-container > .bd-container:first-of-type {
     background-color: var(--bd-depth-title, transparent);
 }
 

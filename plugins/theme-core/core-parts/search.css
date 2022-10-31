@@ -3,6 +3,8 @@
 #app-mount .bd-search > .bd-searchBar,
 /** Find or start a conversation **/
 #app-mount .bd-searchBar .bd-searchBarComponent,
+/** Friends **/
+#app-mount .bd-peopleColumn .bd-searchBar,
 /** Library > Filter **/
 #app-mount .bd-libraryFilter .bd-searchBar.bd-container {
     background-color: rgba(var(--bd-searchbar), .35);

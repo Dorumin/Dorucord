@@ -220,6 +220,10 @@
     height: 115px;
 }
 
+#app-mount .bd-layerContainer .bd-userProfileModalOuter .bd-topSection header .bd-header > div > .bd-avatar svg circle {
+    fill: transparent;
+}
+
 /*** Body ***/
 #app-mount .bd-layerContainer .bd-userProfileModalOuter .bd-userProfileModalOverlayBackground {
     background-color: rgba(var(--bd-user-popouts-body), .95);

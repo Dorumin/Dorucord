@@ -111,12 +111,12 @@
 #app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper > .bd-wrapper,
 /*** Header for DM channels and channel info ***/
 #app-mount .bd-base .bd-chat > .bd-title,
-/*** Shitty box shadow like thing that appears after the title if search is open ***/
-#app-mount .bd-base .bd-chat > .bd-title .bd-children::after,
 /*** Guild member list / Group chat participants ***/
 #app-mount .bd-base .bd-chat .bd-membersWrap .bd-members,
 #app-mount .bd-base .bd-chat .bd-membersWrap .bd-members > div,
 #app-mount .bd-base .bd-content > .bd-container,
+/*** Shitty box shadow like thing that appears after the title if search is open in DMs and in Friends ***/
+#app-mount .bd-base .bd-content .bd-children::after,
 /*** Friends | Library header ***/
 #app-mount .bd-base .bd-content > .bd-container > .bd-container,
 /*** Library > Settings ***/
@@ -153,6 +153,8 @@
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-searchBar,
 /*** Below guild name in the channel sidebar ***/
 #app-mount .bd-base .bd-sidebar .bd-header,
+/*** Box shadow found in modals, like privacy settings ***/
+#app-mount .bd-layerContainer .bd-root .bd-separator,
 /*** Quick Switcher ***/
 #app-mount .bd-layerContainer .bd-container .bd-quickswitcher,
 /*** I am so not looking for pseudo elements, sorry ***/
