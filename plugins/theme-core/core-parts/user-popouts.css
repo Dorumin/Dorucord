@@ -76,14 +76,21 @@
 }
 
 /*** Avatar ***/
-#app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal {
+/**** Uploader found in Settings > Profiles ****/
+#app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal,
+#app-mount .bd-userPopoutOuter .bd-avatarUploader {
     top: 16px;
     left: 50%;
     transform: translate(-50%);
 }
 
+#app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal .bd-wrapper rect:not(.bd-pointerEvents),
 #app-mount .bd-userPopoutOuter .bd-avatarWrapperNormal .bd-wrapper circle {
     fill: transparent;
+}
+
+#app-mount .bd-userPopoutOuter .bd-avatarUploader .bd-statusDotBackground {
+    background: transparent;
 }
 
 #app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground {
@@ -220,6 +227,7 @@
     height: 115px;
 }
 
+#app-mount .bd-layerContainer .bd-userProfileModalOuter .bd-topSection header .bd-header > div > .bd-avatar svg rect:not(.bd-pointerEvents),
 #app-mount .bd-layerContainer .bd-userProfileModalOuter .bd-topSection header .bd-header > div > .bd-avatar svg circle {
     fill: transparent;
 }

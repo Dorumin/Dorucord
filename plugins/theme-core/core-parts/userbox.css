@@ -1,17 +1,31 @@
 /* Userbox */
-/* The thingy at the bottom left where you set your custom status and stuff */
+/** The thingy at the bottom left where you set your custom status and stuff **/
 #app-mount .bd-base .bd-sidebar .bd-panels .bd-container .bd-avatarWrapper:hover {
     background-color: transparent;
 }
 
-#app-mount .bd-layerContainer .bd-menu .bd-profileBody .bd-bodyInnerWrapper {
-    background-color: transparent;
+/** Add a pretty border after status picker **/
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-menu div[role="group"] > .bd-item:first-of-type + .bd-submenuContainer {
+    position: relative;
+    margin-bottom: 17px;
 }
 
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-menu div[role="group"] > .bd-item:first-of-type + .bd-submenuContainer::after {
+    content: '';
+    border-bottom: 1px solid rgb(255 255 255 / 24%);
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: -8px;
+}
+
+/** Stuff related to hiding the user popout, cuz bulky **/
 #app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-bannerSVGWrapper,
 #app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-avatarWrapperNormal,
 #app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-profileBadges,
+/** Everything that isn't the status picker **/
 #app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-userPopoutOverlayBackground > div:not(.bd-menu),
-#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-menu .bd-item:first-of-type {
+/** First divider **/
+#app-mount .bd-layerContainer .bd-accountProfilePopoutWrapper .bd-menu div[role="group"] > .bd-item:first-of-type {
     display: none;
 }

@@ -17,6 +17,11 @@
     margin-top: 0;
 }
 
+/** Images to be uploaded at textarea **/
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea .bd-upload {
+    background-color: rgba(var(--bd-darker), .4);
+}
+
 /** Actual textarea **/
 #app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea .bd-scrollableContainer {
     background-color: rgba(0, 0, 0, .05);

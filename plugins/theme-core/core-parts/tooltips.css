@@ -1,10 +1,15 @@
-/*** Click server boost from settings */
+/* Tooltips */
+/** Click server boost from settings **/
 #app-mount .bd-subscribeTooltipWrapper,
+/** Markdown **/
+#app-mount .bd-layerContainer .bd-toolbar,
+/** General tooltips **/
 #app-mount .bd-layerContainer .bd-layer .bd-tooltip,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-grabber .bd-bubble {
     background-color: rgba(var(--bd-tooltips));
 }
 
+#app-mount .bd-layerContainer .bd-toolbar::before,
 #app-mount .bd-layerContainer .bd-layer .bd-tooltip > *,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-grabber .bd-bubble::before {
     border-top-color: rgba(var(--bd-tooltips));

@@ -17,6 +17,8 @@
 #app-mount .bd-layerContainer .bd-root .bd-header + .bd-thin.bd-fade,
 /*** Upload modals ***/
 #app-mount .bd-layerContainer .bd-root .bd-inner,
+/*** Events header ***/
+#app-mount .bd-layerContainer .bd-root > .bd-container:first-of-type,
 /*** Keyboard Shortcuts modal ***/
 #app-mount .bd-layerContainer .bd-keyboardShortcutsModal {
     background-color: rgba(var(--bd-modal-base), .85);
@@ -28,7 +30,7 @@
 }
 
 /** Footers **/
-#app-mount .bd-layerContainer .bd-root .bd-footer {
+#app-mount .bd-layerContainer .bd-root > .bd-footer {
     background-color: rgba(var(--bd-modal-footer), .85);
 }
 
@@ -60,4 +62,15 @@
     background-color: rgba(var(--bd-color-link-dark), .3);
     border-color: rgb(var(--bd-darker));
     box-shadow: inset 0 -4px 0 rgba(var(--bd-default), .8);
+}
+
+/** Manage Accounts modal **/
+#app-mount .bd-layerContainer .bd-root .bd-transitionGroup .bd-list {
+    background-color: rgb(var(--bd-lightest), .3);
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-transitionGroup .bd-list .bd-separator {
+    border-bottom-color: rgb(var(--bd-monochrome-contrast), .1);
+    width: -webkit-fill-available;
+    margin: 0 16px;
 }

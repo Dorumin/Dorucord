@@ -63,8 +63,11 @@
 
     /* Buttons */
     --bd-button-default: var(--bd-color-link);
-    --bd-button-secondary: var(--bd-lighter);
+    --bd-button-default-hover: var(--bd-color-link-hovered);
+    --bd-button-secondary: var(--bd-color-link-dark);
+    --bd-button-secondary-hover: var(--bd-color-link-hovered-shadow);
     --bd-button-green: var(--bd-color-link);
+    --bd-button-green-hover: var(--bd-color-link-hovered);
     --bd-button-text: var(--bd-monochrome-contrast);
 
     /* Context Menu */

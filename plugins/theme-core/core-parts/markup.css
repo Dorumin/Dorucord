@@ -20,13 +20,13 @@
 }
 
 /** Mentions **/
-#app-mount .bd-markup .bd-wrapper.mention {
+#app-mount .bd-wrapper.mention {
     color: rgb(var(--bd-mentions-color));
     background: rgba(var(--bd-mentions-color), .1);
     transition: var(--bd-transition);
 }
 
-#app-mount .bd-markup .bd-wrapper.mention:hover {
+#app-mount .bd-wrapper.mention:hover {
     color: rgb(var(--bd-mentions-color-hover));
     background-color: rgba(var(--bd-mentions-color), .5);
 }

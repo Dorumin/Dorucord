@@ -22,15 +22,28 @@
 
 /** Regular buttons **/
 /*** Blue buttons ***/
+/**** Action buttons, found in User Popouts like View Repository, etc ****/
+#app-mount .bd-lookFilled.bd-buttonColor,
 #app-mount .bd-lookFilled.bd-colorBrand,
 #app-mount .bd-lookFilled.bd-colorBrandNew {
     background-color: rgb(var(--bd-button-default));
     color: rgb(var(--bd-button-text));
 }
 
+#app-mount .bd-lookFilled.bd-colorBrand:hover,
+#app-mount .bd-lookFilled.bd-colorBrandNew:hover {
+    background-color: rgb(var(--bd-button-default-hover));
+    color: rgb(var(--bd-button-text));
+}
+
 /*** Gray buttons ***/
 #app-mount .bd-lookFilled.bd-colorPrimary {
     background-color: rgb(var(--bd-button-secondary));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookFilled.bd-colorPrimary:hover {
+    background-color: rgb(var(--bd-button-secondary-hover));
     color: rgb(var(--bd-button-text));
 }
 
@@ -45,15 +58,24 @@
     color: rgb(var(--bd-button-text));
 }
 
+#app-mount .bd-lookOutlined.bd-colorPrimary {
+    border-color: rgba(var(--bd-button-secondary), .5);
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-colorPrimary:hover {
+    background-color: rgba(var(--bd-button-secondary));
+    color: rgb(var(--bd-button-text));
+}
+
 /*** Green buttons ***/
 #app-mount .bd-lookFilled.bd-colorGreen {
     background-color: rgb(var(--bd-button-green));
     color: rgb(var(--bd-button-text));
 }
 
-/*** Action buttons, found in User Popouts like View Repository, etc ***/
-#app-mount .bd-lookFilled.bd-button {
-    background-color: rgb(var(--bd-button-default));
+#app-mount .bd-lookFilled.bd-colorGreen {
+    background-color: rgb(var(--bd-button-green-hover));
     color: rgb(var(--bd-button-text));
 }
 
@@ -69,11 +91,14 @@
 }
 
 /** Button on the right side of messages **/
-#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper {
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper,
+/** Button on file when you bouta upload **/
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea .bd-actionBarContainer .bd-wrapper {
     background-color: rgba(var(--bd-default), 0.3);
 }
 
-#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper .bd-button:hover {
+#app-mount .bd-message.bd-cozyMessage.bd-cozy .bd-buttonContainer .bd-wrapper .bd-button:hover,
+#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea .bd-actionBarContainer .bd-wrapper .bd-button:hover {
     background-color: rgba(var(--bd-default), 0.4);
     color: rgba(255, 255, 255, .8);
 }

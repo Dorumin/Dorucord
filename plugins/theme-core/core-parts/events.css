@@ -1,0 +1,18 @@
+/* Events */
+/** Wrapper for events **/
+#app-mount .bd-layerContainer .bd-root .bd-card.bd-eventCard {
+    background-color: rgba(var(--bd-color-link), .05);
+    border: none;
+    box-shadow: none;
+}
+
+/** [Calendar icon] [Date] **/
+#app-mount .bd-layerContainer .bd-root .bd-eventStatusLabel,
+#app-mount .bd-layerContainer .bd-root .bd-eventStatusBrand {
+    color: rgba(var(--bd-color-link-hovered)) !important;
+}
+
+/** x people interested **/
+#app-mount .bd-layerContainer .bd-root .bd-rsvpCount {
+    background-color: rgba(var(--bd-darker), .8);
+}
