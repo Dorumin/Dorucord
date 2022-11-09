@@ -8,10 +8,8 @@
     background-color: rgba(var(--bd-color-link), .05)
 }
 
-#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-emptyCard {
-    background-color: rgba(var(--bd-default), .4);
-}
-
+/*** Now Playing ***/
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-emptyCard,
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard {
     background-color: rgba(var(--bd-default), .4);
 }
@@ -26,4 +24,8 @@
 
 #app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body .bd-section {
     background-color: transparent;
+}
+
+#app-mount .bd-base .bd-container > .bd-tabBody .bd-nowPlayingColumn .bd-itemCard .bd-body .bd-partyMemberOverflow {
+    background-color: rgba(var(--bd-lightest), .5);
 }

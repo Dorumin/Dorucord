@@ -1,0 +1,15 @@
+/* Misc stuff */
+/** Aka badge **/
+#app-mount .bd-base .bd-chat .bd-title .bd-akaBadge.bd-textBadge,
+/** Public keyword on servers **/
+#app-mount .bd-communityInfoPill {
+    background-color: rgba(var(--bd-lightest));
+}
+
+/** Beta keyword **/
+/*** Devices, Gift Inventory ***/
+/*** Privacy & Safety > In-game rewards (aka Drops) ***/
+/*** Guild Home ***/
+#app-mount .bd-textBadge[style] {
+    background-color: rgb(var(--bd-color-link-dark)) !important;
+}

@@ -5,6 +5,8 @@
 #app-mount .bd-layerContainer .bd-toolbar,
 /** General tooltips **/
 #app-mount .bd-layerContainer .bd-layer .bd-tooltip,
+/** Tooltip when introducing a new feature in guild **/
+#app-mount .bd-layerContainer .bd-upsellTooltipWrapper,
 #app-mount .bd-layer:-webkit-any([aria-label$="_SETTINGS"], [aria-label="RTC_DEBUG"]) .bd-grabber .bd-bubble {
     background-color: rgba(var(--bd-tooltips));
 }
@@ -15,6 +17,7 @@
     border-top-color: rgba(var(--bd-tooltips));
 }
 
+#app-mount .bd-layerContainer .bd-upsellTooltipWrapper::after,
 #app-mount .bd-subscribeTooltipWrapper::after {
     border-bottom-color: rgba(var(--bd-tooltips));
 }

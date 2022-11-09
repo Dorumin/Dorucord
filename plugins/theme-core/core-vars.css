@@ -42,7 +42,7 @@
     --bd-color-mention: var(--bd-color-link);
     --bd-color-lighter: 230, 230, 230;
     --bd-color-light: 200, 200, 200;
-    --bd-color-dark: 220, 220, 220;
+    --bd-color-dark: 180, 180, 180;
     --bd-color-darker: 150, 150, 150;
     --bd-color-darkest: 100, 100, 100;
     --bd-color-placeholder: 90, 90, 90;
@@ -229,7 +229,7 @@
     --bd-color-mention: var(--bd-color-link);
     --bd-color-lighter: 230, 230, 230;
     --bd-color-light: 200, 200, 200;
-    --bd-color-dark: 220, 220, 220;
+    --bd-color-dark: 180, 180, 180;
     --bd-color-darker: 150, 150, 150;
     --bd-color-darkest: 100, 100, 100;
     --bd-color-placeholder: 90, 90, 90;
@@ -250,8 +250,11 @@
 
     /* Buttons */
     --bd-button-default: var(--bd-color-link);
-    --bd-button-secondary: var(--bd-lighter);
+    --bd-button-default-hover: var(--bd-color-link-hovered);
+    --bd-button-secondary: var(--bd-color-link-dark);
+    --bd-button-secondary-hover: var(--bd-color-link-hovered-shadow);
     --bd-button-green: var(--bd-color-link);
+    --bd-button-green-hover: var(--bd-color-link-hovered);
     --bd-button-text: var(--bd-monochrome-contrast);
 
     /* Context Menu */

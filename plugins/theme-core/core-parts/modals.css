@@ -10,15 +10,26 @@
     box-shadow: none;
 }
 
+/** le wut Idek, it showed up when it advertised App Directory **/
+#app-mount .bd-layerContainer .bd-root .bd-modalContent {
+    margin: 0;
+}
+
 /** Base of the modal **/
+/*** Add Friend Nickname | Remove Friend | Block ***/
+/*** Create Channel | Category ***/
+/*** Invite friends to server ***/
+/*** Notification | Privacy settings ***/
+/*** Change Nickname ***/
+/*** Timeout | Kick | Ban ***/
 #app-mount .bd-layerContainer .bd-root .bd-header.bd-flex,
-#app-mount .bd-layerContainer .bd-root .bd-content.bd-thin,
-/*** For Group Chat popout body ***/
-#app-mount .bd-layerContainer .bd-root .bd-header + .bd-thin.bd-fade,
-/*** Upload modals ***/
-#app-mount .bd-layerContainer .bd-root .bd-inner,
+#app-mount .bd-layerContainer .bd-root .bd-header.bd-flex + .bd-thin,
+/*** New Event modal **/
+#app-mount .bd-layerContainer .bd-root > .bd-content.bd-thin,
 /*** Events header ***/
 #app-mount .bd-layerContainer .bd-root > .bd-container:first-of-type,
+/*** Upload modal ***/
+#app-mount .bd-layerContainer .bd-uploadModal .bd-inner,
 /*** Keyboard Shortcuts modal ***/
 #app-mount .bd-layerContainer .bd-keyboardShortcutsModal {
     background-color: rgba(var(--bd-modal-base), .85);
@@ -30,12 +41,19 @@
 }
 
 /** Footers **/
-#app-mount .bd-layerContainer .bd-root > .bd-footer {
+/*** Add Friend Nickname | Remove Friend | Block ***/
+/*** Create Channel | Category ***/
+/*** Invite friends to server ***/
+/*** Notification | Privacy settings ***/
+/*** Change Nickname ***/
+/*** Timeout | Kick | Ban ***/
+/*** Pin | Unpin Message ***/
+#app-mount .bd-layerContainer .bd-root .bd-thin + .bd-footer {
     background-color: rgba(var(--bd-modal-footer), .85);
 }
 
 /** Upload modals **/
-#app-mount .bd-layerContainer .bd-root > .bd-inner {
+#app-mount .bd-layerContainer .bd-uploadModal > .bd-inner {
     margin: 0;
     padding: 4px;
 }
@@ -55,6 +73,7 @@
 /** You sure you wanna pin this? **/
 #app-mount .bd-layerContainer .bd-content > .bd-message {
     background-color: rgb(var(--bd-lighter));
+    box-shadow: none;
 }
 
 /** Keyboard Shortcuts modal keys **/

@@ -2,22 +2,19 @@
 /** Regular links **/
 #app-mount a.bd-anchor,
 /** Fake links found in channel text area or edit text area **/
-#app-mount span.bd-fakeLink
-/* #app-mount button.bd-lookLink */ {
+#app-mount span.bd-fakeLink,
+/** Link-ish thingies in Guild Home, titled "Show More" **/
+#app-mount .bd-showMore {
     color: rgb(var(--bd-color-link));
     text-shadow: var(--bd-link-shadows);
     text-decoration: none;
 }
 
 #app-mount a.bd-anchor:hover,
-#app-mount span.bd-fakeLink:hover
-/* #app-mount button.bd-lookLink:hover */ {
+#app-mount span.bd-fakeLink:hover,
+#app-mount .bd-showMore:hover {
     color: rgb(var(--bd-color-link-hovered));
     text-shadow: var(--bd-link-shadows-hover);
     text-decoration: none;
     transition: all .4s linear 0s;
 }
-
-/* #app-mount button.bd-lookLink:hover .bd-contents {
-    background: none;
-} */

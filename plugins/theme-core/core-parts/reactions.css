@@ -1,9 +1,13 @@
-#app-mount .bd-reaction {
+/** Reactions **/
+#app-mount .bd-reaction,
+/** Reaction button found in Guild Home **/
+#app-mount .bd-reactionBtn.bd-forceShowLook {
     background-color: rgba(var(--bd-monochrome-contrast), .06);
     border-radius: 4px;
 }
 
-#app-mount .bd-reaction:hover {
+#app-mount .bd-reaction:hover,
+#app-mount .bd-reactionBtn.bd-forceShowLook:hover {
     background-color: rgba(var(--bd-monochrome-contrast), .06);
     border-color: transparent;
 }
@@ -17,6 +21,11 @@
     background-color: rgba(var(--bd-default), .5);
 }
 
-#app-mount .bd-reactionInner {
-    padding: 1px 6px;
+#app-mount .bd-reactionInner,
+#app-mount .bd-reactionBtn.bd-forceShowLook {
+    padding: 2px 6px;
+}
+
+#app-mount .bd-reactionInner img {
+    margin: 0;
 }

@@ -126,6 +126,12 @@
     display: none;
 }
 
+/*** Custom status ***/
+#app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground > .bd-section .bd-customStatus {
+    display: flex;
+    justify-content: center;
+}
+
 /*** Body ***/
 #app-mount .bd-userPopoutOuter .bd-userPopoutOverlayBackground > .bd-scroller {
     background-color: rgba(var(--bd-user-popouts-body), .95);

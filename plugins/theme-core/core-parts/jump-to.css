@@ -1,8 +1,8 @@
 /* Jump tos */
 /** New messages **/
-#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar,
+#app-mount .bd-base .bd-chat .bd-newMessagesBar,
 /** Jump to present **/
-#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar,
+#app-mount .bd-base .bd-chat .bd-jumpToPresentBar,
 /** Unread indicator on channel list **/
 #app-mount .bd-base .bd-sidebar .bd-unread.bd-bar,
 /** Reply bars when replying **/
@@ -10,14 +10,20 @@
     background-color: rgba(var(--bd-jumpto));
 }
 
-#app-mount .bd-base .bd-chat .bd-content .bd-newMessagesBar:hover,
-#app-mount .bd-base .bd-chat .bd-content .bd-jumpToPresentBar:hover,
+#app-mount .bd-base .bd-chat .bd-newMessagesBar:hover,
+#app-mount .bd-base .bd-chat .bd-jumpToPresentBar:hover,
 #app-mount .bd-base .bd-sidebar .bd-unread.bd-bar:hover,
 #app-mount .bd-channelTextArea .bd-attachedBars:hover {
     background-color: rgba(var(--bd-jumpto-hover));
 }
 
 /** I'm not sure why this isn't the same as attachedBar. Discord being stupid **/
-#app-mount .bd-channelTextArea .bd-replyBar {
+#app-mount .bd-channelTextArea .bd-replyBar,
+/** Long chain of replies **/
+#app-mount .bd-channelTextArea .bd-threadSuggestionBar {
     background-color: transparent;
+}
+
+#app-mount .bd-channelTextArea .bd-threadSuggestionBar {
+    border-top-color: rgba(var(--bd-monochrome-contrast), .1);
 }

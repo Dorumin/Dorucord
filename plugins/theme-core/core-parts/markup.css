@@ -14,7 +14,11 @@
 }
 
 /** Small `codes` **/
-#app-mount .bd-markup code {
+#app-mount .bd-markup code,
+/** Preview of `code` in textarea **/
+#app-mount span.bd-inlineCode,
+#app-mount span.bd-before_inlineCode,
+#app-mount span.bd-after_inlineCode {
     background-color: rgba(var(--bd-code), 0.6);
     border-color: rgba(var(--bd-code-border), 0.8);
 }

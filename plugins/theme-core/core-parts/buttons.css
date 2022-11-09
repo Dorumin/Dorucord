@@ -47,6 +47,17 @@
     color: rgb(var(--bd-button-text));
 }
 
+/*** Green buttons ***/
+#app-mount .bd-lookFilled.bd-colorGreen {
+    background-color: rgb(var(--bd-button-green));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookFilled.bd-colorGreen:hover {
+    background-color: rgb(var(--bd-button-green-hover));
+    color: rgb(var(--bd-button-text));
+}
+
 /*** Outlined buttons ***/
 #app-mount .bd-lookOutlined.bd-colorBrand {
     border-color: rgba(var(--bd-button-default), .5);
@@ -68,26 +79,34 @@
     color: rgb(var(--bd-button-text));
 }
 
-/*** Green buttons ***/
-#app-mount .bd-lookFilled.bd-colorGreen {
-    background-color: rgb(var(--bd-button-green));
+#app-mount .bd-lookOutlined.bd-colorGreen {
+    border-color: rgba(var(--bd-button-green), .5);
     color: rgb(var(--bd-button-text));
 }
 
-#app-mount .bd-lookFilled.bd-colorGreen {
-    background-color: rgb(var(--bd-button-green-hover));
+#app-mount .bd-lookOutlined.bd-colorGreen:hover {
+    background-color: rgba(var(--bd-button-green-hover));
     color: rgb(var(--bd-button-text));
+}
+
+/*** Inverted buttons ***/
+#app-mount .bd-lookInverted.bd-colorBrand {
+    color: rgb(var(--bd-button-default));
+    background-color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookInverted.bd-colorBrand:hover {
+    color: rgb(var(--bd-button-default-hover));
+    background-color: rgb(var(--bd-button-text));
 }
 
 /** Non rectangle-y buttons **/
 #app-mount .bd-button.bd-secondary {
     background-color: rgba(var(--bd-light));
-
 }
 
 #app-mount .bd-button.bd-tertiary {
     background-color: rgba(var(--bd-default));
-
 }
 
 /** Button on the right side of messages **/

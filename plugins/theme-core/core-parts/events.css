@@ -6,13 +6,17 @@
     box-shadow: none;
 }
 
-/** [Calendar icon] [Date] **/
-#app-mount .bd-layerContainer .bd-root .bd-eventStatusLabel,
-#app-mount .bd-layerContainer .bd-root .bd-eventStatusBrand {
+/** Calender Icon **/
+#app-mount .bd-eventInfoStatusContainer .bd-eventStatusBrand {
     color: rgba(var(--bd-color-link-hovered)) !important;
 }
 
+/** Date **/
+#app-mount .bd-eventInfoStatusContainer .bd-eventStatusLabel {
+    color: rgba(var(--bd-color-dark)) !important;
+}
+
 /** x people interested **/
-#app-mount .bd-layerContainer .bd-root .bd-rsvpCount {
+#app-mount .bd-eventInfoStatusContainer .bd-rsvpCount {
     background-color: rgba(var(--bd-darker), .8);
 }

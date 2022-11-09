@@ -1,0 +1,33 @@
+/* Guild Home */
+/** Description about server **/
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer > .bd-container:first-of-type {
+    background-color: rgba(var(--bd-default), .5);
+    border: 1px solid rgba(var(--bd-darker), .5);
+}
+
+/** Icon **/
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer > .bd-container:first-of-type .bd-icon {
+    border-color: rgba(var(--bd-default), .5);
+}
+
+/** Active Now **/
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-channelList > .bd-container {
+    background-color: rgba(var(--bd-default), .5);
+    border-color: rgba(var(--bd-darker), .5);
+}
+
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-channelList > .bd-container :is(.bd-moreUsers, .bd-typingIndicator),
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-scrollIcon {
+    background-color: rgba(var(--bd-dark));
+}
+
+/** Your Highlights **/
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-homeContent .bd-card.bd-container,
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-homeContent .bd-card.bd-container + .bd-container > .bd-card {
+    background-color: rgba(var(--bd-default), .5);
+    border-color: rgba(var(--bd-darker), .5);
+}
+
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-homeContent .bd-card.bd-container + .bd-container > .bd-card .bd-body .bd-wrapper.bd-cozy {
+    background-color: transparent;
+}

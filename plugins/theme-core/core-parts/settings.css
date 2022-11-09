@@ -20,13 +20,6 @@
     background-color: rgba(var(--bd-settings-sidebar-item), 0.4);
 }
 
-/*** Beta keyword ***/
-/**** Devices, Gift Inventory ****/
-/**** Privacy & Safety > In-game rewards (aka Drops) ****/
-#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView .bd-textBadge {
-    background: rgb(var(--bd-color-link-dark)) !important;
-}
-
 /*** Server Boost | Nitro ***/
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-sidebarRegion .bd-sidebar .bd-item.bd-premiumTab:hover {
     background-color: rgba(var(--bd-color-link), .1);
