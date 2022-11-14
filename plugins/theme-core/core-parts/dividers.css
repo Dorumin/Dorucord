@@ -2,7 +2,7 @@
 /** Unread = unreadPill **/
 /** Dates = content **/
 /** Hehe special behavior **/
-#app-mount .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill {
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill {
     display: flex;
     flex-shrink: 0;
     order: -1;
@@ -16,7 +16,7 @@
     font-variant: small-caps;
 }
 
-#app-mount .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill::after {
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-hasContent.bd-isUnread .bd-unreadPill::after {
 	content: '';
 	border-width: 10px 0 10px 10px;
 	border-color: transparent transparent transparent rgba(var(--bd-color-link-dark), .8);
@@ -26,7 +26,7 @@
 }
 
 /*** Hides the red thingy ***/
-#app-mount .bd-divider .bd-unreadPill .bd-unreadPillCap {
+#app-mount .bd-chat .bd-scroller .bd-divider .bd-unreadPill .bd-unreadPillCap {
     display: none;
 }
 
@@ -49,8 +49,8 @@
     margin: 14px 0;
 }
 
-#app-mount .bd-divider::before,
-#app-mount .bd-divider::after {
+#app-mount .bd-chat .bd-scroller .bd-divider::before,
+#app-mount .bd-chat .bd-scroller .bd-divider::after {
     content: "";
     background-color: rgba(var(--bd-color-link-dark), .8);
     width: 100%;
@@ -58,26 +58,26 @@
     position: initial;
 }
 
-#app-mount .bd-divider.bd-isUnread::before,
-#app-mount .bd-divider.bd-hasContent::before {
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-isUnread::before,
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-hasContent::before {
     margin-right: 8px;
 }
 
-#app-mount .bd-divider.bd-isUnread::after,
-#app-mount .bd-divider.bd-hasContent::after {
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-isUnread::after,
+#app-mount .bd-chat .bd-scroller .bd-divider.bd-hasContent::after {
     margin-left: 8px;
 }
 
 /*** Text ***/
-#app-mount .bd-divider .bd-unreadPill,
-#app-mount .bd-divider .bd-content {
+#app-mount .bd-chat .bd-scroller .bd-divider .bd-unreadPill,
+#app-mount .bd-chat .bd-scroller .bd-divider .bd-content {
     color: rgba(var(--bd-color-link-dark), .8);
     background-color: transparent;
     font-size: 14px;
     padding: 0;
 }
 
-#app-mount .bd-divider .bd-unreadPill {
+#app-mount .bd-chat .bd-scroller .bd-divider .bd-unreadPill {
     position: relative;
     top: 0;
     left: 0;

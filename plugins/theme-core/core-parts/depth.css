@@ -2,7 +2,7 @@
 /** Title **/
 #app-mount .bd-base .bd-content .bd-chat > .bd-title,
 /** Friends | Library **/
-#app-mount .bd-base .bd-content .bd-container > .bd-container:first-of-type {
+#app-mount .bd-base .bd-content .bd-container > section.bd-container:first-of-type {
     background-color: var(--bd-depth-title, transparent);
 }
 

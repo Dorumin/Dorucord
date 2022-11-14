@@ -3,14 +3,18 @@
 #app-mount .bd-attachment,
 /** Links with embeds, or embeds in general, such a those created by bots **/
 #app-mount .bd-embedFull,
-/** Embeded file previews **/
+/** Spotify invite links **/
+#app-mount .bd-invite.bd-container,
+/** Music files **/
+#app-mount .bd-embedWrapper.bd-wrapper,
+/** Overflowing text files **/
 #app-mount .bd-embedWrapper.bd-container {
     background-color: rgba(var(--bd-embed-wrapper), 0.5);
     border-color: rgb(var(--bd-embed-wrapper-border)) !important;
 }
 
 /** Invite embeds **/
-#app-mount .bd-chat > .bd-content .bd-message .bd-wrapper.bd-userSelectNone.bd-cursorDefault {
+#app-mount .bd-wrapper.bd-userSelectNone.bd-cursorDefault {
     background-color: rgba(var(--bd-embed-wrapper), 0.5);
     border: 1px solid rgb(var(--bd-embed-wrapper-border));
 }

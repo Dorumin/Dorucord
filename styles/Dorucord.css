@@ -50,7 +50,6 @@
 }
 
 .bd-focusedItem {
-    background-color: var(--background-modifier-selected);
     text-shadow: 0 0 2px white;
 }
 

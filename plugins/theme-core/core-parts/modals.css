@@ -28,6 +28,8 @@
 #app-mount .bd-layerContainer .bd-root > .bd-content.bd-thin,
 /*** Events header ***/
 #app-mount .bd-layerContainer .bd-root > .bd-container:first-of-type,
+/*** Activities body ***/
+#app-mount .bd-layerContainer .bd-root .bd-scrollTierBackground,
 /*** Upload modal ***/
 #app-mount .bd-layerContainer .bd-uploadModal .bd-inner,
 /*** Keyboard Shortcuts modal ***/
@@ -48,8 +50,30 @@
 /*** Change Nickname ***/
 /*** Timeout | Kick | Ban ***/
 /*** Pin | Unpin Message ***/
-#app-mount .bd-layerContainer .bd-root .bd-thin + .bd-footer {
+#app-mount .bd-layerContainer .bd-root .bd-thin + .bd-footer,
+/*** Activities ***/
+#app-mount .bd-layerContainer .bd-root .bd-modalDivider + .bd-footer,
+/*** Upload Modal ***/
+#app-mount .bd-layerContainer .bd-uploadModal > .bd-footer {
     background-color: rgba(var(--bd-modal-footer), .85);
+}
+
+/** Activities **/
+#app-mount .bd-layerContainer .bd-root .bd-modalDivider {
+    height: 0;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-shelf .bd-activityItem {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-shelf .bd-activityItem .bd-activityTextContainer {
+    background-color: rgba(var(--bd-dark, .5))
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-shelf .bd-activityItem .bd-activityTextContainer .bd-activityTag {
+    background-color: rgba(var(--bd-lightest), .3)
 }
 
 /** Upload modals **/
@@ -66,7 +90,7 @@
 /**** File icon ****/
 #app-mount .bd-uploadArea.bd-uploadModalIn .bd-uploadDropModal .bd-icon,
 /***** File icon for files that aren't images, such as text, misc files *****/
-#app-mount .bd-uploadModal .bd-icon:not(.bd-image) {
+#app-mount .bd-uploadModal .bd-icon:not(img) {
     filter: var(--bd-modal-icon, none);
 }
 
@@ -92,4 +116,21 @@
     border-bottom-color: rgb(var(--bd-monochrome-contrast), .1);
     width: -webkit-fill-available;
     margin: 0 16px;
+}
+
+/** Invite to Server **/
+/** Add an image to your invite link with boosting **/
+#app-mount .bd-layerContainer .bd-root .bd-inviteBannerUpsell {
+    background-color: rgba(var(--bd-lightest), .2)
+}
+
+/** Invite to Listen **/
+#app-mount .bd-layerContainer .bd-root .bd-invite.bd-preview {
+    background-color: rgba(var(--bd-embed-wrapper), 0.5);
+    border-color: rgb(var(--bd-embed-wrapper-border)) !important;
+}
+
+/*** Add a comment ***/
+#app-mount .bd-layerContainer .bd-root .bd-channelTextArea .bd-scrollableContainer {
+    background-color: rgba(var(--bd-darker), .5);
 }

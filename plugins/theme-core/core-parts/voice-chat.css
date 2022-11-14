@@ -1,0 +1,5 @@
+/* Voice chat */
+/** Status of current call, if you tap on 'Authenticating' or 'Connected' **/
+#app-mount .bd-layerContainer .bd-animatorTop.bd-render > .bd-container {
+    background-color: rgba(var(--bd-dark), .85);
+}

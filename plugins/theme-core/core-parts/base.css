@@ -1,6 +1,21 @@
 /* Main */
+/** Threads that popup on the side **/
+/** Also when you click on a highlight in guild home **/
+#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget {
+    border-radius: 0;
+    box-shadow: 0 0 40px 0px rgb(0 0 0 / 50%);
+}
+
+#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget,
+#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget + .bd-container {
+    background-color: transparent;
+    filter: none;
+    border-left: none;
+}
+
 /** Background **/
-#app-mount .bd-app > .bd-app > .bd-bg::before {
+#app-mount .bd-app > .bd-app > .bd-bg::before,
+#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget::before {
     content: '';
     background: var(--bd-background-color) var(--bd-background-image) var(--bd-background-position) / cover no-repeat fixed;
     position: absolute;
@@ -8,9 +23,6 @@
     right: 0;
     left: 0;
     top: 0;
-}
-
-#app-mount .bd-app > .bd-app > .bd-bg::before {
     filter: var(--bd-background-brightness) var(--bd-background-contrast) var(--bd-background-blur);
 }
 
@@ -57,10 +69,6 @@
     right: 0;
     left: 0;
     top: 0;
-}
-
-#app-mount .bd-app > .bd-container.bd-fixClipping::before,
-#app-mount .bd-app > .bd-app + .bd-container::before {
     filter: var(--bd-loading-background-brightness) var(--bd-loading-background-contrast) var(--bd-loading-background-blur);
     z-index: -1;
 }
@@ -133,8 +141,11 @@
 #app-mount .bd-base .bd-content .bd-applicationStore .bd-headerBar,
 /**** Main content ****/
 #app-mount .bd-base .bd-content .bd-applicationStore .bd-scroller,
+/*** Threads that popup on the side ***/
+/*** Also when you click on a highlight in guild home ***/
+#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper,
 /*** Channel text area ***/
-#app-mount .bd-base .bd-chat .bd-content .bd-channelTextArea,
+#app-mount .bd-base .bd-chat .bd-channelTextArea,
 /*** Search ***/
 #app-mount .bd-searchResultsWrap,
 /*** Search > Results | New | Old | Relevant  ***/

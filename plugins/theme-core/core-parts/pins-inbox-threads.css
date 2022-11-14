@@ -5,7 +5,7 @@
     box-shadow: none;
 }
 
-#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout, .bd-browser) .bd-header + :-webkit-any(.bd-thin, .bd-container) {
+#app-mount .bd-layerContainer :-webkit-any(.bd-messagesPopoutWrap, .bd-recentMentionsPopout, .bd-browser) .bd-header + :-webkit-any(.bd-thin, .bd-container, .bd-list) {
     background-color: rgba(var(--bd-popout-bg), .95);
 }
 
@@ -29,6 +29,11 @@
 }
 
 /** Threads **/
+/*** There are no threads icon ***/
+#app-mount .bd-layerContainer .bd-browser .bd-icon {
+    background-color: rgba(var(--bd-darker), .8));
+}
+
 /*** Search ***/
 #app-mount .bd-layerContainer .bd-browser .bd-searchBox,
 /*** Entries ***/

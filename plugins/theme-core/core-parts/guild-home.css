@@ -10,15 +10,19 @@
     border-color: rgba(var(--bd-default), .5);
 }
 
-/** Active Now **/
-#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-channelList > .bd-container {
+/** Active Now | Events **/
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-container.bd-containerCard {
     background-color: rgba(var(--bd-default), .5);
     border-color: rgba(var(--bd-darker), .5);
 }
 
+/*** More users, typing indicator ***/
 #app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-channelList > .bd-container :is(.bd-moreUsers, .bd-typingIndicator),
-#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-scrollIcon {
-    background-color: rgba(var(--bd-dark));
+/*** Left and right scroll icons ***/
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-scrollIcon,
+/*** Event Icon ***/
+#app-mount .bd-base .bd-chat .bd-homeContainer .bd-widgetsContainer .bd-container.bd-containerCard .bd-iconContainer[aria-label="Event"] {
+    background-color: rgba(var(--bd-darker));
 }
 
 /** Your Highlights **/
