@@ -18,7 +18,10 @@
 #app-mount .bd-base .bd-membersWrap .bd-container.bd-selected:hover .bd-layout,
 /*** Guild VC ***/
 #app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected > .bd-content,
-#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected:hover > .bd-content {
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-voiceUser.bd-selected:hover > .bd-content,
+/**** When you in a VC and you open the chat ****/
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-modeSelected > .bd-content,
+#app-mount .bd-base .bd-sidebar .bd-scroller .bd-containerDefault .bd-modeSelected:hover > .bd-content {
     background-color: rgba(var(--bd-default), .4);
 }
 

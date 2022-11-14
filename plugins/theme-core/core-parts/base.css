@@ -1,13 +1,13 @@
 /* Main */
 /** Threads that popup on the side **/
 /** Also when you click on a highlight in guild home **/
-#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget {
+#app-mount .bd-base .bd-chatLayerWrapper .bd-chatTarget {
     border-radius: 0;
     box-shadow: 0 0 40px 0px rgb(0 0 0 / 50%);
 }
 
-#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget,
-#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget + .bd-container {
+#app-mount .bd-base .bd-chatLayerWrapper .bd-chatTarget,
+#app-mount .bd-base .bd-chatLayerWrapper .bd-chatTarget + .bd-container {
     background-color: transparent;
     filter: none;
     border-left: none;
@@ -15,7 +15,7 @@
 
 /** Background **/
 #app-mount .bd-app > .bd-app > .bd-bg::before,
-#app-mount .bd-base .bd-chat + .bd-chatLayerWrapper .bd-chatTarget::before {
+#app-mount .bd-base .bd-chatLayerWrapper .bd-chatTarget::before {
     content: '';
     background: var(--bd-background-color) var(--bd-background-image) var(--bd-background-position) / cover no-repeat fixed;
     position: absolute;

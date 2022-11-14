@@ -10,6 +10,14 @@
     box-shadow: none;
 }
 
+/** Nitro Gift stupid header **/
+#app-mount .bd-layerContainer .bd-root.bd-withHeader .bd-modalHeader {
+    background-image: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    box-sizing: border-box;
+}
+
 /** le wut Idek, it showed up when it advertised App Directory **/
 #app-mount .bd-layerContainer .bd-root .bd-modalContent {
     margin: 0;
@@ -24,6 +32,8 @@
 /*** Timeout | Kick | Ban ***/
 #app-mount .bd-layerContainer .bd-root .bd-header.bd-flex,
 #app-mount .bd-layerContainer .bd-root .bd-header.bd-flex + .bd-thin,
+/*** Nitro Gift ***/
+#app-mount .bd-layerContainer .bd-root .bd-header.bd-flex + .bd-content,
 /*** New Event modal **/
 #app-mount .bd-layerContainer .bd-root > .bd-content.bd-thin,
 /*** Events header ***/
@@ -53,6 +63,8 @@
 #app-mount .bd-layerContainer .bd-root .bd-thin + .bd-footer,
 /*** Activities ***/
 #app-mount .bd-layerContainer .bd-root .bd-modalDivider + .bd-footer,
+/*** Nitro Gift ***/
+#app-mount .bd-layerContainer .bd-root .bd-content + .bd-footer,
 /*** Upload Modal ***/
 #app-mount .bd-layerContainer .bd-uploadModal > .bd-footer {
     background-color: rgba(var(--bd-modal-footer), .85);
@@ -74,6 +86,15 @@
 
 #app-mount .bd-layerContainer .bd-root .bd-shelf .bd-activityItem .bd-activityTextContainer .bd-activityTag {
     background-color: rgba(var(--bd-lightest), .3)
+}
+
+/** Nitro Gift **/
+#app-mount .bd-layerContainer .bd-root .bd-content .bd-paymentNote {
+    margin-top: 0;
+}
+
+#app-mount .bd-layerContainer .bd-root .bd-selectPlanDivider {
+    background-color: rgba(var(--bd-monochrome-contrast), .1);
 }
 
 /** Upload modals **/
