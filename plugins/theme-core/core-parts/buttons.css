@@ -24,6 +24,8 @@
 /*** Blue buttons ***/
 /**** Action buttons, found in User Popouts like View Repository, etc ****/
 #app-mount .bd-lookFilled.bd-buttonColor,
+/**** Action buttons, found in popped out User Popouts, like View Repository, etc ****/
+#app-mount .bd-lookFilled.bd-actionColor,
 #app-mount .bd-lookFilled.bd-colorBrand,
 #app-mount .bd-lookFilled.bd-colorBrandNew {
     background-color: rgb(var(--bd-button-default));
@@ -86,6 +88,16 @@
 
 #app-mount .bd-lookOutlined.bd-colorGreen:hover {
     background-color: rgba(var(--bd-button-green-hover));
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-button {
+    border-color: rgba(var(--bd-button-default), .5);
+    color: rgb(var(--bd-button-text));
+}
+
+#app-mount .bd-lookOutlined.bd-button:hover {
+    background-color: rgba(var(--bd-button-default));
     color: rgb(var(--bd-button-text));
 }
 

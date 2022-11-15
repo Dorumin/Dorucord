@@ -115,13 +115,13 @@
 }
 
 /** Stickers, when suggested **/
-#app-mount .bd-channelTextArea > .bd-container .bd-stickerIconOffset .bd-containerBackground {
+#app-mount .bd-channelTextArea > .bd-container.bd-stickerIconOffset .bd-containerBackground {
     background-color: rgba(var(--bd-darker), .7);
     border-color: rgba(var(--bd-darker));
 }
 
 /*** Hovering a sticker ***/
-#app-mount .bd-channelTextArea > .bd-container .bd-stickerIconOffset .bd-stickerResults .bd-maskBackground {
+#app-mount .bd-channelTextArea > .bd-container.bd-stickerIconOffset .bd-stickerResults .bd-maskBackground {
     background-color: rgba(var(--bd-lightest), .5)
 }
 

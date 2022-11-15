@@ -280,7 +280,7 @@
     --bd-mentions: var(--bd-color-link);
     --bd-mentions-border: var(--bd-color-link);
 
-    /* Emoji Picker / Gif picker */
+    /* Emoji | Gif | Sticker picker */
     --bd-picker: var(--bd-default);
 
     /* Guild icons */
@@ -356,6 +356,11 @@
 
     /* Tooltips */
     --bd-tooltips: var(--bd-default);
+
+    /* Popouts */
+    --bd-popouts: var(--bd-dark);
+    --bd-emoji-popout-header: var(--bd-darker);
+    --bd-emoji-popout-body: var(--bd-light);
 
     /* User popouts */
     --bd-user-popouts-header: var(--bd-darker);

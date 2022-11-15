@@ -1,6 +1,6 @@
 /* Emoji, Sticker and Gif picker */
 #app-mount .bd-layerContainer [aria-label="Expression Picker"] .bd-contentWrapper,
-#app-mount .bd-layerContainer .bd-animatorLeft #emoji-picker-tab-panel {
+#app-mount .bd-layerContainer :is(.bd-animatorLeft, .bd-animatorRight) #emoji-picker-tab-panel {
     background-color: rgba(var(--bd-picker), 0.85);
 }
 

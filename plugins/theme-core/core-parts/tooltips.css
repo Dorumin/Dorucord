@@ -2,7 +2,7 @@
 /** Click server boost from settings **/
 #app-mount .bd-subscribeTooltipWrapper,
 /** Markdown **/
-#app-mount .bd-layerContainer .bd-toolbar,
+#app-mount .bd-layerContainer > #slate-toolbar.bd-toolbar,
 /** General tooltips **/
 #app-mount .bd-layerContainer .bd-layer .bd-tooltip,
 /** Tooltip when introducing a new feature in guild **/

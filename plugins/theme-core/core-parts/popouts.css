@@ -1,0 +1,28 @@
+/* Popouts */
+/** This Emoji is from **/
+#app-mount .bd-layerContainer .bd-popoutContainer {
+    background-color: transparent;
+}
+
+#app-mount .bd-layerContainer .bd-popoutContainer .bd-emojiSection {
+    background-color: rgba(var(--bd-emoji-popout-header), .85);
+}
+
+#app-mount .bd-layerContainer .bd-popoutContainer .bd-guildSection {
+    background-color: rgba(var(--bd-emoji-popout-body), .85);
+}
+
+/** Forum tags popout **/
+/** If someone in a voice channel has a status, and you hover them **/
+#app-mount .bd-layerContainer [class*="animator"] > .bd-container,
+/** Color picker in settings **/
+#app-mount .bd-layerContainer .bd-animatorRight > .bd-customColorPicker,
+/** Random advertisement of new activity in sidebar **/
+#app-mount .bd-base .bd-sidebar .bd-unreadBottom + .bd-wrapper > .bd-container {
+    background-color: rgba(var(--bd-popout), .85);
+    border-color: transparent;
+}
+
+#app-mount .bd-layerContainer .bd-animatorRight > .bd-container .bd-channelNameContainer + .bd-container {
+    background-color: rgba(var(--bd-lightest), .4);
+}

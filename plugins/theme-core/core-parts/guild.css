@@ -19,6 +19,8 @@
 #app-mount .bd-baseLayer + .bd-layer  .bd-standardSidebarView > .bd-contentRegion .bd-avatarUploader .bd-avatarUploaderInner,
 /** General catch-all. Yes, lazy LOL **/
 #app-mount .bd-guildIcon.bd-noIcon,
+/** Invites with a guild Icon with transparency **/
+#app-mount .bd-guildIcon.bd-guildIconImage,
 /** Mutual servers found in User Popouts **/
 #app-mount .bd-noIcon,
 /** Mutual servers **/
@@ -35,7 +37,7 @@
 }
 
 /** Invite link with expired guild icon **/
-#app-mount .bd-chat > .bd-content .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon.bd-guildIconExpired {
+#app-mount .bd-wrapper.bd-userSelectNone.bd-cursorDefault .bd-guildIcon.bd-guildIconExpired {
     background-color: transparent;
 }
 

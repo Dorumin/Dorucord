@@ -152,6 +152,8 @@
 #app-mount .bd-searchResultsWrap .bd-searchHeader,
 /*** Search > #channel-name ***/
 #app-mount .bd-searchResultsWrap .bd-channelName,
+/*** Emoji Popouts. This emote is from: ***/
+#app-mount .bd-layerContainer .bd-popoutContainer,
 /*** Quick switcher ***/
 #app-mount .bd-layerContainer .bd-container .bd-quickswitcher .bd-scroller,
 /*** Server Boost ***/

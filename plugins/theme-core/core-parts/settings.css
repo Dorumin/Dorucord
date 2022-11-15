@@ -103,6 +103,12 @@
     background-color: transparent;
 }
 
+/***** Ring around the avatar *****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-children .bd-accountProfileCard .bd-userInfo .bd-wrapper {
+    background-color: rgba(var(--bd-default));
+    border-color: rgba(var(--bd-darker));
+}
+
 /*** Profiles ***/
 /**** User Profile | Server Profiles ****/
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-tabBar {
@@ -129,6 +135,12 @@
 /**** About Me ****/
 #app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-profileCustomizationSection .bd-bioTextArea {
     background-color: rgba(var(--bd-dark), .4);
+}
+
+/**** Nitro advertisement ****/
+#app-mount .bd-baseLayer + .bd-layer .bd-standardSidebarView > .bd-contentRegion .bd-premiumFeatureBorder {
+    background-color: rgba(var(--bd-dark), .4);
+    background-image: none;
 }
 
 /*** Connections ***/

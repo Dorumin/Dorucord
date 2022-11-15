@@ -42,6 +42,8 @@
 #app-mount .bd-layerContainer .bd-root .bd-scrollTierBackground,
 /*** Upload modal ***/
 #app-mount .bd-layerContainer .bd-uploadModal .bd-inner,
+/*** Community popout modal ***/
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile.bd-main,
 /*** Keyboard Shortcuts modal ***/
 #app-mount .bd-layerContainer .bd-keyboardShortcutsModal {
     background-color: rgba(var(--bd-modal-base), .85);
@@ -154,4 +156,13 @@
 /*** Add a comment ***/
 #app-mount .bd-layerContainer .bd-root .bd-channelTextArea .bd-scrollableContainer {
     background-color: rgba(var(--bd-darker), .5);
+}
+
+/** Community modal **/
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile.bd-main .bd-optionContainer {
+    background-color: rgba(var(--bd-lightest), .3);
+}
+
+#app-mount .bd-layerContainer .bd-root.bd-fullscreenOnMobile.bd-main .bd-optionContainer:hover {
+    background-color: rgba(var(--bd-lightest), .5);
 }

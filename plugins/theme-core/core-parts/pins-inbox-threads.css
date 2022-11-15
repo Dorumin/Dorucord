@@ -31,7 +31,7 @@
 /** Threads **/
 /*** There are no threads icon ***/
 #app-mount .bd-layerContainer .bd-browser .bd-icon {
-    background-color: rgba(var(--bd-darker), .8));
+    background-color: rgba(var(--bd-darker), .8);
 }
 
 /*** Search ***/
