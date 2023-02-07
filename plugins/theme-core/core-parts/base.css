@@ -103,7 +103,7 @@
 /*** Sidebar ***/
 #app-mount .bd-base .bd-sidebar,
 /*** Userbox ***/
-#app-mount .bd-base .bd-sidebar .bd-panels,
+#app-mount .bd-base .bd-sidebar .bd-panels > .bd-container,
 /*** Guild name in channel sidebar ***/
 #app-mount .bd-base .bd-sidebar .bd-header,
 /*** Channel list ***/
@@ -113,7 +113,7 @@
 /*** DMs scroller ***/
 #app-mount .bd-base .bd-sidebar .bd-privateChannels .bd-scroller,
 /*** Main chat ***/
-#app-mount .bd-base .bd-chat,
+#app-mount .bd-base .bd-chatContent,
 /*** For chat that hasn't loaded ***/
 #app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper,
 #app-mount .bd-base .bd-chat .bd-scrollerInner > .bd-wrapper > .bd-wrapper,
